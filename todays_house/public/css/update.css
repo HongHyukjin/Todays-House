@@ -1,0 +1,57 @@
+#wrap {
+  width: 100%;
+}
+#wrap #update {
+  width: 100%;
+}
+#wrap #update .container {
+  width: 100%;
+}
+#wrap #update .container .gap {
+  width: 100%;
+}
+#wrap #update .container .gap nav {
+  width: 100%;
+  height: 200px;
+}
+#wrap #update .container .gap .content {
+  width: 100%;
+  max-width: 1136px;
+  padding: 50px;
+  margin: 50px auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+#wrap #update .container .gap .content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 60px 0;
+}
+#wrap #update .container .gap .content form {
+  width: 100%;
+}
+#wrap #update .container .gap .content form > div {
+  display: flex;
+}
+#wrap #update .container .gap .content form > div > .label {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 30px 0 0 0;
+  width: 100px;
+  height: 103px;
+}
+#wrap #update .container .gap .content form > div > .label p {
+  margin: 5px 0 0 0;
+}
+#wrap #update .container .gap .content form > div > .input {
+  width: 400px;
+  padding: 20px 0;
+  position: relative;
+}
+#wrap #update .container .gap .content form > div > .input input[type=text] {
+  width: 400px;
+  height: 40px;
+}
+#wrap #update .container .gap .content form > div > .input:nth-child(1) input {
+  width: 190px;
+}
