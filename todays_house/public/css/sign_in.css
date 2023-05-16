@@ -1,0 +1,38 @@
+#wrap .ohouse-login-form {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+#wrap .ohouse-login-form-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#wrap .ohouse-login-form-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #008489;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#wrap .ohouse-login-form-button:hover {
+  background-color: #00716a;
+}
+#wrap .form-group {
+  margin-bottom: 1.5rem;
+}
+#wrap label {
+  font-weight: bold;
+}
+#wrap input[type=text],
+#wrap input[type=password] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
