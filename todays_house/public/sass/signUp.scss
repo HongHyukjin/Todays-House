@@ -1,0 +1,144 @@
+*{padding: 0; margin: 0; box-sizing: border-box; vertical-align:middle;}
+ul{list-style: none;}
+
+#signUp{
+    width: 100%;
+    #section1{
+        width: 100%;
+        padding: 40px 15px 0 15px;
+        a{
+            width: 100%;
+        }
+    }
+    #section2{
+        width: 100%;
+        padding: 60px 0 0 0;
+        .container{
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            .gap{
+                width: 100%;
+                .title{
+                    h2{
+                        color: #424242;
+                        font-size: 20px;
+                        font-weight: 600;
+                        letter-spacing: -2px;
+                    }
+                }
+                .content{
+                    width: 100%;
+                    .up{
+                        width: 100%;   
+                        border-bottom:1px solid #ededed ;                   
+                        >p{
+                            padding: 15px 0;
+                            text-align: center;
+                            font-size: 12px;
+                            color: #757575;
+                            letter-spacing: -1px;
+                        }
+                        >ul{
+                            display: flex;
+                            justify-content: center;
+                            padding: 0 0 30px 0;
+                            >li{
+                                margin: 0 10px;
+                            }
+                        }
+                    }
+                    form{
+                        width: 100%;
+                        .join{
+                            width: 100%;
+                            padding: 20px 0 0 0; 
+                            label{
+                                width: 100%;
+                                display: block;
+                                font-size: 16px;
+                                font-weight: 700;
+                                color: #2f3438;
+                                padding: 10px 0;
+                            }
+                            input{
+                                width: 100%;
+                                height: 40px;
+                                padding: 0 15px;
+                                border: 1px solid #dbdbdb;
+                                font-size: 15px;
+                                color: #424242;
+                                border-radius: 4px;
+                                outline: 0;
+                                &.email{
+                                    width: 45%;
+                                }
+                                &::placeholder{
+                                    color: #dbdbdb;
+                                }
+                            }
+                            i{
+                                margin: 0 5px;
+                                color: #dbdbdb;
+                            }
+                            select{
+                                width: 45%;
+                                height: 40px;
+                                padding: 0 15px;
+                                border: 1px solid #dbdbdb;
+                                font-size: 15px;
+                                color: #424242;
+                                border-radius: 4px;
+                                outline: 0;
+                            }
+                            >p{
+                                font-size: 14px;
+                                color: #828C94;
+                                letter-spacing: -1px;
+                                padding: 0 0 15px 0;
+                            }
+                            .check-box{
+                                border: 1px solid #dbdbdb;
+                                padding: 18px;
+                              >label{
+                                display: flex;
+                                font-size: 14px;
+                                color: #2F3438;
+                                letter-spacing: -1.5px;
+                                span{
+                                    font-size: 12px;
+                                    padding: 0 0 0 3px;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #828C94;
+                                }
+                                input[type=checkbox]{
+                                    width: 18px;
+                                    height: 18px;
+                                    margin: 0 10px 0 0;
+                                  }
+                                  &:first-child{
+                                    border-bottom: 1px solid #dbdbdb;
+                                    padding: 0 0 20px 0;
+                                  }
+                              }
+
+                            }
+                        }
+                        >button{
+                            width: 100%;
+                            margin: 30px 0;
+                            height: 50px;
+                            background: #35c5f0;
+                            color: #fff;
+                            font-size: 17px ;
+                            font-weight: 600;
+                            border: 0;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
