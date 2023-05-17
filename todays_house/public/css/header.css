@@ -96,7 +96,8 @@
   border: 0px;
 }
 #wrap #header .container .gap .row1 .headbox .right ul li button:hover {
-  background-color: rgba(78, 111, 139, 0.8);
+  transition: all 0.1s;
+  opacity: 0.5;
 }
 #wrap #header .container .gap .row2 {
   width: 100%;

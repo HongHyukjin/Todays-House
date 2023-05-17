@@ -92,7 +92,8 @@
                                         border-radius: 4px;
                                         border:0px;
                                         &:hover {
-                                            background-color : rgba(78,111,139,0.8)
+                                            transition: all 0.1s;
+                                            opacity: 0.5;
                                         }
                                     }
                                 }
