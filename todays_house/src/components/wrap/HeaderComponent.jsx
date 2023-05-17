@@ -29,7 +29,7 @@ export default function HeaderComponent(){
                                     <li>
                                         <a href="!#"><img src="./images/icon_cart.svg" alt="" className='cart'/></a>
                                     </li>
-                                    <li><a href="!#">로그인</a></li>
+                                    <li><Link to="/비밀번호변경">로그인</Link></li>
                                     <li><a href="!#">회원가입</a></li>
                                     <li><a href="!#">고객센터</a></li>
                                     <li><button>글쓰기</button></li>

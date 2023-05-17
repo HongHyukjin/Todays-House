@@ -20,6 +20,7 @@ export default function WrapComponent () {
                     <Route path='/섹션1' element={<Section1Component />} />
                     <Route path='/섹션2' element={<Section2Component />} />
                     <Route path='/마이페이지/*' element={<MypageComponent />} />
+                    <Route path='/비밀번호변경' element={<ChangePwComponent />} />
                 </Route>
             </Routes>
          </BrowserRouter>

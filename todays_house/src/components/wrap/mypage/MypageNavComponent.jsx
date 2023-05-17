@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {Link, Outlet} from 'react-router-dom';
+import {NavLink, Link, Outlet} from 'react-router-dom';
 
 export default function MypageNavComponent () {
   
@@ -50,7 +50,6 @@ export default function MypageNavComponent () {
   })
 
   return (
-    <>
       <div id="mypagenav">
         <nav className='top-nav'>
               <ul>
@@ -76,14 +75,14 @@ export default function MypageNavComponent () {
               state.nav1==='설정' &&
               <nav className='bottom-nav'>
                 <ul>
-                  <li><Link to="/회원정보수정" className={`bottom-nav-btn${state.nav2==='회원정보수정'?' on':''}`}>회원정보수정</Link></li>
-                  <li><Link to="/비밀번호변경" className='bottom-nav-btn'>비밀번호변경</Link></li>
+                  {/* <li><Link to="/마이페이지/회원정보수정" className={`bottom-nav-btn${state.nav2==='회원정보수정'?' on':''}`}>회원정보수정</Link></li>
+                  <li><Link to="/마이페이지/비밀번호변경" className='bottom-nav-btn'>비밀번호변경</Link></li> */}
+                  <li><Link to="/마이페이지/회원정보수정" >회원정보수정</Link></li>
+                  <li><Link to="/마이페이지/비밀번호변경" >비밀번호변경</Link></li>
                 </ul>
               </nav>
             }
       </div>
-      <Outlet />
-    </>
   );
 };
 
