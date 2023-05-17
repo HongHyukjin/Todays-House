@@ -38,7 +38,7 @@ export default function MypageNavComponent () {
       click(e){
         e.preventDefault();
         let nav2 = '';
-        $('.bottom-nav-btn').removeClass('on');
+        $('.active').removeClass('on');
         $(this).toggleClass('on');
         nav2 = $(this)[0].innerHTML;
         setState({
@@ -47,7 +47,7 @@ export default function MypageNavComponent () {
         })
       }
     })
-  })
+  },[])
 
   return (
       <div id="mypagenav">
@@ -75,10 +75,8 @@ export default function MypageNavComponent () {
               state.nav1==='설정' &&
               <nav className='bottom-nav'>
                 <ul>
-                  {/* <li><Link to="/마이페이지/회원정보수정" className={`bottom-nav-btn${state.nav2==='회원정보수정'?' on':''}`}>회원정보수정</Link></li>
-                  <li><Link to="/마이페이지/비밀번호변경" className='bottom-nav-btn'>비밀번호변경</Link></li> */}
-                  <li><Link to="/마이페이지/회원정보수정" >회원정보수정</Link></li>
-                  <li><Link to="/마이페이지/비밀번호변경" >비밀번호변경</Link></li>
+                  <li><Link to="/마이페이지/회원정보수정" className={`bottom-nav-btn${state.nav2==='회원정보수정'?' on':''}`}>회원정보수정</Link></li>
+                  <li><Link to="/마이페이지/비밀번호변경" className='bottom-nav-btn'>비밀번호변경</Link></li>
                 </ul>
               </nav>
             }
