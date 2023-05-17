@@ -1,3 +1,12 @@
+<<<<<<< HEAD
 @import url("../css/fonts.css");
 @import url("../css/reset.css");
+=======
+@import url("../css/reset.css");
+@import url("../css/skip.css");
+@import url("../css/header.css");
+@import url("../css/footer.css");
+@import url("../css/topmodal.css");
+@import url("../css/section1.css");
+>>>>>>> 8c07dfa3705305fd7dcb41510929fae871aac424
 @import url("../css/update.css");
