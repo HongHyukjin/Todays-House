@@ -38,8 +38,9 @@ export default function SignUpComponent () {
                                         <option value="outlook.com">outlook.com</option>
                                         <option value="icloud.com">icloud.com</option>
                                         <option value="직접입력">직접입력</option>
-                                    </select>
-                        
+                                    </select>                                                
+                                    <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>                                                
+                                    <button>이메일 인증하기</button>
                                 </div>
                                 <div className="join">
                                     <label>비밀번호</label>
@@ -80,6 +81,10 @@ export default function SignUpComponent () {
                                 </div>
                                 <button type='submit'>회원가입하기</button>
                             </form>
+                            <div className="log-in">
+                                <p>이미 아이디가 있으신가요?</p>
+                                <a href="!#">로그인</a>
+                            </div>
                         </div>
                     </div>
                 </div>
