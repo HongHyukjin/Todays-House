@@ -10,9 +10,75 @@
 #wrap #update .container .gap {
   width: 100%;
 }
-#wrap #update .container .gap nav {
+#wrap #update .container .gap .top-nav {
   width: 100%;
-  height: 200px;
+  height: 60px;
+  border-bottom: 1px solid #ededed;
+}
+#wrap #update .container .gap .top-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+#wrap #update .container .gap .top-nav ul li {
+  position: relative;
+}
+#wrap #update .container .gap .top-nav ul li a {
+  display: block;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  height: 60px;
+  line-height: 60px;
+  color: inherit;
+}
+#wrap #update .container .gap .top-nav ul li a:hover {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .top-nav ul li a.on {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ededed;
+}
+#wrap #update .container .gap .bottom-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+#wrap #update .container .gap .bottom-nav ul li {
+  position: relative;
+}
+#wrap #update .container .gap .bottom-nav ul li a {
+  display: block;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  color: inherit;
+}
+#wrap #update .container .gap .bottom-nav ul li a:hover {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav ul li a.on {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav ul li a.on::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #35c5f0;
+  height: 4px;
 }
 #wrap #update .container .gap .content {
   width: 100%;
@@ -73,11 +139,45 @@
   color: #ccc;
 }
 #wrap #update .container .gap .content form > div .input input[type=file] {
+  display: none;
+}
+#wrap #update .container .gap .content form > div .input .img_upload {
   width: 200px;
   height: 200px;
-  background: url("./img/avatar.avif");
+  border: 0;
+  background-color: #d8d8d8;
+  cursor: pointer;
 }
-#wrap #update .container .gap .content form > div .input img {
+#wrap #update .container .gap .content form > div .input .img_upload:hover {
+  transition: all 0.3s;
+  background-color: #ddd;
+}
+#wrap #update .container .gap .content form > div .input .img_upload:hover img {
+  opacity: 0.5;
+}
+#wrap #update .container .gap .content form > div .input .img_upload > img {
+  width: 100%;
+  height: 100%;
+}
+#wrap #update .container .gap .content form > div .input .img_del {
+  width: 62px;
+  height: 30px;
+  background-color: #35c5f0;
+  border: #35c5f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 210px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  display: none;
+}
+#wrap #update .container .gap .content form > div .input > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -124,7 +224,7 @@
   height: 22px;
   border: 7px solid #35c5f0;
 }
-#wrap #update .container .gap .content form button {
+#wrap #update .container .gap .content form > button {
   margin: 50px 0 0 100px;
   width: 290px;
   padding: 11px 10px;

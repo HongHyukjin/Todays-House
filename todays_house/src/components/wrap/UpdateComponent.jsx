@@ -1,16 +1,114 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import $ from 'jquery';
 
 export default function UpdateComponent () {
+
+  const [state, setState] = React.useState({
+    nav1 : '프로필',
+    nav2 : '모두보기'
+  })
+
+  React.useEffect(() => {
+    $('#update .top-nav-btn').on({
+      click(e){
+        e.preventDefault();
+        let nav1 = '';
+        $('.top-nav-btn').removeClass('on');
+        $(this).toggleClass('on');
+        nav1 = $(this)[0].innerHTML;
+        if(nav1 === '프로필'){
+          setState({
+            ...state,
+            nav1 : nav1,
+            nav2 : '모두보기'
+          })
+        }
+        else if(nav1 === '설정'){
+          setState({
+            ...state,
+            nav1 : nav1,
+            nav2 : '회원정보수정'
+          })
+        }
+      }
+    })
+
+    $('#update .bottom-nav-btn').on({
+      click(e){
+        e.preventDefault();
+        let nav2 = '';
+        $('.bottom-nav-btn').removeClass('on');
+        $(this).toggleClass('on');
+        nav2 = $(this)[0].innerHTML;
+        setState({
+          ...state,
+          nav2 : nav2
+        })
+      }
+    })
+  })
+  
+
+  const imageInput = useRef();
+
+  const onClickImageUpload = (e) => {
+    console.log("img upload btn click");
+    e.preventDefault();
+    imageInput.current.click();
+  }
+
+  const onChangeImage = (e) => {
+    console.log("img upload");
+    console.log(e.target.files[0]);
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onload = (event) =>{
+      $('.input .img_upload img').attr("src", event.target.result);
+    }
+    reader.readAsDataURL(file);
+    $('.input .img_del').css({"display":"block"})
+  }
+
+  const onClickDelImage = (e) => {
+    e.preventDefault();
+    console.log("img delete");
+    $('.input .img_upload img').attr("src", "./img/avatar.avif");
+    $('.input .img_del').css({"display":"none"})
+  }
+
   return (
     <div id="update">
       <div className="container">
         <div className="gap">
-          <nav>
+          <nav className='top-nav'>
             <ul>
-              <li>프로필</li>
-              <li>설정</li>
+              <li><a href="#!" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</a></li>
+              <li><a href="#!" className={`top-nav-btn ${state.nav1==='설정'?'on':''}`}>설정</a></li>
             </ul>
           </nav>
+          {
+            state.nav1==='프로필' &&
+            <nav className='bottom-nav'>
+              <ul>
+                <li><a href="#!" className={`bottom-nav-btn ${state.nav2==='모두보기'?'on':''}`}>모두보기</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>사진</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>집들이</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>노하우</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>질문과답변</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>스크랩북</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>좋아요</a></li>
+              </ul>
+            </nav>
+          }
+          {
+            state.nav1==='설정' &&
+            <nav className='bottom-nav'>
+              <ul>
+                <li><a href="#!" className={`bottom-nav-btn ${state.nav2==='회원정보수정'?'on':''}`}>회원정보수정</a></li>
+                <li><a href="#!" className='bottom-nav-btn'>비밀번호변경</a></li>
+              </ul>
+            </nav>
+          }
           <div className="content">
             <h1>회원정보수정</h1>
             <form name="update_form" id="updateForm" action="">
@@ -67,8 +165,14 @@ export default function UpdateComponent () {
                   <label htmlFor="">프로필 이미지</label>
                 </div>
                 <div className="input">
-                  <input type="file" name="file" id="file" accept='image/*'/>
-                  {/* <img src="./img/avatar.avif" alt="" /> */}
+                  <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} />
+                  <button className='img_upload' onClick={onClickImageUpload}>
+                    <img src="./img/avatar.avif" alt="" />
+                  </button>
+                  <button className='img_del' onClick={onClickDelImage}>
+                    <img src="./img/img_del.svg" alt="" />
+                    삭제
+                  </button>
                 </div>
               </div>
               <div>
