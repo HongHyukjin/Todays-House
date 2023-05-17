@@ -1,0 +1,238 @@
+#wrap {
+  width: 100%;
+}
+#wrap #update {
+  width: 100%;
+}
+#wrap #update .container {
+  width: 100%;
+}
+#wrap #update .container .gap {
+  width: 100%;
+}
+#wrap #update .container .gap .top-nav {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ededed;
+}
+#wrap #update .container .gap .top-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+#wrap #update .container .gap .top-nav ul li {
+  position: relative;
+}
+#wrap #update .container .gap .top-nav ul li a {
+  display: block;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  height: 60px;
+  line-height: 60px;
+  color: inherit;
+}
+#wrap #update .container .gap .top-nav ul li a:hover {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .top-nav ul li a.on {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ededed;
+}
+#wrap #update .container .gap .bottom-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+#wrap #update .container .gap .bottom-nav ul li {
+  position: relative;
+}
+#wrap #update .container .gap .bottom-nav ul li a {
+  display: block;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  color: inherit;
+}
+#wrap #update .container .gap .bottom-nav ul li a:hover {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav ul li a.on {
+  color: #35c5f0;
+}
+#wrap #update .container .gap .bottom-nav ul li a.on::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #35c5f0;
+  height: 4px;
+}
+#wrap #update .container .gap .content {
+  width: 100%;
+  max-width: 1136px;
+  padding: 50px;
+  margin: 50px auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+#wrap #update .container .gap .content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 60px 0;
+}
+#wrap #update .container .gap .content form {
+  width: 100%;
+}
+#wrap #update .container .gap .content form > div {
+  display: flex;
+}
+#wrap #update .container .gap .content form > div .label {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 30px 0 0 0;
+  width: 100px;
+  height: 103px;
+}
+#wrap #update .container .gap .content form > div .label label {
+  color: #292929;
+  font-size: 15px;
+}
+#wrap #update .container .gap .content form > div .label > p {
+  margin: 5px 0 0 0;
+  color: #757575;
+  font-size: 13px;
+}
+#wrap #update .container .gap .content form > div .input {
+  width: 400px;
+  padding: 20px 0;
+  position: relative;
+}
+#wrap #update .container .gap .content form > div .input input[type=text] {
+  width: 400px;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 40px;
+  border-radius: 6px;
+  border: 1px solid #dbdbdb;
+}
+#wrap #update .container .gap .content form > div .input input[type=text].half {
+  width: 190px;
+}
+#wrap #update .container .gap .content form > div .input input[type=text]::-moz-placeholder {
+  color: #ccc;
+}
+#wrap #update .container .gap .content form > div .input input[type=text]::placeholder {
+  color: #ccc;
+}
+#wrap #update .container .gap .content form > div .input input[type=file] {
+  display: none;
+}
+#wrap #update .container .gap .content form > div .input .img_upload {
+  width: 200px;
+  height: 200px;
+  border: 0;
+  background-color: #d8d8d8;
+  cursor: pointer;
+}
+#wrap #update .container .gap .content form > div .input .img_upload:hover {
+  transition: all 0.3s;
+  background-color: #ddd;
+}
+#wrap #update .container .gap .content form > div .input .img_upload:hover img {
+  opacity: 0.5;
+}
+#wrap #update .container .gap .content form > div .input .img_upload > img {
+  width: 100%;
+  height: 100%;
+}
+#wrap #update .container .gap .content form > div .input .img_del {
+  width: 62px;
+  height: 30px;
+  background-color: #35c5f0;
+  border: #35c5f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 210px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  display: none;
+}
+#wrap #update .container .gap .content form > div .input > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+#wrap #update .container .gap .content form > div .input span {
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  width: 20px;
+  height: 40px;
+  color: #dbdbdb;
+}
+#wrap #update .container .gap .content form > div .input > p {
+  margin: 10px 0 0 0;
+  color: #9e9e9e;
+  font-size: 13px;
+  font-weight: 700;
+}
+#wrap #update .container .gap .content form > div .input-radio {
+  width: 400px;
+  padding: 20px 0;
+}
+#wrap #update .container .gap .content form > div .input-radio ul {
+  width: 138px;
+  display: flex;
+}
+#wrap #update .container .gap .content form > div .input-radio ul li {
+  width: 50%;
+}
+#wrap #update .container .gap .content form > div .input-radio ul li input[type=radio] {
+  width: 22px;
+  height: 22px;
+  margin: 0 10px 0 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+#wrap #update .container .gap .content form > div .input-radio ul li input[type=radio]:checked {
+  width: 22px;
+  height: 22px;
+  border: 7px solid #35c5f0;
+}
+#wrap #update .container .gap .content form > button {
+  margin: 50px 0 0 100px;
+  width: 290px;
+  padding: 11px 10px;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 700;
+  background: #35c5f0;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
