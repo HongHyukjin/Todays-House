@@ -11,11 +11,7 @@ html, body {
 }
 
 html { /* scroll-behavior: smooth; */
-<<<<<<< HEAD
   overflow-y: auto;
-=======
-  overflow-y: scroll;
->>>>>>> 8c07dfa3705305fd7dcb41510929fae871aac424
 }
 
 body {
@@ -65,11 +61,8 @@ i, em, address {
   display: inline-block;
   text-indent: -10000px;
   overflow: hidden;
-<<<<<<< HEAD
 }
 
 .hide {
   display: none;
-=======
->>>>>>> 8c07dfa3705305fd7dcb41510929fae871aac424
 }

@@ -4,6 +4,7 @@ import HeaderComponent from './wrap/HeaderComponent';
 import FooterComponent from './wrap/FooterComponent';
 import Section1Component from './wrap/Section1Component';
 import UpdateComponent from './wrap/UpdateComponent'
+import ChangePwComponent from './wrap/ChangePwComponent';
 
 export default function WrapComponent () {
   return (
@@ -11,7 +12,7 @@ export default function WrapComponent () {
          <TopmodalComponent/>
          <HeaderComponent/>
          <UpdateComponent />
-         <Section1Component/>
+         <ChangePwComponent />
          <FooterComponent/>
     </div>
   );
