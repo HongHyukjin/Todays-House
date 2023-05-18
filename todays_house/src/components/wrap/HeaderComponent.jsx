@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link,Outlet } from 'react-router-dom';
+import Section1Component from './Section1Component';
 
 
 export default function HeaderComponent(){
@@ -13,7 +14,7 @@ export default function HeaderComponent(){
                             <div className="left">
                                 <ul>
                                     <li>
-                                        <a href="!#"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></a>
+                                        <a href="#!"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></a>
                                     </li>
                                     <li><Link to="/섹션1">커뮤니티</Link></li>
                                     <li><Link to="/섹션2">쇼핑</Link></li>

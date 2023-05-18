@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import $ from 'jquery';
+import HeaderComponent from '../HeaderComponent';
 
 export default function UpdateComponent () {
 

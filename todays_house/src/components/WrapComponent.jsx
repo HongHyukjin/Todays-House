@@ -41,19 +41,22 @@ export default function WrapComponent () {
 
   return (
     <div id="wrap">
-         <TopmodalComponent/>
+
          <BrowserRouter>
             <Routes>
-                <Route path='/' element={<HeaderComponent/>} >
-                    <Route index element={<Section1Component />} />
-                    <Route path='/섹션1' element={<Section1Component />} />
-                    <Route path='/섹션2' element={<Section2Component />} />
-                    <Route path='/마이페이지/*' element={<MypageComponent />} />
-                </Route>
+                    <Route path="/마이페이지/*" element={<MypageComponent />}/>
+                    <Route path='/' element={() => (
+                      <>
+                      <TopmodalComponent />                      
+                      <Route index element={<HeaderComponent />} />
+                      <Route path='/섹션1' element={<Section1Component/>} />
+                      <Route path='/섹션2' element={<Section2Component/>}/>
+                      <FooterComponent/>
+                      </>
+                    )} />
             </Routes>
          </BrowserRouter>
 
-         <FooterComponent/>
     </div>
   );
 };
