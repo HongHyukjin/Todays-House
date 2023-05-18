@@ -5,25 +5,19 @@ export default function UpdateComponent () {
 
   const [state,setState] = React.useState({
     file : '',
-    imgUrl : './images/avatar.avif',
-    imgDel : false
+    imgUrl : '../images/avatar.avif'
   })
-
-  const onClickDelImage = (e) => {
-    e.preventDefault();
-    console.log("img delete");
-    setState({
-      ...state,
-      imgDel : true
-    })
-  }
 
   const imageInput = useRef();
 
   const onClickImageUpload = (e) => {
     e.preventDefault();
-    console.log("img upload btn click");
     imageInput.current.click();
+    console.log("img upload btn click");
+  }
+
+  const onClickImage = (e) => {
+    e.target.value = null;
   }
 
   const onChangeImage = (e) => {
@@ -34,25 +28,34 @@ export default function UpdateComponent () {
       setState({
         ...state,
         file:file,
-        imgUrl:reader.result,
-        imgDel : false
+        imgUrl:event.target.result,
       })
     }
     reader.readAsDataURL(file);
+  }
+
+  const onClickDelImage = (e) => {
+    e.preventDefault();
+    console.log("img delete");
+    setState({
+      ...state,
+      file : '',
+      imgUrl:'../images/avatar.avif',
+    })
   }
 
   React.useEffect(()=>{
     if(state.file !== ''){
       $('.input .img_del').css({"display":"block"})
     }
+    else{
+      $('.input .img_del').css({"display":"none"})
+    }
   }, [state.file])
 
   React.useEffect(()=>{
-    if(state.imgDel === true){
-      $('.input .img_upload img').attr("src", "./images/avatar.avif");
-      $('.input .img_del').css({"display":"none"})
-    }
-  },[state.imgDel])
+    
+  },[state.file])
 
   return (
     <div id="update">
@@ -114,7 +117,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">프로필 이미지</label>
                 </div>
                 <div className="input">
-                  <input className='img_upload_input' type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} />
+                  <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} />
                   <button className='img_upload' onClick={onClickImageUpload}>
                     <img src={state.imgUrl} alt="" />
                   </button>
