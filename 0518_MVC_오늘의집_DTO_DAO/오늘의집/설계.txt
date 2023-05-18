@@ -1,46 +1,23 @@
-
 CREATE TABLE ohouse_member(
-idx             int(11)         NOT NULL     COMMENT     AUTO_INCREMENT,
-user_email1     varchar(100)    NOT NULL  PRIMARY KEY,
-user_email2     varchar(100)    NOT NULL,
-user_pw         varchar(100)    NOT NULL,
-user_pw_ok      varchar(100)    NOT NULL,
-user_nick       varchar(300)    NOT NULL,
-user_service    varchar(1000)   NOT NULL,
-gaib_date       varchar(100)    NOT NULL,
-PRIMARY KEY (user_email1)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
-
-
-
-CREATE TABLE ohouse_member(
-  idx             int        NOT NULL AUTO_INCREMENT,
-  user_email1     varchar(100)    NOT NULL PRIMARY KEY,
+  idx             int       AUTO_INCREMENT,
+  user_email1     varchar(100)    NOT NULL,
   user_email2     varchar(100)    NOT NULL,
   user_pw         varchar(100)    NOT NULL,
   user_pw_ok      varchar(100)    NOT NULL,
   user_nick       varchar(300)    NOT NULL,
   user_service    varchar(1000)   NOT NULL,
-    create_date  timestamp              NOT NULL        DEFAULT     CURRENT_TIMESTAMP
+  create_date timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (idx, user_email1)
 ); 
 
 
+localhost:8080/jsp/0518_MVC_오늘의집_DTO_DAO
 
+update.jsp
+update_action.jsp 
 
-// 예시 
-CREATE TABLE gmgungang_signup (
-    idx             int             NOT NULL    PRIMARY KEY     AUTO_INCREMENT, 
-    saup_grbh           VARCHAR(250)    NOT NULL,
-    saup_giho           VARCHAR(250)    NOT NULL,
-    gaib_yb             VARCHAR(250)    NOT NULL,
-    user_id             VARCHAR(100)    NOT NULL,
-    user_pw1            VARCHAR(50)     NOT NULL,
-    sel_pw              VARCHAR(50)     NOT NULL,
-    pwbs_ok             VARCHAR(250)    NOT NULL,
-    user_hp             VARCHAR(250)    NOT NULL,
-    input_email         VARCHAR(250)    NOT NULL,
-    email_domain_select VARCHAR(250)    NOT NULL,
-    sosic_ok            VARCHAR(250)    NOT NULL,
-    sosic_no            VARCHAR(250)    NOT NULL,
-    create_date  timestamp              NOT NULL        DEFAULT     CURRENT_TIMESTAMP
-)   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+delete_action.jsp 
+delete.jsp 
+
+signin.jsp
+signin_action.jsp 
