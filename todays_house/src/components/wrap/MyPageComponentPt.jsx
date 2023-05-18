@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function MyPageComponent ()  {
+export default function MyPageComponentPt ()  {
     return (
-        <div id='myPage' >
+        <div id='myPagePt' >
             <div className="container">
                 <div className="gap">
                     <div className="left">
@@ -42,27 +42,8 @@ export default function MyPageComponent ()  {
                         <button>취향 공유하고 <span>리워드 받기</span><svg width="1em" height="1em" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="css-1pjipdo e1s6kf710"><path fill="currentColor" fill-rule="nonzero" d="M6 19.692L8.25 22 18 12 8.25 2 6 4.308 13.5 12z"></path></svg></button>
                     </div>
                     <div className="right">
-                        <div className="row1">
-                            <h2>사진 <span>0</span></h2>
-                            <a href="!#">
-                                <div className="upload-p">
-                                    <p> 
-                                        <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
-                                        첫 번째 사진을 올려보세요
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="row2">
-                            <h2>집들이 <span>0</span></h2>
-                            <a href="!#">
-                                <div className="upload-h">
-                                    <p> 
-                                        <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
-                                        첫 번째 집들이를 올려보세요
-                                    </p>
-                                </div>
-                            </a>
+                        <div className="txt-box">
+                            <p>결과가 존재하지 않습니다.</p>        
                         </div>
                     </div>
                 </div>

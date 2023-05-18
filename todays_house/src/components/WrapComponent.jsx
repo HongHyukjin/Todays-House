@@ -1,11 +1,15 @@
 import React from 'react';
 import SignUpComponent from './wrap/SignUpComponent';
-import MyPageComponent from './wrap/MyPageComponent';
+import MyPageComponentAll from './wrap/MyPageComponentAll';
+import MyPageComponentPt from './wrap/MyPageComponentPt';
+import UploadPhotoComponent from './wrap/UploadPhotoComponent';
 
 export default function WrapComponent () {
   return (
     <div id="wrap">
-      <MyPageComponent/>
+      <UploadPhotoComponent/>
+      <MyPageComponentPt/>
+      <MyPageComponentAll/>
       <SignUpComponent/>
     </div>
   );

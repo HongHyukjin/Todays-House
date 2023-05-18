@@ -1,4 +1,4 @@
-#myPage{
+#myPagePt{
     width: 100%;
     .container{
         width: 100%;
@@ -129,77 +129,14 @@
             .right{
                 width: 750px;
                 margin: 0 25px 0 100px;
-                .row1{
-                    width: 100%;
-                    h2{
-                        display: flex;
-                        align-items: center;
-                        font-size: 18px;
-                        font-weight: bold;
-                        padding: 15px 0;
-                        >span{
-                            color: #35c5f0;
-                            padding: 0 0 0 5px;
-                        }
-                    }
-                    .upload-p{
-                        width: 700px;
-                        height: 175px;
-                        border: 1px dashed #dbdbdb;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        >p{
-                            display: flex;
-                            align-items: center;
-                            font-size: 14px;
-                            color: #757575;
-                            font-weight: bold;
-                            transition: all 0.1s;
-                            span{
-                                margin: 0 5px 0 0;
-                            }
-                            &:hover{
-                                color: rgba(117, 117, 117,0.5);
-                            }
-                        }
-                    }
-                }
-                .row2{
-                    width: 100%;
-                    padding: 30px 0 0 0 ;
-                    h2{
-                        display: flex;
-                        align-items: center;
-                        font-size: 18px;
-                        font-weight: 600;
-                        padding: 15px 0;
-                        >span{
-                            color: #35c5f0;
-                            padding: 0 0 0 5px;
-                        }
-                    }
-                    .upload-h{
-                        width: 700px;
-                        height: 175px;
-                        border: 1px dashed #dbdbdb;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        >p{
-                            display: flex;
-                            align-items: center;
-                            font-size: 14px;
-                            color: #757575;
-                            font-weight: bold;
-                            transition: all 0.1s;
-                            span{
-                                margin: 0 5px 0 0;
-                            }
-                            &:hover{
-                                color: rgba(117, 117, 117,0.5);
-                            }
-                        }
+                .txt-box{
+                    padding: 50px 0 0 0;
+                    p{
+                        font-size: 15px;
+                        color: #757575;
+                        text-align: center;
+                        letter-spacing: -0.4px;
+                        font-weight: 500;
                     }
                 }
             }
