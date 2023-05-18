@@ -12,7 +12,7 @@ public class UserDTO {
     private String user_pw_ok;
     private String user_nick;
     private String user_service;
-    private String gaib_date;
+    private String create_date;
 
     public int getIdx() {
         return this.idx;
@@ -70,13 +70,14 @@ public class UserDTO {
         this.user_service = user_service;
     }
 
-    public String getGaib_date() {
-        return this.gaib_date;
+    public String getCreate_date() {
+        return this.create_date;
     }
 
-    public void setGaib_date(String gaib_date) {
-        this.gaib_date = gaib_date;
+    public void setCreate_date(String create_date) {
+        this.create_date = create_date;
     }
+
 
 }
 

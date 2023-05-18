@@ -21,3 +21,7 @@ delete.jsp
 
 signin.jsp
 signin_action.jsp 
+
+signup.jsp
+signup_action.jsp 
+
