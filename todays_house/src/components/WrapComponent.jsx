@@ -40,7 +40,7 @@ export default function WrapComponent () {
 
          <BrowserRouter>
             <Routes>
-                    <Route index element={<IntroComponent />} />
+                    <Route path='/*' element={<IntroComponent />} />
                     <Route path="/로그인" element={<SigininComponent />}/>
             </Routes>
          </BrowserRouter>

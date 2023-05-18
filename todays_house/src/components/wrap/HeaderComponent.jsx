@@ -13,7 +13,7 @@ export default function HeaderComponent(){
                                     <li>
                                         <a href="!#"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></a>
                                     </li>
-                                    <li><a href="!#">커뮤니티</a></li>
+                                    <li><Link to="/마이페이지">커뮤니티</Link></li>
                                     <li><a href="!#">쇼핑</a></li>
                                     <li><a href="!#">이사/시공/수리</a></li>
                                 </ul>
