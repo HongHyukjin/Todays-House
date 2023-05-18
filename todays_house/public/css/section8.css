@@ -1,26 +1,26 @@
 #wrap {
   width: 100%;
 }
-#wrap #section3 {
+#wrap #section8 {
   width: 100%;
   height: 306px;
   margin: 40px 0;
 }
-#wrap #section3 .container {
+#wrap #section8 .container {
   width: 100%;
   max-width: 1256px;
   padding: 0 60px;
   margin: 0 auto;
 }
-#wrap #section3 .container .gap {
+#wrap #section8 .container .gap {
   width: 100%;
 }
-#wrap #section3 .container .gap .title {
+#wrap #section8 .container .gap .title {
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
 }
-#wrap #section3 .container .gap .title h2 {
+#wrap #section8 .container .gap .title h2 {
   cursor: pointer;
   font-size: 20px;
   font-weight: 700;
@@ -28,11 +28,11 @@
   color: #2f3438;
   letter-spacing: -1px;
 }
-#wrap #section3 .container .gap .title h2:hover {
+#wrap #section8 .container .gap .title h2:hover {
   transition: all 0.1s;
   opacity: 0.6;
 }
-#wrap #section3 .container .gap .title a {
+#wrap #section8 .container .gap .title a {
   font-size: 16px;
   font-weight: 800;
   line-height: 20px;
@@ -40,35 +40,35 @@
   cursor: pointer;
   letter-spacing: -1.3px;
 }
-#wrap #section3 .container .gap .title a:hover {
+#wrap #section8 .container .gap .title a:hover {
   transition: all 0.1s;
   opacity: 0.8;
 }
-#wrap #section3 .container .gap .content ul {
+#wrap #section8 .container .gap .content ul {
   display: flex;
   gap: 20px;
 }
-#wrap #section3 .container .gap .content ul li {
+#wrap #section8 .container .gap .content ul li {
   overflow: hidden;
 }
-#wrap #section3 .container .gap .content ul li a img {
-  width: 100%;
+#wrap #section8 .container .gap .content ul li a img {
+  width: 269px;
   height: 180px;
   margin-bottom: 13px;
   border-radius: 4px;
   transition: all 0.2s;
 }
-#wrap #section3 .container .gap .content ul li a img:hover {
+#wrap #section8 .container .gap .content ul li a img:hover {
   transform: scale(1.05);
 }
-#wrap #section3 .container .gap .content ul li a p {
+#wrap #section8 .container .gap .content ul li a p {
   color: rgb(66, 66, 66);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -1.3px;
   line-height: 24px;
 }
-#wrap #section3 .container .gap .content ul li a p strong {
+#wrap #section8 .container .gap .content ul li a p strong {
   color: #35c5f0;
   font-weight: 800;
   font-size: 16px;
