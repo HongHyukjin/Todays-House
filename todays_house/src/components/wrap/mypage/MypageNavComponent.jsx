@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {NavLink, Link, Outlet} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function MypageNavComponent () {
   
@@ -12,7 +12,6 @@ export default function MypageNavComponent () {
   React.useEffect(() => {
     $('#mypagenav .top-nav-btn').on({
       click(e){
-        e.preventDefault();
         let nav1 = '';
         $('.top-nav-btn').removeClass('on');
         $(this).toggleClass('on');
@@ -36,9 +35,8 @@ export default function MypageNavComponent () {
 
     $('#mypagenav .bottom-nav-btn').on({
       click(e){
-        e.preventDefault();
         let nav2 = '';
-        $('.active').removeClass('on');
+        $('.bottom-nav-btn').removeClass('on');
         $(this).toggleClass('on');
         nav2 = $(this)[0].innerHTML;
         setState({
@@ -47,14 +45,15 @@ export default function MypageNavComponent () {
         })
       }
     })
-  },[])
+  },)
+
 
   return (
       <div id="mypagenav">
         <nav className='top-nav'>
               <ul>
                 <li><a href="#!" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</a></li>
-                <li><a href="#!" className={`top-nav-btn ${state.nav1==='설정'?'on':''}`}>설정</a></li>
+                <li><Link to="/마이페이지/회원정보수정" className={`top-nav-btn ${state.nav1==='설정'?'on':''}`}>설정</Link></li>
               </ul>
             </nav>
             {

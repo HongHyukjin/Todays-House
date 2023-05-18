@@ -3,32 +3,56 @@ import $ from 'jquery';
 
 export default function UpdateComponent () {
 
+  const [state,setState] = React.useState({
+    file : '',
+    imgUrl : './images/avatar.avif',
+    imgDel : false
+  })
+
   const onClickDelImage = (e) => {
     e.preventDefault();
     console.log("img delete");
-    $('.input .img_upload img').attr("src", "./img/avatar.avif");
-    $('.input .img_del').css({"display":"none"})
+    setState({
+      ...state,
+      imgDel : true
+    })
   }
 
   const imageInput = useRef();
 
   const onClickImageUpload = (e) => {
-    console.log("img upload btn click");
     e.preventDefault();
+    console.log("img upload btn click");
     imageInput.current.click();
   }
 
   const onChangeImage = (e) => {
     console.log("img upload");
-    console.log(e.target.files[0]);
     let file = e.target.files[0];
     let reader = new FileReader();
     reader.onload = (event) =>{
-      $('.input .img_upload img').attr("src", event.target.result);
+      setState({
+        ...state,
+        file:file,
+        imgUrl:reader.result,
+        imgDel : false
+      })
     }
     reader.readAsDataURL(file);
-    $('.input .img_del').css({"display":"block"})
   }
+
+  React.useEffect(()=>{
+    if(state.file !== ''){
+      $('.input .img_del').css({"display":"block"})
+    }
+  }, [state.file])
+
+  React.useEffect(()=>{
+    if(state.imgDel === true){
+      $('.input .img_upload img').attr("src", "./images/avatar.avif");
+      $('.input .img_del').css({"display":"none"})
+    }
+  },[state.imgDel])
 
   return (
     <div id="update">
@@ -90,12 +114,11 @@ export default function UpdateComponent () {
                   <label htmlFor="">프로필 이미지</label>
                 </div>
                 <div className="input">
-                  <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} />
+                  <input className='img_upload_input' type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} />
                   <button className='img_upload' onClick={onClickImageUpload}>
-                    <img src="./img/avatar.avif" alt="" />
+                    <img src={state.imgUrl} alt="" />
                   </button>
                   <button className='img_del' onClick={onClickDelImage}>
-                    <img src="./img/img_del.svg" alt="" />
                     삭제
                   </button>
                 </div>
