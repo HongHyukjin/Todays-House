@@ -1,19 +1,72 @@
-메인(홈) - 유영현
-	사진
+-----------------------------FRONT--------------------------------
+메인
+	홈 - 유영현
+	사진 - 유영현
 	집들이
 	노하우
 
 회원가입 - 박소연
+	회원가입 유효성검사
 비밀번호재설정 - 정슬기
+	비밀번호재설정 유효성검사
 로그인 - 정슬기
+	로그인 유효성검사
 
-마이페이지
+마이페이지 
 	프로필
-		모두보기
-		사진
-		집들이
-		노하우
+		모두보기 - 박소연
+		사진 - 박소연
+			사진 게시물 작성 - 박소연
+		집들이 - 박소연
+			집들이 게시물 작성
+		노하우 - 박소연
+			노하우 게시물 작성
+
 	설정
 		회원정보수정 - 홍혁진
+			회원정보수정 유효성검사
 		비밀번호변경 - 홍혁진
+			비밀번호변경 유효성검사
+
+
+-----------------------------BACK----------------------------------
+
+DB      =    Todays-House
+Table   =     member
+	    picture_post 
+	    house_post
+	    knowhow_post
+
+로그인 세션관리
+로그아웃 세션삭제
+
+회원가입 member Insert
+회원정보수정 member Update
+비밀번호변경 member Update
+
+사진 게시물 작성 picture_post Insert
+사진 게시물 수정 picture_post Update
+사진 게시물 삭제 picture_post Delete
+
+집들이 게시물 작성 house_post Insert
+집들이 게시물 수정 house_post Update
+집들이 게시물 삭제 house_post Delete
+
+노하우 게시물 작성 knowhow_post Insert
+노하우 게시물 수정 knowhow_post Update
+노하우 게시물 삭제 knowhow_post Delete
+
+메인
+	홈
+	사진(picture_post Read해서 뿌려주기)
+	집들이(house_post Read해서 뿌려주기)
+	노하우(knowhow_post Read해서 뿌려주기)
+
+
+
+
+
+
+
+
 
