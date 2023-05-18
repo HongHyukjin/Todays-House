@@ -3,7 +3,7 @@
 }
 #wrap #header {
   width: 100%;
-  height: 132px;
+  height: 80px;
 }
 #wrap #header .container {
   width: 100%;
@@ -17,7 +17,6 @@
 #wrap #header .container .gap .row1 {
   width: 100%;
   height: 81px;
-  border-bottom: 1px solid #eaedef;
 }
 #wrap #header .container .gap .row1 .headbox {
   width: 100%;
@@ -96,30 +95,6 @@
   border: 0px;
 }
 #wrap #header .container .gap .row1 .headbox .right ul li button:hover {
-  background-color: rgba(78, 111, 139, 0.8);
-}
-#wrap #header .container .gap .row2 {
-  width: 100%;
-  height: 51px;
-  border-bottom: 1px solid #eaedef;
-}
-#wrap #header .container .gap .row2 .headbox2 {
-  width: 100%;
-}
-#wrap #header .container .gap .row2 .headbox2 ul {
-  width: 100%;
-  display: flex;
-}
-#wrap #header .container .gap .row2 .headbox2 ul li {
-  padding: 12px 10px;
-}
-#wrap #header .container .gap .row2 .headbox2 ul li a {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: #2f3438;
-  letter-spacing: -1px;
-}
-#wrap #header .container .gap .row2 .headbox2 ul li a:hover {
-  color: #00bbff;
+  transition: all 0.1s;
+  opacity: 0.5;
 }
