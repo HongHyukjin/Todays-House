@@ -1,0 +1,196 @@
+#uploadPt{
+    width: 100%;
+    .section1{
+        width: 100%;
+        .container{
+            width: 100%;
+            max-width: 1256px;
+            margin: 0 auto;
+            .gap{
+                width: 100%;
+                padding: 0 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a{
+                    display: block;
+                    padding: 24px 0 23px 30px;
+                }
+                button{
+                    width: 134.17px;
+                    padding: 11px 0 12px 0;
+                    background: #35c5f0;
+                    border: 0;
+                    color: #fff;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .section2{
+        width: 100%;
+        border-top:1px solid #dbdbdb ;
+        border-bottom:1px solid #dbdbdb ;
+        .container{
+            width: 100%;
+            max-width: 1136px+120px;
+            margin: 0 auto;
+            .gap{
+                width: 100%;
+                padding: 0 60px;
+                ul{
+                    display: flex;
+                    li{
+                        margin: 0 15px 0 0;
+                        a{
+                            font-size: 15px;
+                            display: block;
+                            padding: 13px 5px 14px 5px;
+                            color: #424242;
+                            font-weight: bold;
+                            &:hover{
+                                color: #35c5f0;
+                            }
+                            &.on{
+                                color: #35c5f0;
+                                border-bottom: 2px solid #35c5f0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .section3{
+        width: 100%;
+        .container{
+            width: 100%;
+            max-width: 1003px;
+            margin: 30px auto 0 auto;
+            .gap{
+                padding:  0 30px;
+                .btn-box{
+                    display: flex;
+                    padding: 0 0 50px 0;
+                    .select{
+                        position: relative;
+                        select{
+                            height: 40px;
+                            margin: 0 10px 0 0;
+                            padding: 0 30px 0 15px;
+                            border: 1px solid #dbdbdb;
+                            font-size: 15px;
+                            border-radius: 4px;
+                            color: #424242; 
+                            appearance: none;                         
+                            option{
+                                color: #424242;
+                                &:first-child{
+                                    color: #bdbdbd;
+                                }
+                            }
+                        }
+                        svg{
+                            position: absolute;
+                            top: 15px;
+                            right: 30px;
+                        }
+                    }
+                }
+                .bottom{
+                    display: flex;
+                    .left{
+                        width: 50%;
+                        .photo-box{
+                            height: 275px;
+                            margin: 0 30px 0 0;
+                            border: 1px dashed #dadce0 ;
+                            color: #f7f8fa;
+                            border-radius: 4px;
+                           
+                            .input{
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                               
+                                >input{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                .img_upload{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 0;
+                                    border-radius: 4px;
+                                    overflow: hidden;
+                                    background: #f7f8fa;
+                                    &:hover{
+                                        background: rgba(247, 248, 250,0.5);
+                                    }
+                                    img{
+                                        width: 100%;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .right{
+                        width: 50%;
+                        >ul{
+                            >li{
+                                padding: 0 0 15px 0;
+                                position: relative;
+                                >select{
+                                    width: 100%;
+                                    height: 40px;
+                                    font-size: 15px;
+                                    border: 1px solid #dbdbdb;
+                                    padding: 0 15px;
+                                    border-radius: 4px;
+                                    outline: 0;
+                                    appearance: none;
+                                    color: #424242;
+                                }
+                                >svg{
+                                    position: absolute;
+                                    top: 15px;
+                                    right: 10px;
+                                }
+                                textarea{
+                                    width: 100%;
+                                    height: 145px;
+                                    appearance: none;
+                                    border: 1px solid #dbdbdb;
+                                    padding: 10px 15px 10px 15px;
+                                    border-radius: 4px;
+                                    color: #000;
+                                    font-size: 15px;
+                                    outline: 3px solid transparent;
+                                    resize: vertical;
+                                    &:focus{
+                                        outline: 3px solid rgba(53,197,240,0.3);
+                                    }
+                                    &::placeholder{
+                                        color: #dbdbdb;
+                                    }
+                                    &::-webkit-scrollbar{
+                                        display: none;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
