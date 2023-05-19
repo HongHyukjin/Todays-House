@@ -1,0 +1,59 @@
+개발자가 자바 소스작성(코딩) 
+=> 0. 서블릿 환경설정 담당 파일  WEB.XML
+=> 1. 서블릿소스.java[UserDAO.java, UserDTO.java] 
+=> 2. [컴파일 번역] => 
+=> 3. 자바 클래스 생성[UserDAO.class, UserDTO.class](이진파일 bin)
+=> 4. 서블릿 컨테이너[톰켓]에 등록(ROOT > WEB-INF > 클래스 폴더 > 붙여넣기) 
+=> 5. 서블릿 컨테이너[톰켓] 클래스 이진파일 실행 & 연동 데이터베이스[JDBC] <=> [데이터베이스]
+=> 6. 서블릿(요청(HTTP OR HTTPS REQUST)을 받으면 
+=> 7. 응답(HTTP OR HTTPS RESPONSE) 서블릿 메서드(CRUD)가 실행) 
+=> 8. 결과 출력(Publishing) 홈페이지(디자인 HTML, CSS, SASS, REACT) HTML(HTTP 통신)
+
+localhost:8080/jsp/0509_MVC_모델링_프로젝트/쇼핑몰고객관리/kurly_user_main.jsp?이름=이순신&아이디=moonjong&pw=moonjon123
+
+    // 파라미터
+    String name = request.getParameter("이름");
+    String id = request.getParameter("아이디");
+    String pw = request.getParameter("pw");
+
+    <input  name="name"  value="<%=name%>">
+    <input  name="id"  value="id">
+    <input  name="pw"  value="pw">
+
+
+메인페이지 에서
+
+회원관리
+ 
+// 비회원 ///////////////////////////////////////////////////////////////
+<div class="content">
+    <h3>접속하기</h3>
+    <ul>
+        <li><a href="./kurly_user_signin.jsp">로그인</a></li>
+        <li><a href="./kurly_user_signup.jsp">회원가입</a></li>
+    </ul>
+</div>
+
+
+// 회원 ///////////////////////////////////////////////////////////////
+
+<div class="content">
+    <h3>회원관리</h3>
+    <ul>
+        <li><a href="./kurly_user_update.jsp">개인정보수정</a></li>
+        <li><a href="./kurly_user_delete.jsp">회원탈퇴</a></li>
+        <li><a href="./로그아웃페이지만들기준비.jsp">로그아웃</a></li>
+    </ul>
+</div>
+
+
+// 로그아웃 액션페이지
+kurly_user_logout.jsp
+세션삭제후 메인페이지로 이동
+
+// 회원탈퇴
+로그인 한상태에만 가능하다
+삭제폼에서 
+아이디 입력상자에 로그인 아이디가 바인딩 되어있고
+비밀번호는 비어있다
+비밀번호를 입력하고 탈퇴버튼을 클릭 전송하여 구현한다.
