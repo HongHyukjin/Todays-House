@@ -3,7 +3,7 @@ import React from 'react';
 export default function EmailComponent() {
     return (
         <main id="emailSet">
-            <section id="section1">
+            <section className="pw_set">
                 <div className="container">
                     <div className="gap">
                         <div className="title">
