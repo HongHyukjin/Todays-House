@@ -13,6 +13,7 @@ import Section8Component from './wrap/Section8Component';
 import Section9Component from './wrap/Section9Component';
 import Section10Component from './wrap/Section10Component';
 import Section11Component from './wrap/Section11Component';
+import Sub1Component from './wrap/Sub1Component';
 import FooterComponent from './wrap/FooterComponent';
 
 
@@ -34,6 +35,7 @@ export default function WrapComponent () {
          <Section9Component/>
          <Section10Component/>
          <Section11Component/>
+         <Sub1Component/>
          <FooterComponent/>
     </div>
   );

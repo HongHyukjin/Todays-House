@@ -10,7 +10,7 @@ export default function TopmodalComponent(){
                             <img src="./images/164718394900874613.png" alt="" />
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     );

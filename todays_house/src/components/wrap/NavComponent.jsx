@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function NavComponent() {
+
+
+
     return (
         <div id='nav'>
             <div className="container">
