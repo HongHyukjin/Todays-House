@@ -1,0 +1,81 @@
+#wrap {
+    width:100%;
+    #section9 {
+        width:100%;
+        height:306px;
+        margin: 40px 0;
+        .container {
+            width:100%;
+            max-width: 1256px;
+            padding: 0 60px;
+            margin: 0 auto;
+            .gap {
+                width:100%;
+                .title {
+                    display:flex;
+                    justify-content: space-between;
+                    padding: 20px 0;
+                    h2 {
+                        cursor: pointer;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 28px;
+                        color:#2f3438;
+                        letter-spacing: -1px;
+                        &:hover {
+                            transition: all 0.1s;
+                            opacity: 0.6;
+                        }
+                    }
+                    a {
+                        font-size: 16px;
+                        font-weight: 800;
+                        line-height: 20px;
+                        color:#35c5f0;
+                        cursor: pointer;
+                        letter-spacing: -1.3px;
+                        &:hover {
+                            transition: all 0.1s;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+                .content {
+                    ul {
+                        display:flex;
+                        gap:20px;
+                        li {
+                            overflow: hidden;
+                            a {
+                                img {
+                                    width:25% * 4;
+                                    height:180px;
+                                    margin-bottom : 13px;
+                                    border-radius: 4px;
+                                    transition: all 0.2s;
+                                    &:hover {
+                                        transform: scale(1.05);
+                                    }
+                                }
+                                p {
+                                    color:rgb(66,66,66);
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    letter-spacing: -1.3px;
+                                    line-height: 24px;
+                                    strong {
+                                        color:#35c5f0;
+                                        font-weight: 800;
+                                        font-size: 16px;
+                                        letter-spacing: -1.3px;
+                                        line-height: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

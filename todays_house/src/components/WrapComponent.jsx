@@ -1,18 +1,50 @@
 import React from 'react';
-import TopmodalComponent from './wrap/TopmodalComponent';
-import HeaderComponent from './wrap/HeaderComponent';
-import FooterComponent from './wrap/FooterComponent';
-import Section1Component from './wrap/Section1Component';
-import UpdateComponent from './wrap/UpdateComponent'
+import {BrowserRouter, Routes, Route}  from 'react-router-dom';
+import IntroComponent from './wrap/IntroComponent';
+import SigininComponent from './wrap/SigninComponent'
+
 
 export default function WrapComponent () {
+
+  React.useEffect(() => {
+    console.log(`                                                                        ,,
+                                                                           /  ,
+                                                                          /   /
+                                                                         /   /
+                                                                        /   /
+         __________________________                                    /   /
+        ⎢                         ⎥                                   /   /
+        ⎢  누구나 예쁜 집에 살 수 있어  ⎥                                  /   /
+        ⎢____    _________________⎥                                 /   /
+              \\/    ,      ,,                                      /   /
+                   /@\\____/@ \\                                ____/   /
+                  /           \\                         _____/        /_
+            /" \\ / •    •      \\                     __/             /  @@\\"\\
+            \\    @@  ㅅ  @@     /___             ___/                /    _/
+           /" \\   \\                 \\__________/                    |__/ "\\
+           \\   \\                                                   /      /
+            \\    \\  __                                                  _/
+             \\                                                       __/
+               \\_                                             ______/
+                  \\ ___                                    __/
+                        \\__                             __/
+                            \\_____                _____/
+                                  \\______________/
+                                  `);
+    console.log("");
+
+  }, [])
+
   return (
     <div id="wrap">
-         <TopmodalComponent/>
-         <HeaderComponent/>
-         <UpdateComponent />
-         <Section1Component/>
-         <FooterComponent/>
+
+         <BrowserRouter>
+            <Routes>
+                    <Route path='/*' element={<IntroComponent />} />
+                    <Route path="/로그인" element={<SigininComponent />}/>
+            </Routes>
+         </BrowserRouter>
+
     </div>
   );
 };

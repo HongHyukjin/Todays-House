@@ -11,7 +11,7 @@ html, body {
 }
 
 html { /* scroll-behavior: smooth; */
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 body {
@@ -61,4 +61,8 @@ i, em, address {
   display: inline-block;
   text-indent: -10000px;
   overflow: hidden;
+}
+
+.hide {
+  display: none;
 }
