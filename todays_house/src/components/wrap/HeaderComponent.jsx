@@ -11,11 +11,11 @@ export default function HeaderComponent(){
                             <div className="left">
                                 <ul>
                                     <li>
-                                        <a href="!#"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></a>
+                                        <Link to="/"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></Link>
                                     </li>
-                                    <li><Link to="/마이페이지">커뮤니티</Link></li>
-                                    <li><a href="!#">쇼핑</a></li>
-                                    <li><a href="!#">이사/시공/수리</a></li>
+                                    <li><a href="#!">커뮤니티</a></li>
+                                    <li><a href="#!">쇼핑</a></li>
+                                    <li><a href="#!">이사/시공/수리</a></li>
                                 </ul>
                             </div>
                             <div className="right">
@@ -28,7 +28,7 @@ export default function HeaderComponent(){
                                         <a href="!#"><img src="./images/icon_cart.svg" alt="" className='cart'/></a>
                                     </li>
                                     <li><Link to="/로그인">로그인</Link></li>
-                                    <li><a href="!#">회원가입</a></li>
+                                    <li><Link to="/회원가입">회원가입</Link></li>
                                     <li><Link to="/마이페이지">마이페이지</Link></li>
                                     <li><button>글쓰기</button></li>
                                 </ul>

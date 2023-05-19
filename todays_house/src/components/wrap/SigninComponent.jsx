@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 
 export default function SigninComponent(){
@@ -43,7 +44,7 @@ export default function SigninComponent(){
 
                     <li>
                         <div className="set-up1">
-                            <h3>비밀번호 재설정 </h3>
+                            <h3><Link to="/비밀번호재설정">비밀번호 재설정</Link> </h3>
                             <h4> 회원가입</h4>
                         </div>
                     </li>

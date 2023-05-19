@@ -1,7 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
+import EmailComponent from './wrap/EmailComponent';
 import IntroComponent from './wrap/IntroComponent';
-import SigininComponent from './wrap/SigninComponent'
+import SigninComponent from './wrap/SigninComponent'
 
 
 export default function WrapComponent () {
@@ -41,7 +42,8 @@ export default function WrapComponent () {
          <BrowserRouter>
             <Routes>
                     <Route path='/*' element={<IntroComponent />} />
-                    <Route path="/로그인" element={<SigininComponent />}/>
+                    <Route path="/로그인" element={<SigninComponent />}/>
+                    <Route path="/비밀번호재설정" element={<EmailComponent />}/>
             </Routes>
          </BrowserRouter>
 
