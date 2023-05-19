@@ -51,14 +51,14 @@ public class UserDAO {
             ps.setString(5, userDTO.getUser_nick());
             ps.setString(6, userDTO.getUser_service());
             return ps.executeUpdate();
-        } cattch(Exception e){
+        } catch(Exception e){
             e.printStackTrace();
         }
         finally {
             try {
                 if(rs!= null){rs.close();}
                 if(ps!= null){ps.close();}
-                is(conn!= null){conn.close();}
+                if(conn!= null){conn.close();}
             }
             catch(Exception e){
                 e.printStackTrace();
