@@ -162,18 +162,21 @@ export default function SignUpComponent () {
         })
     }
 
-    // const onChangeUserService = (e) => {
+    const onChangeUserService = (e) => {
 
-    //     if(e.target.checked === true){
-    //         if(e.target.value === '개인정보마케팅활용동의(선택)' || state){
+        if(e.target.checked === true){
+            if(e.target.value === '개인정보마케팅활용동의(선택)' || state){
                 
-    //         }
-    //     }
-    //     else{
+            }
+        }
+        else{
+            setState({
+                ...state,
+                약관동의 : [...state.약관동의, e.target.value]
+            })
+        }
 
-    //     }
-
-    // }
+    }
 
 
 
