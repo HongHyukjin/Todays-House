@@ -229,11 +229,13 @@ export default function SignUpComponent () {
                                 <div className="join">
                                     <label>비밀번호 확인</label>
                                     <input type="password" name='user_pw_ok' id='userPwOk' placeholder='비밀번호 확인' onChange={onChangePwOk} />                       
+                                    <p className={`error-msg ${state.isPw2Error?'on':''}`}>{state.isPw2Msg}</p>
                                 </div>
                                 <div className="join">
                                     <label>닉네임</label>
                                     <p className="sub-msg">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</p>
                                     <input type="text" name='user_nick' id='userNick' placeholder='별명 (2~15자)' onChange={onChangeNick} />                       
+                                    <p className={`error-msg ${state.isNickError?'on':''}`}>{state.isNickMsg}</p>
                                 </div>
                                 <div className="join">
                                     <label>약관동의</label>
