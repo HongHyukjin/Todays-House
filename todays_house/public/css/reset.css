@@ -15,7 +15,7 @@ html { /* scroll-behavior: smooth; */
 }
 
 body {
-  font: normal 14px/1 "Noto Sans KR";
+  font: normal 14px/1 "Noto Sans", "Montserrat", "Roboto";
   color: #626262;
   background: #fff;
 }

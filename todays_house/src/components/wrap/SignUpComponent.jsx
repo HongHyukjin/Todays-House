@@ -13,8 +13,8 @@ export default function SignUpComponent () {
             "전체동의",
             "만 14세 이상입니다(필수)",
             "이용약관(필수)",
-            "개인정보수집및이용동의(필수)",
-            "개인정보마케팅활용동의(선택)",
+            "개인정보수집 및 이용동의(필수)",
+            "개인정보 마케팅 활용 동의(선택)",
             "이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)"
         ],
 
@@ -156,6 +156,12 @@ export default function SignUpComponent () {
         else{
             약관동의 = [];
         }
+        // "만 14세 이상입니다(필수)",
+        //     "이용약관(필수)",
+        //     "개인정보수집 및 이용동의(필수)",
+        if(약관동의.includes('만 14세 이상입니다(필수)') && 약관동의.includes('이용약관(필수)') && 약관동의.includes('개인정보수집 및 이용동의(필수)') ){
+            
+        }
         setState({
             ...state,
             약관동의 : 약관동의
@@ -163,17 +169,62 @@ export default function SignUpComponent () {
     }
 
     const onChangeUserService = (e) => {
-
+        console.log(e.target.value);
         if(e.target.checked === true){
-            if(e.target.value === '개인정보마케팅활용동의(선택)' || state){
-                
+            if(e.target.value === '개인정보 마케팅 활용 동의(선택)' && state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)') === true){
+                setState({
+                    ...state,
+                    약관동의 : [...state.약관동의, '개인정보 마케팅 활용 동의(선택)']
+                })
+            } 
+            else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)' && state.약관동의.includes('개인정보 마케팅 활용 동의(선택)') === true ){
+                setState({
+                    ...state,
+                    약관동의 : [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)']
+                })
+            }
+            else if(e.target.value === '개인정보 마케팅 활용 동의(선택)' && state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)') === false){
+                console.log('h')
+                setState({
+                    ...state,
+                    약관동의 : [...state.약관동의, '개인정보 마케팅 활용 동의(선택)', '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)']
+                })
+            }
+            else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)' && state.약관동의.includes('개인정보 마케팅 활용 동의(선택)') === false ){
+                setState({
+                    ...state,
+                    약관동의 : [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)', '개인정보 마케팅 활용 동의(선택)']
+                })
+            } 
+            else{
+                setState({
+                    ...state,
+                    약관동의 : [...state.약관동의, e.target.value]
+                })
             }
         }
         else{
-            setState({
-                ...state,
-                약관동의 : [...state.약관동의, e.target.value]
-            })
+            let 약관동의 = [];
+            if(e.target.value === '개인정보 마케팅 활용 동의(선택)'){
+                약관동의 =  state.약관동의.filter((item) => item !== e.target.value && item !== '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)')
+                setState({
+                    ...state,
+                    약관동의 : 약관동의
+                })
+            }
+            else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'){
+                약관동의 =  state.약관동의.filter((item) => item !== e.target.value);
+                setState({
+                    ...state,
+                    약관동의 : 약관동의
+                })
+            }
+            else{
+                setState({
+                    ...state,
+                    약관동의 : state.약관동의.filter((item) => item !== e.target.value)
+                })
+            }
         }
 
     }
@@ -244,24 +295,25 @@ export default function SignUpComponent () {
                                     <label>약관동의</label>
                                     <div className="check-box">
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_all' id='userAgrAll' value={'전체동의'} onChange={onChangeUserServiceAll} /> 전체동의 <span>선택항목에 대한 동의 포함</span>
+                                        <input type="checkbox" name='user_agr_all' id='userAgrAll' value={'전체동의'} checked={state.약관동의.length === 5} onChange={onChangeUserServiceAll} /> 전체동의 <span>선택항목에 대한 동의 포함</span>
                                         </label>               
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_1' id='userAgr1' value={'만 14세 이상입니다'}/> 만 14세 이상입니다 <span>(필수)</span>
+                                        <input type="checkbox" name='user_agr_1' id='userAgr1' value={'만 14세 이상입니다(필수)'} checked={state.약관동의.includes('만 14세 이상입니다(필수)')} onChange={onChangeUserService}/> 만 14세 이상입니다 <span>(필수)</span>
                                         </label>                      
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_2' id='userAgr2' value={'이용약관'}/> 이용약관 <span>(필수)</span>
+                                        <input type="checkbox" name='user_agr_2' id='userAgr2' value={'이용약관(필수)'} checked={state.약관동의.includes('이용약관(필수)')} onChange={onChangeUserService}/> 이용약관 <span>(필수)</span>
                                         </label>                      
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_3' id='userAgr3' value={'개인정보수집 및 이용동의'}/> 개인정보수집 및 이용동의 <span>(필수)</span>
+                                        <input type="checkbox" name='user_agr_3' id='userAgr3' value={'개인정보수집 및 이용동의(필수)'} checked={state.약관동의.includes('개인정보수집 및 이용동의(필수)')} onChange={onChangeUserService}/> 개인정보수집 및 이용동의 <span>(필수)</span>
                                         </label>                      
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_4' id='userAgr4' value={'개인정보 마케팅 활용 동의'}/> 개인정보 마케팅 활용 동의 <span>(선택)</span>
+                                        <input type="checkbox" name='user_agr_4' id='userAgr4' value={'개인정보 마케팅 활용 동의(선택)'} checked={state.약관동의.includes('개인정보 마케팅 활용 동의(선택)')} onChange={onChangeUserService}/> 개인정보 마케팅 활용 동의 <span>(선택)</span>
                                         </label>                      
                                         <label className='check'>
-                                        <input type="checkbox" name='user_agr_5' id='userAgr5' value={'이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신'}/> 이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신 <span>(선택)</span>
+                                        <input type="checkbox" name='user_agr_5' id='userAgr5' value={'이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'} checked={state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)')} onChange={onChangeUserService}/> 이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신 <span>(선택)</span>
                                         </label>  
-                                    </div>                    
+                                    </div>     
+                                    <p className='error-msg'>에러메시지</p>               
                                 </div>
                                 <button type='submit'>회원가입하기</button>
                             </form>
