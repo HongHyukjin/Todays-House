@@ -1,6 +1,6 @@
 #uploadPt{
     width: 100%;
-    #section1{
+    .section1{
         width: 100%;
         .container{
             width: 100%;
@@ -31,7 +31,7 @@
             }
         }
     }
-    #section2{
+    .section2{
         width: 100%;
         border-top:1px solid #dbdbdb ;
         border-bottom:1px solid #dbdbdb ;
@@ -65,7 +65,7 @@
             }
         }
     }
-    #section3{
+    .section3{
         width: 100%;
         .container{
             width: 100%;
@@ -105,10 +105,98 @@
                     display: flex;
                     .left{
                         width: 50%;
-                        .imsi-box{
+                        .photo-box{
                             height: 275px;
                             margin: 0 30px 0 0;
-                            border: 1px dashed #dadce0;
+                            border: 1px dashed #dadce0 ;
+                            color: #f7f8fa;
+                            border-radius: 4px;
+                     
+                            .input{
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                &:hover{
+                                    .ico{
+                                    
+                                        svg{
+                                            fill:rgba(130, 140, 148,0.5) ;
+                                        }
+                                        h5,p{
+                                            color: rgba(130, 140, 148,0.5);
+                                        }
+                                    }
+                                }
+                                >input{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: none;
+                                }
+                                >img{
+                                    width: 100%;
+                                    max-height: 100%;
+                                    position: relative;
+                                    z-index: 2;
+                                    border-radius: 4px;
+                                }
+                                
+
+                                .img_upload{
+                                    position: absolute;
+                                    z-index: 1;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 0;
+                                    border-radius: 4px;
+                                    overflow: hidden;
+                                    background: #f7f8fa;
+                                    cursor: pointer;
+                                    &:hover{
+                                        background: rgba(247, 248, 250,0.8);
+                                    }
+                                    .ico{
+                                        svg{
+                                            width : 100%;
+                                            margin: 0 auto;
+                                        }
+                                        h5{
+                                            color: #828c94;
+                                            padding: 15px 0 5px 0;
+                                            font-size: 15px;
+                                            font-weight: 700;
+                                            letter-spacing: -1.5px;
+                                        }
+                                        p{
+                                            color: #a4acb3;
+                                            font-size: 12px;
+                                            color: #828c94;
+                                        }
+                                    }
+                                }
+                                .re{
+                                    position: absolute;
+                                    bottom: 10px;
+                                    left: 20px;
+                                    background: transparent;
+                                    border: 0;
+                                    cursor: pointer;
+                                    z-index: 3;
+                                }
+                                .img_del{
+                                    position: absolute;
+                                    bottom: 10px;
+                                    left: 70px;
+                                    background: transparent;
+                                    border: 0;
+                                    cursor: pointer;
+                                    z-index: 3;
+                                }
+                            }
                         }
                     }
                     .right{
@@ -126,11 +214,12 @@
                                     border-radius: 4px;
                                     outline: 0;
                                     appearance: none;
+                                    color: #424242;
                                 }
                                 >svg{
                                     position: absolute;
-                                    top: 10px;
-                                    right: 0;
+                                    top: 15px;
+                                    right: 10px;
                                 }
                                 textarea{
                                     width: 100%;
@@ -147,7 +236,10 @@
                                         outline: 3px solid rgba(53,197,240,0.3);
                                     }
                                     &::placeholder{
-                                        color: #dbdbdb;
+                                        color: #bbb;
+                                        font-weight: 700;
+                                        font-size: 13px;
+                                        letter-spacing: -1px;
                                     }
                                     &::-webkit-scrollbar{
                                         display: none;

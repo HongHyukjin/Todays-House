@@ -1,14 +1,14 @@
 
 #signUp{
     width: 100%;
-    #section1{
+    .section1{
         width: 100%;
         padding: 40px 15px 0 15px;
         a{
             width: 100%;
         }
     }
-    #section2{
+    .section2{
         width: 100%;
         padding: 60px 0 0 0;
         .container{
@@ -140,7 +140,7 @@
                                     font-size: 12px;
                                     padding: 0 0 0 5px;
                                     display: flex;
-                                    align-items: flex-end;
+                                    align-items: center;
                                     color: #828C94;
                                 }
                                 &:nth-child(2),&:nth-child(3),&:nth-child(4){

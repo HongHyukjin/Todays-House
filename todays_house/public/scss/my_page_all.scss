@@ -149,6 +149,11 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        &:hover{
+                            p{
+                                color: rgba(117, 117, 117,0.5);
+                            }                        
+                        }
                         >p{
                             display: flex;
                             align-items: center;
@@ -159,9 +164,7 @@
                             span{
                                 margin: 0 5px 0 0;
                             }
-                            &:hover{
-                                color: rgba(117, 117, 117,0.5);
-                            }
+                       
                         }
                     }
                 }

@@ -153,6 +153,9 @@
   justify-content: center;
   align-items: center;
 }
+#myPageAll .container .gap .right .row1 .upload-p:hover p {
+  color: rgba(117, 117, 117, 0.5);
+}
 #myPageAll .container .gap .right .row1 .upload-p > p {
   display: flex;
   align-items: center;
@@ -163,9 +166,6 @@
 }
 #myPageAll .container .gap .right .row1 .upload-p > p span {
   margin: 0 5px 0 0;
-}
-#myPageAll .container .gap .right .row1 .upload-p > p:hover {
-  color: rgba(117, 117, 117, 0.5);
 }
 #myPageAll .container .gap .right .row2 {
   width: 100%;
