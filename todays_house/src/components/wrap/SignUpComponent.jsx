@@ -273,7 +273,7 @@ export default function SignUpComponent () {
              "user_email2": state.이메일도메인,
              "user_pw": state.비밀번호,
              "user_nick": state.닉네임,
-             "user_service": 약관
+             "user_service": state.약관동의
          }
          
          $.ajax({

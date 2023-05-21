@@ -1,0 +1,12 @@
+
+create table photo_post(
+    idx     int     auto_increment primary key,
+    pyeong  varchar(100) not null,
+    type    varchar(100) not null,
+    style   varchar(100) not null,
+    file    blob not null,
+    place   varchar(100) not null,
+    memo    varchar(500) not null,
+    write_date timestamp default current_timestamp
+);
+
