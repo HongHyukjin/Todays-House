@@ -218,6 +218,17 @@ export default function SignUpComponent () {
 
     const onSubmitSignUp = (e) => {
         e.preventDefault();
+
+        let 약관동의 = '';
+        state.약관동의.map((item,idx) => {
+            if(idx===state.약관동의.length-1){
+                약관동의 += item
+            }
+            else{
+                약관동의 += item + ', '
+            }
+        })
+
         const formData = {
             "user_email1": state.이메일1,
             "user_email2": state.이메일2,
@@ -227,7 +238,7 @@ export default function SignUpComponent () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8080/',
+            url: 'http://localhost:8080/JSP/오늘의집/signup_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
