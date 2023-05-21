@@ -1,7 +1,8 @@
 package ohouse;
 import java.sql.*;
 import java.util.*;
-             
+import ohouse.UserDTO;
+            
 /**
  * User_DAO
  */

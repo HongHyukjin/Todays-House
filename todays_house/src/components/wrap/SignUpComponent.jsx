@@ -227,7 +227,7 @@ export default function SignUpComponent () {
         }
 
         $.ajax({
-            url: 'http://localhost:8080/JSP/오늘의집/signup_action.jsp',
+            url: 'http://localhost:8080/0521ohouse/ohouse/signup_action_test_parameter.jsp',
             type: 'POST',
             data: formData,
             success(res) {
