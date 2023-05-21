@@ -11,11 +11,12 @@ export default function MyPageComponentPt ()  {
             url:'http://localhost:8080/jsp/photo_post/photo_post/select_action.jsp',
             type:'get',
             success(res){
-                console.log('AJAX 성공');
-                console.log(res);
+                // console.log('AJAX 성공');
+                // console.log(res);
+                console.log(JSON.parse(res).result);
                 setState({
                     ...state,
-                    사진:res.data
+                    사진:JSON.parse(res).result
                 })
             },
             error(err){
@@ -71,7 +72,7 @@ export default function MyPageComponentPt ()  {
                     <div className="right">
                         <div className="txt-box">
                             <p>결과가 존재하지 않습니다.</p>  
-                            <img src="" alt="" />      
+                        <img src={state.사진} alt="" />
                         </div>
                     </div>
                 </div>
