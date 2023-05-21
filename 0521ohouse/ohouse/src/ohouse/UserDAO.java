@@ -1,7 +1,8 @@
 package ohouse;
 import java.sql.*;
 import java.util.*;
-
+import ohouse.UserDTO;
+            
 /**
  * User_DAO
  */
@@ -41,15 +42,13 @@ public class UserDAO {
   
 
     public int signup(UserDTO userDTO){
-        String SQL = "INSERT INTO ohouse_member(user_email1, user_email2, user_pw, user_pw_ok, user_nick, user_service) VALUES(?,?,?,?,?,?)";
-        try {
+        String SQL = "INSERT INTO ohouse_member(user_email, user_pw, user_nick, user_service) VALUES(?,?,?,?)";
+        try {   
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, userDTO.getUser_email1());
-            ps.setString(2, userDTO.getUser_email2());
-            ps.setString(3, userDTO.getUser_pw());
-            ps.setString(4, userDTO.getUser_pw_ok());
-            ps.setString(5, userDTO.getUser_nick());
-            ps.setString(6, userDTO.getUser_service());
+            ps.setString(1, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+            ps.setString(2, userDTO.getUser_pw());
+            ps.setString(3, userDTO.getUser_nick());
+            ps.setString(4, userDTO.getUser_service());
             return ps.executeUpdate();
         } catch(Exception e){
             e.printStackTrace();

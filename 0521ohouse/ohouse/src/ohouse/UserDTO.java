@@ -9,14 +9,13 @@ public class UserDTO {
     private String user_email1;
     private String user_email2;
     private String user_pw;
-    private String user_pw_ok;
     private String user_nick;
     private String user_service;
     private String create_date;
-
+          
     public int getIdx() {
         return this.idx;
-    }
+    }  
 
     public void setIdx(int idx) {
         this.idx = idx;
@@ -46,14 +45,6 @@ public class UserDTO {
         this.user_pw = user_pw;
     }
 
-    public String getUser_pw_ok() {
-        return this.user_pw_ok;
-    }
-
-    public void setUser_pw_ok(String user_pw_ok) {
-        this.user_pw_ok = user_pw_ok;
-    }
-
     public String getUser_nick() {
         return this.user_nick;
     }
@@ -78,6 +69,7 @@ public class UserDTO {
         this.create_date = create_date;
     }
 
+    
 
 }
 
