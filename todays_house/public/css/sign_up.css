@@ -65,13 +65,16 @@
   top: 76px;
   right: 15px;
 }
-#signUp .section2 .container .gap .content form .join label {
+#signUp .section2 .container .gap .content form .join .label {
   width: 100%;
   display: block;
   font-size: 16px;
   font-weight: 700;
   color: #2f3438;
   padding: 10px 0;
+}
+#signUp .section2 .container .gap .content form .join .label.on {
+  color: #ff7777;
 }
 #signUp .section2 .container .gap .content form .join input {
   width: 100%;
@@ -136,6 +139,9 @@
 #signUp .section2 .container .gap .content form .join .check-box {
   border: 1px solid #eaedef;
   padding: 18px;
+}
+#signUp .section2 .container .gap .content form .join .check-box.on {
+  border: 1px solid #ff7777;
 }
 #signUp .section2 .container .gap .content form .join .check-box > label {
   display: flex;

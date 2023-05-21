@@ -59,13 +59,16 @@
                                 top: 76px;
                                 right: 15px;
                             }
-                            label{
+                            .label{
                                 width: 100%;
                                 display: block;
                                 font-size: 16px;
                                 font-weight: 700;
                                 color: #2f3438;
                                 padding: 10px 0;
+                                &.on{
+                                    color : #ff7777;
+                                }
                             }
                             input{
                                 width: 100%;
@@ -126,6 +129,9 @@
                             .check-box{
                                 border: 1px solid #eaedef;
                                 padding: 18px;
+                                &.on{
+                                    border : 1px solid #ff7777;
+                                }
                               >label{
                                 display: flex;
                                 font-size: 14px;
