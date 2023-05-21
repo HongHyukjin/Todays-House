@@ -216,30 +216,31 @@ export default function SignUpComponent () {
 
     }
 
-    const onSubmitSignUp=(e)=>{
+    const onSubmitSignUp = (e) => {
         e.preventDefault();
-         const formData ={
-             "user_email1": state.이메일1,
-             "user_email2": state.이메일2,
-             "user_pw": state.비밀번호,
-             "user_nick": state.닉네임,
-             "user_service": 이용약관
-         }
-         
-         $.ajax({
-             url:'http://127.0.0.1:8080/',
-             type: 'POST',
-             data:formData,
-             success(res){
-                 console.log('AJAX 성공!');
-                 console.log(res);
-                 console.log(JSON.parse(res));
-             
-             },
-             error(err){
-                 console.log('AJAX 실패!' + err); 
-             }    
-         });
+        const formData = {
+            "user_email1": state.이메일1,
+            "user_email2": state.이메일2,
+            "user_pw": state.비밀번호,
+            "user_nick": state.닉네임,
+            "user_service": state.이용약관
+        }
+
+        $.ajax({
+            url: 'http://127.0.0.1:8080/',
+            type: 'POST',
+            data: formData,
+            success(res) {
+                console.log('AJAX 성공!');
+                console.log(res);
+                console.log(JSON.parse(res));
+
+            },
+            error(err) {
+                console.log('AJAX 실패!' + err);
+            }
+        });
+    }
 
 
     return (
