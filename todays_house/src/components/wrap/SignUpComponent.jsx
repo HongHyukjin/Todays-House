@@ -218,16 +218,27 @@ export default function SignUpComponent () {
 
     const onSubmitSignUp = (e) => {
         e.preventDefault();
+
+        let 약관동의 = '';
+        state.약관동의.map((item,idx) => {
+            if(idx===state.약관동의.length-1){
+                약관동의 += item
+            }
+            else{
+                약관동의 += item + ', '
+            }
+        })
+
         const formData = {
             "user_email1": state.이메일,
             "user_email2": state.이메일도메인,
             "user_pw": state.비밀번호,
             "user_nick": state.닉네임,
-            "user_service": state.약관동의
+            "user_service": 약관동의
         }
 
         $.ajax({
-            url: 'http://localhost:8080/0521ohouse/ohouse/signup_action_test_parameter.jsp',
+            url: 'http://localhost:8080/0521ohouse/ohouse/signup_action_test.jsp',
             type: 'POST',
             data: formData,
             success(res) {
