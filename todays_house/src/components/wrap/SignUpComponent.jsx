@@ -74,6 +74,35 @@ export default function SignUpComponent ({회원가입}) {
         })
     }
 
+    const onSubmitSignUp=(e)=>{
+       e.preventDefault();
+        const formData ={
+            "user_email1": state.이메일1,
+            "user_email2": state.이메일2,
+            "user_pw": state.비밀번호,
+            "user_nick": state.닉네임,
+            "user_service": 이용약관
+        }
+        
+        $.ajax({
+            url:'http://127.0.0.1:8080/',
+            type: 'POST',
+            data:formData,
+            success(res){
+                console.log('AJAX 성공!');
+                console.log(res);
+                console.log(JSON.parse(res));
+            
+            },
+            error(err){
+                console.log('AJAX 실패!' + err); 
+            }    
+        });
+
+
+
+    }
+
     return (
         <div id='signUp'>
             <section id='section1'>
@@ -95,7 +124,7 @@ export default function SignUpComponent ({회원가입}) {
                                     <li><a href="!#"><svg width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#00C63B" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24z"></path><path fill="#FFF" d="M21 25.231V34h-7V15h7l6 8.769V15h7v19h-7l-6-8.769z"></path></g></svg></a></li>
                                 </ul>
                             </div>
-                            <form name='sign_up' id='signUp' method='post' action="">
+                            <form name='sign_up' id='signUp' method='post' action="" onSubmit={onSubmitSignUp}>
                                 <div className="join email">
                                     <label>이메일</label>
                                     <input 

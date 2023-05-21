@@ -1,10 +1,8 @@
 import React from 'react';
-import HeaderComponent from './HeaderComponent';
+
 
 export default function EmailComponent() {
     return (
-        <>
-            <HeaderComponent/>
         <main id="emailSet">
             <section className="pw_set">
                 <div className="container">
@@ -34,7 +32,6 @@ export default function EmailComponent() {
                 </div>
             </section>
             </main>
-        </>
        
     );
 };
