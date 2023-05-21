@@ -267,7 +267,7 @@ export default function SignUpComponent () {
                             </div>
                             <form name='sign_up' id='signUp' method='post' action="" onSubmit={onSubmitSignUp}>
                                 <div className="join email">
-                                    <label>이메일</label>
+                                    <label className={`label ${state.isEmailError?'on':''}`}>이메일</label>
                                     <input type="text" className='email' name='user_email1' id='userEmail1' placeholder='이메일' onChange={onChangeEmail}/>
                                     <i>@</i>
                                     <select type="text" name='user_email2' id='userEmail2' onChange={onChangeEmailDomain}>
@@ -287,18 +287,18 @@ export default function SignUpComponent () {
                                     <button>이메일 인증하기</button>
                                 </div>
                                 <div className="join">
-                                    <label>비밀번호</label>
+                                    <label className={`label ${state.isPwError?'on':''}`}>비밀번호</label>
                                     <p className="sub-msg">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
                                     <input type="password" name='user_pw' id='userPw' placeholder='비밀번호' onChange={onChangePw} />                       
                                     <p className={`error-msg ${state.isPwError?'on':''}`}>{state.isPwMsg}</p>
                                 </div>
                                 <div className="join">
-                                    <label>비밀번호 확인</label>
+                                    <label className={`label ${state.isPw2PError?'on':''}`}>비밀번호 확인</label>
                                     <input type="password" name='user_pw_ok' id='userPwOk' placeholder='비밀번호 확인' onChange={onChangePwOk} />                       
                                     <p className={`error-msg ${state.isPw2Error?'on':''}`}>{state.isPw2Msg}</p>
                                 </div>
                                 <div className="join">
-                                    <label>닉네임</label>
+                                    <label className={`label ${state.isNickError?'on':''}`}>닉네임</label>
                                     <p className="sub-msg">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</p>
                                     <input type="text" name='user_nick' id='userNick' placeholder='별명 (2~15자)' onChange={onChangeNick} />                       
                                     <p className={`error-msg ${state.isNickError?'on':''}`}>{state.isNickMsg}</p>
