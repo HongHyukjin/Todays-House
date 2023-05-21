@@ -1,8 +1,10 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
+import EmailComponent from './wrap/EmailComponent';
 import IntroComponent from './wrap/IntroComponent';
-import SigininComponent from './wrap/SigninComponent'
-import SignUpComponent from './wrap/SignUpComponent'
+import SigninComponent from './wrap/SigninComponent'
+import SignUpComponent from './wrap/SignUpComponent';
+import UploadPhotoComponent from './wrap/mypage/UploadPhotoComponent';
 
 
 export default function WrapComponent () {
@@ -42,8 +44,10 @@ export default function WrapComponent () {
          <BrowserRouter>
             <Routes>
                     <Route path='/*' element={<IntroComponent />} />
-                    <Route path="/로그인" element={<SigininComponent />}/>
+                    <Route path="/로그인" element={<SigninComponent />}/>
                     <Route path="/회원가입" element={<SignUpComponent />}/>
+                    <Route path="/비밀번호재설정" element={<EmailComponent />}/>
+                    <Route path="/사진업로드" element={<UploadPhotoComponent />}/>
             </Routes>
          </BrowserRouter>
 

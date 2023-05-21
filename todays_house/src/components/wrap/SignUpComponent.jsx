@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default function SignUpComponent () {
 
@@ -319,7 +320,7 @@ export default function SignUpComponent () {
                             </form>
                             <div className="log-in">
                                 <p className="sub-msg">이미 아이디가 있으신가요?</p>
-                                <a href="!#">로그인</a>
+                                <Link to="/로그인">로그인</Link>
                             </div>
                         </div>
                     </div>
