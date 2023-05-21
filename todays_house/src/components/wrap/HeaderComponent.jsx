@@ -13,9 +13,9 @@ export default function HeaderComponent(){
                                     <li>
                                         <Link to="/"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></Link>
                                     </li>
-                                    <li><a href="#!">커뮤니티</a></li>
-                                    <li><a href="#!">쇼핑</a></li>
-                                    <li><a href="#!">이사/시공/수리</a></li>
+                                    <li><a href='!#'>커뮤니티</a></li>
+                                    <li><a href="!#">쇼핑</a></li>
+                                    <li><a href="!#">이사/시공/수리</a></li>
                                 </ul>
                             </div>
                             <div className="right">

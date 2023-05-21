@@ -1,6 +1,33 @@
 import React from 'react';
+import $ from 'jquery';
 
 export default function MyPageComponentPt ()  {
+
+    const [state,setState] = React.useState({
+        사진:''
+    })
+    const getPhoto=()=>{
+        $.ajax({
+            url:'http://localhost:8080/jsp/photo_post/photo_post/select_action.jsp',
+            type:'get',
+            success(res){
+                console.log('AJAX 성공');
+                console.log(res);
+                setState({
+                    ...state,
+                    사진:res.data
+                })
+            },
+            error(err){
+                console.log('AJAX 실패'+err);
+            }
+        })
+    }
+
+    React.useEffect(()=>{
+        getPhoto();
+    },[]);
+ 
     return (
         <div id='myPagePt' >
             <div className="container">
@@ -43,7 +70,8 @@ export default function MyPageComponentPt ()  {
                     </div>
                     <div className="right">
                         <div className="txt-box">
-                            <p>결과가 존재하지 않습니다.</p>        
+                            <p>결과가 존재하지 않습니다.</p>  
+                            <img src="" alt="" />      
                         </div>
                     </div>
                 </div>

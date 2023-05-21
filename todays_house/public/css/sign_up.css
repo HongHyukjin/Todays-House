@@ -127,7 +127,7 @@
   border-radius: 4px;
   cursor: pointer;
 }
-#signUp .section2 .container .gap .content form .join > p {
+#signUp .section2 .container .gap .content form .join .sub-msg {
   font-size: 14px;
   color: #828C94;
   letter-spacing: -1px;
@@ -183,6 +183,12 @@
 #signUp .section2 .container .gap .content form .join .check-box > label:first-child {
   border-bottom: 1px solid #eaedef;
   padding: 0 0 20px 0;
+}
+#signUp .section2 .container .gap .content form .join .error-msg {
+  padding: 10px 0 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ff7777;
 }
 #signUp .section2 .container .gap .content form > button {
   width: 100%;

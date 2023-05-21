@@ -117,7 +117,7 @@
                                 border-radius: 4px;
                                 cursor: pointer;
                             }
-                            >p{
+                            .sub-msg{
                                 font-size: 14px;
                                 color: #828C94;
                                 letter-spacing: -1px;
@@ -178,6 +178,12 @@
                                   }
                               }
 
+                            }
+                            .error-msg{
+                                padding : 10px 0 0 0;
+                                font-size: 14px;
+                                line-height: 18px;
+                                color : #ff7777;
                             }
                         }
                         >button{
