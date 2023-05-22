@@ -113,7 +113,7 @@ export default  function UploadPhotoComponent ()  {
       
     
         $.ajax({
-            url:'http://localhost:8080/jsp/photo_post/photo_post/post_action.jsp',
+            url:'http://localhost:8080/jsp/photo_post_DAO_DTO/photo_post/post_action.jsp',
             type:'post',
             data:formData,
             success(res){
