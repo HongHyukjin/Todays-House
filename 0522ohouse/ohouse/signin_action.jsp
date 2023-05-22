@@ -24,8 +24,9 @@
 
 <%
     UserDAO userDAO = new UserDAO();
-    int result = userDAO.signin(userDTO.getUser_pw(), userDTO.getUser_email1() + "@" + userDTO.getUser_email2());
+    int result = userDAO.signin(userDTO.getUser_email1() + "@" + userDTO.getUser_email2(), userDTO.getUser_pw());
 %>
+
 
 <%
     //로그인이 됨

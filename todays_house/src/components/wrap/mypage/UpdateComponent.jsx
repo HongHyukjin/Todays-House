@@ -159,10 +159,44 @@ export default function UpdateComponent () {
     }
   }, [state.file])
 
-  React.useEffect(()=>{
-    
-  },[state.file])
+  
+  const getUserData = () => {
+  //   const user_email = sessionStorage.getItem('user_email');
+  //   $.ajax({
+  //     url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
+  //     data : {user_email : user_email},
+  //     type: 'GET',
+  //     dataType:'json',  
+      
+  //     success(res) {
+  //         console.log('AJAX 성공!');
+  //         console.log(res.result); // 결과 데이터 출력
+  //         // console.log(JSON.parse(res));
+  //     },
+  //     error(err) {
+  //         console.log('AJAX 실패!' + err);
+  //     }
+  // });
+  $.ajax({
+    url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
+    type: 'GET',
+    dataType: 'json',
+    success(res) {
+      console.log('AJAX 성공!');
+      console.log(res.result); // 결과 데이터 출력
+    },
+    error(err) {
+      console.log('AJAX 실패!' + err);
+    },
+    beforeSend(xhr) {
+      xhr.setRequestHeader('Accept', 'application/json'); // 응답 헤더에 Accept 추가
+    }
+  });
+  }
 
+  React.useEffect(()=>{
+    getUserData();
+  },[])
 
 
   const onSubmitUpdate = (e) => {
@@ -173,7 +207,7 @@ export default function UpdateComponent () {
 
       const formData = {
         "user_email1": state.이메일.substring(0, index),
-        "user_email2": state.이메일도메인.substring(index+1),
+        "user_email2": state.이메일.substring(index+1),
         "user_nick" : state.닉네임,
         "user_url" : state.홈페이지,
         "user_gender" : state.성별,

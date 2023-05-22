@@ -7,7 +7,6 @@ import $ from 'jquery';
 export default function SigninComponent(){
     const [state, setState] = React.useState({
         이메일 : '',
-        이메일도메인:'',
         비밀번호 : '',
         isPwError : false,
         isPwMsg : '',
@@ -68,20 +67,20 @@ export default function SigninComponent(){
         })
     }
 
-    React.useEffect(()=>{
-        const storedEmail = sessionStorage.getItem('user_email1');
-        const storedEmailDomain = sessionStorage.getItem('user_email2');
-        const storedPassword = sessionStorage.getItem('user_pw');
+    // React.useEffect(()=>{
+    //     const storedEmail = sessionStorage.getItem('user_email1');
+    //     const storedEmailDomain = sessionStorage.getItem('user_email2');
+    //     const storedPassword = sessionStorage.getItem('user_pw');
 
-        if(storedEmail && storedEmailDomain && storedPassword){
-            setState({
-                ...state,
-                이메일: storedEmail,
-                이메일도메인: storedEmailDomain,
-                비밀번호: storedPassword
-            });
-        }
-    },[]);
+    //     if(storedEmail && storedEmailDomain && storedPassword){
+    //         setState({
+    //             ...state,
+    //             이메일: storedEmail,
+    //             이메일도메인: storedEmailDomain,
+    //             비밀번호: storedPassword
+    //         });
+    //     }
+    // },[]);
 
     const onSubmitSignin =(e)=>{
         e.preventDefault();
@@ -90,14 +89,11 @@ export default function SigninComponent(){
         console.log(state.이메일.substring(index+1));
         const formData = {
             "user_email1": state.이메일.substring(0, index),
-            "user_email2": state.이메일도메인.substring(index+1),
+            "user_email2": state.이메일.substring(index+1),
             "user_pw": state.비밀번호
         }
 
-        sessionStorage.setItem('user_email1', state.이메일.substring(0, index));
-        sessionStorage.setItem('user_email2', state.이메일도메인.substring(0, index+1));
-        sessionStorage.setItem('user_pw', state.비밀번호);
-
+        
         $.ajax({
             url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signin_action.jsp',
             type: 'POST',
@@ -106,7 +102,10 @@ export default function SigninComponent(){
                 console.log('AJAX 성공!');
                 console.log(res);
                 console.log(JSON.parse(res));
-
+                // session에 이메일 저장 
+                sessionStorage.setItem('user_email', state.이메일);
+                // main으로 이동 
+                window.location.href='/';
             },
             error(err) {
                 console.log('AJAX 실패!' + err);
@@ -151,7 +150,7 @@ export default function SigninComponent(){
                     <li>
                         <div className="set-up1">
                             <h3><Link to="/비밀번호재설정">비밀번호 재설정</Link> </h3>
-                            <Link to='/'>회원가입</Link>
+                            <a href='!#'>회원가입</a>
                         </div>
                     </li>
                     <li>

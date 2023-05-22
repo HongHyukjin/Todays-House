@@ -138,28 +138,21 @@ public class UserDAO {
 
 
     // 개인정보 수정 
-    public UserDTO getJoin(String user_nick){
+    public UserDTO getJoin(String user_email){
         UserDTO userDTO = new UserDTO();
 
-        String SQL = "SELECT * FROM ohouse_member WHERE user_nick=?";
+        String SQL = "SELECT * FROM ohouse_member WHERE user_email=?";
         try {
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, user_nick);
+            ps.setString(1, user_email);
             rs = ps.executeQuery();
             if(rs.next()){
                 int index = rs.getString("user_email").indexOf("@");
                 userDTO.setUser_email1(rs.getString("user_email1").substring(0, index));
                 userDTO.setUser_email2(rs.getString("user_email2").substring(index+1));
-                userDTO.setUser_pw(rs.getString("user_pw"));
                 userDTO.setUser_nick(rs.getString("user_nick"));
-                userDTO.setUser_service(rs.getString("user_service"));
-                userDTO.setUser_url(rs.getString("user_url"));
-                userDTO.setUser_gender(rs.getString("user_gender"));
-                userDTO.setUser_birth(rs.getString("user_birth"));
-                userDTO.setUser_oneline(rs.getString("user_oneline"));
-
             }
-        } catch(Exception e){
+        } catch(Exception e){ 
             e.printStackTrace();
         }
         finally {

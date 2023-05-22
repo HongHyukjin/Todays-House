@@ -25,7 +25,7 @@ public class UserDTO {
     public void setIdx(int idx) {
         this.idx = idx;
     }
-
+        
     public String getUser_email1() {
         return this.user_email1;
     }
