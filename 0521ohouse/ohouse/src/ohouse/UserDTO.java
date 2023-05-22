@@ -5,7 +5,7 @@ package ohouse;
  */
 public class UserDTO {
 
-    private int idx;
+    private int idx; 
     private String user_email1;
     private String user_email2;
     private String user_pw;

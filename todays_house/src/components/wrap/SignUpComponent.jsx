@@ -69,7 +69,8 @@ export default function SignUpComponent () {
         e.preventDefault();
         if(state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError){
             // 이메일 인증 기능 넣어야됨
-            
+            console.log(state.이메일 + "@" + state.이메일도메인);
+            console.log("이메일 발송");
         }
         else{
             emailInput.current.focus();

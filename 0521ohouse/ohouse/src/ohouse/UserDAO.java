@@ -9,12 +9,12 @@ import ohouse.UserDTO;
 public class UserDAO {
 
     private Connection conn;
-    private PreparedStatement ps;
+    private PreparedStatement ps; 
     private ResultSet rs;
 
-    public UserDAO(){
+    public UserDAO(){ 
         try{
-            String URL = "jdbc:mysql://localhost:3306/ddulki";
+            String URL = "jdbc:mysql://localhost:3306/hyukjin";
             String ID = "root";
             String PW = "1234";
             // 1. 데이터베이스 드라이버(JDBC)
