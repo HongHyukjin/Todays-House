@@ -167,10 +167,13 @@ export default function UpdateComponent () {
 
   const onSubmitUpdate = (e) => {
       e.preventDefault();
+      let index = state.이메일.indexOf("@");
+      console.log(state.이메일.substring(0, index));
+      console.log(state.이메일.substring(index+1));
 
       const formData = {
-        "user_email1" : state.이메일,
-        "user_email2" : state.이메일도메인,
+        "user_email1": state.이메일.substring(0, index),
+        "user_email2": state.이메일도메인.substring(index+1),
         "user_nick" : state.닉네임,
         "user_url" : state.홈페이지,
         "user_gender" : state.성별,
@@ -206,9 +209,9 @@ export default function UpdateComponent () {
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail} value={userDTO.getUser_email1()}/>
+                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail} /* value={userDTO.getUser_email1()} *//>
                   <span>@</span>
-                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain} value={userDTO.getUser_email2()}/>
+                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain} /* value={userDTO.getUser_email2()} *//>
                   <p>이메일을 변경하시려면 운영자에게 메일을 보내주세요.</p>
                 </div>
               </div>
@@ -218,7 +221,7 @@ export default function UpdateComponent () {
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick} value={userDTO.getUser_nick()}/>
+                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick} /* value={userDTO.getUser_nick()} *//>
                 </div>
               </div>
               <div>
@@ -226,7 +229,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">홈페이지</label>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl} value={userDTO.getUser_url()}/>
+                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl} /* value={userDTO.getUser_url()} *//>
                 </div>
               </div>
               <div>
@@ -235,8 +238,8 @@ export default function UpdateComponent () {
                 </div>
                 <div className='input-radio'>
                   <ul>
-                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender} checked={userDTO.getUser_gender() === "남성"} />남성</li>
-                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender} checked={userDTO.getUser_gender() === "여성"} />여성</li>
+                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender} /* checked={userDTO.getUser_gender() === "남성"} */ />남성</li>
+                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender} /* checked={userDTO.getUser_gender() === "여성"} */ />여성</li>
                   </ul>
                 </div>
               </div>
