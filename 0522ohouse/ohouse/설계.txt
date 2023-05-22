@@ -27,10 +27,10 @@ CREATE TABLE ohouse_member(
    user_email      varchar(100)    NOT NULL,
    user_pw         varchar(100)    NOT NULL,
    user_nick       varchar(300)    NOT NULL,
-   user_url        varchar(300)    NOT NULL,
-   user_gender     varchar(300)    NOT NULL,
-   user_birth      varchar(300)    NOT NULL,
-   user_oneline    varchar(300)    NOT NULL,
+   user_url        varchar(300),
+   user_gender     varchar(300),
+   user_birth      varchar(300),
+   user_oneline    varchar(300),
    user_service    varchar(1000)   NOT NULL,
    create_date timestamp DEFAULT CURRENT_TIMESTAMP,
    PRIMARY KEY (idx, user_email)
@@ -54,3 +54,11 @@ signup_action.jsp
 
 
 drop table ohouse_member;
+
+// 개인정보 수정 
+
+SELECT * FROM ohouse_member WHERE user_nick='재밌다';
+
+
+// 업데이트 
+UPDATE ohouse_member SET user_nick='재밌다', user_url='ddulki.com', user_gender='여자', user_birth='19930130', user_oneline='계속확인하기' WHERE user_email='tmfrl4994@naver.com';

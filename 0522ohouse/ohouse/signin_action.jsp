@@ -1,3 +1,8 @@
+<%
+    response.setHeader("Access-Control-Allow-Origin","*");
+%>
+
+
 <%@
     page
     language="java"
@@ -16,9 +21,17 @@
 <jsp:setProperty name="userDTO" property="user_email1" />
 <jsp:setProperty name="userDTO" property="user_email2" />
 
+
 <%
     UserDAO userDAO = new UserDAO();
-    int result = userDAO.signin(userDTO);
+    int result = userDAO.signin(userDTO.getUser_pw(), userDTO.getUser_email1() + "@" + userDTO.getUser_email2());
+%>
+
+<%
+    //로그인이 됨
+    if(result == 1){
+        session.setAttribute("user_email", userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+    }   
 %>
 
 {"AJAX실행 DTO & DAO 결과":"<%=result%>"}

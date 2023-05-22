@@ -68,16 +68,16 @@ public class UserDAO {
 
     public int signin(String user_email, String user_pw){
         String SQL = "SELECT user_pw FROM ohouse_member WHERE user_email = ?";
-        try {
+        try { 
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
 
             rs = ps.executeQuery();
             if(rs.next()){
-                if(rs.getString(1).equals(user_pw)){
+                if(rs.getString("user_pw").equals(user_pw)){
                     return 1;
                 }
-                else {
+                else{
                     return 0;
                 }
             }
@@ -101,6 +101,11 @@ public class UserDAO {
     }
 
 
+
+    // int index = rs.getString("user_email").indexOf("@");
+    // userDTO.setUser_email1(rs.getString("user_email").substring(0, index));
+    // userDTO.setUser_email2(rs.getString("user_email").substring(index+1));
+    // userDTo.set
 
     public int update(UserDTO userDTO){
         String SQL = "UPDATE ohouse_member SET user_nick=?, user_url=?, user_gender=?, user_birth=?, user_oneline=? WHERE user_email=?";
@@ -129,6 +134,87 @@ public class UserDAO {
             }
         }
         return -1;
+    }
+
+
+    // 개인정보 수정 
+    public UserDTO getJoin(String user_nick){
+        UserDTO userDTO = new UserDTO();
+
+        String SQL = "SELECT * FROM ohouse_member WHERE user_nick=?";
+        try {
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, user_nick);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                int index = rs.getString("user_email").indexOf("@");
+                userDTO.setUser_email1(rs.getString("user_email1").substring(0, index));
+                userDTO.setUser_email2(rs.getString("user_email2").substring(index+1));
+                userDTO.setUser_pw(rs.getString("user_pw"));
+                userDTO.setUser_nick(rs.getString("user_nick"));
+                userDTO.setUser_service(rs.getString("user_service"));
+                userDTO.setUser_url(rs.getString("user_url"));
+                userDTO.setUser_gender(rs.getString("user_gender"));
+                userDTO.setUser_birth(rs.getString("user_birth"));
+                userDTO.setUser_oneline(rs.getString("user_oneline"));
+
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if(rs!= null){rs.close();}
+                if(ps!= null){ps.close();}
+                if(conn!= null){conn.close();}
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return userDTO; 
+    }
+
+    // 가입 회원 전체리스트 목록 가져오기 
+    public List<UserDTO> getJoinList(){
+        UserDTO userDTO = new UserDTO();
+        List<UserDTO> list = new ArrayList<>();
+
+        String SQL = "SELECT * FROM ohouse_member";
+        try {
+            ps = conn.prepareStatement(SQL);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                int index = rs.getString("user_email").indexOf("@");
+                userDTO.setIdx(rs.getInt("idx"));
+                userDTO.setUser_email1(rs.getString("user_email1").substring(0, index));
+                userDTO.setUser_email2(rs.getString("user_email2").substring(index+1));
+                userDTO.setUser_pw(rs.getString("user_pw"));
+                userDTO.setUser_nick(rs.getString("user_nick"));
+                userDTO.setUser_service(rs.getString("user_service"));
+                userDTO.setUser_url(rs.getString("user_url"));
+                userDTO.setUser_gender(rs.getString("user_gender"));
+                userDTO.setUser_birth(rs.getString("user_birth"));
+                userDTO.setUser_image(rs.getString("user_image"));
+                userDTO.setUser_oneline(rs.getString("user_oneline"));
+                userDTO.setCreate_date(rs.getString("create_date"));
+                list.add(userDTO);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(rs!= null){ rs.close(); }
+                if(ps!= null){ ps.close(); }
+                if(conn!= null){ conn.close(); }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return list;
+        
     }
         
     

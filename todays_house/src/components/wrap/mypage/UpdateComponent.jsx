@@ -5,7 +5,6 @@ import HeaderComponent from '../HeaderComponent';
 export default function UpdateComponent () {
 
   const [state,setState] = React.useState({
-<<<<<<< HEAD
     이메일: '',
     이메일도메인:'',
     닉네임:'',
@@ -23,8 +22,9 @@ export default function UpdateComponent () {
     isNickMsg : ''
   })
 
-    // 이메일 
-    const onChangeEmail = (e) => {
+
+  // 이메일 
+  const onChangeEmail = (e) => {
       const {value} = e.target;
       let isEmailError = false;
       let isEmailMsg = '';
@@ -106,8 +106,7 @@ export default function UpdateComponent () {
     })
   }
 
-  // 한줄소개
-
+  // 한줄소개 
   const onChangeOneline = (e) => {
     setState({
       ...state,
@@ -115,12 +114,6 @@ export default function UpdateComponent () {
     })
   }
 
-=======
-    file : '',
-    imgUrl : '../images/avatar.avif'
-  })
-
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
   const imageInput = useRef();
 
   const onClickImageUpload = (e) => {
@@ -170,7 +163,8 @@ export default function UpdateComponent () {
     
   },[state.file])
 
-<<<<<<< HEAD
+
+
   const onSubmitUpdate = (e) => {
       e.preventDefault();
 
@@ -199,34 +193,22 @@ export default function UpdateComponent () {
       });
   }
 
-=======
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
   return (
     <div id="update">
       <div className="container">
         <div className="gap">
           <div className="content">
             <h1>회원정보수정</h1>
-<<<<<<< HEAD
             <form name="update_form" id="updateForm" action="" onSubmit={onSubmitUpdate}>
-=======
-            <form name="update_form" id="updateForm" action="">
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
               <div>
                 <div className='label'>
                   <label htmlFor="">이메일</label>
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-<<<<<<< HEAD
-                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail}/>
+                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail} value={userDTO.getUser_email1()}/>
                   <span>@</span>
-                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain}/>
-=======
-                  <input type="text" name="email" id="email" className='half'/>
-                  <span>@</span>
-                  <input type="text" name="domain" id="domain" className='half'/>
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
+                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain} value={userDTO.getUser_email2()}/>
                   <p>이메일을 변경하시려면 운영자에게 메일을 보내주세요.</p>
                 </div>
               </div>
@@ -236,11 +218,7 @@ export default function UpdateComponent () {
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-<<<<<<< HEAD
-                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick}/>
-=======
-                  <input type="text" name="nickname" id="nickname" />
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
+                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick} value={userDTO.getUser_nick()}/>
                 </div>
               </div>
               <div>
@@ -248,11 +226,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">홈페이지</label>
                 </div>
                 <div className='input'>
-<<<<<<< HEAD
-                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl}/>
-=======
-                  <input type="text" name="homepage" id="homepage" placeholder='https://ohou.se'/>
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
+                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl} value={userDTO.getUser_url()}/>
                 </div>
               </div>
               <div>
@@ -261,13 +235,8 @@ export default function UpdateComponent () {
                 </div>
                 <div className='input-radio'>
                   <ul>
-<<<<<<< HEAD
-                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender}/>남성</li>
-                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender}/>여성</li>
-=======
-                    <li><input type="radio" name="gender" id="gender1" value="남성" />남성</li>
-                    <li><input type="radio" name="gender" id="gender2" value="여성" />여성</li>
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
+                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender} checked={userDTO.getUser_gender() === "남성"} />남성</li>
+                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender} checked={userDTO.getUser_gender() === "여성"} />여성</li>
                   </ul>
                 </div>
               </div>
@@ -276,11 +245,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">생년월일</label>
                 </div>
                 <div className='input'>
-<<<<<<< HEAD
                   <input type="text" name="user_birth" id="birth" placeholder='YYYY-MM-DD' onChange={onChangeBirth}/>
-=======
-                  <input type="text" name="birth" id="birth" placeholder='YYYY-MM-DD' />
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
                 </div>
               </div>
               <div>
@@ -288,11 +253,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">프로필 이미지</label>
                 </div>
                 <div className="input">
-<<<<<<< HEAD
                   <input type="file" name="user_image" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} />
-=======
-                  <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} />
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
                   <button className='img_upload' onClick={onClickImageUpload}>
                     <img src={state.imgUrl} alt="" />
                   </button>
@@ -306,11 +267,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">한줄 소개</label>
                 </div>
                 <div className='input'>
-<<<<<<< HEAD
                   <input type="text" name="user_oneline" id="oneline" onChange={onChangeOneline} />
-=======
-                  <input type="text" name="oneline" id="oneline" />
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
                 </div>
               </div>
               <button type='submit'>회원 정보 수정</button>

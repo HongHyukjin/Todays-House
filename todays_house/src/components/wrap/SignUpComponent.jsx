@@ -238,11 +238,7 @@ export default function SignUpComponent () {
         }
 
         $.ajax({
-<<<<<<< HEAD
             url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signup_action.jsp',
-=======
-            url: 'http://localhost:8080/0521ohouse/ohouse/signup_action_test.jsp',
->>>>>>> 5ec0b85b504f8123f83627716e5100b751ee8dfd
             type: 'POST',
             data: formData,
             success(res) {

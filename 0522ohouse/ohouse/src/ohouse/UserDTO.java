@@ -7,17 +7,17 @@ public class UserDTO {
 
     private int idx;
     private String user_email1;
-    private String user_email2;
+    private String user_email2; 
     private String user_pw;
     private String user_nick;
     private String user_service;
-    private String user_url;
+    private String user_url; 
     private String user_gender;
     private String user_birth;
     private String user_image;
     private String user_oneline;
     private String create_date;
-  
+   
     public int getIdx() {
         return this.idx;
     }
