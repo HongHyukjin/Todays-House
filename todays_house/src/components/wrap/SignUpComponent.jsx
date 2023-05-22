@@ -230,15 +230,15 @@ export default function SignUpComponent () {
         })
 
         const formData = {
-            "user_email1": state.이메일1,
-            "user_email2": state.이메일2,
+            "user_email1": state.이메일,
+            "user_email2": state.이메일도메인,
             "user_pw": state.비밀번호,
             "user_nick": state.닉네임,
-            "user_service": state.이용약관
+            "user_service": 약관동의
         }
 
         $.ajax({
-            url: 'http://localhost:8080/JSP/오늘의집/signup_action.jsp',
+            url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signup_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
