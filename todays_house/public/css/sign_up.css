@@ -130,6 +130,11 @@
   border-radius: 4px;
   cursor: pointer;
 }
+#signUp .section2 .container .gap .content form .join > button.on {
+  color: #35c5f0;
+  border-color: #35c5f0;
+  background-color: #fff;
+}
 #signUp .section2 .container .gap .content form .join .sub-msg {
   font-size: 14px;
   color: #828C94;

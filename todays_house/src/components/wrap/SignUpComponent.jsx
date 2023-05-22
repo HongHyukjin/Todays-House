@@ -32,6 +32,8 @@ export default function SignUpComponent () {
         isUserServiceMsg : ''
     })
 
+    const emailInput = React.useRef();
+
     const onChangeEmail = (e) => {
         const {value} = e.target;
         let isEmailError = false;
@@ -60,6 +62,18 @@ export default function SignUpComponent () {
             이메일도메인 : e.target.value,
             isEmailDomainError : false
         })
+    }
+
+    // 미완성
+    const onClickEmailAuth = (e) => {
+        e.preventDefault();
+        if(state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError){
+            // 이메일 인증 기능 넣어야됨
+            
+        }
+        else{
+            emailInput.current.focus();
+        }
     }
 
     React.useEffect(() => {
@@ -279,7 +293,7 @@ export default function SignUpComponent () {
                             <form name='sign_up' id='signUp' method='post' action="" onSubmit={onSubmitSignUp}>
                                 <div className="join email">
                                     <label className={`label ${state.isEmailError?'on':''}`}>이메일</label>
-                                    <input type="text" className='email' name='user_email1' id='userEmail1' placeholder='이메일' onChange={onChangeEmail}/>
+                                    <input type="text" className='email' name='user_email1' id='userEmail1' placeholder='이메일' onChange={onChangeEmail} ref={emailInput}/>
                                     <i>@</i>
                                     <select type="text" name='user_email2' id='userEmail2' onChange={onChangeEmailDomain}>
                                         <option value="선택해주세요">선택해주세요</option>
@@ -295,7 +309,7 @@ export default function SignUpComponent () {
                                     </select>                                                
                                     <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>                                                
                                     <p className={`error-msg ${state.isEmailError?'on':''}`}>{state.isEmailMsg}</p>
-                                    <button>이메일 인증하기</button>
+                                    <button className={`${state.이메일!==''&&!state.isEmailError&&!state.isEmailDomainError?'on':''}`} onClick={onClickEmailAuth} >이메일 인증하기</button>
                                 </div>
                                 <div className="join">
                                     <label className={`label ${state.isPwError?'on':''}`}>비밀번호</label>
