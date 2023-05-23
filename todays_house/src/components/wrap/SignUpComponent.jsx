@@ -252,14 +252,14 @@ export default function SignUpComponent () {
         }
 
         $.ajax({
-            url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signup_action.jsp',
+            url: 'http://localhost:8080/JSP/ohouse/signup_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
                 console.log('AJAX 성공!');
                 console.log(res);
                 console.log(JSON.parse(res));
-
+                window.location.href = '/'
             },
             error(err) {
                 console.log('AJAX 실패!' + err);

@@ -42,7 +42,7 @@ export default function HeaderComponent(){
                             <div className="left">
                                 <ul>
                                     <li>
-                                        <Link to="/"><img src="./images/제목 없는 다이어그램.drawio.png" alt="" /></Link>
+                                        <Link to="/"><img src="./images/drawio.png" alt="" /></Link>
                                     </li>
                                     <li><a href='!#'>커뮤니티</a></li>
                                     <li><a href="!#">쇼핑</a></li>

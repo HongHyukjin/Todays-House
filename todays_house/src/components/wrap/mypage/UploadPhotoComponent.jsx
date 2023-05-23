@@ -6,8 +6,11 @@ export default  function UploadPhotoComponent ()  {
     const [state,setState] = React.useState({
         file : '',
         imgUrl : '',
-        imgWidth:0,
-        imgHeight:0
+        pyeong:'',
+        type:'',
+        style:'',
+        place:'',
+        memo:''
       })
     
       const imageInput = useRef();
@@ -63,12 +66,15 @@ export default  function UploadPhotoComponent ()  {
           $('.input .img_del').css({"display":"block"})
           $('.ico').css({"display":"none"})
           $('.re').css({"display":"block"})
+          $('.input').css({"background":"#f7f8fa"})
+          $('.img_upload:hover').css({"background":"#fff"})
         //   $('.img_upload').css({"position":"absolute","bottom":"10","left":"15","width":"24","height":"24"});
         }
         else{
           $('.input .img_del').css({"display":"none"})
           $('.ico').css({"display":"flex"})
           $('.re').css({"display":"none"})
+          $('.input').css({"background":"trnsparent"})
         }
       }, [state.file])
     
@@ -87,13 +93,86 @@ export default  function UploadPhotoComponent ()  {
         })
     })
 
+    const onClickSubmit=(e)=>{
+        e.preventDefault();
+        console.log('클릭');
+        onSubmitPhotoPost();
+        console.log('길이 : ',state.imgUrl.length);
+    } 
+
+    const onSubmitPhotoPost=()=>{ 
+        
+        const formData = {
+            "pyeong":state.pyeong,
+            "type":state.type,
+            "style":state.style,
+            "file":state.imgUrl,
+            "place":state.place,
+            "memo":state.memo
+        }
+      
+    
+        $.ajax({
+            url:'http://localhost:8080/jsp/photo_post_DAO_DTO/photo_post/post_action.jsp',
+            type:'post',
+            data:formData,
+            success(res){
+                console.log('AJAX 성공');
+                console.log(res);
+            },
+            error(err){
+                console.log('AJAX 실패'+err);
+            }
+        })
+        
+    }
+
+    const onChangePyeong =(e)=>{
+        let 평수 =e.target.value;
+        setState({
+            ...state,
+            pyeong:평수
+        }) 
+    }
+    const onChangeType =(e)=>{
+        let 주거형태 =e.target.value;
+        setState({
+            ...state,
+            type:주거형태
+        }) 
+    }
+    const onChangeStyle =(e)=>{
+        let 스타일 =e.target.value;
+        setState({
+            ...state,
+            style:스타일
+        }) 
+    }
+    const onChangePlace =(e)=>{
+        let 공간 =e.target.value;
+        setState({
+            ...state,
+            place:공간
+        }) 
+    }
+    const onChangeMemo =(e)=>{
+        let 메모 =e.target.value;
+        setState({
+            ...state,
+            memo:메모
+        }) 
+    }
+
+
+
+
     return (
         <div id='uploadPt'>
             <section className='section1'>
                 <div className="container">
                     <div className="gap">
                         <a href="!#"><svg class="icon" width="74" height="30" viewBox="0 0 74 30" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#000" d="M14.2 25.17H9.28V20.7a1.45 1.45 0 0 0-2.9 0v4.47H1.44a1.45 1.45 0 1 0 0 2.9H14.2a1.45 1.45 0 0 0 0-2.9M4.5 9.15c0-4.6 2.08-5.28 3.33-5.28 1.24 0 3.33.69 3.33 5.28v.36c0 4.6-2.09 5.28-3.33 5.28-1.25 0-3.34-.69-3.34-5.28v-.36zm3.33 8.54c3.84 0 6.23-3.13 6.23-8.18v-.36c0-5.05-2.39-8.18-6.23-8.18-3.85 0-6.24 3.13-6.24 8.18v.36c0 5.05 2.39 8.19 6.24 8.19zm25.54-7.34H17.81a1.45 1.45 0 0 0 0 2.9h15.56a1.45 1.45 0 1 0 0-2.9m-1.55 15.5c-7.08 1.83-9.45.79-10.14.25-.45-.35-.65-.8-.65-1.48v-.87h10.25c.8 0 1.46-.65 1.46-1.45v-5.08c0-.8-.66-1.45-1.46-1.45h-11.7a1.45 1.45 0 1 0 0 2.9h10.25v2.18H19.57c-.8 0-1.45.65-1.45 1.45v2.32a4.6 4.6 0 0 0 1.78 3.78c1.2.93 2.94 1.39 5.21 1.39 2.05 0 4.54-.38 7.44-1.13a1.45 1.45 0 1 0-.73-2.82M20.3 7.83h10.8a1.45 1.45 0 1 0 0-2.9h-9.35V1.45a1.45 1.45 0 1 0-2.9 0v4.93c0 .8.65 1.45 1.45 1.45"></path><rect width="3" height="15" x="70" fill="#000" rx="1.5"></rect><path fill="#000" d="M64.5 13.28a1.45 1.45 0 0 0 2.73-1c-.05-.13-1-2.68-3.38-4.5l3.7-4.1a1.45 1.45 0 0 0-1.09-2.42h-9.05a1.45 1.45 0 1 0 0 2.9h5.8l-6.88 7.64a1.45 1.45 0 1 0 2.16 1.95l3.41-3.8a8 8 0 0 1 2.6 3.33M69.56 26.52h-7.01a.82.82 0 0 1-.82-.82v-1.95h8.65v1.95c0 .45-.37.82-.82.82m2.27-9.37c-.8 0-1.45.65-1.45 1.45v2.25h-8.65V18.6a1.45 1.45 0 1 0-2.9 0v7.1a3.73 3.73 0 0 0 3.72 3.72h7.01a3.73 3.73 0 0 0 3.72-3.72v-7.1c0-.8-.65-1.45-1.45-1.45M42.46 3.87c2.22 0 2.33 4.24 2.33 5.08 0 .85-.11 5.09-2.33 5.09-2.21 0-2.32-4.24-2.32-5.08 0-.86.11-5.09 2.32-5.09m0 13.07c1.76 0 3.23-.93 4.14-2.62.71-1.34 1.1-3.2 1.1-5.36s-.39-4.02-1.1-5.37A4.6 4.6 0 0 0 42.46.97c-1.76 0-3.22.93-4.13 2.62-.72 1.35-1.1 3.2-1.1 5.37s.38 4.01 1.1 5.36a4.59 4.59 0 0 0 4.13 2.62"></path><path fill="#000" d="M51.4.49c-.8 0-1.45.65-1.45 1.45v17.78c-1.93.6-5.75 1.13-10.38 1.13h-2.2a1.45 1.45 0 0 0 0 2.9h2.2c2.64 0 7.21-.23 10.38-1.02v4.84a1.45 1.45 0 0 0 2.9 0V1.94c0-.8-.65-1.45-1.45-1.45"></path></g></svg></a>
-                        <button>올리기</button>
+                        <button onClick={onClickSubmit}>올리기</button>
                     </div>
                 </div>
             </section>
@@ -110,10 +189,10 @@ export default  function UploadPhotoComponent ()  {
             <section className='section3'>
                 <div className="container">
                     <div className="gap">
-                        <form action="" name='upload_pt' id='uploadPt'>
+                        <form action="./post_action.jsp" name='upload_pt' id='uploadPt' onSubmit={onSubmitPhotoPost}>
                             <div className="btn-box">
                                 <div className="select">
-                                    <select name="pyeong" id="pyeong">
+                                    <select name="pyeong" id="pyeong" onChange={onChangePyeong} value={state.pyeong}>
                                         <option value="평수">평수</option>
                                         <option value="10평 미만">10평 미만</option>
                                         <option value="10평대">10평대</option>
@@ -125,7 +204,7 @@ export default  function UploadPhotoComponent ()  {
                                     <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dbdbdb"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
                                 </div>
                                 <div className="select">
-                                    <select name="type" id="type">
+                                    <select name="type" id="type" onChange={onChangeType} value={state.type}>
                                         <option value="주거형태">주거형태</option>
                                         <option value="원룸&오피스텔">원룸&오피스텔</option>
                                         <option value="아파트">아파트</option>
@@ -139,7 +218,7 @@ export default  function UploadPhotoComponent ()  {
 
                                 </div>
                                 <div className="select">
-                                    <select name="style" id="style">
+                                    <select name="style" id="style"  onChange={onChangeStyle} value={state.style}>
                                         <option value="스타일">스타일</option>
                                         <option value="모던">모던</option>
                                         <option value="북유럽">북유럽</option>
@@ -183,7 +262,7 @@ export default  function UploadPhotoComponent ()  {
                                 <div className="right">
                                     <ul>
                                         <li>
-                                            <select name="place" id="place">
+                                            <select name="place" id="place" onChange={onChangePlace}>
                                                 <option value="공간 (필수)">공간 (필수)</option>
                                                 <option value="원룸">원룸</option>
                                                 <option value="거실">거실</option>
@@ -203,7 +282,7 @@ export default  function UploadPhotoComponent ()  {
                                             <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#bdbdbd"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
                                         </li>
                                         <li>
-                                            <textarea type="memo" id='pictureInfo' name='picture-info' placeholder='사진에 대해 설명해주세요.'/>
+                                            <textarea type="memo" id='pictureInfo' name='picture-info' placeholder='사진에 대해 설명해주세요.' onChange={onChangeMemo}/>
                                         </li>
                                         <li>
 

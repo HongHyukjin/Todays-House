@@ -12,17 +12,16 @@ create table photo_post(
 );
 
 
-CREATE TABLE `signup_table` (
-  `idx` int(11) NOT NULL PRIMARY KEY COMMENT '자동 증가번호',
-  `id` varchar(16)  NOT NULL COMMENT '아이디',
-  `pw` varchar(16) NOT NULL COMMENT '비밀번호',
-  `irum` varchar(100) NOT NULL COMMENT '이름',
-  `email` varchar(250) NOT NULL COMMENT '이메일',
-  `hp` varchar(13) NOT NULL COMMENT '휴대폰',
-  `addr` varchar(500)  NOT NULL COMMENT '주소',
-  `gender` varchar(4)  NULL COMMENT '성별',
-  `birth` varchar(10)  NULL COMMENT '생년월일',
-  `chooga` varchar(250)  NULL COMMENT '추가입력사항',
-  `service` varchar(1000) NOT NULL COMMENT '이용약관동의',
-  `gaib_date` varchar(10) NOT NULL COMMENT '가입일자'
-) ;
+CREATE TABLE ohouse_member(
+   idx             int       AUTO_INCREMENT,
+   user_email      varchar(100)    NOT NULL,
+   user_pw         varchar(100)    NOT NULL,
+   user_nick       varchar(300)    NOT NULL,
+   user_url        varchar(300),
+   user_gender     varchar(300),
+   user_birth      varchar(300),
+   user_oneline    varchar(300),
+   user_service    varchar(1000)   NOT NULL,
+   create_date timestamp DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (idx, user_email)
+ );

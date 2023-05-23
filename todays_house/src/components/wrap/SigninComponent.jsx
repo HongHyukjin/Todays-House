@@ -95,7 +95,7 @@ export default function SigninComponent(){
 
         
         $.ajax({
-            url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signin_action.jsp',
+            url: 'http://localhost:8080/JSP/ohouse/signin_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
@@ -144,7 +144,7 @@ export default function SigninComponent(){
                         </div>
                     </li>
                     <button  type="submit" className="ohouse-login-form-button">
-                        <Link to='/마이페이지/회원정보수정'>로그인</Link>
+                        <Link to='/'>로그인</Link>
                     </button>
 
                     <li>

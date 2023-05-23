@@ -31,6 +31,7 @@
   font-weight: 500;
   line-height: 22px;
   text-align: center;
+  cursor: pointer;
 }
 #uploadPt .section2 {
   width: 100%;
@@ -158,6 +159,7 @@
   border-radius: 4px;
   overflow: hidden;
   background: #f7f8fa;
+  background: #fff;
   cursor: pointer;
 }
 #uploadPt .section3 .container .gap .bottom .left .photo-box .input .img_upload:hover {
