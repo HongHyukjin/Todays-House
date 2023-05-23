@@ -66,7 +66,7 @@ export default function HeaderComponent(){
                                         }
                                         {
                                             state.isLogin && (
-                                                <a href="#!" onClick={onClickLogout}>로그아웃</a>
+                                                <Link to="/" onClick={onClickLogout}>로그아웃</Link>
                                             )
                                         }
                                     </li>

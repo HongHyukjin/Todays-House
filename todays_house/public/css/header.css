@@ -33,11 +33,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 21px 5px 15px 5px;
+  padding: 17px 5px 11px 5px;
   margin: 0 10px;
 }
 #wrap #header .container .gap .row1 .headbox .left ul li a {
-  font-size: 17px;
+  font-size: 18px;
   color: #2f3438;
   font-weight: 800;
   line-height: 18px;

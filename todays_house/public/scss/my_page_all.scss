@@ -20,7 +20,11 @@
                         .img-box{
                             display: flex;
                             justify-content: center;
+                            width : 118px;
+                            height: 118px;
+                            margin: 0 auto;
                             img{
+                                border-radius: 50%;
                                 width: 120px;
                             }
                         }

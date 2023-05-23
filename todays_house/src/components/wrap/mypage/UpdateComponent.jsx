@@ -121,13 +121,13 @@ export default function UpdateComponent () {
   }
 
   React.useEffect(()=>{
-    if(state.file !== ''){
+    if(state.imgUrl !== ''){
       $('.input .img_del').css({"display":"block"})
     }
     else{
       $('.input .img_del').css({"display":"none"})
     }
-  }, [state.file])
+  }, [state.imgUrl])
 
   
   const getUserData = () => {
@@ -135,6 +135,7 @@ export default function UpdateComponent () {
     const form_data = {
       "user_email" : user_email
     }
+
     $.ajax({
       url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
       type: 'POST',
@@ -148,10 +149,11 @@ export default function UpdateComponent () {
           이메일 : res.result.이메일,
           이메일도메인 : res.result.이메일도메인,
           닉네임 : res.result.닉네임,
-          홈페이지 : res.result.홈페이지,
-          성별 : res.result.성별,
-          생년월일 : res.result.생년월일,
-          한줄소개 : res.result.한줄소개
+          홈페이지 : (res.result.홈페이지==="null"?'':res.result.홈페이지),
+          성별 : res.result.성별==="null"?'':res.result.성별,
+          생년월일 : res.result.생년월일==="null"?'':res.result.생년월일,
+          imgUrl : res.result.프로필이미지==="null"?'../images/avatar.avif':res.result.프로필이미지,
+          한줄소개 : res.result.한줄소개==="null"?'':res.result.한줄소개
         })
       },
       error(err) {
@@ -175,6 +177,7 @@ export default function UpdateComponent () {
         "user_url" : state.홈페이지,
         "user_gender" : state.성별,
         "user_birth" : state.생년월일,
+        "user_profile" : state.imgUrl,
         "user_oneline" : state.한줄소개
       }
 
