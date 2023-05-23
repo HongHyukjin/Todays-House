@@ -2,8 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 
+
+
+
 export default function SignUpComponent () {
 
+
+    
     const [state,setState] = React.useState({
         이메일 : '',
         이메일도메인 : '',
@@ -254,6 +259,8 @@ export default function SignUpComponent () {
     }
 
 
+
+
     return (
         <div id='signUp'>
             <section className='section1'>
@@ -295,7 +302,7 @@ export default function SignUpComponent () {
                                     </select>                                                
                                     <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>                                                
                                     <p className={`error-msg ${state.isEmailError?'on':''}`}>{state.isEmailMsg}</p>
-                                    <button>이메일 인증하기</button>
+                                    <button type="submit">이메일 인증하기</button>
                                 </div>
                                 <div className="join">
                                     <label className={`label ${state.isPwError?'on':''}`}>비밀번호</label>
