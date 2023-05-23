@@ -1,0 +1,28 @@
+CREATE DATABASE Todays_House;
+
+create table photo_post(
+    idx     int     auto_increment primary key,
+    pyeong  varchar(100) not null,
+    type    varchar(100) not null,
+    style   varchar(100) not null,
+    file    blob not null,
+    place   varchar(100) not null,
+    memo    varchar(500) not null,
+    write_date timestamp default current_timestamp
+);
+
+
+CREATE TABLE `signup_table` (
+  `idx` int(11) NOT NULL PRIMARY KEY COMMENT '자동 증가번호',
+  `id` varchar(16)  NOT NULL COMMENT '아이디',
+  `pw` varchar(16) NOT NULL COMMENT '비밀번호',
+  `irum` varchar(100) NOT NULL COMMENT '이름',
+  `email` varchar(250) NOT NULL COMMENT '이메일',
+  `hp` varchar(13) NOT NULL COMMENT '휴대폰',
+  `addr` varchar(500)  NOT NULL COMMENT '주소',
+  `gender` varchar(4)  NULL COMMENT '성별',
+  `birth` varchar(10)  NULL COMMENT '생년월일',
+  `chooga` varchar(250)  NULL COMMENT '추가입력사항',
+  `service` varchar(1000) NOT NULL COMMENT '이용약관동의',
+  `gaib_date` varchar(10) NOT NULL COMMENT '가입일자'
+) ;
