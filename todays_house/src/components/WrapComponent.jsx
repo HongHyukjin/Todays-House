@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
 import EmailComponent from './wrap/EmailComponent';
 import IntroComponent from './wrap/IntroComponent';
@@ -37,6 +38,10 @@ export default function WrapComponent () {
     console.log("");
 
   }, [])
+
+  React.useEffect(()=>{
+    console.log($('#header').offset());
+  })
 
 
   return (

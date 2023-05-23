@@ -3,7 +3,7 @@
 }
 #wrap #section1 {
   width: 100%;
-  height: 508px;
+  padding: 50px 0 0 0;
 }
 #wrap #section1 .container {
   width: 100%;
@@ -19,10 +19,13 @@
   display: flex;
 }
 #wrap #section1 .container .gap .content .left {
+  width: 847px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 #wrap #section1 .container .gap .content .left a > img {
-  width: auto;
+  width: 100%;
   height: 508px;
   border-radius: 5px;
   transition: all 0.2s;
@@ -30,9 +33,63 @@
 #wrap #section1 .container .gap .content .left a > img:hover {
   transform: scale(1.05);
 }
-#wrap #section1 .container .gap .content .right a > img {
-  width: auto;
-  height: 508px;
+#wrap #section1 .container .gap .content .left .txt {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+#wrap #section1 .container .gap .content .left .txt > p {
+  font-size: 30px;
+  line-height: 42px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -2px;
+  padding: 0 0 10px 0;
+}
+#wrap #section1 .container .gap .content .left .txt h5 {
+  font-size: 16px;
+  color: #fff;
+}
+#wrap #section1 .container .gap .content .left .txt h5 > img {
+  border-radius: 50%;
+  width: 24px;
+  margin: 0 10px 0 0;
+}
+#wrap #section1 .container .gap .content .right {
+  width: 269px;
   padding-left: 15px;
+}
+#wrap #section1 .container .gap .content .right .slide-container {
+  width: 100%;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view {
+  width: 100%;
+  overflow: hidden;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap {
+  width: 1400%;
+  display: flex;
+  margin: 0 0 0 -100%;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide {
+  width: 100%;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide a {
+  width: 100%;
+  display: block;
+  overflow: hidden;
   border-radius: 5px;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide a > img {
+  width: 100%;
+  height: 508px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+#wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide a > img:hover {
+  transform: scale(1.05);
 }

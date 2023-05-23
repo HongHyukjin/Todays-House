@@ -6,6 +6,17 @@
   height: 50px;
   border-top: 1px solid #eaedef;
   border-bottom: 1px solid #eaedef;
+  position: fixed;
+  top: auto;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+}
+#wrap #nav.on {
+  animation: header-paral 0.3s ease-in-out both;
+}
+#wrap #nav.off {
+  animation: header-Paral-off 0.3s ease-in-out both;
 }
 #wrap #nav .container {
   width: 100%;
@@ -39,4 +50,20 @@
 }
 #wrap #nav .container .gap .row2 .headbox2 ul li a:hover {
   color: #00bbff;
+}
+@keyframes header-paral {
+  0% {
+    top: 80px;
+  }
+  100% {
+    top: -50px;
+  }
+}
+@keyframes header-Paral-off {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 80px;
+  }
 }

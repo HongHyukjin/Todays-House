@@ -1,6 +1,54 @@
 import React from 'react';
+import $ from 'jquery';
 
 export default function NavComponent() {
+
+    const [state,setState] = React.useState({
+        newScroll:0,
+        oldScroll:0
+    })
+
+    
+    React.useEffect(()=>{
+        let newScroll = $(window).scrollTop();
+        let oldScroll = newScroll;
+       
+        $(window).scroll(function(e){
+            newScroll = $(window).scrollTop();
+            if(newScroll-oldScroll>0){
+                // console.log('아래로');
+                $('#nav').addClass('on');
+                $('#nav').removeClass('off');
+            }
+            if(newScroll-oldScroll<0){
+                // console.log('위로');
+                $('#nav').removeClass('on');
+                $('#nav').addClass('off');
+            }
+            if(newScroll===0){
+                $('#nav').removeClass('off');
+            }
+            oldScroll = newScroll;
+            // console.log(newScroll);
+            // console.log(oldScroll);
+            // console.log(newScroll-oldScroll);
+           
+        });
+
+        setState({
+            ...state,
+            newScroll:newScroll,
+            oldScroll:oldScroll
+        })
+        if($(window).scrollTop()===0){
+            $('#nav').css({"top":'auto'});
+        }
+
+    },[state.newScroll]);
+
+
+
+
     return (
         <div id='nav'>
             <div className="container">

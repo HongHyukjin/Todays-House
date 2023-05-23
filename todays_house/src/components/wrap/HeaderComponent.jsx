@@ -1,7 +1,26 @@
 import React from 'react';
+import $ from 'jquery';
 import {Link} from 'react-router-dom'
 
 export default function HeaderComponent(){
+
+    const [top,setTop]=React.useState(0);
+    React.useEffect(()=>{
+        let top = $(window).scrollTop();
+        $(window).scroll(function(e){
+        top = $(window).scrollTop();
+        if(top>=50){
+            $('.container').addClass('on');
+            setTop(top);
+        }
+        else{
+            $('.container').removeClass('on');
+            setTop(top);
+        }
+    });
+        
+    },[top]);
+    
     return (
         <div id='header'>
             <div className="container">

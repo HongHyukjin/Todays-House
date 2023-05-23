@@ -5,6 +5,17 @@
         height:50px;                    
         border-top: 1px solid #eaedef;
         border-bottom: 1px solid #eaedef;
+        position: fixed;
+        top: auto;
+        left:0;
+        z-index: 5;
+        background: #fff;
+        &.on{
+            animation: header-paral 0.3s ease-in-out both;
+        }
+        &.off{
+            animation: header-Paral-off 0.3s ease-in-out both;
+        }
         .container {
             width:100%;
             max-width: 1256px;
@@ -38,5 +49,13 @@
                 }
             }
         }
+    }
+    @keyframes header-paral {
+        0% {top:80px}
+        100% {top:-50px}
+    }
+    @keyframes header-Paral-off {
+        0% {top:-50px}
+        100% {top:80px}
     }
 }

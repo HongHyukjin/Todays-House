@@ -5,11 +5,16 @@ import UpdateComponent from './mypage/UpdateComponent';
 import ChangePwComponent from './mypage/ChangePwComponent';
 import MyPageComponentAll from './mypage/MyPageComponentAll';
 import MyPageComponentPt from './mypage/MyPageComponentPt';
+import NavComponent from './NavComponent';
 
 export default function MypageComponent () {
+  const [state,setState] = React.useState({
+
+  })
   return (
     <>
       <MypageNavComponent />
+   
       <Routes>
           <Route path='/' element={<MyPageComponentAll/>} />
           <Route path='/모두보기' element={<MyPageComponentAll/>} />

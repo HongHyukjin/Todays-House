@@ -7,12 +7,20 @@
 }
 #wrap #header .container {
   width: 100%;
-  max-width: 1256px;
-  padding: 0 60px;
-  margin: 0 auto;
+  position: fixed;
+  z-index: 7;
+  background: #fff;
+}
+#wrap #header .container.on {
+  position: fixed;
+  z-index: 7;
+  top: 0;
 }
 #wrap #header .container .gap {
   width: 100%;
+  max-width: 1256px;
+  padding: 0 60px;
+  margin: 0 auto;
 }
 #wrap #header .container .gap .row1 {
   width: 100%;
