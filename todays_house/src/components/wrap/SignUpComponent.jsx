@@ -69,8 +69,7 @@ export default function SignUpComponent () {
         e.preventDefault();
         if(state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError){
             // 이메일 인증 기능 넣어야됨
-            console.log(state.이메일 + "@" + state.이메일도메인);
-            console.log("이메일 발송");
+            
         }
         else{
             emailInput.current.focus();
@@ -245,22 +244,22 @@ export default function SignUpComponent () {
         })
 
         const formData = {
-            "user_email1": state.이메일1,
-            "user_email2": state.이메일2,
+            "user_email1": state.이메일,
+            "user_email2": state.이메일도메인,
             "user_pw": state.비밀번호,
             "user_nick": state.닉네임,
-            "user_service": state.이용약관
+            "user_service": 약관동의
         }
 
         $.ajax({
-            url: 'http://localhost:8080/JSP/오늘의집/signup_action.jsp',
+            url: 'http://localhost:8080/JSP/ohouse/signup_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
                 console.log('AJAX 성공!');
                 console.log(res);
                 console.log(JSON.parse(res));
-
+                window.location.href = '/'
             },
             error(err) {
                 console.log('AJAX 실패!' + err);

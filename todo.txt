@@ -6,7 +6,7 @@
 	노하우
 
 회원가입 - 박소연
-	회원가입 유효성검사
+	회원가입 유효성검사 - 홍혁진
 비밀번호재설정 - 정슬기
 	비밀번호재설정 유효성검사
 로그인 - 정슬기
@@ -31,37 +31,49 @@
 
 -----------------------------BACK----------------------------------
 
-DB      =    Todays-House
+DB      =    Todays_House
 Table   =     member
-	    picture_post 
+	    photo_post 
 	    house_post
 	    knowhow_post
 
-로그인 세션관리
-로그아웃 세션삭제
+로그인 세션관리 - 홍혁진
+로그아웃 세션삭제 - 홍혁진
 
+member 테이블 관리 - 정슬기
 회원가입 member Insert
 회원정보수정 member Update
 비밀번호변경 member Update
 
-사진 게시물 작성 picture_post Insert
-사진 게시물 수정 picture_post Update
-사진 게시물 삭제 picture_post Delete
+photo_post 테이블 관리 - 박소연
+사진 게시물 작성 photo_post Insert
+사진 게시물 수정 photo_post Update
+사진 게시물 삭제 photo_post Delete
 
+house_post 테이블 관리
 집들이 게시물 작성 house_post Insert
 집들이 게시물 수정 house_post Update
 집들이 게시물 삭제 house_post Delete
 
+knowhow_post테이블 관리
 노하우 게시물 작성 knowhow_post Insert
 노하우 게시물 수정 knowhow_post Update
 노하우 게시물 삭제 knowhow_post Delete
 
 메인
 	홈
-	사진(picture_post Read해서 뿌려주기)
-	집들이(house_post Read해서 뿌려주기)
-	노하우(knowhow_post Read해서 뿌려주기)
+	사진(photo_post 전체 Read)
+	집들이(house_post 전체 Read)
+	노하우(knowhow_post 전체 Read)
 
+마이페이지 
+	프로필
+		사진(로그인된 계정의 사진게시글만 Read)
+
+		집들이(로그인된 계정의 집들이게시글만 Read)
+			
+		노하우(로그인된 계정의 노하우게시글만 Read)
+		
 
 
 
