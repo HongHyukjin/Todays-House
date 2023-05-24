@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom'
 import $ from 'jquery';
 import NavComponent from './NavComponent';
 
-export default function HeaderComponent(){
+export default function HeaderComponent({isMypage}){
 
     const [state,setState] = React.useState({
         isLogin : false,
-        isNav:false
+        isNav:false,
     })
 
     React.useEffect(()=>{
@@ -23,7 +23,7 @@ export default function HeaderComponent(){
         }
         setState({
             ...state,
-            isLogin : isLogin
+            isLogin : isLogin,
         })
     },[])
 
@@ -52,10 +52,11 @@ export default function HeaderComponent(){
 
     React.useEffect(()=>{
         $('#mypagenav').css({height:'200px',"padding-top":"80px"});
-        $('#nav').css({position:"fixed" ,background:"#fff",padding:0,height:"50px"})
+        // $('#nav').css({position:"fixed" ,background:"#fff",padding:0,height:"50px"})
         if(state.isNav){
             $('#header').css({height:"130px"})
             $('#mypagenav').css({height:'250px',"padding-top":"130px"});
+            $('#nav').css({"padding-top" : "0", "height":"50px"})
         }
         else{
             $('#header').css({height:"80px"})

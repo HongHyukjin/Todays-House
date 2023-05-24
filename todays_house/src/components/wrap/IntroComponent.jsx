@@ -64,7 +64,7 @@ export default function IntroComponent () {
         let top = 0;
         $(window).scroll(function(){
             top = $(window).scrollTop();
-            console.log($(window).scrollTop());
+            // console.log($(window).scrollTop());
             setState({
                 ...state,
                 top : top
@@ -78,17 +78,18 @@ export default function IntroComponent () {
         })
     },[state.top])
 
+
     return (
         <>
         {
             topModal.isTopModal&&<TopmodalComponent  topModalClose={topModalClose} />  
         }
              
-            <HeaderComponent />
+            <HeaderComponent isMypag={state.isMypage} />
                 <Routes>
                       <Route index element={<MainComponent/>} top={state.top} />
                       <Route path='/메인' element={<MainComponent/>} />
-                      <Route path='/마이페이지/*' element={<MypageComponent />} />
+                      <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
                 </Routes>
             <FooterComponent/>
         </>
