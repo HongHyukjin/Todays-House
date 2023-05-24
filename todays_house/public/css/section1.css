@@ -62,6 +62,8 @@
 #wrap #section1 .container .gap .content .right {
   width: 269px;
   padding-left: 15px;
+  position: relative;
+  z-index: 1;
 }
 #wrap #section1 .container .gap .content .right .slide-container {
   width: 100%;
@@ -92,4 +94,26 @@
 }
 #wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide a > img:hover {
   transform: scale(1.05);
+}
+#wrap #section1 .container .gap .content .right .right-btn {
+  position: absolute;
+  display: block;
+  z-index: 2;
+  top: 50%;
+  right: -30px;
+  margin: -26px 0 0 0;
+  transform: rotate(180deg);
+}
+#wrap #section1 .container .gap .content .right .right-btn > img {
+  width: 58px;
+}
+#wrap #section1 .container .gap .content .right .left-btn {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  margin: -26px 0 0 0;
+  left: -10px;
+}
+#wrap #section1 .container .gap .content .right .left-btn > img {
+  width: 58px;
 }

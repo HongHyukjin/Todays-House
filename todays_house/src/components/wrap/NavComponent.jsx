@@ -29,9 +29,7 @@ export default function NavComponent() {
                 $('#nav').removeClass('off');
             }
             oldScroll = newScroll;
-            // console.log(newScroll);
-            // console.log(oldScroll);
-            // console.log(newScroll-oldScroll);
+
            
         });
 

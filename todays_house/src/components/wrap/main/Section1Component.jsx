@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import $ from 'jquery';
 
 export default  function Section1Component(){
     const [state,setState] = React.useState({
@@ -25,6 +26,30 @@ export default  function Section1Component(){
             console.log("AXIOS 실패"+err);
         })
     },[]);
+
+    React.useEffect(()=>{
+        const $slideWrap = $('#section1 .slide-wrap');
+        const $rightBtn = $('#section1 .right-btn');
+        const $leftBtn = $('#section1 .left-btn');
+        let cnt=0;
+        let n=state.n;
+
+        function sec1Slide(){
+            $slideWrap.stop().animate({left:`${cnt*-100}%`},600,function(){
+
+            });
+        }
+        function nextCount(){
+            cnt++;     
+            sec1Slide();
+        }
+        $rightBtn.on({
+            click(e){
+                e.preventDefault();
+                nextCount();
+            }
+        });
+    })
 
     
 
@@ -57,6 +82,8 @@ export default  function Section1Component(){
                                     </ul>
                                 </div>
                             </div>
+                            <a href="!#" className='right-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
+                            <a href="!#" className='left-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
                         </div>
                     </div>
                 </div>

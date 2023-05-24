@@ -60,6 +60,8 @@
                     .right {
                         width: 269px;
                         padding-left:15px;
+                        position: relative;
+                        z-index: 1;
                         .slide-container{
                             width: 100%;
                             .slide-view{
@@ -88,6 +90,30 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                        .right-btn{
+                            position: absolute;
+                            display: block;
+                            z-index: 2;
+                            top: 50%;
+                            right: -30px;
+                            margin: -26px 0 0 0;
+                            transform: rotate(180deg);
+                            >img{
+                                width: 58px;
+                               
+                            }
+                        }
+                        .left-btn{
+                            position: absolute;
+                            z-index: 2;
+                            top: 50%;
+                            margin: -26px 0 0 0;
+                            left: -10px;
+                            // box-shadow: 0 2px 5px rgba(63, 71, 77, 0.15);
+                            >img{
+                                width: 58px;
                             }
                         }
                     }
