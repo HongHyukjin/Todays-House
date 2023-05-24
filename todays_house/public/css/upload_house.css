@@ -1,0 +1,219 @@
+#UploadHouse {
+  width: 100%;
+  font-family: "Noto Sans KR";
+}
+#UploadHouse .row1 {
+  width: 100%;
+}
+#UploadHouse .row1 .container {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding: 0 60px;
+}
+#UploadHouse .row1 .container .gap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#UploadHouse .row1 .container .gap a {
+  display: block;
+  padding: 24px 0 23px 0;
+}
+#UploadHouse .row1 .container .gap button {
+  width: 134.17px;
+  padding: 11px 0 12px 0;
+  background: #35c5f0;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+}
+#UploadHouse form {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+#UploadHouse form .photo-box {
+  width: 100%;
+  padding: 130px 0 60px 0;
+}
+#UploadHouse form .photo-box .input {
+  width: 100%;
+  height: 405px;
+  position: relative;
+}
+#UploadHouse form .photo-box .input > input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#UploadHouse form .photo-box .input .img-upload {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 405px;
+  border: 0;
+  background: #f7f8fa;
+}
+#UploadHouse form .photo-box .input .img-upload .upload-box {
+  text-align: center;
+  margin: auto 0;
+}
+#UploadHouse form .photo-box .input .img-upload .upload-box > h5 {
+  font-size: 16px;
+  color: #2f3438;
+  font-weight: 700;
+  line-height: 20px;
+}
+#UploadHouse form .photo-box .input .img-upload .upload-box > p {
+  color: #828c94;
+  padding: 15px 0 30px 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+#UploadHouse form .photo-box .input .img-upload .upload-box .chooga-btn {
+  width: 143px;
+  height: 40px;
+  letter-spacing: -1px;
+  background: rgba(33, 38, 41, 0.8);
+  border: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#UploadHouse form .photo-box .input .img-upload .upload-box .chooga-btn:hover {
+  background: rgba(33, 38, 41, 0.4);
+}
+#UploadHouse form .photo-box .input .house-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+#UploadHouse form .photo-box .input .house-box > img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+}
+#UploadHouse form .photo-box .input .house-box .re {
+  position: absolute;
+  bottom: 0px;
+  right: -60px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+#UploadHouse form .photo-box .input .house-box .re:hover {
+  background: #f7f9fa;
+}
+#UploadHouse form .photo-box .input .house-box .img_del {
+  position: absolute;
+  bottom: 60px;
+  right: -60px;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+#UploadHouse form .photo-box .input .house-box .img_del:hover {
+  background: #f7f9fa;
+}
+#UploadHouse form .write-box {
+  width: 100%;
+}
+#UploadHouse form .write-box > ul {
+  width: 100%;
+}
+#UploadHouse form .write-box > ul > li {
+  width: 100%;
+  position: relative;
+}
+#UploadHouse form .write-box > ul > li:first-child {
+  border-bottom: 1px solid #ddd;
+}
+#UploadHouse form .write-box > ul > li > input {
+  width: 100%;
+  border: 0;
+  padding: 15px 80px 15px 5px;
+  font-size: 34px;
+  line-height: 31px;
+  font-weight: 600;
+  outline: 0;
+}
+#UploadHouse form .write-box > ul > li > input::-moz-placeholder {
+  color: #ddd;
+}
+#UploadHouse form .write-box > ul > li > input::placeholder {
+  color: #ddd;
+}
+#UploadHouse form .write-box > ul > li > span {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #828c94;
+  font-size: 15px;
+}
+#UploadHouse form .write-box > ul > li > span > i {
+  margin: 0 8px;
+}
+#UploadHouse form .write-box > ul > li .err {
+  padding: 8px 0 0 0;
+}
+#UploadHouse form .write-box > ul > li .err p {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: #ff7777;
+}
+#UploadHouse form .write-box > ul > li > textarea {
+  width: 100%;
+  height: 300px;
+  margin: 40px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #292929;
+  border: 0;
+  outline: 0;
+  resize: none;
+}
+#UploadHouse form .write-box > ul > li > textarea::-webkit-scrollbar {
+  display: none;
+}
+#UploadHouse form .write-box > ul > li > textarea::-moz-placeholder {
+  color: #ccc;
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 28px;
+  font-weight: 600;
+}
+#UploadHouse form .write-box > ul > li > textarea::placeholder {
+  color: #ccc;
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 28px;
+  font-weight: 600;
+}

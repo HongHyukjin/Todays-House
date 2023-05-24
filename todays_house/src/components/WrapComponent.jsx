@@ -6,6 +6,7 @@ import IntroComponent from './wrap/IntroComponent';
 import SigninComponent from './wrap/SigninComponent'
 import SignUpComponent from './wrap/SignUpComponent';
 import UploadPhotoComponent from './wrap/mypage/UploadPhotoComponent';
+import UploadHouseComponent from './wrap/mypage/UploadHouseComponent';
 
 
 export default function WrapComponent () {
@@ -54,6 +55,7 @@ export default function WrapComponent () {
                     <Route path="/회원가입" element={<SignUpComponent />}/>
                     <Route path="/비밀번호재설정" element={<EmailComponent />}/>
                     <Route path="/사진업로드" element={<UploadPhotoComponent />}/>
+                    <Route path="/집들이업로드" element={<UploadHouseComponent />}/>
             </Routes>
          </BrowserRouter>
 

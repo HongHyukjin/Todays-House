@@ -2,10 +2,12 @@ import axios from 'axios';
 import React from 'react';
 import $ from 'jquery';
 
+
 export default  function Section1Component(){
     const [state,setState] = React.useState({
         슬라이드:[],
-        n:0
+        n:0,
+        cnt:0
     });
 
     React.useEffect(()=>{
@@ -29,27 +31,70 @@ export default  function Section1Component(){
 
     React.useEffect(()=>{
         const $slideWrap = $('#section1 .slide-wrap');
+        const $right=$('#section1 .right');
         const $rightBtn = $('#section1 .right-btn');
         const $leftBtn = $('#section1 .left-btn');
-        let cnt=0;
+        let cnt=state.cnt;
         let n=state.n;
-
+        let setId=0;
+        $slideWrap.css({width:`${100*(n+2)}%`});
         function sec1Slide(){
             $slideWrap.stop().animate({left:`${cnt*-100}%`},600,function(){
-
+                if(cnt>=n){
+                    cnt=0;
+                }
+                if(cnt<0){
+                    cnt=n-1;
+                }
+                setState({
+                    ...state,
+                    cnt:cnt
+                })
+                $slideWrap.stop().animate({left:`${-100*cnt}%`},0);
             });
         }
         function nextCount(){
             cnt++;     
             sec1Slide();
         }
+        function PrevCount(){
+            cnt--;     
+            sec1Slide();
+        }
+        function autoTimer(){
+            clearInterval(setId);
+            setId = setInterval(nextCount,3000);
+        }
+        autoTimer();
+
         $rightBtn.on({
             click(e){
                 e.preventDefault();
                 nextCount();
             }
         });
-    })
+        $leftBtn.on({
+            click(e){
+                e.preventDefault();
+                PrevCount();
+            }
+        });
+
+        $right.on({
+            mouseover(){
+                clearInterval(setId);
+                $leftBtn.stop().fadeIn(800);
+                $rightBtn.stop().fadeIn(800);
+            },
+            mouseleave(){
+                $leftBtn.stop().fadeOut(800);
+                $rightBtn.stop().fadeOut(800);
+                autoTimer();
+            }
+        });
+
+
+    },[state.n])
 
     
 
@@ -81,9 +126,14 @@ export default  function Section1Component(){
                                     
                                     </ul>
                                 </div>
+                                <a href="!#" className='right-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
+                                <a href="!#" className='left-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
                             </div>
-                            <a href="!#" className='right-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
-                            <a href="!#" className='left-btn'><img src="./images/arrow_lf.svg" alt="" /></a>
+                            <span className='count-box'>
+                                <em className='current-number'>{state.cnt+1}</em>
+                                <i>/</i>
+                                <em className='total-number'>{state.n}</em>
+                            </span>
                         </div>
                     </div>
                 </div>

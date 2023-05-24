@@ -106,7 +106,7 @@
                     display: flex;
                     .left{
                         width: 50%;
-                        .photo-box{
+                        >.photo-box{
                             height: 275px;
                             margin: 0 30px 0 0;
                             border: 1px dashed #dadce0 ;

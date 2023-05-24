@@ -4,12 +4,14 @@
 #wrap #section1 {
   width: 100%;
   padding: 50px 0 0 0;
+  position: relative;
 }
 #wrap #section1 .container {
   width: 100%;
   margin: 30px auto;
   max-width: 1256px;
   padding: 0 60px;
+  position: relative;
 }
 #wrap #section1 .container .gap {
   width: 100%;
@@ -17,6 +19,7 @@
 #wrap #section1 .container .gap .content {
   width: 100%;
   display: flex;
+  position: relative;
 }
 #wrap #section1 .container .gap .content .left {
   width: 847px;
@@ -62,6 +65,7 @@
 #wrap #section1 .container .gap .content .right {
   width: 269px;
   padding-left: 15px;
+  margin: 0 15px 0 0;
   position: relative;
   z-index: 1;
 }
@@ -76,6 +80,7 @@
   width: 1400%;
   display: flex;
   margin: 0 0 0 -100%;
+  position: relative;
 }
 #wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide {
   width: 100%;
@@ -95,25 +100,50 @@
 #wrap #section1 .container .gap .content .right .slide-container .slide-view .slide-wrap .slide a > img:hover {
   transform: scale(1.05);
 }
-#wrap #section1 .container .gap .content .right .right-btn {
+#wrap #section1 .container .gap .content .right .slide-container .right-btn {
   position: absolute;
-  display: block;
-  z-index: 2;
+  display: none;
+  z-index: 5;
   top: 50%;
   right: -30px;
   margin: -26px 0 0 0;
   transform: rotate(180deg);
+  transition: all 0.3s;
 }
-#wrap #section1 .container .gap .content .right .right-btn > img {
+#wrap #section1 .container .gap .content .right .slide-container .right-btn > img {
   width: 58px;
 }
-#wrap #section1 .container .gap .content .right .left-btn {
+#wrap #section1 .container .gap .content .right .slide-container .left-btn {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
+  display: none;
   top: 50%;
   margin: -26px 0 0 0;
   left: -10px;
+  transition: all 0.3s;
 }
-#wrap #section1 .container .gap .content .right .left-btn > img {
+#wrap #section1 .container .gap .content .right .slide-container .left-btn > img {
   width: 58px;
+}
+#wrap #section1 .container .gap .content .right .count-box {
+  position: absolute;
+  width: 60px;
+  z-index: 2;
+  bottom: 10px;
+  right: 15px;
+  background: rgba(33, 38, 41, 0.5);
+  border-radius: 13px;
+  line-height: 24px;
+  text-align: center;
+}
+#wrap #section1 .container .gap .content .right .count-box em {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+#wrap #section1 .container .gap .content .right .count-box i {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 3px;
 }
