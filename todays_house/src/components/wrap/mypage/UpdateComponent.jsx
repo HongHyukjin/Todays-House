@@ -162,40 +162,6 @@ export default function UpdateComponent () {
     });
   }
 
-  
-  const getUserData = () => {
-  //   const user_email = sessionStorage.getItem('user_email');
-  //   $.ajax({
-  //     url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
-  //     data : {user_email : user_email},
-  //     type: 'GET',
-  //     dataType:'json',  
-      
-  //     success(res) {
-  //         console.log('AJAX 성공!');
-  //         console.log(res.result); // 결과 데이터 출력
-  //         // console.log(JSON.parse(res));
-  //     },
-  //     error(err) {
-  //         console.log('AJAX 실패!' + err);
-  //     }
-  // });
-  $.ajax({
-    url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
-    type: 'GET',
-    dataType: 'json',
-    success(res) {
-      console.log('AJAX 성공!');
-      console.log(res.result); // 결과 데이터 출력
-    },
-    error(err) {
-      console.log('AJAX 실패!' + err);
-    },
-    beforeSend(xhr) {
-      xhr.setRequestHeader('Accept', 'application/json'); // 응답 헤더에 Accept 추가
-    }
-  });
-  }
 
   React.useEffect(()=>{
     getUserData();
