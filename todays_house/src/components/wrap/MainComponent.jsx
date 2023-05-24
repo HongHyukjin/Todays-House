@@ -12,7 +12,7 @@ import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
 
-const MainComponent = () => {
+export default function MainComponent () {
     return (
         <>
             <NavComponent />
@@ -31,4 +31,3 @@ const MainComponent = () => {
     );
 };
 
-export default MainComponent;

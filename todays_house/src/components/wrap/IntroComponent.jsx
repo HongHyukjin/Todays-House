@@ -3,10 +3,14 @@ import TopmodalComponent from '../wrap/TopmodalComponent';
 import HeaderComponent from '../wrap/HeaderComponent';
 import FooterComponent from '../wrap/FooterComponent';
 import { Routes, Route}  from 'react-router-dom';
+import $ from 'jquery';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
 
 export default function IntroComponent () {
+    const [state,setState] = React.useState({
+        top : 0
+    })
     const[topModal,setTopModal]=React.useState({
         key :'TODAYS_HOUSE_TOPMODAL',
         isTopModal:true
@@ -49,19 +53,43 @@ export default function IntroComponent () {
     
     React.useEffect(()=>{
       getTopCookieMethod();
+      if(!topModal.isTopModal){
+        $('#header').css({top : 0});
+        $('#mypagenav').css({height : "200px", "padding-top" : "80px", margin : 0})
+      }
+
     },[topModal.isTopModal])
     
+    React.useEffect(()=>{
+        let top = 0;
+        $(window).scroll(function(){
+            top = $(window).scrollTop();
+            // console.log($(window).scrollTop());
+            setState({
+                ...state,
+                top : top
+            })
+            if(top > 50){
+                $('#header').css({top : 0});
+            }
+            else{
+                $('#header').css({top : "auto"});
+            }
+        })
+    },[state.top])
+
+
     return (
         <>
         {
             topModal.isTopModal&&<TopmodalComponent  topModalClose={topModalClose} />  
         }
              
-            <HeaderComponent />
+            <HeaderComponent isMypag={state.isMypage} />
                 <Routes>
-                      <Route index element={<MainComponent/>} />
+                      <Route index element={<MainComponent/>} top={state.top} />
                       <Route path='/메인' element={<MainComponent/>} />
-                      <Route path='/마이페이지/*' element={<MypageComponent />} />
+                      <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
                 </Routes>
             <FooterComponent/>
         </>

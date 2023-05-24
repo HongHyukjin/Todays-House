@@ -1,8 +1,45 @@
 import React from 'react';
+import $ from 'jquery';
 import {Link} from 'react-router-dom';
 
 
 export default function MyPageComponentAll ()  {
+
+    const [state,setState] = React.useState({
+        닉네임 : '',
+        imgUrl : ''
+    })
+
+    const getUserData = () => {
+        const user_email = sessionStorage.getItem('user_email');
+        const form_data = {
+            "user_email": user_email
+        }
+
+        $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success(res) {
+                console.log('AJAX 성공!');
+                console.log(res.result); // 결과 데이터 출력
+                setState({
+                    ...state,
+                    닉네임 : res.result.닉네임 === "null" ? '' : res.result.닉네임,
+                    imgUrl: res.result.프로필이미지 === "null" ? '../images/avatar.avif' : res.result.프로필이미지
+                })
+            },
+            error(err) {
+                console.log('AJAX 실패!' + err);
+            },
+        });
+    }
+
+    React.useEffect(() => {
+        getUserData();
+    }, [])
+
     return (
         <div id='myPageAll' >
             <div className="container">
@@ -11,9 +48,9 @@ export default function MyPageComponentAll ()  {
                         <div className="profile">
                             <div className="up-box">
                                 <div className="img-box">
-                                    <img src="../images/avatar.png" alt="" />
+                                    <img src={state.imgUrl} alt="" />
                                 </div>
-                                <h2>닉네임</h2>
+                                <h2>{state.닉네임}</h2>
                                 <ul>
                                     <li>팔로워 <span>0</span> </li>
                                     <i>|</i>

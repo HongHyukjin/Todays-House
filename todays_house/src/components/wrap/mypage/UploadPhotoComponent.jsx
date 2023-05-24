@@ -94,7 +94,6 @@ export default  function UploadPhotoComponent ()  {
     })
 
     const onClickSubmit=(e)=>{
-        e.preventDefault();
         console.log('클릭');
         onSubmitPhotoPost();
         console.log('길이 : ',state.imgUrl.length);
@@ -113,12 +112,13 @@ export default  function UploadPhotoComponent ()  {
       
     
         $.ajax({
-            url:'http://localhost:8080/jsp/photo_post_DAO_DTO/photo_post/post_action.jsp',
+            url:'http://localhost:8080/JSP/ohouse/post_action.jsp',
             type:'post',
             data:formData,
             success(res){
                 console.log('AJAX 성공');
                 console.log(res);
+                window.location.href = '/마이페이지'
             },
             error(err){
                 console.log('AJAX 실패'+err);

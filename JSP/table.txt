@@ -22,6 +22,7 @@ CREATE TABLE ohouse_member(
    user_birth      varchar(300),
    user_oneline    varchar(300),
    user_service    varchar(1000)   NOT NULL,
+   user_profile    blob    null,
    create_date timestamp DEFAULT CURRENT_TIMESTAMP,
    PRIMARY KEY (idx, user_email)
  );

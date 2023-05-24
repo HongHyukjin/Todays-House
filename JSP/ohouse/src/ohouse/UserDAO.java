@@ -133,7 +133,7 @@ public class UserDAO {
                 e.printStackTrace();
             }
         }
-        return -1;
+        return -1; 
     }
 
 
@@ -148,8 +148,8 @@ public class UserDAO {
             rs = ps.executeQuery();
             if(rs.next()){
                 int index = rs.getString("user_email").indexOf("@");
-                userDTO.setUser_email1(rs.getString("user_email1").substring(0, index));
-                userDTO.setUser_email2(rs.getString("user_email2").substring(index+1));
+                userDTO.setUser_email1(rs.getString("user_email").substring(0, index));
+                userDTO.setUser_email2(rs.getString("user_email").substring(index+1));
                 userDTO.setUser_nick(rs.getString("user_nick"));
             }
         } catch(Exception e){ 

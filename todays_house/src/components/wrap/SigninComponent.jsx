@@ -67,21 +67,6 @@ export default function SigninComponent(){
         })
     }
 
-    // React.useEffect(()=>{
-    //     const storedEmail = sessionStorage.getItem('user_email1');
-    //     const storedEmailDomain = sessionStorage.getItem('user_email2');
-    //     const storedPassword = sessionStorage.getItem('user_pw');
-
-    //     if(storedEmail && storedEmailDomain && storedPassword){
-    //         setState({
-    //             ...state,
-    //             이메일: storedEmail,
-    //             이메일도메인: storedEmailDomain,
-    //             비밀번호: storedPassword
-    //         });
-    //     }
-    // },[]);
-
     const onSubmitSignin =(e)=>{
         e.preventDefault();
         let index = state.이메일.indexOf("@");
