@@ -35,7 +35,7 @@ export default function Sub3Component(){
 
 
 
-
+    // 노하우 페이지
     return (
         <div id='sub3'>
             <div className="container">

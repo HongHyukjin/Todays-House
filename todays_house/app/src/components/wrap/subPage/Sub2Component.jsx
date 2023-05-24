@@ -29,6 +29,7 @@ export default function Sub2Component() {
         getNewProduct2();
     }, []);
 
+    // 집들이 페이지
     return (
         <div id='sub2'>
             <div className="container">

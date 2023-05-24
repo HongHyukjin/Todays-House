@@ -5,6 +5,7 @@ import FooterComponent from '../wrap/FooterComponent';
 import { Routes, Route}  from 'react-router-dom';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
+import ShopingComponent from './ShopingComponent';
 
 export default function IntroComponent () {
     return (

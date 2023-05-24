@@ -11,16 +11,17 @@ import Section8Component from './main/Section8Component';
 import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
-import Sub2Component from './Sub2Component';
-import Sub3Component from './Sub3Component';
+import Sub1Component from './subPage/Sub1Component';
+import Sub2Component from './subPage/Sub2Component';
+import Sub3Component from './subPage/Sub3Component';
+import ShopingComponent from './ShopingComponent';
+
 
 const MainComponent = () => {
     return (
         <>
             <NavComponent />
-            <Sub2Component/>
-            <Sub3Component/>
-            {/* <Section1Component/>
+            <Section1Component/>
             <Section2Component/>
             <Section3Component/>
             <Section4Component/>
@@ -30,7 +31,10 @@ const MainComponent = () => {
             <Section8Component/>
             <Section9Component/>
             <Section10Component/>
-            <Section11Component/> */}
+            <Section11Component/>
+            <Sub1Component/>
+            <Sub2Component/>
+            <Sub3Component/>
         </>
     );
 };
