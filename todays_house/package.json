@@ -22,6 +22,9 @@
     "stream-browserify": "^3.0.0",
     "web-vitals": "^2.1.4"
   },
+  "browser": {
+    "stream": false
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

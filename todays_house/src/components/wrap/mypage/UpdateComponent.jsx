@@ -178,7 +178,7 @@ export default function UpdateComponent () {
   //     }
   // });
   $.ajax({
-    url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
+    url: 'http://localhost:8080/jsp/0524ohouse/update_getjoin_action.jsp',
     type: 'GET',
     dataType: 'json',
     success(res) {
