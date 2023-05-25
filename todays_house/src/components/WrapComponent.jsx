@@ -7,6 +7,7 @@ import SignUpComponent from './wrap/SignUpComponent';
 import UploadPhotoComponent from './wrap/mypage/UploadPhotoComponent';
 
 
+
 export default function WrapComponent () {
 
   React.useEffect(() => {
