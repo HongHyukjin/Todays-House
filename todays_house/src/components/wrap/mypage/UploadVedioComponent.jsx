@@ -3,23 +3,22 @@ import React, {useRef} from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router-dom';
 
-export default  function UploadPhotoComponent ()  {
+export default  function UploadVedioComponent ()  {
     const [state,setState] = React.useState({
-        file : '',
-        imgUrl : '',
-        pyeong:'',
-        type:'',
-        style:'',
-        place:'',
-        memo:'',
-        imgHeight:0
+        video_file : '',
+        vedio_url : '',
+        video_pyeong:'',
+        video_type:'',
+        video_style:'',
+        video_place:'',
+        video_memo:''
       })
     
-      const imageInput = useRef();
+      const videoInput = useRef();
     
       const onClickImageUpload = (e) => {
         e.preventDefault();
-        imageInput.current.click();
+        videoInput.current.click();
         console.log("img upload btn click");
    
       }
@@ -38,14 +37,14 @@ export default  function UploadPhotoComponent ()  {
         reader.onload = (event) =>{
             setState({
                 ...state,
-                file: file,
-                imgUrl: event.target.result,
+                video_file: file,
+                vedio_url: event.target.result,
             })
         }
         reader.readAsDataURL(file);
 
 
-        let photoBox = $('#uploadPt .photo-box');
+        let photoBox = $('#uploadPt .vedio-box');
         photoBox.css({border:0});
         
       }
@@ -56,54 +55,57 @@ export default  function UploadPhotoComponent ()  {
         console.log("img delete");
         setState({
           ...state,
-          file : '',
-          imgUrl:'',
+          video_file : '',
+          vedio_url:'',
         })
-        let photoBox = $('#uploadPt .photo-box');
+        let photoBox = $('#uploadPt .vedio-box');
         photoBox.css({border:'1px dashed #dadce0 '});
       }
     
       React.useEffect(()=>{
-        if(state.file !== ''){
-          $('#uploadPt .input .img_del').css({"display":"block"})
-          $('#uploadPt .ico').css({"display":"none"})
-          $('#uploadPt .re').css({"display":"block"})
-          $('#uploadPt .input').css({"background":"#f7f8fa"})
-          $('#uploadPt .img_upload:hover').css({"background":"#fff"})
+        if(state.video_file !== ''){
+          $('#uploadVedio .input .img_del').css({"display":"block"})
+          $('#uploadVedio .ico').css({"display":"none"})
+          $('#uploadVedio .re').css({"display":"block"})
+          $('#uploadVedio .input').css({"background":"#f7f8fa"})
+          $('#uploadVedio .vedio-upload').css({"display":"none"})
+          $('#uploadVedio .re-del').css({"background":" linear-gradient(transparent, rgba(0, 0, 0, 0.54))"})
         }
         else{
-          $('#uploadPt .input .img_del').css({"display":"none"})
-          $('#uploadPt .ico').css({"display":"flex"})
-          $('#uploadPt .re').css({"display":"none"})
-          $('#uploadPt .input').css({"background":"trnsparent"})
+          $('#uploadVedio .input .img_del').css({"display":"none"})
+          $('#uploadVedio .ico').css({"display":"flex"})
+          $('#uploadVedio .re').css({"display":"none"})
+          $('#uploadVedio .input').css({"background":"trnsparent"})
+          $('#uploadVedio .vedio-upload').css({"display":"block"})
+          $('#uploadVedio .re-del').css({"background":"transparent"})
         }
-      }, [state.file])
+      }, [state.video_file])
     
       React.useEffect(()=>{
         let imgHeight = $('.section3 .input img').height();
-        $('#uploadPt .section3 .input >div').css({"height": imgHeight});
-      },[state.imgUrl])
+        $('#uploadVedio .section3 .input >div').css({"height": imgHeight});
+      },[state.vedio_url])
 
     const onClickSubmit=(e)=>{
         e.preventDefault();
         console.log('클릭');
-        onSubmitPhotoPost();
-        console.log('길이 : ',state.imgUrl.length);
+        onSubmitVideoPost();
+        console.log('길이 : ',state.vedio_url.length);
     } 
 
-    const onSubmitPhotoPost=()=>{ 
+    const onSubmitVideoPost=()=>{ 
         
         const formData = {
-            "pyeong":state.pyeong,
-            "type":state.type,
-            "style":state.style,
-            "file":state.imgUrl,
-            "place":state.place,
-            "memo":state.memo
+            "video_pyeong":state.video_pyeong,
+            "video_type":state.video_type,
+            "video_style":state.video_style,
+            "video_file":state.vedio_url,
+            "video_place":state.video_place,
+            "video_memo":state.video_memo
         }
 
         $.ajax({
-            url:'http://localhost:8080/JSP/photo_post_DAO_DTO/photo_post/post_action.jsp',
+            url:'http://localhost:8080/JSP/video_post_DAO_DTO/video_post/post_action.jsp',
             type:'post',
             data:formData,
             success(res){
@@ -121,35 +123,35 @@ export default  function UploadPhotoComponent ()  {
         let 평수 =e.target.value;
         setState({
             ...state,
-            pyeong:평수
+            video_pyeong:평수
         }) 
     }
     const onChangeType =(e)=>{
         let 주거형태 =e.target.value;
         setState({
             ...state,
-            type:주거형태
+            video_type:주거형태
         }) 
     }
     const onChangeStyle =(e)=>{
         let 스타일 =e.target.value;
         setState({
             ...state,
-            style:스타일
+            video_style:스타일
         }) 
     }
     const onChangePlace =(e)=>{
         let 공간 =e.target.value;
         setState({
             ...state,
-            place:공간
+            video_place:공간
         }) 
     }
     const onChangeMemo =(e)=>{
         let 메모 =e.target.value;
         setState({
             ...state,
-            memo:메모
+            video_memo:메모
         }) 
     }
 
@@ -157,7 +159,7 @@ export default  function UploadPhotoComponent ()  {
 
 
     return (
-        <div id='uploadPt'>
+        <div id='uploadVedio'>
             <section className='section1'>
                 <div className="container">
                     <div className="gap">
@@ -170,8 +172,8 @@ export default  function UploadPhotoComponent ()  {
                 <div className="container">
                     <div className="gap">
                         <ul>
-                            <li><Link href="/사진업로드" className='nav-btn on' >사진</Link></li>
-                            <li><Link to="/비디오업로드" className='nav-btn'>동영상</Link></li>
+                            <li><Link to="/사진업로드" className='nav-btn' >사진</Link></li>
+                            <li><Link to="/비디오업로드" className='nav-btn on'>동영상</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -179,10 +181,10 @@ export default  function UploadPhotoComponent ()  {
             <section className='section3'>
                 <div className="container">
                     <div className="gap">
-                        <form action="./post_action.jsp" name='upload_pt' id='uploadPt' onSubmit={onSubmitPhotoPost}>
+                        <form action="./post_action.jsp" name='upload_pt' id='uploadPt' onSubmit={onSubmitVideoPost}>
                             <div className="btn-box">
                                 <div className="select">
-                                    <select name="pyeong" id="pyeong" onChange={onChangePyeong} value={state.pyeong}>
+                                    <select name="video_pyeong" id="pyeong" onChange={onChangePyeong} value={state.video_pyeong}>
                                         <option value="평수">평수</option>
                                         <option value="10평 미만">10평 미만</option>
                                         <option value="10평대">10평대</option>
@@ -194,7 +196,7 @@ export default  function UploadPhotoComponent ()  {
                                     <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dbdbdb"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
                                 </div>
                                 <div className="select">
-                                    <select name="type" id="type" onChange={onChangeType} value={state.type}>
+                                    <select name="video_type" id="type" onChange={onChangeType} value={state.video_type}>
                                         <option value="주거형태">주거형태</option>
                                         <option value="원룸&오피스텔">원룸&오피스텔</option>
                                         <option value="아파트">아파트</option>
@@ -208,7 +210,7 @@ export default  function UploadPhotoComponent ()  {
 
                                 </div>
                                 <div className="select">
-                                    <select name="style" id="style"  onChange={onChangeStyle} value={state.style}>
+                                    <select name="video_style" id="style"  onChange={onChangeStyle} value={state.video_style}>
                                         <option value="스타일">스타일</option>
                                         <option value="모던">모던</option>
                                         <option value="북유럽">북유럽</option>
@@ -225,25 +227,27 @@ export default  function UploadPhotoComponent ()  {
                             </div>
                             <div className="bottom">
                                 <div className="left">
-                                    <div className="photo-box">
+                                    <div className="vedio-box">
                                         <div className="input">
-                                            <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} />
-                                            {/* <img src={state.imgUrl} alt="" /> */}
-                                            <button className='img_upload' onClick={onClickImageUpload}>        
+                                            <input type="file" name="video_input" id="videoInput" accept='video/mp4,video/mkv, video/x-m4v,video/*' ref={videoInput} onChange={onChangeImage} onClick={onClickImage} />
+                                            {/* <img src={state.vedio_url} alt="" /> */}
+                                            <button className='vedio-upload' onClick={onClickImageUpload}>        
                                                 <div className="ico">
                                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="#828c94" preserveAspectRatio="xMidYMid meet" className="css-hcf77b em8wpqo2"><path d="M11.952 9.778l2.397-5.994A1.778 1.778 0 0 1 16 2.667h16c.727 0 1.38.442 1.65 1.117l2.398 5.994h10.174c.982 0 1.778.796 1.778 1.778v32c0 .981-.796 1.777-1.778 1.777H1.778A1.778 1.778 0 0 1 0 43.556v-32c0-.982.796-1.778 1.778-1.778h10.174zM24 38c6.075 0 11-4.925 11-11s-4.925-11-11-11-11 4.925-11 11 4.925 11 11 11z"></path></svg>
-                                                        <h5>사진 올리기</h5>
-                                                        <p>(*최대 10장까지)</p>
+                                                        <h5>동영상 올리기</h5>
+                                                        <p>(*5GB 미만, 3초~60초 길이의<br />세로 영상을 권장합니다.)</p>
                                                 </div>                                                                                           
                                             </button>
                                             <div>
-                                                <img src={state.imgUrl} alt="" />
-                                                <button className="re" onClick={onClickImageUpload}>
-                                                    <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
-                                                </button>
-                                                <button className='img_del' onClick={onClickDelImage}>
-                                                    <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
-                                                </button>
+                                                <video id="video" src={state.vedio_url} alt="" />
+                                                <div className="re-del">
+                                                    <button className="re" onClick={onClickImageUpload}>
+                                                        <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
+                                                    </button>
+                                                    <button className='img_del' onClick={onClickDelImage}>
+                                                        <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                                    </button>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -252,7 +256,7 @@ export default  function UploadPhotoComponent ()  {
                                 <div className="right">
                                     <ul>
                                         <li>
-                                            <select name="place" id="place" onChange={onChangePlace}>
+                                            <select name="video_place" id="place" onChange={onChangePlace}>
                                                 <option value="공간 (필수)">공간 (필수)</option>
                                                 <option value="원룸">원룸</option>
                                                 <option value="거실">거실</option>
@@ -272,7 +276,7 @@ export default  function UploadPhotoComponent ()  {
                                             <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#bdbdbd"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
                                         </li>
                                         <li>
-                                            <textarea type="memo" id='pictureInfo' name='picture-info' placeholder='사진에 대해 설명해주세요.' onChange={onChangeMemo}/>
+                                            <textarea type="text" id='pictureInfo' name='video_memo' placeholder='사진에 대해 설명해주세요.' onChange={onChangeMemo}/>
                                         </li>
                                         <li>
 

@@ -12,6 +12,20 @@ create table photo_post(
     write_date timestamp default current_timestamp
 );
 
+// 동영상 올리기
+create table video_post(
+    idx     int     auto_increment primary key,
+    user_email  varchar(100) null,
+    video_pyeong  varchar(100) not null,
+    video_type    varchar(100) not null,
+    video_style   varchar(100) not null,
+    video_file    longblob not null,
+    video_place   varchar(100) not null,
+    video_memo    varchar(500) not null,
+    write_date timestamp default current_timestamp
+);
+
+
 // 집들이 올리기
 create table house_post(
     idx     int     auto_increment primary key,
@@ -20,4 +34,6 @@ create table house_post(
     house_content varchar(2000) not null,
     write_date timestamp default current_timestamp
 );
+
+
 

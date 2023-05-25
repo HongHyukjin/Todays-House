@@ -81,7 +81,7 @@ export default  function Section1Component(){
         });
 
         $right.on({
-            mouseover(){
+            mouseenter(){
                 clearInterval(setId);
                 $leftBtn.stop().fadeIn(800);
                 $rightBtn.stop().fadeIn(800);

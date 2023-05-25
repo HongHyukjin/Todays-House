@@ -111,6 +111,26 @@ export default function UploadHouseComponent ()  {
 
       },[state.house_title]);
 
+      React.useEffect(()=>{
+        $('.guide-btn').on({
+          click(e){
+            e.preventDefault();
+            let guideContent = $('.guide-content');
+            guideContent.removeClass("hide");
+            guideContent.toggleClass("hide");
+            if( guideContent.is(":visible") ){
+                guideContent.slideUp();
+                $('.u9pb').css({"transform":"rotate(0)"});
+            }
+            else{
+                guideContent.slideDown();
+                $('.u9pb').css({"transform":"rotate(180deg)"});
+            }
+            
+          }
+        });
+      },[]);
+
       const onClickSubmit=(e)=>{
         e.preventDefault();
         onSubmitHousePost();
@@ -147,6 +167,35 @@ export default function UploadHouseComponent ()  {
                         <button onClick={onClickSubmit}>올리기</button>
                     </div>
                 </div>
+            </div>
+            <div className="guide">
+              <button className='guide-btn'>
+                <svg className="icon" width="25" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMidYMid meet"><rect width="25" height="25" fill="#6ADFC4" rx="10"></rect><g fill="#FFF" transform="translate(7 8)"><rect width="7" height="1.5" rx=".8"></rect><rect width="11" height="1.5" y="4" rx=".8"></rect><rect width="11" height="1.5" y="8" rx=".8"></rect></g></svg>
+                <b>집들이 작성 가이드</b>
+                <p>원활한 집들이 발행을 위해 꼭 읽어주세요.</p>
+                <div className="arrow">
+                  <svg className="u9pb" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                </div>
+              </button>
+              <div className="guide-content hide">
+                <ul className='one'>
+                  <li className='one-one'>에디터의 섭외 없이 작성해주시는 경우엔 확인 후 <b>게시글 오픈이 반려될 수도 있습니다.</b> 오픈 및 반려 여부는 <b>댓글로</b> 안내 드립니다. </li>
+                  <li className='one-one'>오픈 및 반려 여부 확인은 작성해주신 시점을 기준으로 일주일-10일 가량 소요되며, <b>댓글로</b> 결과를 안내 드립니다.</li>
+                  <li className='one-one'>간단한 자기 소개 후 집에 관한 이야기를 들려주세요. (집 공간 사진 최소 15장 이상)</li>
+                  <li className='one-one'>집 사진/소개글 관련해서 고민이 될 땐 이 링크를 참고해주세요.
+                    <ul className='two'>
+                      <li className='two-two'>원룸·오피스텔·방을 소개하는 경우 (<a href="https://ohouse.notion.site/6569e378ef97497a9e17d884c1665da1">바로가기</a>)</li>
+                      <li className='two-two'>아파트·빌라·주택 전체를 소개하는 경우 (<a href="https://ohouse.notion.site/7f783b644f9746eea77ff8b6c959389e">바로가기</a>)</li>
+                    </ul>
+                  </li> 
+                  <li className='one-one'>도면이 있으면 좋아요. (손그림도 OK)</li>
+                  <li className='one-one'>사진 속 제품 정보를 본문에 최대한 적어주세요. (제품분류/브랜드/제품명 순서)</li>
+                  <li className='one-one'>사진 첨부 시 용량은 장당 최대 20MB까지 업로드할 수 있고, jpg, png, webp, heif, heic, gif 포맷을 지원합니다.</li>
+                  <li className='one-one'>정보를 많이 입력할수록 검색 결과에 많이 노출되어 조회수가 올라갑니다.</li>
+                  <li className='one-one'>커버사진과 제목은 에디터에 의해 변경될 수 있습니다.</li>
+                  <li className='one-one'>글 작성과 이미지 업로드 시, 타인의 지식재산권을 침해하지 않도록 유의해주세요.</li>
+                </ul>
+              </div>
             </div>
             <form action="" name='upload_ho' id='uploadHo' onSubmit={onSubmitHousePost}>
                 <div className="photo-box">
