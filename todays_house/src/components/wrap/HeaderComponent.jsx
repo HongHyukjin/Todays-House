@@ -121,21 +121,21 @@ export default function HeaderComponent({isMypage}){
                                                                 <div className="sub">
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="!#">
+                                                                            <Link to="/사진업로드">
                                                                                 <div><img src="./images/picture.svg" alt="" /></div>
                                                                                 <h2>사진/동영상 올리기</h2>
                                                                                 <h3>우리 집의 공간과 나의 일상을 기록해 보세요.</h3>
-                                                                            </a>
+                                                                            </Link>
                                                                         </li>
                                                                     
                                                                     </ul>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="!#">
+                                                                            <Link to="/집들이업로드">
                                                                                 <div><img src="./images/home.svg" alt="" /></div>
                                                                                 <h2>집들이 글쓰기</h2>
                                                                                 <h3>집에 관한 이야기를 글로 작성해 보세요.</h3>
-                                                                            </a>
+                                                                            </Link>
                                                                         </li>
                                                                     </ul>
                                                                     <ul>
