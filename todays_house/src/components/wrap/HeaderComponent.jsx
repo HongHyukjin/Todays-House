@@ -56,7 +56,7 @@ export default function HeaderComponent({isMypage}){
         if(state.isNav){
             $('#header').css({height:"130px"})
             $('#mypagenav').css({height:'250px',"padding-top":"130px"});
-            $('#header #nav').css({"padding-top" : "0", "height":"51px"})
+            $('#header #nav').css({"padding-top" : "0", "height":"50px", "border-top" : "1px solid #eaedef"})
         }
         else{
             $('#header').css({height:"80px"})
