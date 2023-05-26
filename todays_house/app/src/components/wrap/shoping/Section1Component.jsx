@@ -7,6 +7,7 @@ export default function Section1Component(){
 
     const [state,setState] = React.useState({
         슬라이드: [],
+        n : 0
     });
 
     React.useEffect(()=>{
@@ -20,7 +21,8 @@ export default function Section1Component(){
             if(res.status===200){
                 setState({
                     ...state,
-                    슬라이드:res.data.slide
+                    슬라이드:res.data.slide,
+                    n:res.data.slide.length
                 })
             }
         })
@@ -31,21 +33,20 @@ export default function Section1Component(){
 
     React.useEffect(()=>{
 
-        const $slideContainer = $('#section1 .slide-container');
-        const $slideWrap      = $('#section1 .slide-wrap');
-        const $slide          = $('#section1 .slide');
-        const $slidea         = $('#section1 .slide a');
+        const $slideContainer = $('#shopsection1 .slide-container');
+        const $slideWrap      = $('#shopsection1 .slide-wrap');
+        const $slide          = $('#shopsection1 .slide');
+        const $slidea         = $('#shopsection1 .slide a');
 
         let cnt = 0;
         let setId = 0;
-        let n = $slide.length;
+        let n = state.n;
 
         // 슬라이드
         function mainSlide(){
             $slideWrap.stop().animate({left: `${-100*cnt}%`}, 600, function(){
-                if(cnt>n-1){cnt=0}
+                if(cnt>=n){cnt=0}
                 if(cnt<0){cnt=n-1}
-                console.log(cnt);
                 $slideWrap.stop().animate({left: `${-100*cnt}%`}, 0);
             });
             // slidePageEvent();
@@ -70,7 +71,7 @@ export default function Section1Component(){
         }   
         autoTimer();
 
-    },[]);
+    },[state.n]);
 
 
     return (
