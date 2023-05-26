@@ -150,43 +150,40 @@
 #myPagePt .container .gap .right .txt-box {
   width: 100%;
 }
-#myPagePt .container .gap .right .txt-box p {
-  width: 100%;
-}
-#myPagePt .container .gap .right .txt-box p .no-res {
+#myPagePt .container .gap .right .txt-box .no-res {
   font-size: 15px;
   color: #757575;
   text-align: center;
   letter-spacing: -0.4px;
   font-weight: 500;
 }
-#myPagePt .container .gap .right .txt-box p .is-post {
+#myPagePt .container .gap .right .txt-box .is-post {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li {
+#myPagePt .container .gap .right .txt-box .is-post > li {
   width: 236.88px;
   height: 364px;
   margin: 0 0 30px 0;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .writer-box {
+#myPagePt .container .gap .right .txt-box .is-post > li .writer-box {
   width: 100%;
   position: relative;
   cursor: pointer;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .writer-box > img {
+#myPagePt .container .gap .right .txt-box .is-post > li .writer-box > img {
   width: 36px;
   height: 36px;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .writer-box > span {
+#myPagePt .container .gap .right .txt-box .is-post > li .writer-box > span {
   font-size: 15px;
   color: #424242;
   font-weight: 600;
   padding: 0 0 0 5px;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .writer-box::before {
+#myPagePt .container .gap .right .txt-box .is-post > li .writer-box::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -196,48 +193,48 @@
   left: 0;
   transition: all 0.2s;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .writer-box:hover:before {
+#myPagePt .container .gap .right .txt-box .is-post > li .writer-box:hover:before {
   background-color: rgba(255, 255, 255, 0.5);
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .pt-box {
+#myPagePt .container .gap .right .txt-box .is-post > li .pt-box {
   margin: 15px 0;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .pt-box > a {
+#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a {
   width: 100%;
   display: block;
   overflow: hidden;
   border-radius: 6px;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .pt-box > a > img {
+#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a > img {
   width: 100%;
   height: 236px;
   transition: all 0.3s;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .pt-box > a > img:hover {
+#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a > img:hover {
   scale: 1.05;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box {
   width: 100%;
   padding: 0 0 20px 0;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico > li {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li {
   cursor: pointer;
   position: relative;
   z-index: 1;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico > li .icon {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon {
   width: 100%;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico > li .icon.stroke {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon.stroke {
   stroke: #626262;
   fill: #fff;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico > li::before {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -247,16 +244,16 @@
   left: 0;
   transition: all 0.2s;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .ico-box .ico > li:hover:before {
+#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li:hover:before {
   background-color: rgba(255, 255, 255, 0.5);
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .memo-box {
+#myPagePt .container .gap .right .txt-box .is-post > li .memo-box {
   color: #555;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
 }
-#myPagePt .container .gap .right .txt-box p .is-post > li .memo-box:hover {
+#myPagePt .container .gap .right .txt-box .is-post > li .memo-box:hover {
   color: rgba(66, 66, 66, 0.3);
 }
