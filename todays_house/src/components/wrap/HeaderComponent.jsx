@@ -7,10 +7,10 @@ export default function HeaderComponent(){
     const [state,setState] = React.useState({
         isLogin : false,
         isSub1 : false,
-        mapText:'',
+        isSub2: false
     })
 
-    // 글쓰기 서브메뉴(툴팁메뉴) 마우스 엔터 이벤트 
+    // 글쓰기 서브메뉴(툴팁메뉴) 마우스 클릭 이벤트 
     const onClickSub1=(e)=>{
         e.preventDefault();
         if(state.isSub1===true){
@@ -27,7 +27,23 @@ export default function HeaderComponent(){
         }
     }
 
+    // 고객센터 마우스 클릭 이벤트 
 
+    const onClickSub2=(e)=>{
+        e.preventDefault();
+        if(state.isSub2===true){
+            setState({
+                ...state,
+                isSub2: false
+            })
+        }
+        else{
+            setState({
+                ...state,
+                isSub2: true
+            })
+        }
+    }
 
     
 
@@ -106,12 +122,30 @@ export default function HeaderComponent(){
                                             )
                                         }
                                     </li>
-                                    <li><a href="#!">고객센터</a></li>
+                                    <li>
+                                        <a href="#!" onClick={onClickSub2}>고객센터</a>
+                                        {
+                                            state.isSub2 && (
+                                                <div className="sub1">
+                                                    <ul>
+                                                        <li><h3>마이페이지</h3></li>
+                                                        <li><h3>나의 쇼핑</h3></li>
+                                                        <li><h3>이벤트</h3></li>
+                                                        <li><h3>전문가 신청</h3></li>
+                                                        <li><h3>판매자 신청</h3></li>
+                                                        <li><h3>고객센터</h3></li>
+                                                        <li><h3>로그아웃</h3></li>
+                                                    </ul>
+                                                </div>
+                                            )
+                                        }
+
+                                    </li>
                                     <li>
                                         <button onClick={onClickSub1}>글쓰기</button>
                                         {
                                             state.isSub1 && (
-                                                <div className="sub">
+                                                <div className="sub2">
                                                     <ul>
                                                         <li>
                                                             <a href="!#">
