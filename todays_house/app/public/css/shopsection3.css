@@ -1,0 +1,121 @@
+#wrap {
+  width: 100%;
+}
+#wrap #shopsection3 {
+  width: 100%;
+  margin-top: 50px;
+}
+#wrap #shopsection3 .container {
+  width: 100%;
+  max-width: 1156px;
+  margin: 0 auto;
+}
+#wrap #shopsection3 .container .gap {
+  width: 100%;
+}
+#wrap #shopsection3 .container .gap .title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#wrap #shopsection3 .container .gap .title h1 {
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.8px;
+}
+#wrap #shopsection3 .container .gap .title a {
+  color: #f77;
+  font-weight: 800;
+  font-size: 15px;
+  margin-right: 7px;
+  letter-spacing: -0.8px;
+  line-height: 15px;
+}
+#wrap #shopsection3 .container .gap .content {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box {
+  width: 25%;
+  overflow: hidden;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .img-box {
+  width: 269px;
+  overflow: hidden;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .img-box img {
+  cursor: pointer;
+  width: 269px;
+  height: 269px;
+  transition: all 0.2s;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .img-box img:hover {
+  transform: scale(1.1);
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box {
+  margin-top: 10px;
+  width: 249px;
+  height: 160px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li {
+  margin-bottom: 4px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .sangho {
+  font-size: 11px;
+  font-weight: 400;
+  color: #828c94;
+  letter-spacing: -0.6px;
+  line-height: 11px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .product {
+  font-size: 13px;
+  font-weight: 400;
+  color: #424242;
+  line-height: 17px;
+  letter-spacing: -0.8px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .rate-percent {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: -0.5px;
+  color: #35c5f0;
+  margin-right: 4px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .price {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 23px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .star {
+  width: 13px;
+  height: 13px;
+  vertical-align: -2px;
+  margin-right: 1px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .starscore {
+  color: #424242;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.7px;
+  line-height: 16px;
+  margin-right: 4px;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .review {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 16px;
+  color: #9e9e9e;
+}
+#wrap #shopsection3 .container .gap .content .todaydeal-box .title-box ul li .badge-list img {
+  width: auto;
+  height: auto;
+  margin-right: 4px;
+}

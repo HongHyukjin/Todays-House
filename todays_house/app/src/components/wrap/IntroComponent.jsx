@@ -12,11 +12,12 @@ export default function IntroComponent () {
         <>
             <TopmodalComponent />   
             <HeaderComponent />
-                <Routes>
+            <ShopingComponent/>
+                {/* <Routes>
                       <Route index element={<MainComponent />} />
                       <Route path='/메인' element={<MainComponent/>} />
                       <Route path='/마이페이지/*' element={<MypageComponent />} />
-                </Routes>
+                </Routes> */}
             <FooterComponent/>
         </>
     );

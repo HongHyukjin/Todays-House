@@ -14,7 +14,6 @@ import Section11Component from './main/Section11Component';
 import Sub1Component from './subPage/Sub1Component';
 import Sub2Component from './subPage/Sub2Component';
 import Sub3Component from './subPage/Sub3Component';
-import ShopingComponent from './ShopingComponent';
 
 
 const MainComponent = () => {
