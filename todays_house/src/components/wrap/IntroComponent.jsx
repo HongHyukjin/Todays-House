@@ -5,6 +5,7 @@ import FooterComponent from '../wrap/FooterComponent';
 import { Routes, Route}  from 'react-router-dom';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
+import LogInHeaderComponent from './LogInHeaderComponent';
 
 export default function IntroComponent () {
     const[topModal,setTopModal]=React.useState({
@@ -58,6 +59,7 @@ export default function IntroComponent () {
         }
              
             <HeaderComponent />
+            <LogInHeaderComponent/>
                 <Routes>
                       <Route index element={<MainComponent/>} />
                       <Route path='/메인' element={<MainComponent/>} />

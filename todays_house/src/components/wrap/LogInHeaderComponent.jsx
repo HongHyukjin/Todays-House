@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router-dom'
 
-export default function HeaderComponent(){
+export default function LogInHeaderComponent(){
 
     const [top,setTop]=React.useState(0);
     React.useEffect(()=>{
@@ -22,7 +22,7 @@ export default function HeaderComponent(){
     },[top]);
     
     return (
-        <div id='header'>
+        <div id='logInHeader'>
             <div className="container">
                 <div className="gap">
                     <div className="row1">
@@ -41,16 +41,15 @@ export default function HeaderComponent(){
                                 <ul>
                                     <li>
                                         <span className='_search_24 css-hkiqzb'></span>
-                                        <input type="text" name='home' id='home' placeholder='통합검색'></input>
+                                        <input type="text" name='home' id='home' placeholder='통합검색'/>
                                     </li>
                                     <li>
-                                        <a href="!#"><span className='_cart_24 css-17vaqfq'></span></a>
+                                        <a href="!#"><span className='_scrap_outline_24 css-17vaqfq'></span></a>
                                     </li>
-                                    <li><Link to="/로그인">로그인</Link></li>
-                               
-                                    <li><Link to="/회원가입">회원가입</Link></li>
+                                    <li><a href="!#"><span className='_notification_outline_24 css-17vaqfq'></span></a></li>
+                                    <li><a href="!#"><span className='_cart_24 css-17vaqfq'></span></a></li>
                           
-                                    <li><Link to="/마이페이지">고객센터</Link></li>
+                                    <li><a href="!#" className='avartar-box'><img src="./images/avatar.png" alt="" /></a></li>
                                     <li><button>글쓰기</button></li>
                                 </ul>
                             </div>
