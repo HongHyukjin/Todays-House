@@ -1,11 +1,35 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 
 export default function HeaderComponent(){
 
     const [state,setState] = React.useState({
-        isLogin : false
+        isLogin : false,
+        isSub1 : false,
+        mapText:'',
     })
+
+    // 글쓰기 서브메뉴(툴팁메뉴) 마우스 엔터 이벤트 
+    const onClickSub1=(e)=>{
+        e.preventDefault();
+        if(state.isSub1===true){
+            setState({
+                ...state,
+                isSub1: false
+            })
+        }
+        else{
+            setState({
+                ...state,
+                isSub1: true
+            })
+        }
+    }
+
+
+
+    
 
     React.useEffect(()=>{
         const stored_email = sessionStorage.getItem('user_email');
@@ -83,7 +107,61 @@ export default function HeaderComponent(){
                                         }
                                     </li>
                                     <li><a href="#!">고객센터</a></li>
-                                    <li><button>글쓰기</button></li>
+                                    <li>
+                                        <button onClick={onClickSub1}>글쓰기</button>
+                                        {
+                                            state.isSub1 && (
+                                                <div className="sub">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="!#">
+                                                                <div><img src="./images/picture.svg" alt="" /></div>
+                                                                <h2>사진/동영상 올리기</h2>
+                                                                <h3>우리 집의 공간과 나의 일상을 기록해 보세요.</h3>
+                                                            </a>
+                                                        </li>
+                                                      
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="!#">
+                                                                <div><img src="./images/home.svg" alt="" /></div>
+                                                                <h2>집들이 글쓰기</h2>
+                                                                <h3>집에 관한 이야기를 글로 작성해 보세요.</h3>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="!#">
+                                                                <div><img src="./images/nohow.svg" alt="" /></div>
+                                                                <h2>노하우 글쓰기</h2>
+                                                                <h3>다양한 인테리어 노하우를 공유해 주세요.</h3>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="!#">
+                                                                <div><img src="./images/sangpum.svg" alt="" /></div>
+                                                                <h2>상품 리뷰 쓰기</h2>
+                                                                <h3>상품 리뷰를 작성하고 포인트도 받아 보세요.</h3>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="!#">
+                                                                <div><img src="./images/sigong.svg" alt="" /></div>
+                                                                <h2>시공 전문가 리뷰쓰기</h2>
+                                                                <h3>시공 전문가 리뷰를 작성하고 포인트도 받아 보세요.</h3>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            )
+                                        }
+                                    </li>
                                 </ul>
                             </div>
                         </div>

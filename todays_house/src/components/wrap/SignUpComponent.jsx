@@ -1,13 +1,8 @@
-import React, { useEffect,useRef } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
-import axios from 'axios'
-// import { sendEmail } from './email';
-
 
 export default function SignUpComponent () {
-
-
 
     const [state,setState] = React.useState({
         이메일 : '',
@@ -69,177 +64,17 @@ export default function SignUpComponent () {
         })
     }
 
-
     // 미완성
     const onClickEmailAuth = (e) => {
         e.preventDefault();
         if(state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError){
             // 이메일 인증 기능 넣어야됨
-           
+            
         }
         else{
             emailInput.current.focus();
         }
     }
-
- 
-    // 2차 
-    //   const sendEmailVerification = async () => {
-    //     try {
-    //       const response = await axios.post('/api/send-email-verification', {
-    //         email: state.이메일
-    //       });
-    //       console.log('이메일 인증 요청 성공:', response.data);
-    //       // 이메일 인증에 대한 추가적인 처리 로직을 작성하세요.
-    //     } catch (error) {
-    //       console.error('이메일 인증 요청 실패:', error);
-    //       // 에러 처리 로직을 작성하세요.
-    //     }
-    //   };
-
-
-    //   const onClickEmailAuth = () => {
-    //     if (state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError) {
-    //       // 이메일 인증 기능 요청
-    //       sendEmailVerification();
-    //     } else {
-    //       emailInput.current.focus();
-    //     }
-    //   };
-
-    // 3차 
-
-    // const emailInput = React.useRef(null);
-
-    // const sendEmailVerification = async () => {
-    //   try {
-    //     const response = await axios.post('/api/send-email-verification', {
-    //       email: state.이메일
-    //     });
-    //     console.log('이메일 인증 요청 성공:', response.data);
-    //     // 이메일 인증에 대한 추가적인 처리 로직을 작성하세요.
-    //   } catch (error) {
-    //     console.error('이메일 인증 요청 실패:', error);
-    //     // 에러 처리 로직을 작성하세요.
-    //   }
-    // };
-  
-    // const onClickEmailAuth = () => {
-    //   if (state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError) {
-    //     // 이메일 인증 기능 요청
-    //     sendEmailVerification();
-    //   } else {
-    //     emailInput.current.focus();
-    //   }
-    // };
-
-    // 4차 
-
-
-
-    // const sendEmail = async () => {
-    //     const emailData = {
-    //       from: 'seulki4994@naver.com',
-    //       to: 'seulki4994@naver.com',
-    //       subject: '오늘의집 가입을 환영합니다:)♥',
-    //       text: generateRandomNumber() // 랜덤 번호 생성
-    //     };
-      
-    //     try {
-    //       const response = await axios.post('/email/send', emailData);
-    //       console.log('이메일 전송 성공:', response.data);
-    //       // 이메일 전송에 대한 추가적인 처리 로직을 작성하세요.
-    //     } catch (error) {
-    //       console.error('이메일 전송 실패:', error);
-    //       // 에러 처리 로직을 작성하세요.
-    //     }
-    //   };
-      
-    //   const generateRandomNumber = () => {
-    //     return Math.floor(Math.random() * 1000000).toString();
-    //   };
-      
-    // 9시.. 
-
-    // const sendEmail = async () => {
-    //     const emailData = {
-    //       from: 'seulki4994@naver.com',
-    //       to: 'seulki4994@naver.com',
-    //       subject: '오늘의집 가입을 환영합니다:)♥',
-    //       text: generateRandomNumber() // 랜덤 번호 생성
-    //     };
-    
-    //     try {
-    //       const response = await axios.post('./email.js', emailData);
-    //       console.log('이메일 전송 성공:', response.data);
-    //       // 이메일 전송에 대한 추가적인 처리 로직을 작성하세요.
-    //     } catch (error) {
-    //       console.error('이메일 전송 실패:', error);
-    //       // 에러 처리 로직을 작성하세요.
-    //     }
-    //   };
-    
-    //   const generateRandomNumber = () => {
-    //     return Math.floor(Math.random() * 1000000).toString();
-    //   };
-    
-    //   useEffect(() => {
-    //     sendEmail();
-    //   }, []); // 컴포넌트가 마운트될 때 이메일을 보내도록 useEffect를 사
-
-   
-
-    // const onClickSendEmail = async () => {
-
-               
-    //             // const generateRandomNumber = () => {
-    //             //     return Math.floor(Math.random() * 1000000).toString();
-    //             // };
-
-    //             // const content = {
-    //             //     from: "seulki4994@naver.com",
-    //             //     to: "seulki4994@naver.com",
-    //             //     subject: "오늘의집 가입을 환영합니다:)♥",
-    //             //     text: generateRandomNumber() // 랜덤 번호 생성
-    //             // };
-
-                
-
-    //     const emailData = {
-    //         from: 'seulki4994@naver.com',
-    //         to: 'seulki4994@naver.com',
-    //         subject: '오늘의집 가입을 환영합니다:)♥',
-    //         text: Math.floor(Math.random() * 1000000).toString()
-    //     }
-
-    //     try {
-    //         const response = await axios.post('http://localhost:3000' ,emailData );
-    //         console.log('이메일 전송 성공:', response.data);
-    //         // 이메일 전송에 대한 추가적인 처리 로직을 작성하세요.
-    //     } catch (error) {
-    //         console.error('이메일 전송 실패:', error);
-    //         // 에러 처리 로직을 작성하세요.
-    //     }
-    //     // const generateRandomNumber = () => {
-    //     //     return Math.floor(Math.random() * 1000000).toString();
-    //     // };
-    // }
-
-      
-
-    //   useEffect(() => {
-    //     sendEmail();
-    //   }, []);
-    
-
-    // 0525 4시 
-    const handleEmailSend = () => {
-        const email = 'seulki4994@naver.com';
-        const message = '안녕하세요!';
-        // sendEmail(email, message);
-      };
-
-
 
     React.useEffect(() => {
         if(state.이메일 !== '' && state.이메일도메인 !== ''){
@@ -395,11 +230,9 @@ export default function SignUpComponent () {
 
     }
 
-
-
     const onSubmitSignUp = (e) => {
         e.preventDefault();
-        alert();
+
         let 약관동의 = '';
         state.약관동의.map((item,idx) => {
             if(idx===state.약관동의.length-1){
@@ -419,7 +252,7 @@ export default function SignUpComponent () {
         }
 
         $.ajax({
-            url: 'http://localhost:8080/jsp/0524ohouse/signup_action.jsp',
+            url: 'http://localhost:8080/JSP/ohouse/signup_action.jsp',
             type: 'POST',
             data: formData,
             success(res) {
@@ -476,7 +309,7 @@ export default function SignUpComponent () {
                                     </select>                                                
                                     <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>                                                
                                     <p className={`error-msg ${state.isEmailError?'on':''}`}>{state.isEmailMsg}</p>
-                                    <button className={`${state.이메일!==''&&!state.isEmailError&&!state.isEmailDomainError?'on':''}`} onChange={onClickEmailAuth} onClick={handleEmailSend}>이메일 인증하기</button>
+                                    <button className={`${state.이메일!==''&&!state.isEmailError&&!state.isEmailDomainError?'on':''}`} onClick={onClickEmailAuth} >이메일 인증하기</button>
                                 </div>
                                 <div className="join">
                                     <label className={`label ${state.isPwError?'on':''}`}>비밀번호</label>
@@ -532,5 +365,4 @@ export default function SignUpComponent () {
         </div>
     );
 };
-
 

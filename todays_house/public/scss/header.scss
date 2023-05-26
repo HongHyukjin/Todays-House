@@ -21,15 +21,15 @@
                         align-items: center;
                         justify-content: space-between;
                         .left  {
-                            ul {
+                            >ul {
                                 display:flex;
-                                li {
+                                >li {
                                     display:flex;
                                     justify-content: center;
                                     align-items: center;
                                     padding : 21px 5px 15px 5px;
                                     margin: 0 10px;
-                                    a {
+                                    >a {
                                         font-size: 17px;
                                         color:#2f3438;
                                         font-weight: 800;
@@ -38,7 +38,7 @@
                                         &:hover {
                                             color : #00bbff;
                                         }
-                                        img {
+                                        >img {
                                             height:30px;
                                             margin: 0 15px 0 0 ;
                                         } 
@@ -89,9 +89,65 @@
                                         color:#fff;
                                         border-radius: 4px;
                                         border:0px;
+                                        position: relative;
                                         &:hover {
                                             transition: all 0.1s;
                                             opacity: 0.5;
+                                        }
+                                    }
+                                    .sub {
+                                        transform: translateY(70px);
+                                        border: 1px solid #ccc;
+                                        width: 340.17px;
+                                        height: 373px;
+                                        z-index: 5;
+                                        position: absolute;
+                                        top: 0;
+                                        right: -100px;
+                                        background: #fff;
+                                        border-radius: 4px;
+                                       
+                                        ul {
+                                            width:100%;
+                                            padding: 15px 0 18px 8px;
+                                           
+                                            
+                                            li {
+                                              width: 100%;
+                                              height: 41px;
+                                              display: flex;
+                                              align-items: center;
+                                              justify-content: space-between;
+                                              &:hover {
+                                                border: 1px;
+                                                background: #eee;
+                                                transition: all ease 0.5s;
+                                                }
+                                                a {
+                                                    width: 100%;
+                                                    cursor: pointer;
+                                                    div {
+                                                    float:left; 
+                                                    width: 36px;
+                                                    height: 36px;
+                                                    padding: 0 45px 0 0;
+                                                        img {
+                                                            width: auto;
+                                                        }
+                                                    }
+                                                    h2 {
+                                                        letter-spacing: -0.4px;
+                                                        font-size: 15px;
+                                                        font-weight: 800;
+                                                        text-align: left;
+                                                        height: 21px;
+                                                    }
+                                                    h3 {
+                                                        font-size: 12px;
+                                                        text-align: left;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
