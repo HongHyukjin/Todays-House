@@ -6,6 +6,7 @@ import { Routes, Route}  from 'react-router-dom';
 import $ from 'jquery';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
+import SubComponent from './SubComponent';
 
 export default function IntroComponent () {
     const [state,setState] = React.useState({
@@ -89,6 +90,7 @@ export default function IntroComponent () {
                 <Routes>
                       <Route index element={<MainComponent/>} top={state.top} />
                       <Route path='/메인' element={<MainComponent/>} />
+                      <Route path='/서브페이지/*' element={<SubComponent />} />
                       <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
                 </Routes>
             <FooterComponent/>

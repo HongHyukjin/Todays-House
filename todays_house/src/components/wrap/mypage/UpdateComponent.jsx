@@ -121,7 +121,7 @@ export default function UpdateComponent () {
   }
 
   React.useEffect(()=>{
-    if(state.imgUrl !== ''){
+    if(state.imgUrl !== '../images/avatar.avif'){
       $('.input .img_del').css({"display":"block"})
     }
     else{
@@ -149,10 +149,10 @@ export default function UpdateComponent () {
           이메일 : res.result.이메일,
           이메일도메인 : res.result.이메일도메인,
           닉네임 : res.result.닉네임,
-          홈페이지 : (res.result.홈페이지==="null"?'':res.result.홈페이지),
+          홈페이지 : res.result.홈페이지==="null"?'':res.result.홈페이지,
           성별 : res.result.성별==="null"?'':res.result.성별,
           생년월일 : res.result.생년월일==="null"?'':res.result.생년월일,
-          imgUrl : res.result.프로필이미지==="null"?'../images/avatar.avif':res.result.프로필이미지,
+          imgUrl : res.result.imgUrl==="null"?'../images/avatar.avif':res.result.imgUrl,
           한줄소개 : res.result.한줄소개==="null"?'':res.result.한줄소개
         })
       },

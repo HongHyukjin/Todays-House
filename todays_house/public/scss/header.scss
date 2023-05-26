@@ -8,16 +8,25 @@
         // top : 0;
         background-color: #fff;
         border-bottom: 1px solid #eaedef;
-        .container {
+        // font-family: 'Noto sans';
+        >.container {
             width:100%;
-            max-width: 1256px;
-            padding: 0 60px;
-            margin: 0 auto;
+            position: fixed;
+            z-index: 7;
+            background: #fff;
+            &.on{
+                position: fixed;
+                z-index: 7;
+                top: 0;
+            }
             .gap {
                 width:100%;
+                max-width: 1256px;
+                padding: 0 60px;
+                margin: 0 auto;
                 .row1 {
                     width:100%;
-                    height:81px;
+                    height:80px;
                     .headbox {
                         width:100%;
                         height:100%;
@@ -26,77 +35,339 @@
                         align-items: center;
                         justify-content: space-between;
                         .left  {
+                            width: 40%;
                             ul {
                                 display:flex;
                                 li {
                                     display:flex;
                                     justify-content: center;
                                     align-items: center;
-                                    padding : 17px 5px 11px 5px;
-                                    margin: 0 10px;
+                                    padding: 8px 0 0 0 ;
+                                    margin: 0 15px;
+                                    &:first-child{
+                                        justify-content: flex-start;
+                                        margin: 0 35px 0 0;
+                                        padding: 0;
+                                    }
                                     a {
                                         font-size: 18px;
                                         color:#2f3438;
                                         font-weight: 800;
                                         line-height: 18px;
-                                        letter-spacing: -1px;
+                                        letter-spacing: -1.5px;
                                         &:hover {
                                             color : #00bbff;
                                         }
                                         img {
                                             height:30px;
-                                            margin: 0 15px 0 0 ;
+                                            margin: 0 40px 0 0 ;
                                         } 
                                     }
                                 }
                             }
                         }
                         .right {
-                            ul {
+                            width: 650px;
+                            >ul {
                                 display:flex;
-                                li {
+                                align-items: center;
+                                >li {
                                     display:flex;
                                     align-items: center;
                                     justify-content: center;
-                                    padding: 21px 5px 15px 5px;
                                     margin: 0 10px;
                                     position: relative;
-                                    a  {
-                                       letter-spacing: -1px;
+                                    &:first-child{
+                                        margin-left: 0;
+                                        ._search_24 {
+                                            position: absolute;
+                                            top:8px;
+                                            left:15px;
+                                        }
+                                    }
+                                    &:last-child{
+                                        justify-content: flex-end;
+                                        margin-right: 0;
+                                    }
+                                    &:nth-child(4){
+                                        margin: 0;
+                                        padding: 0 10px;
+                                        height: 18px;
+                                        border-left: 1px solid #ddd;
+                                        border-right: 1px solid #ddd;
+                                   
+                                   
+                                    }
+                                    >a  {
+                                       letter-spacing: -1.5px;
                                        font-size: 14px;
                                        line-height: 18px;
                                        color:#333;
+                                       ._cart_24{
+                                        padding: 0 3px ;
+                                       }
                                     }
-                                    .search {
-                                        position: absolute;
-                                        color:#828C94;
-                                        top:25px;
-                                        left:13px;
-                                    }
-                                    input {
-                                        width:240px;
+                
+                                    >input {
+                                        width:286.5px;
                                         height:40px;
-                                        padding : 0 40px;
+                                        padding : 5px 14px 0 40px;
                                         border : 1px solid #dadde0;
                                         border-radius: 4px;
                                         color : #424242;
-                                        font-size: 15px;
-
+                                        font-size: 16px;
+                                        outline: 0;
+                                        &::placeholder{
+                                            color: #ccc;
+                                            font-weight: 600;
+                                            letter-spacing: -1px;
+                                        }
                                         &:hover {
-                                            background-color: #f1f1f1;
+                                            background-color: #f9f9f9;
+                                        }
+                                        &:focus{
+                                            outline:1px solid #35C5F0;
                                         }
                                     }
-                                    button {
+                                    >button {
                                         background-color: #35C5F0;
+                                        position: relative;
                                         cursor: pointer;
                                         width:94px;
                                         height:40px;
                                         color:#fff;
                                         border-radius: 4px;
                                         border:0px;
+                                        padding: 0 20px 0 0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        letter-spacing: -1px;
                                         &:hover {
                                             transition: all 0.1s;
                                             opacity: 0.5;
+                                        }
+                                        &::before{
+                                            content: '';
+                                            position: absolute;
+                                            width: 8.5px;
+                                            height: 8.5px;
+                                            top: 12px;
+                                            right: 18px;
+                                            border-right: 2px solid #fff;
+                                            border-bottom: 2px solid #fff;
+                                            transform: rotate(45deg);
+                                        }
+                                    }
+                                    .sub {
+                                        transform: translateY(70px);
+                                        border: 1px solid #ccc;
+                                        width: 340.17px;
+                                        height: 373px;
+                                        z-index: 5;
+                                        position: absolute;
+                                        top: 0;
+                                        right: -100px;
+                                        background: #fff;
+                                        border-radius: 4px;
+                                       
+                                        ul {
+                                            width:100%;
+                                            padding: 15px 0 18px 8px;
+                                           
+                                            
+                                            li {
+                                              width: 100%;
+                                              height: 41px;
+                                              display: flex;
+                                              align-items: center;
+                                              justify-content: space-between;
+                                              &:hover {
+                                                border: 1px;
+                                                background: #eee;
+                                                transition: all ease 0.5s;
+                                                }
+                                                a {
+                                                    width: 100%;
+                                                    cursor: pointer;
+                                                    div {
+                                                    float:left; 
+                                                    width: 36px;
+                                                    height: 36px;
+                                                    padding: 0 45px 0 0;
+                                                        img {
+                                                            width: auto;
+                                                        }
+                                                    }
+                                                    h2 {
+                                                        letter-spacing: -0.4px;
+                                                        font-size: 15px;
+                                                        font-weight: 800;
+                                                        text-align: left;
+                                                        height: 21px;
+                                                    }
+                                                    h3 {
+                                                        font-size: 12px;
+                                                        text-align: left;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .login-right {
+                            width: 650px;
+                            >ul {
+                                display:flex;
+                                align-items: center;
+                                >li {
+                                    display:flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin: 0 5px;
+                                    position: relative;
+                                    &:first-child{
+                                        margin-left: 0;
+                                        ._search_24 {
+                                            position: absolute;
+                                            top:8px;
+                                            left:15px;
+                                        }
+                                    }
+                                    &:last-child{
+                                        justify-content: flex-end;
+                                        margin-right: 0;
+                                    }
+                                    >a  {
+                                       letter-spacing: -1.5px;
+                                       font-size: 14px;
+                                       line-height: 18px;
+                                       color:#333;
+                                       ._scrap_outline_24,._notification_outline_24,._cart_24{
+                                        padding: 0 3px ;
+                                        &:hover{
+                                            color : #00bbff
+                                        }
+                                       }
+                                    }
+                                    .avartar-box{
+                                        display: block;
+                                        width: 40px;
+                                        height: 40px;
+                                        border-radius: 50%;
+                                        margin: 0 5px;
+                                        >img{
+                                            width: 100%;
+                                        }
+                                        &:hover{
+                                            outline: 2px solid #00bbff;
+                                        }
+                                    }
+                                    >input {
+                                        width:356.5px;
+                                        height:40px;
+                                        padding : 5px 14px 0 40px;
+                                        margin: 0 15px 0 0;
+                                        border : 1px solid #dadde0;
+                                        border-radius: 4px;
+                                        color : #424242;
+                                        font-size: 16px;
+                                        outline: 0;
+                                        &::placeholder{
+                                            color: #ccc;
+                                            font-weight: 600;
+                                            letter-spacing: -1px;
+                                        }
+                                        &:hover {
+                                            background-color: #f9f9f9;
+                                        }
+                                        &:focus{
+                                            outline:1px solid #35C5F0;
+                                        }
+                                    }
+                                    >button {
+                                        background-color: #35C5F0;
+                                        position: relative;
+                                        cursor: pointer;
+                                        width:94px;
+                                        height:40px;
+                                        color:#fff;
+                                        border-radius: 4px;
+                                        border:0px;
+                                        padding: 0 20px 0 0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        letter-spacing: -1px;
+                                        &:hover {
+                                            transition: all 0.1s;
+                                            opacity: 0.5;
+                                        }
+                                        &::before{
+                                            content: '';
+                                            position: absolute;
+                                            width: 8.5px;
+                                            height: 8.5px;
+                                            top: 12px;
+                                            right: 18px;
+                                            border-right: 2px solid #fff;
+                                            border-bottom: 2px solid #fff;
+                                            transform: rotate(45deg);
+                                        }
+                                    }
+                                    .sub {
+                                        transform: translateY(70px);
+                                        border: 1px solid #ccc;
+                                        width: 340.17px;
+                                        height: 373px;
+                                        z-index: 5;
+                                        position: absolute;
+                                        top: 0;
+                                        right: -100px;
+                                        background: #fff;
+                                        border-radius: 4px;
+                                       
+                                        ul {
+                                            width:100%;
+                                            padding: 15px 0 18px 8px;
+                                           
+                                            
+                                            li {
+                                              width: 100%;
+                                              height: 41px;
+                                              display: flex;
+                                              align-items: center;
+                                              justify-content: space-between;
+                                              &:hover {
+                                                border: 1px;
+                                                background: #eee;
+                                                transition: all ease 0.5s;
+                                                }
+                                                a {
+                                                    width: 100%;
+                                                    cursor: pointer;
+                                                    div {
+                                                    float:left; 
+                                                    width: 36px;
+                                                    height: 36px;
+                                                    padding: 0 45px 0 0;
+                                                        img {
+                                                            width: auto;
+                                                        }
+                                                    }
+                                                    h2 {
+                                                        letter-spacing: -0.4px;
+                                                        font-size: 15px;
+                                                        font-weight: 800;
+                                                        text-align: left;
+                                                        height: 21px;
+                                                    }
+                                                    h3 {
+                                                        font-size: 12px;
+                                                        text-align: left;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
