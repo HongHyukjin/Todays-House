@@ -26,8 +26,12 @@
 #myPagePt .container .gap .left .profile .up-box .img-box {
   display: flex;
   justify-content: center;
+  width: 118px;
+  height: 118px;
+  margin: 0 auto;
 }
 #myPagePt .container .gap .left .profile .up-box .img-box img {
+  border-radius: 50%;
   width: 120px;
 }
 #myPagePt .container .gap .left .profile .up-box h2 {

@@ -17,7 +17,7 @@ export default  function Section1Component(){
         })
         .then((res)=>{
             if(res.status===200){
-                console.log(res);
+                // console.log(res);
                 setState({
                     ...state,
                     슬라이드:res.data.slide1,

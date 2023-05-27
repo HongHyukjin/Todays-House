@@ -1,17 +1,18 @@
 
 import React, {useRef} from 'react';
-import $ from 'jquery';
+import $, { data } from 'jquery';
 import {Link} from 'react-router-dom';
 
 export default  function UploadVedioComponent ()  {
     const [state,setState] = React.useState({
         video_file : '',
-        vedio_url : '',
+        video_url : '',
         video_pyeong:'',
         video_type:'',
         video_style:'',
         video_place:'',
-        video_memo:''
+        video_memo:'',
+        video_blob:'',
       })
     
       const videoInput = useRef();
@@ -26,6 +27,27 @@ export default  function UploadVedioComponent ()  {
       const onClickImage = (e) => {
         e.target.value = null;
       }
+
+      function b64toBlob(b64Data,contentType){
+    	let sliceSize=512;
+    	  const byteCharacters = atob(b64Data);
+    	  const byteArrays = [];
+
+    	  for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    	    const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+    	    const byteNumbers = new Array(slice.length);
+    	    for (let i = 0; i < slice.length; i++) {
+    	      byteNumbers[i] = slice.charCodeAt(i);
+    	    }
+
+    	    const byteArray = new Uint8Array(byteNumbers);
+    	    byteArrays.push(byteArray);
+    	  }
+
+    	  const blob = new Blob(byteArrays, {type: contentType});
+    	  return blob;
+    	}
     
       const onChangeImage = (e) => {
         console.log("img upload");
@@ -35,10 +57,16 @@ export default  function UploadVedioComponent ()  {
         let reader = new FileReader();
         
         reader.onload = (event) =>{
+            let dataURL = event.target.result;
+            let base64 = dataURL.substring(dataURL.indexOf('base64,')+7);
+            let file_etc = dataURL.substring(dataURL.indexOf(':')+1, dataURL.indexOf(';'));
+
+            let blob = b64toBlob(base64, file_etc);
             setState({
                 ...state,
                 video_file: file,
-                vedio_url: event.target.result,
+                video_url: event.target.result,
+                video_blob : blob
             })
         }
         reader.readAsDataURL(file);
@@ -56,7 +84,7 @@ export default  function UploadVedioComponent ()  {
         setState({
           ...state,
           video_file : '',
-          vedio_url:'',
+          video_url:'',
         })
         let photoBox = $('#uploadPt .vedio-box');
         photoBox.css({border:'1px dashed #dadce0 '});
@@ -84,13 +112,13 @@ export default  function UploadVedioComponent ()  {
       React.useEffect(()=>{
         let imgHeight = $('.section3 .input img').height();
         $('#uploadVedio .section3 .input >div').css({"height": imgHeight});
-      },[state.vedio_url])
+      },[state.video_url])
 
     const onClickSubmit=(e)=>{
         e.preventDefault();
         console.log('클릭');
         onSubmitVideoPost();
-        console.log('길이 : ',state.vedio_url.length);
+        console.log('길이 : ',state.video_url.length);
     } 
 
     const onSubmitVideoPost=()=>{ 
@@ -99,15 +127,18 @@ export default  function UploadVedioComponent ()  {
             "video_pyeong":state.video_pyeong,
             "video_type":state.video_type,
             "video_style":state.video_style,
-            "video_file":state.vedio_url,
+            "video_file":state.video_blob,
             "video_place":state.video_place,
             "video_memo":state.video_memo
         }
 
         $.ajax({
-            url:'http://localhost:8080/JSP/video_post_action.jsp',
+            // url:'http://localhost:8080/JSP/ohouse/video_post_action.jsp',
+            url:'http://localhost:8080/JSP/ohouse/video_post_action_test.jsp',
             type:'post',
             data:formData,
+            processData:false,
+            contentType:false,
             success(res){
                 console.log('AJAX 성공');
                 console.log(res);
@@ -230,7 +261,7 @@ export default  function UploadVedioComponent ()  {
                                     <div className="vedio-box">
                                         <div className="input">
                                             <input type="file" name="video_input" id="videoInput" accept='video/mp4,video/mkv, video/x-m4v,video/*' ref={videoInput} onChange={onChangeImage} onClick={onClickImage} />
-                                            {/* <img src={state.vedio_url} alt="" /> */}
+                                            {/* <img src={state.video_url} alt="" /> */}
                                             <button className='vedio-upload' onClick={onClickImageUpload}>        
                                                 <div className="ico">
                                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="#828c94" preserveAspectRatio="xMidYMid meet" className="css-hcf77b em8wpqo2"><path d="M11.952 9.778l2.397-5.994A1.778 1.778 0 0 1 16 2.667h16c.727 0 1.38.442 1.65 1.117l2.398 5.994h10.174c.982 0 1.778.796 1.778 1.778v32c0 .981-.796 1.777-1.778 1.777H1.778A1.778 1.778 0 0 1 0 43.556v-32c0-.982.796-1.778 1.778-1.778h10.174zM24 38c6.075 0 11-4.925 11-11s-4.925-11-11-11-11 4.925-11 11 4.925 11 11 11z"></path></svg>
@@ -239,7 +270,7 @@ export default  function UploadVedioComponent ()  {
                                                 </div>                                                                                           
                                             </button>
                                             <div>
-                                                <video id="video" src={state.vedio_url} alt="" />
+                                                <video id="video" src={state.video_url} alt="" />
                                                 <div className="re-del">
                                                     <button className="re" onClick={onClickImageUpload}>
                                                         <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>

@@ -4,10 +4,43 @@ import $ from 'jquery';
 export default function MyPageComponentPt ()  {
 
     const [state,setState] = React.useState({
+        닉네임 : '',
+        imgUrl : '',
         사진:'',
         isPost:false,
         noRes:true
     })
+
+    const getUserData = () => {
+        const user_email = sessionStorage.getItem('user_email');
+        const form_data = {
+            "user_email": user_email
+        }
+
+        $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success(res) {
+                console.log('AJAX 성공!');
+                console.log(res.result); // 결과 데이터 출력
+                setState({
+                    ...state,
+                    닉네임 : res.result.닉네임 === "null" ? '' : res.result.닉네임,
+                    imgUrl: res.result.imgUrl === "null" ? '../images/avatar.avif' : res.result.imgUrl
+                })
+            },
+            error(err) {
+                console.log('AJAX 실패!' + err);
+            },
+        });
+    }
+
+    React.useEffect(()=>{
+        getUserData();
+    })
+
     const getPhoto=()=>{
         $.ajax({
             url:'http://localhost:8080/JSP/ohouse/photo_select_action.jsp',
@@ -61,9 +94,9 @@ export default function MyPageComponentPt ()  {
                         <div className="profile">
                             <div className="up-box">
                                 <div className="img-box">
-                                    <img src="../images/avatar.png" alt="" />
+                                    <img src={state.imgUrl} alt="" />
                                 </div>
-                                <h2>닉네임</h2>
+                                <h2>{state.닉네임}</h2>
                                 <ul>
                                     <li>팔로워 <span>0</span> </li>
                                     <i>|</i>

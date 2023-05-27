@@ -83,14 +83,23 @@ export default function SigninComponent(){
             url: 'http://localhost:8080/JSP/ohouse/signin_action.jsp',
             type: 'POST',
             data: formData,
+            dataType : 'json',
             success(res) {
                 console.log('AJAX 성공!');
                 console.log(res);
-                console.log(JSON.parse(res));
-                // session에 이메일 저장 
-                sessionStorage.setItem('user_email', state.이메일);
-                // main으로 이동 
-                window.location.href='/';
+                console.log(res.result.type);
+                if(res.result === '1'){
+                    // session에 이메일 저장 
+                    sessionStorage.setItem('user_email', state.이메일);
+                    // main으로 이동 
+                    window.location.href='/';
+                }
+                else if(res.result === '0'){
+                    alert('비밀번호를 확인해주세요!');
+                }
+                else{
+                    alert('이메일을 확인해주세요!');
+                }
             },
             error(err) {
                 console.log('AJAX 실패!' + err);
@@ -129,7 +138,7 @@ export default function SigninComponent(){
                         </div>
                     </li>
                     <button  type="submit" className="ohouse-login-form-button">
-                        <Link to='/'>로그인</Link>
+                        <a href="">로그인</a>
                     </button>
 
                     <li>
