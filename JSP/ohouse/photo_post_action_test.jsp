@@ -4,10 +4,10 @@
 <%@
     page
     language="java"
-    contentType="text/html; charset=UTF-8"
+    contentType="application/json; charset=UTF-8"
     pageEncoding= "UTF-8"
 %>
-<%@ page import="photo_post.PhotoPostDAO"%>
+<%@ page import="video_post.VideoPostDAO"%>
 <% request.setCharacterEncoding("UTF-8");%>
 
 <jsp:useBean class="photo_post.PhotoPostDTO" id="photoPostDTO" scope="page"/>
@@ -18,9 +18,15 @@
 <jsp:setProperty name="photoPostDTO" property="place"/>
 <jsp:setProperty name="photoPostDTO" property="memo"/>
 
-<%
-    PhotoPostDAO photoPostDAO = new PhotoPostDAO();
-    int result = photoPostDAO.post(photoPostDTO);
-%>
+<%  
+    String jsonData = "{ \"result\": {"
+    + "\"pyeong\": \"" + photoPostDTO.getPyeong() + "\","
+    + "\"type\": \"" + photoPostDTO.getType() + "\","
+    + "\"style\": \"" + photoPostDTO.getStyle() + "\","
+    + "\"file\": \"" + photoPostDTO.getFile() + "\","
+    + "\"place\": \"" + photoPostDTO.getPlace() + "\","
+    + "\"memo\": \"" + photoPostDTO.getMemo() + "\""
+    + "} }";
 
-{"result" : "<%=result%>"}
+    response.getWriter().write(jsonData);
+%>

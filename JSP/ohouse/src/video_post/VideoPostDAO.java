@@ -25,7 +25,7 @@ public class VideoPostDAO {
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, videoPostDTO.getVideo_pyeong());
-            ps.setString(2, videoPostDTO.getVideo_type());
+            ps.setString(2, videoPostDTO.getVideo_type()); 
             ps.setString(3, videoPostDTO.getVideo_style());
             ps.setString(4, videoPostDTO.getVideo_file());
             ps.setString(5, videoPostDTO.getVideo_place());
