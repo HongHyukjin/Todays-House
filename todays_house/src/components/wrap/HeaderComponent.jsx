@@ -128,13 +128,13 @@ export default function HeaderComponent(){
                                             state.isSub2 && (
                                                 <div className="sub1">
                                                     <ul>
-                                                        <li><h3>마이페이지</h3></li>
-                                                        <li><h3>나의 쇼핑</h3></li>
-                                                        <li><h3>이벤트</h3></li>
-                                                        <li><h3>전문가 신청</h3></li>
-                                                        <li><h3>판매자 신청</h3></li>
-                                                        <li><h3>고객센터</h3></li>
-                                                        <li><h3>로그아웃</h3></li>
+                                                        <li><a href="!#"><h3>마이페이지</h3></a></li>
+                                                        <li><a href="!#"><h3>나의 쇼핑</h3></a></li>
+                                                        <li><a href="!#"><h3>이벤트</h3></a></li>
+                                                        <li><a href="!#"><h3>전문가 신청</h3></a></li>
+                                                        <li><a href="!#"><h3>판매자 신청</h3></a></li>
+                                                        <li><a href="!#"><h3>고객센터</h3></a></li>
+                                                        <li><a href="!#"><h3>로그아웃</h3></a></li>
                                                     </ul>
                                                 </div>
                                             )
