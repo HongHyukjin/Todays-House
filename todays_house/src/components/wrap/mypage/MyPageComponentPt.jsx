@@ -37,6 +37,10 @@ export default function MyPageComponentPt ()  {
         });
     }
 
+    React.useEffect(()=>{
+        getUserData();
+    })
+
     const getPhoto=()=>{
         $.ajax({
             url:'http://localhost:8080/JSP/ohouse/photo_select_action.jsp',
@@ -78,7 +82,6 @@ export default function MyPageComponentPt ()  {
 
 
     React.useEffect(()=>{
-        getUserData();
         getPhoto();
     },[]);
 
