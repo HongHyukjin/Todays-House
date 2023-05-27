@@ -1,4 +1,4 @@
-package video_post;
+ package video_post;
 
 /**
  * VideoPostDTO

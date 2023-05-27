@@ -21,19 +21,6 @@
 <%
     PhotoPostDAO photoPostDAO = new PhotoPostDAO();
     int result = photoPostDAO.post(photoPostDTO);
-    if(result==1){
 %>
-    <script>
-        alert("사진이 업로드되었습니다");
-    </script>
-<%
-    } 
-    else{
-%>
-        <script>
-            alert("확인 후 다시 시도해주세요");
-            history.back();
-        </script>
-<%          
-    }
-%>
+
+{"result" : "<%=result%>"}

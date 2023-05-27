@@ -6,7 +6,7 @@
 <%@
     page
     language="java"
-    contentType="text/html; charset=UTF-8"
+    contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"
 %>
 
@@ -28,11 +28,9 @@
 %>
 
 
-<%
-    //로그인이 됨
-    if(result == 1){
-        session.setAttribute("user_email", userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
-    }   
-%>
 
-{"AJAX실행 DTO & DAO 결과":"<%=result%>"}
+<%
+    String jsonData = "{ \"result\": \"" + result + "\"" + "}";
+
+    response.getWriter().write(jsonData);
+%>

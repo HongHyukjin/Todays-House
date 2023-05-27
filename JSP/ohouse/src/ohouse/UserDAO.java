@@ -108,16 +108,16 @@ public class UserDAO {
     // userDTo.set
 
     public int update(UserDTO userDTO){
-        String SQL = "UPDATE ohouse_member SET user_nick=?, user_url=?, user_gender=?, user_birth=?, user_oneline=? WHERE user_email=?";
+        String SQL = "UPDATE ohouse_member SET user_nick=?, user_url=?, user_gender=?, user_birth=?, user_profile=?, user_oneline=? WHERE user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, userDTO.getUser_nick());
             ps.setString(2, userDTO.getUser_url());
             ps.setString(3, userDTO.getUser_gender());
             ps.setString(4, userDTO.getUser_birth());
-            // ps.setString(5, userDTO.getUser_image());
-            ps.setString(5, userDTO.getUser_oneline());
-            ps.setString(6, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+            ps.setString(5, userDTO.getUser_profile());
+            ps.setString(6, userDTO.getUser_oneline());
+            ps.setString(7, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
             return ps.executeUpdate();
         }
         catch(Exception e){
@@ -139,7 +139,7 @@ public class UserDAO {
 
     // 개인정보 수정 
     public UserDTO getJoin(String user_email){
-        UserDTO userDTO = new UserDTO();
+        UserDTO userDTO = new UserDTO(); 
 
         String SQL = "SELECT * FROM ohouse_member WHERE user_email=?";
         try {
@@ -151,6 +151,11 @@ public class UserDAO {
                 userDTO.setUser_email1(rs.getString("user_email").substring(0, index));
                 userDTO.setUser_email2(rs.getString("user_email").substring(index+1));
                 userDTO.setUser_nick(rs.getString("user_nick"));
+                userDTO.setUser_url(rs.getString("user_url"));
+                userDTO.setUser_gender(rs.getString("user_gender"));
+                userDTO.setUser_birth(rs.getString("user_birth"));
+                userDTO.setUser_profile(rs.getString("user_profile"));
+                userDTO.setUser_oneline(rs.getString("user_oneline"));
             }
         } catch(Exception e){ 
             e.printStackTrace();

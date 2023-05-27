@@ -14,7 +14,7 @@ public class UserDTO {
     private String user_url; 
     private String user_gender;
     private String user_birth;
-    private String user_image;
+    private String user_profile;
     private String user_oneline;
     private String create_date;
    
@@ -67,7 +67,7 @@ public class UserDTO {
     }
 
     public String getUser_url() {
-        return this.user_url;
+        return this.user_url; 
     }
 
     public void setUser_url(String user_url) {
@@ -90,12 +90,12 @@ public class UserDTO {
         this.user_birth = user_birth;
     }
 
-    public String getUser_image() {
-        return this.user_image;
+    public String getUser_profile() {
+        return this.user_profile;
     }
 
-    public void setUser_image(String user_image) {
-        this.user_image = user_image;
+    public void setUser_profile(String user_profile) {
+        this.user_profile = user_profile;
     }
 
     public String getUser_oneline() {

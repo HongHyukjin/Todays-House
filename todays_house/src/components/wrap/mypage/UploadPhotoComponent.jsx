@@ -103,7 +103,7 @@ export default  function UploadPhotoComponent ()  {
         }
 
         $.ajax({
-            url:'http://localhost:8080/JSP/photo_post_action.jsp',
+            url:'http://localhost:8080/JSP/ohouse/photo_post_action.jsp',
             type:'post',
             data:formData,
             success(res){

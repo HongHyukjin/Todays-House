@@ -191,6 +191,7 @@ export default function UpdateComponent () {
           console.log(res);
           console.log(JSON.parse(res));
           alert('회원 정보가 성공적으로 바뀌었습니다.');
+          // window.location.href = '/마이페이지/회원정보수정';
         },
         error(err){
           console.log('AJAX 실패!' + err);
