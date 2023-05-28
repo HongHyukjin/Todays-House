@@ -10,7 +10,7 @@ export default function ScrapComponent() {
                         <div className="row1">
                             <ul>
                                 <li><h2>스크랩북</h2></li>
-                                <li><a href=""><img src="" alt="" /> 공유하기</a></li>
+                                <li><a href="">공유하기</a></li>
                             </ul>
                         </div>
                         <div className="row2">
