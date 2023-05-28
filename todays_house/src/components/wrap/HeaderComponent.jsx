@@ -12,31 +12,47 @@ export default function HeaderComponent(){
 
     // 글쓰기 서브메뉴(툴팁메뉴) 마우스 클릭 이벤트 
     const onClickSub1=(e)=>{
-        if (state.isSub1 === true || state.isSub2 === true) {
+        if (state.isSub1 === true && state.isSub2 === false) {
             setState({
-              ...state,
-              isSub1: false,
-              isSub2: false
+                ...state,
+                isSub1: false,
+                isSub2: false
             });
-          } else {
+        }
+        else if (state.isSub1 === false && state.isSub2 === false) {
             setState({
-              ...state,
-              isSub1: true,
-              isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
+                ...state,
+                isSub1: true,
+                isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
             });
-          }
-        };
+        }
+        else if (state.isSub1 === false && state.isSub2 === true) {
+            setState({
+                ...state,
+                isSub1: true,
+                isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
+            });
+        }
+    };
         
         // 고객센터 마우스 클릭 이벤트
         const onClickSub2 = (e) => {
           e.preventDefault();
-          if (state.isSub2 === true || state.isSub1 === true) {
+          if (state.isSub2 === true && state.isSub1 === false) {
             setState({
               ...state,
               isSub1: false,
               isSub2: false
             });
-          } else {
+          } 
+          else if(state.isSub2 === false && state.isSub1 === false) {
+            setState({
+              ...state,
+              isSub1: false, // 서브 2 페이지 켜질 때 서브 1 페이지는 꺼줌
+              isSub2: true
+            });
+          }
+          else if(state.isSub2 === false && state.isSub1 === true) {
             setState({
               ...state,
               isSub1: false, // 서브 2 페이지 켜질 때 서브 1 페이지는 꺼줌
