@@ -116,12 +116,14 @@
                           .body-img {
                               overflow: hidden;
                               cursor: pointer;
-                              > img {
-                                  width:269px;
-                                  height:269px;
-                                  transition: all 0.2s;
-                                  &:hover {
-                                      transform: scale(1.1);
+                              a{
+                                  > img {
+                                      width:269px;
+                                      height:269px;
+                                      transition: all 0.2s;
+                                      &:hover {
+                                          transform: scale(1.1);
+                                      }
                                   }
                               }
                           }

@@ -1,10 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Sub1ComponentChild({ 사진 }) {
+
     return (
         <>
             {
-                사진.map((item) => {
+                사진.map((item, idx) => {
                     return (
                         <div className="pitbox" key={item.제품코드}>
                             <div className="headbox">
@@ -21,7 +23,7 @@ export default function Sub1ComponentChild({ 사진 }) {
                             </div>
                             <div className="bodybox">
                                 <div className="body-img">
-                                    <img src={`../images/sub1/${item.이미지2}`} alt="" />
+                                    <Link to={`/서브페이지/서브1/상세보기/${idx}`}><img src={`../images/sub1/${item.이미지2}`} alt="" /></Link>
                                 </div>
                                 <div className="body-button">
                                     <button className="heart"><img src={`../images/sub1/${item.하트버튼}`} alt="" /></button>

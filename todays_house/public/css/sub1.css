@@ -124,12 +124,12 @@
   overflow: hidden;
   cursor: pointer;
 }
-#wrap #sub1 .container .gap .content .pitbox .bodybox .body-img > img {
+#wrap #sub1 .container .gap .content .pitbox .bodybox .body-img a > img {
   width: 269px;
   height: 269px;
   transition: all 0.2s;
 }
-#wrap #sub1 .container .gap .content .pitbox .bodybox .body-img > img:hover {
+#wrap #sub1 .container .gap .content .pitbox .bodybox .body-img a > img:hover {
   transform: scale(1.1);
 }
 #wrap #sub1 .container .gap .content .pitbox .bodybox .body-button {
