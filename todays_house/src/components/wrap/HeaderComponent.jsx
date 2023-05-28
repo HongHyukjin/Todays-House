@@ -8,24 +8,60 @@ export default function HeaderComponent({isMypage}){
     const [state,setState] = React.useState({
         isLogin : false,
         isSub1 : false,
+        isSub2 : false,
         isNav:false,
     })
 
-    const onClickSub1=(e)=>{
+    // 글쓰기 서브메뉴(툴팁메뉴) 마우스 클릭 이벤트 
+    const onClickSub1 = (e) => {
+        if (state.isSub1 === true && state.isSub2 === false) {
+            setState({
+                ...state,
+                isSub1: false,
+                isSub2: false
+            });
+        }
+        else if (state.isSub1 === false && state.isSub2 === false) {
+            setState({
+                ...state,
+                isSub1: true,
+                isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
+            });
+        }
+        else if (state.isSub1 === false && state.isSub2 === true) {
+            setState({
+                ...state,
+                isSub1: true,
+                isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
+            });
+        }
+    };
+
+    // 고객센터 마우스 클릭 이벤트
+    const onClickSub2 = (e) => {
         e.preventDefault();
-        if(state.isSub1===true){
+        if (state.isSub2 === true && state.isSub1 === false) {
             setState({
                 ...state,
-                isSub1: false
-            })
+                isSub1: false,
+                isSub2: false
+            });
         }
-        else{
+        else if (state.isSub2 === false && state.isSub1 === false) {
             setState({
                 ...state,
-                isSub1: true
-            })
+                isSub1: false, // 서브 2 페이지 켜질 때 서브 1 페이지는 꺼줌
+                isSub2: true
+            });
         }
-    }
+        else if (state.isSub2 === false && state.isSub1 === true) {
+            setState({
+                ...state,
+                isSub1: false, // 서브 2 페이지 켜질 때 서브 1 페이지는 꺼줌
+                isSub2: true
+            });
+        }
+    };
 
     React.useEffect(()=>{
         const stored_email = sessionStorage.getItem('user_email');
@@ -188,12 +224,29 @@ export default function HeaderComponent({isMypage}){
                                         
                                                 <li><Link to="/회원가입">회원가입</Link></li>
                                     
-                                                <li><Link to="/마이페이지">고객센터</Link></li>
+                                                <li>
+                                                    <Link to="/마이페이지" onClick={onClickSub2}>고객센터</Link>
+                                                    {
+                                                        state.isSub2 && (
+                                                            <div className="sub1">
+                                                                <ul>
+                                                                    <li><a href="!#"><h3>마이페이지</h3></a></li>
+                                                                    <li><a href="!#"><h3>나의 쇼핑</h3></a></li>
+                                                                    <li><a href="!#"><h3>이벤트</h3></a></li>
+                                                                    <li><a href="!#"><h3>전문가 신청</h3></a></li>
+                                                                    <li><a href="!#"><h3>판매자 신청</h3></a></li>
+                                                                    <li><a href="!#"><h3>고객센터</h3></a></li>
+                                                                    <li><a href="!#"><h3>로그아웃</h3></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        )
+                                                    }
+                                                </li>
                                                 <li>
                                                     <button onClick={onClickSub1}>글쓰기</button>
                                                         {
                                                             state.isSub1 && (
-                                                                <div className="sub">
+                                                                <div className="sub2">
                                                                     <ul>
                                                                         <li>
                                                                             <a href="!#">
