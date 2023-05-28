@@ -12,38 +12,38 @@ export default function HeaderComponent(){
 
     // 글쓰기 서브메뉴(툴팁메뉴) 마우스 클릭 이벤트 
     const onClickSub1=(e)=>{
-        e.preventDefault();
-        if(state.isSub1===true){
+        if (state.isSub1 === true || state.isSub2 === true) {
             setState({
-                ...state,
-                isSub1: false
-            })
-        }
-        else{
+              ...state,
+              isSub1: false,
+              isSub2: false
+            });
+          } else {
             setState({
-                ...state,
-                isSub1: true
-            })
-        }
-    }
-
-    // 고객센터 마우스 클릭 이벤트 
-
-    const onClickSub2=(e)=>{
-        e.preventDefault();
-        if(state.isSub2===true){
+              ...state,
+              isSub1: true,
+              isSub2: false // 서브 1 페이지 켜질 때 서브 2 페이지는 꺼줌
+            });
+          }
+        };
+        
+        // 고객센터 마우스 클릭 이벤트
+        const onClickSub2 = (e) => {
+          e.preventDefault();
+          if (state.isSub2 === true || state.isSub1 === true) {
             setState({
-                ...state,
-                isSub2: false
-            })
-        }
-        else{
+              ...state,
+              isSub1: false,
+              isSub2: false
+            });
+          } else {
             setState({
-                ...state,
-                isSub2: true
-            })
-        }
-    }
+              ...state,
+              isSub1: false, // 서브 2 페이지 켜질 때 서브 1 페이지는 꺼줌
+              isSub2: true
+            });
+          }
+        };
 
     
 
@@ -123,7 +123,7 @@ export default function HeaderComponent(){
                                         }
                                     </li>
                                     <li>
-                                        <a href="#!" onClick={onClickSub2}>고객센터</a>
+                                        <a href="" onClick={onClickSub2}>고객센터</a>
                                         {
                                             state.isSub2 && (
                                                 <div className="sub1">
