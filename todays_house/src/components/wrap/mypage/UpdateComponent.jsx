@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import $ from 'jquery';
-import HeaderComponent from '../HeaderComponent';
 
 export default function UpdateComponent () {
 
@@ -26,59 +25,30 @@ export default function UpdateComponent () {
   // 이메일 
   const onChangeEmail = (e) => {
       const {value} = e.target;
-      let isEmailError = false;
-      let isEmailMsg = '';
-
-      if(value === ''){
-          isEmailError = true;
-          isEmailMsg = '필수 입력 항목입니다.';
-      }
-      else if(value !== ''){
-          isEmailError = true;
-          isEmailMsg = '이메일 형식이 올바르지 않습니다.';
-      }
 
       setState({
           ...state,
-          이메일 : value,
-          isEmailError : isEmailError,
-          isEmailMsg : isEmailMsg
+          이메일 : value
       })
   }
 
   // 이메일 도메인 
   const onChangeEmailDomain = (e) => {
-      setState({
-          ...state,
-          이메일도메인 : e.target.value,
-          isEmailDomainError : false
-      })
+    const {value} = e.target;
+    setState({
+        ...state,
+        이메일도메인 : value
+    })
   }
 
   // 닉네임 
   const onChangeNick = (e) => {
 
     const {value} = e.target;
-    let isNickError = false;
-    let isNickMsg = '';
-
-    const regExp1 = /^(.){2,16}$/g;
-
-    if(value === ''){
-        isNickError = true;
-        isNickMsg = '필수 입력 항목입니다.';
-    }
-    else if(regExp1.test(value) === false){
-        console.log("false");
-        isNickError = true;
-        isNickMsg = '2자 이상 입력해주세요.';
-    }
 
     setState({
         ...state,
-        닉네임 : e.target.value,
-        isNickError : isNickError,
-        isNickMsg : isNickMsg
+        닉네임 : value
     })
 }
 
@@ -151,48 +121,47 @@ export default function UpdateComponent () {
   }
 
   React.useEffect(()=>{
-    if(state.file !== ''){
+    if(state.imgUrl !== '../images/avatar.avif'){
       $('.input .img_del').css({"display":"block"})
     }
     else{
       $('.input .img_del').css({"display":"none"})
     }
-  }, [state.file])
+  }, [state.imgUrl])
 
   
   const getUserData = () => {
-  //   const user_email = sessionStorage.getItem('user_email');
-  //   $.ajax({
-  //     url: 'http://localhost:8080/jsp/0522ohouse/ohouse/update_getjoin_action.jsp',
-  //     data : {user_email : user_email},
-  //     type: 'GET',
-  //     dataType:'json',  
-      
-  //     success(res) {
-  //         console.log('AJAX 성공!');
-  //         console.log(res.result); // 결과 데이터 출력
-  //         // console.log(JSON.parse(res));
-  //     },
-  //     error(err) {
-  //         console.log('AJAX 실패!' + err);
-  //     }
-  // });
-  $.ajax({
-    url: 'http://localhost:8080/jsp/0524ohouse/update_getjoin_action.jsp',
-    type: 'GET',
-    dataType: 'json',
-    success(res) {
-      console.log('AJAX 성공!');
-      console.log(res.result); // 결과 데이터 출력
-    },
-    error(err) {
-      console.log('AJAX 실패!' + err);
-    },
-    beforeSend(xhr) {
-      xhr.setRequestHeader('Accept', 'application/json'); // 응답 헤더에 Accept 추가
+    const user_email = sessionStorage.getItem('user_email');
+    const form_data = {
+      "user_email" : user_email
     }
-  });
+
+    $.ajax({
+      url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
+      type: 'POST',
+      data: form_data,
+      dataType: 'json',
+      success(res) {
+        console.log('AJAX 성공!');
+        console.log(res.result); // 결과 데이터 출력
+        setState({
+          ...state,
+          이메일 : res.result.이메일,
+          이메일도메인 : res.result.이메일도메인,
+          닉네임 : res.result.닉네임,
+          홈페이지 : res.result.홈페이지==="null"?'':res.result.홈페이지,
+          성별 : res.result.성별==="null"?'':res.result.성별,
+          생년월일 : res.result.생년월일==="null"?'':res.result.생년월일,
+          imgUrl : res.result.imgUrl==="null"?'../images/avatar.avif':res.result.imgUrl,
+          한줄소개 : res.result.한줄소개==="null"?'':res.result.한줄소개
+        })
+      },
+      error(err) {
+        console.log('AJAX 실패!' + err);
+      },
+    });
   }
+
 
   React.useEffect(()=>{
     getUserData();
@@ -201,28 +170,28 @@ export default function UpdateComponent () {
 
   const onSubmitUpdate = (e) => {
       e.preventDefault();
-      let index = state.이메일.indexOf("@");
-      console.log(state.이메일.substring(0, index));
-      console.log(state.이메일.substring(index+1));
 
       const formData = {
-        "user_email1": state.이메일.substring(0, index),
-        "user_email2": state.이메일.substring(index+1),
+        "user_email1": state.이메일,
+        "user_email2": state.이메일도메인,
         "user_nick" : state.닉네임,
         "user_url" : state.홈페이지,
         "user_gender" : state.성별,
         "user_birth" : state.생년월일,
+        "user_profile" : state.imgUrl,
         "user_oneline" : state.한줄소개
       }
 
       $.ajax({
-        url:'http://localhost:8080/jsp/0522ohouse/ohouse/update_action.jsp',
+        url:'http://localhost:8080/JSP/ohouse/update_action.jsp',
         type:'POST',
         data:formData,
         success(res){
           console.log('AJAX 성공!');
           console.log(res);
           console.log(JSON.parse(res));
+          alert('회원 정보가 성공적으로 바뀌었습니다.');
+          // window.location.href = '/마이페이지/회원정보수정';
         },
         error(err){
           console.log('AJAX 실패!' + err);
@@ -243,9 +212,9 @@ export default function UpdateComponent () {
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail} /* value={userDTO.getUser_email1()} *//>
+                  <input type="text" name="user_email1" id="email" className='half' onChange={onChangeEmail} value={state.이메일} disabled={true} />
                   <span>@</span>
-                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain} /* value={userDTO.getUser_email2()} *//>
+                  <input type="text" name="user_email2" id="domain" className='half' onChange={onChangeEmailDomain} value={state.이메일도메인} disabled={true} />
                   <p>이메일을 변경하시려면 운영자에게 메일을 보내주세요.</p>
                 </div>
               </div>
@@ -255,7 +224,7 @@ export default function UpdateComponent () {
                   <p>*필수항목</p>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick} /* value={userDTO.getUser_nick()} *//>
+                  <input type="text" name="user_nick" id="nickname" onChange={onChangeNick} value={state.닉네임} />
                 </div>
               </div>
               <div>
@@ -263,7 +232,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">홈페이지</label>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl} /* value={userDTO.getUser_url()} *//>
+                  <input type="text" name="user_url" id="homepage" placeholder='https://ohou.se' onChange={onChangeUrl} value={state.홈페이지} />
                 </div>
               </div>
               <div>
@@ -272,8 +241,8 @@ export default function UpdateComponent () {
                 </div>
                 <div className='input-radio'>
                   <ul>
-                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender} /* checked={userDTO.getUser_gender() === "남성"} */ />남성</li>
-                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender} /* checked={userDTO.getUser_gender() === "여성"} */ />여성</li>
+                    <li><input type="radio" name="user_gender" id="gender1" value="남성"  onChange={onChangeGender} checked={state.성별 === "남성"} />남성</li>
+                    <li><input type="radio" name="user_gender" id="gender2" value="여성"  onChange={onChangeGender} checked={state.성별 === "여성"} />여성</li>
                   </ul>
                 </div>
               </div>
@@ -282,7 +251,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">생년월일</label>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_birth" id="birth" placeholder='YYYY-MM-DD' onChange={onChangeBirth}/>
+                  <input type="text" name="user_birth" id="birth" placeholder='YYYY-MM-DD' onChange={onChangeBirth} value={state.생년월일} />
                 </div>
               </div>
               <div>
@@ -304,7 +273,7 @@ export default function UpdateComponent () {
                   <label htmlFor="">한줄 소개</label>
                 </div>
                 <div className='input'>
-                  <input type="text" name="user_oneline" id="oneline" onChange={onChangeOneline} />
+                  <input type="text" name="user_oneline" id="oneline" onChange={onChangeOneline} value={state.한줄소개} />
                 </div>
               </div>
               <button type='submit'>회원 정보 수정</button>

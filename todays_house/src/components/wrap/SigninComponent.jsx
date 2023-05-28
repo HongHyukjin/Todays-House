@@ -67,21 +67,6 @@ export default function SigninComponent(){
         })
     }
 
-    // React.useEffect(()=>{
-    //     const storedEmail = sessionStorage.getItem('user_email1');
-    //     const storedEmailDomain = sessionStorage.getItem('user_email2');
-    //     const storedPassword = sessionStorage.getItem('user_pw');
-
-    //     if(storedEmail && storedEmailDomain && storedPassword){
-    //         setState({
-    //             ...state,
-    //             이메일: storedEmail,
-    //             이메일도메인: storedEmailDomain,
-    //             비밀번호: storedPassword
-    //         });
-    //     }
-    // },[]);
-
     const onSubmitSignin =(e)=>{
         e.preventDefault();
         let index = state.이메일.indexOf("@");
@@ -95,17 +80,26 @@ export default function SigninComponent(){
 
         
         $.ajax({
-            url: 'http://localhost:8080/jsp/0522ohouse/ohouse/signin_action.jsp',
+            url: 'http://localhost:8080/JSP/ohouse/signin_action.jsp',
             type: 'POST',
             data: formData,
+            dataType : 'json',
             success(res) {
                 console.log('AJAX 성공!');
                 console.log(res);
-                console.log(JSON.parse(res));
-                // session에 이메일 저장 
-                sessionStorage.setItem('user_email', state.이메일);
-                // main으로 이동 
-                window.location.href='/';
+                console.log(res.result.type);
+                if(res.result === '1'){
+                    // session에 이메일 저장 
+                    sessionStorage.setItem('user_email', state.이메일);
+                    // main으로 이동 
+                    window.location.href='/';
+                }
+                else if(res.result === '0'){
+                    alert('비밀번호를 확인해주세요!');
+                }
+                else{
+                    alert('이메일을 확인해주세요!');
+                }
             },
             error(err) {
                 console.log('AJAX 실패!' + err);
@@ -144,13 +138,13 @@ export default function SigninComponent(){
                         </div>
                     </li>
                     <button  type="submit" className="ohouse-login-form-button">
-                        <Link to='/마이페이지/회원정보수정'>로그인</Link>
+                        <a href="">로그인</a>
                     </button>
 
                     <li>
                         <div className="set-up1">
                             <h3><Link to="/비밀번호재설정">비밀번호 재설정</Link> </h3>
-                            <a href='!#'>회원가입</a>
+                            <h3><a href='!#'>회원가입</a></h3>
                         </div>
                     </li>
                     <li>

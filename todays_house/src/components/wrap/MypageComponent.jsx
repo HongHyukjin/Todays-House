@@ -6,7 +6,8 @@ import ChangePwComponent from './mypage/ChangePwComponent';
 import MyPageComponentAll from './mypage/MyPageComponentAll';
 import MyPageComponentPt from './mypage/MyPageComponentPt';
 
-export default function MypageComponent () {
+export default function MypageComponent ({isMypage}) {
+
   return (
     <>
       <MypageNavComponent />

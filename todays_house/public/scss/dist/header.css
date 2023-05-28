@@ -5,25 +5,39 @@
 #wrap #header {
   width: 100%;
   height: 80px;
+  z-index: 5;
+  position: fixed;
+  background-color: #fff;
+  border-bottom: 1px solid #eaedef;
 }
 
-#wrap #header .container {
+#wrap #header > .container {
+  width: 100%;
+  position: fixed;
+  z-index: 7;
+  background: #fff;
+  border-bottom: 1px solid #eaedef;
+}
+
+#wrap #header > .container.on {
+  position: fixed;
+  z-index: 7;
+  top: 0;
+}
+
+#wrap #header > .container .gap {
   width: 100%;
   max-width: 1256px;
   padding: 0 60px;
   margin: 0 auto;
 }
 
-#wrap #header .container .gap {
+#wrap #header > .container .gap .row1 {
   width: 100%;
+  height: 80px;
 }
 
-#wrap #header .container .gap .row1 {
-  width: 100%;
-  height: 81px;
-}
-
-#wrap #header .container .gap .row1 .headbox {
+#wrap #header > .container .gap .row1 .headbox {
   width: 100%;
   height: 100%;
   padding: 10px 0;
@@ -32,95 +46,156 @@
   justify-content: space-between;
 }
 
-#wrap #header .container .gap .row1 .headbox .left > ul {
+#wrap #header > .container .gap .row1 .headbox .left {
+  width: 40%;
+}
+
+#wrap #header > .container .gap .row1 .headbox .left ul {
   display: flex;
 }
 
-#wrap #header .container .gap .row1 .headbox .left > ul > li {
+#wrap #header > .container .gap .row1 .headbox .left ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 21px 5px 15px 5px;
-  margin: 0 10px;
+  padding: 8px 0 0 0;
+  margin: 0 15px;
 }
 
-#wrap #header .container .gap .row1 .headbox .left > ul > li > a {
-  font-size: 17px;
+#wrap #header > .container .gap .row1 .headbox .left ul li:first-child {
+  justify-content: flex-start;
+  margin: 0 35px 0 0;
+  padding: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .left ul li a {
+  font-size: 18px;
   color: #2f3438;
   font-weight: 800;
   line-height: 18px;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
 }
 
-#wrap #header .container .gap .row1 .headbox .left > ul > li > a:hover {
+#wrap #header > .container .gap .row1 .headbox .left ul li a:hover {
   color: #00bbff;
 }
 
-#wrap #header .container .gap .row1 .headbox .left > ul > li > a > img {
+#wrap #header > .container .gap .row1 .headbox .left ul li a img {
   height: 30px;
-  margin: 0 15px 0 0;
+  margin: 0 40px 0 0;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul {
+#wrap #header > .container .gap .row1 .headbox .right {
+  width: 650px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul {
   display: flex;
+  align-items: center;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 21px 5px 15px 5px;
   margin: 0 10px;
   position: relative;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li a {
-  letter-spacing: -1px;
+#wrap #header > .container .gap .row1 .headbox .right > ul > li:first-child {
+  margin-left: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li:first-child ._search_24 {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li:last-child {
+  justify-content: flex-end;
+  margin-right: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li:nth-child(4) {
+  margin: 0;
+  padding: 0 10px;
+  height: 18px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > a {
+  letter-spacing: -1.5px;
   font-size: 14px;
   line-height: 18px;
   color: #333;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .search {
-  position: absolute;
-  color: #828C94;
-  top: 25px;
-  left: 13px;
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > a ._cart_24 {
+  padding: 0 3px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li input {
-  width: 240px;
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > input {
+  width: 286.5px;
   height: 40px;
-  padding: 0 40px;
+  padding: 5px 14px 0 40px;
   border: 1px solid #dadde0;
   border-radius: 4px;
   color: #424242;
-  font-size: 15px;
+  font-size: 16px;
+  outline: 0;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li input:hover {
-  background-color: #f1f1f1;
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > input::placeholder {
+  color: #ccc;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li button {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > input:hover {
+  background-color: #f9f9f9;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > input:focus {
+  outline: 1px solid #35C5F0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > button {
   background-color: #35C5F0;
+  position: relative;
   cursor: pointer;
   width: 94px;
   height: 40px;
   color: #fff;
   border-radius: 4px;
   border: 0px;
-  position: relative;
+  padding: 0 20px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li button:hover {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > button:hover {
   transition: all 0.1s;
   opacity: 0.5;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li > button::before {
+  content: '';
+  position: absolute;
+  width: 8.5px;
+  height: 8.5px;
+  top: 12px;
+  right: 18px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 {
   width: 202px;
-  transform: translateY(70px);
+  transform: translateY(40px);
   border: 1px solid #ccc;
   height: 313px;
   z-index: 5;
@@ -131,7 +206,7 @@
   border-radius: 4px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 > ul {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 > ul {
   width: 100%;
   height: 100%;
   display: block;
@@ -140,26 +215,208 @@
   padding: 5px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li {
   width: 100%;
   height: 43px;
   padding: 10px 12px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li:hover {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li:hover {
   background: rgba(238, 238, 238, 0.4);
   transition: all ease 0.5s;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li a {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li a {
   width: 100%;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li a h3 {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub1 > ul > li a h3 {
   font-size: 15px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 {
+  transform: translateY(50px);
+  border: 1px solid #ccc;
+  width: 340.17px;
+  height: 373px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  right: -100px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul {
+  width: 100%;
+  padding: 10px 10px 0 10px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 30px 30px 15px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li:hover {
+  border: 1px;
+  background: rgba(238, 238, 238, 0.4);
+  transition: all ease 0.5s;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li a {
+  width: 292px;
+  cursor: pointer;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li a div {
+  float: left;
+  height: 36px;
+  padding: 0 15px 0 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li a div img {
+  width: auto;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li a h2 {
+  letter-spacing: 0.4px;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: left;
+  height: 21px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .right > ul > li .sub2 ul li a h3 {
+  font-size: 12px;
+  text-align: left;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right {
+  width: 650px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul {
+  display: flex;
+  align-items: center;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  position: relative;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li:first-child {
+  margin-left: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li:first-child ._search_24 {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li:last-child {
+  justify-content: flex-end;
+  margin-right: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a {
+  letter-spacing: -1.5px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._scrap_outline_24, #wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._notification_outline_24, #wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._cart_24 {
+  padding: 0 3px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._scrap_outline_24:hover, #wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._notification_outline_24:hover, #wrap #header > .container .gap .row1 .headbox .login-right > ul > li > a ._cart_24:hover {
+  color: #00bbff;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .avartar-box {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .avartar-box > img {
+  width: 100%;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .avartar-box:hover {
+  outline: 2px solid #00bbff;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > input {
+  width: 356.5px;
+  height: 40px;
+  padding: 5px 14px 0 40px;
+  margin: 0 15px 0 0;
+  border: 1px solid #dadde0;
+  border-radius: 4px;
+  color: #424242;
+  font-size: 16px;
+  outline: 0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > input::placeholder {
+  color: #ccc;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > input:hover {
+  background-color: #f9f9f9;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > input:focus {
+  outline: 1px solid #35C5F0;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > button {
+  background-color: #35C5F0;
+  position: relative;
+  cursor: pointer;
+  width: 94px;
+  height: 40px;
+  color: #fff;
+  border-radius: 4px;
+  border: 0px;
+  padding: 0 20px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > button:hover {
+  transition: all 0.1s;
+  opacity: 0.5;
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li > button::before {
+  content: '';
+  position: absolute;
+  width: 8.5px;
+  height: 8.5px;
+  top: 12px;
+  right: 18px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub {
   transform: translateY(70px);
   border: 1px solid #ccc;
   width: 340.17px;
@@ -172,50 +429,50 @@
   border-radius: 4px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul {
   width: 100%;
-  padding: 10px 10px 0 10px;
+  padding: 15px 0 18px 8px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li {
   width: 100%;
   height: 41px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 30px 30px 15px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li:hover {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li:hover {
   border: 1px;
-  background: rgba(238, 238, 238, 0.4);
+  background: #eee;
   transition: all ease 0.5s;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li a {
-  width: 292px;
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li a {
+  width: 100%;
   cursor: pointer;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li a div {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li a div {
   float: left;
+  width: 36px;
   height: 36px;
-  padding: 0 15px 0 0;
+  padding: 0 45px 0 0;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li a div img {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li a div img {
   width: auto;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li a h2 {
-  letter-spacing: 0.4px;
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li a h2 {
+  letter-spacing: -0.4px;
   font-size: 15px;
   font-weight: 800;
   text-align: left;
   height: 21px;
 }
 
-#wrap #header .container .gap .row1 .headbox .right > ul > li .sub2 ul li a h3 {
+#wrap #header > .container .gap .row1 .headbox .login-right > ul > li .sub ul li a h3 {
   font-size: 12px;
   text-align: left;
 }

@@ -119,6 +119,11 @@
                                 border: 1px solid #dadce0;
                                 border-radius: 4px;
                                 cursor: pointer;
+                                &.on{
+                                    color : #35c5f0;
+                                    border-color: #35c5f0;
+                                    background-color: #fff;
+                                }
                             }
                             .sub-msg{
                                 font-size: 14px;

@@ -1,8 +1,45 @@
 import React from 'react';
+import $ from 'jquery';
 import {Link} from 'react-router-dom';
 
 
 export default function MyPageComponentAll ()  {
+
+    const [state,setState] = React.useState({
+        닉네임 : '',
+        imgUrl : ''
+    })
+
+    const getUserData = () => {
+        const user_email = sessionStorage.getItem('user_email');
+        const form_data = {
+            "user_email": user_email
+        }
+
+        $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success(res) {
+                console.log('AJAX 성공!');
+                console.log(res.result); // 결과 데이터 출력
+                setState({
+                    ...state,
+                    닉네임 : res.result.닉네임 === "null" ? '' : res.result.닉네임,
+                    imgUrl: res.result.imgUrl === "null" ? '../images/avatar.avif' : res.result.imgUrl
+                })
+            },
+            error(err) {
+                console.log('AJAX 실패!' + err);
+            },
+        });
+    }
+
+    React.useEffect(() => {
+        getUserData();
+    }, [])
+
     return (
         <div id='myPageAll' >
             <div className="container">
@@ -11,9 +48,9 @@ export default function MyPageComponentAll ()  {
                         <div className="profile">
                             <div className="up-box">
                                 <div className="img-box">
-                                    <img src="../images/avatar.png" alt="" />
+                                    <img src={state.imgUrl} alt="" />
                                 </div>
-                                <h2>닉네임</h2>
+                                <h2>{state.닉네임}</h2>
                                 <ul>
                                     <li>팔로워 <span>0</span> </li>
                                     <i>|</i>
@@ -57,14 +94,14 @@ export default function MyPageComponentAll ()  {
                         </div>
                         <div className="row2">
                             <h2>집들이 <span>0</span></h2>
-                            <a href="!#">
+                            <Link to="/집들이업로드">
                                 <div className="upload-h">
                                     <p> 
                                         <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
                                         첫 번째 집들이를 올려보세요
                                     </p>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

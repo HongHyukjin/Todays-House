@@ -11,8 +11,9 @@ import Section8Component from './main/Section8Component';
 import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
+import DetailComponent from './main/DetailComponent';
 
-const MainComponent = () => {
+export default function MainComponent () {
     return (
         <>
             <NavComponent />
@@ -27,8 +28,8 @@ const MainComponent = () => {
             <Section9Component/>
             <Section10Component/>
             <Section11Component/>
+            <DetailComponent/>
         </>
     );
 };
 
-export default MainComponent;

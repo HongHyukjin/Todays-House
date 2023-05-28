@@ -52,7 +52,7 @@ export default function MypageNavComponent () {
       <div id="mypagenav">
         <nav className='top-nav'>
               <ul>
-                <li><a href="#!" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</a></li>
+                <li><Link to="/마이페이지/모두보기" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</Link></li>
                 <li><Link to="/마이페이지/회원정보수정" className={`top-nav-btn ${state.nav1==='설정'?'on':''}`}>설정</Link></li>
               </ul>
             </nav>

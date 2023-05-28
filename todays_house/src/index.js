@@ -5,6 +5,5 @@ import WrapComponent from './components/WrapComponent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <WrapComponent />
-    
 );
 
