@@ -102,11 +102,6 @@ public class UserDAO {
 
 
 
-    // int index = rs.getString("user_email").indexOf("@");
-    // userDTO.setUser_email1(rs.getString("user_email").substring(0, index));
-    // userDTO.setUser_email2(rs.getString("user_email").substring(index+1));
-    // userDTo.set
-
     public int update(UserDTO userDTO){
         String SQL = "UPDATE ohouse_member SET user_nick=?, user_url=?, user_gender=?, user_birth=?, user_profile=?, user_oneline=? WHERE user_email=?";
         try{
@@ -118,6 +113,30 @@ public class UserDAO {
             ps.setString(5, userDTO.getUser_profile());
             ps.setString(6, userDTO.getUser_oneline());
             ps.setString(7, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+            return ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return -1; 
+    }
+
+    public int updatePw(String user_email, String user_pw){
+        String SQL = "UPDATE ohouse_member SET user_pw=? WHERE user_email=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, user_pw);
+            ps.setString(2, user_email);
             return ps.executeUpdate();
         }
         catch(Exception e){
@@ -193,7 +212,7 @@ public class UserDAO {
                 userDTO.setUser_url(rs.getString("user_url"));
                 userDTO.setUser_gender(rs.getString("user_gender"));
                 userDTO.setUser_birth(rs.getString("user_birth"));
-                userDTO.setUser_image(rs.getString("user_image"));
+                userDTO.setUser_profile(rs.getString("user_image"));
                 userDTO.setUser_oneline(rs.getString("user_oneline"));
                 userDTO.setCreate_date(rs.getString("create_date"));
                 list.add(userDTO);

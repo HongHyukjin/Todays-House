@@ -25,7 +25,7 @@ export default function Sub1ComponentChild({ 사진 }) {
                                 </div>
                                 <div className="body-button">
                                     <button className="heart"><img src={`../images/sub1/${item.하트버튼}`} alt="" /></button>
-                                    <button className="comment"><img src={`../images/sub1/${item.코멘트버튼}`} alt="" /></button>
+                                    <button className="comment"><svg class="icon icon--stroke" aria-label="스크랩" width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="0.5" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M11.53 18.54l-8.06 4.31A1 1 0 0 1 2 21.97V3.5A1.5 1.5 0 0 1 3.5 2h17A1.5 1.5 0 0 1 22 3.5v18.47a1 1 0 0 1-1.47.88l-8.06-4.31a1 1 0 0 0-.94 0z"></path></svg></button>
                                     <button className="reply"><img src={`../images/sub1/${item.리플버튼}`} alt="" /></button>
                                 </div>
                                 <div className="body-title">
