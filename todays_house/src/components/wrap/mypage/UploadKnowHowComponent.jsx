@@ -84,19 +84,19 @@ export default function UploadKnowHowComponent ()  {
           $('.input .img_del').css({"display":"block"})
           $('.ico').css({"display":"none"})
           $('.re').css({"display":"block"})
-          $('#UploadHouse .img-upload').css({"display":"none"})
+          $('#UploadKnowHow .img-upload').css({"display":"none"})
         }
         else{ // 사진이 없으면
           $('.input .img_del').css({"display":"none"})
           $('.ico').css({"display":"flex"})
           $('.re').css({"display":"none"})   
-          $('#UploadHouse .img-upload').css({"display":"block"})
+          $('#UploadKnowHow .img-upload').css({"display":"block"})
         }
 
-        $('#UploadHouse .img-upload').on({
+        $('#UploadKnowHow .img-upload').on({
           click(e){
             e.preventDefault();
-            $('#UploadHouse .img-upload').css({"outline":"2px solid #ff7777"})
+            $('#UploadKnowHow .img-upload').css({"outline":"2px solid #ff7777"})
           }
         })
 
@@ -144,7 +144,7 @@ export default function UploadKnowHowComponent ()  {
           "knowhow_content":state.knowhow_content,
         }
         $.ajax({
-          url:'http://localhost:8080/JSP/knowhow_post_action.jsp',
+          url:'http://localhost:8080/JSP/ohouse/knowhow_post_action.jsp',
           type:'post',
           data:formData,
           success(res){
