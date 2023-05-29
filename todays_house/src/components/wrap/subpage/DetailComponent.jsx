@@ -26,11 +26,10 @@ export default function DetailComponent ({사진}) {
             <div className="container">
                 <div className="gap">
                     <div className="title">
-                        <a href="!#">30평대</a>
-                        <i> | </i>
-                        <a href="!#">북유럽 스타일</a>
-                        <i> | </i>
-                        <a href="!#">아파트</a>
+                        <a href="!#">{사진[id].주거형태}</a>
+                        <a href="!#">{사진[id].평수}</a>
+                        <a href="!#">{사진[id].스타일}</a>
+                        <a href="!#">{사진[id].공간}</a>
                     </div>
                     <div className="content">
                         <div className="center-box">
@@ -39,7 +38,7 @@ export default function DetailComponent ({사진}) {
                         <div className="center-txt">
                             <ul>
                                 <li><h3>{사진[id].설명란}</h3></li>
-                                <li><a href="!#">#오라이프</a><a href="!#">#오라이프추천</a><a href="!#">#벌레퇴치</a><a href="!#">#여름철벌레퇴치</a><a href="!#">#하수구관리</a><a href="!#">#싱크대관리</a></li>
+                                <li><a href="!#">{사진[id].테그}</a></li>
                             </ul>
                         </div>
                         <div className="right">

@@ -13,16 +13,12 @@
                 width: 720px;
                 height: 32px;
                 padding: 0 0 50px 0;
-                a,i {
+                a {
                     margin:0 8px 0 0;
                     font-size: 16px;
                     letter-spacing: -0.4px;
                     line-height: 32px;
                     color: rgba(140, 160, 148, 1);
-                }
-                i {
-                    font-size: 12px;
-                    
                 }
             }
             .content {
@@ -31,8 +27,7 @@
                 .center-box {
                     margin: 0 auto;
                     img {
-                        width: 720px;
-                        height: 960px;
+                        width: 100%;
                     }
                 }
                 .center-txt {
@@ -41,6 +36,11 @@
                     ul {
                         li {
                             padding: 15px 0 10px 0;
+                            line-height: 26px;
+                            h3{
+                                color: #2f3438;
+                                font-size: 16px;
+                            }
                             a {
                                 padding: 0 10px 0 0;
                                 font-size: 16px;

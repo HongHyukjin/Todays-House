@@ -18,15 +18,12 @@
   height: 32px;
   padding: 0 0 50px 0;
 }
-#detail .container .gap .title a, #detail .container .gap .title i {
+#detail .container .gap .title a {
   margin: 0 8px 0 0;
   font-size: 16px;
   letter-spacing: -0.4px;
   line-height: 32px;
   color: rgb(140, 160, 148);
-}
-#detail .container .gap .title i {
-  font-size: 12px;
 }
 #detail .container .gap .content {
   width: 720px;
@@ -36,8 +33,7 @@
   margin: 0 auto;
 }
 #detail .container .gap .content .center-box img {
-  width: 720px;
-  height: 960px;
+  width: 100%;
 }
 #detail .container .gap .content .center-txt {
   width: 100%;
@@ -45,6 +41,11 @@
 }
 #detail .container .gap .content .center-txt ul li {
   padding: 15px 0 10px 0;
+  line-height: 26px;
+}
+#detail .container .gap .content .center-txt ul li h3 {
+  color: #2f3438;
+  font-size: 16px;
 }
 #detail .container .gap .content .center-txt ul li a {
   padding: 0 10px 0 0;

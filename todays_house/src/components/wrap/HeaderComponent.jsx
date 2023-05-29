@@ -215,11 +215,11 @@ export default function HeaderComponent({isMypage}){
                                                                     </ul>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="!#">
+                                                                            <Link to="/노하우업로드">
                                                                                 <div><img src="./images/nohow.svg" alt="" /></div>
                                                                                 <h2>노하우 글쓰기</h2>
                                                                                 <h3>다양한 인테리어 노하우를 공유해 주세요.</h3>
-                                                                            </a>
+                                                                            </Link>
                                                                         </li>
                                                                     </ul>
                                                                     <ul>
