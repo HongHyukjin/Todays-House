@@ -1,13 +1,13 @@
 import React from 'react';
-import $ from 'jquery';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
 import EmailComponent from './wrap/EmailComponent';
 import IntroComponent from './wrap/IntroComponent';
 import SigninComponent from './wrap/SigninComponent'
 import SignUpComponent from './wrap/SignUpComponent';
 import UploadPhotoComponent from './wrap/mypage/UploadPhotoComponent';
+import UploadVedioComponent from './wrap/mypage/UploadVideoComponent';
 import UploadHouseComponent from './wrap/mypage/UploadHouseComponent';
-import UploadVedioComponent from './wrap/mypage/UploadVedioComponent';
+
 
 
 export default function WrapComponent () {
@@ -40,10 +40,6 @@ export default function WrapComponent () {
     console.log("");
 
   }, [])
-
-  React.useEffect(()=>{
-    console.log($('#header').offset());
-  })
 
 
   return (

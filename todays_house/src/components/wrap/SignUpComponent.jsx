@@ -1,7 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import $ from 'jquery';
 
 export default function SignUpComponent () {
+
+    const selectEmail = React.useRef();
 
     const [state,setState] = React.useState({
         이메일 : '',
@@ -11,7 +14,6 @@ export default function SignUpComponent () {
         닉네임 : '',
         약관동의 : [],
         약관 : [
-            "전체동의",
             "만 14세 이상입니다(필수)",
             "이용약관(필수)",
             "개인정보수집 및 이용동의(필수)",
@@ -22,13 +24,18 @@ export default function SignUpComponent () {
         isEmailError : false,
         isEmailMsg : '',
         isEmailDomainError : true,
+        isEmailInput:false,
         isPwError : false,
         isPwMsg : '',
         isPw2Error : false,
         isPw2Msg : '',
         isNickError : false,
-        isNickMsg : ''
+        isNickMsg : '',
+        isUserServiceError : false,
+        isUserServiceMsg : ''
     })
+
+    const emailInput = React.useRef();
 
     const onChangeEmail = (e) => {
         const {value} = e.target;
@@ -60,16 +67,51 @@ export default function SignUpComponent () {
         })
     }
 
-    React.useEffect(() => {
+    // 미완성
+    const onClickEmailAuth = (e) => {
+        e.preventDefault();
+        if(state.이메일 !== '' && !state.isEmailError && !state.isEmailDomainError){
+            // 이메일 인증 기능 넣어야됨
+            
+        }
+        else{
+            emailInput.current.focus();
+        }
+    }
+
+
+    React.useEffect(()=>{
+        if (state.이메일 !== '' && state.이메일도메인 !== '') {
+            setState({
+                ...state,
+                isEmailError: false,
+                isEmailDomainError: false,
+                isEmailMsg: ''
+            })
+        }
+        
+    }, [state.이메일, state.이메일도메인])
+
+    React.useEffect(()=>{
         if(state.이메일 !== '' && state.이메일도메인 !== ''){
             setState({
                 ...state,
-                isEmailError : false,
-                isEmailDomainError : false,
-                isEmailMsg : ''
+                isEmailInput : true
             })
         }
-    }, [state.이메일, state.이메일도메인])
+    }, [state.이메일도메인])
+
+    const onClickExit=(e)=>{
+        e.preventDefault();
+        selectEmail.current.value="선택해주세요";
+     
+        setState({
+            ...state,
+            isEmailInput:false,
+            이메일도메인:'선택해주세요'
+     
+        })
+    }
 
     const onChangePw = (e) => {
 
@@ -151,93 +193,113 @@ export default function SignUpComponent () {
 
     const onChangeUserServiceAll = (e) => {
         let 약관동의 = []
+        let isUserServiceError = false;
+        let isUserServiceMsg = '';
         if(e.target.checked === true){
             약관동의 = state.약관;
         }
         else{
             약관동의 = [];
         }
-        // "만 14세 이상입니다(필수)",
-        //     "이용약관(필수)",
-        //     "개인정보수집 및 이용동의(필수)",
-        if(약관동의.includes('만 14세 이상입니다(필수)') && 약관동의.includes('이용약관(필수)') && 약관동의.includes('개인정보수집 및 이용동의(필수)') ){
-            
+
+        if(약관동의.includes('만 14세 이상입니다(필수)')===false || 약관동의.includes('이용약관(필수)')===false || 약관동의.includes('개인정보수집 및 이용동의(필수)')===false ){
+            isUserServiceError = true;
+            isUserServiceMsg = '필수 항목에 동의해주세요.'
         }
         setState({
             ...state,
-            약관동의 : 약관동의
+            약관동의 : 약관동의,
+            isUserServiceError : isUserServiceError,
+            isUserServiceMsg : isUserServiceMsg
         })
     }
 
     const onChangeUserService = (e) => {
-        console.log(e.target.value);
+        let isUserServiceError = false;
+        let isUserServiceMsg = '';
+        let 약관동의 = [];
         if(e.target.checked === true){
             if(e.target.value === '개인정보 마케팅 활용 동의(선택)' && state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)') === true){
-                setState({
-                    ...state,
-                    약관동의 : [...state.약관동의, '개인정보 마케팅 활용 동의(선택)']
-                })
+                약관동의 = [...state.약관동의, '개인정보 마케팅 활용 동의(선택)'];
             } 
             else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)' && state.약관동의.includes('개인정보 마케팅 활용 동의(선택)') === true ){
-                setState({
-                    ...state,
-                    약관동의 : [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)']
-                })
+                약관동의 = [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'];
             }
             else if(e.target.value === '개인정보 마케팅 활용 동의(선택)' && state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)') === false){
-                console.log('h')
-                setState({
-                    ...state,
-                    약관동의 : [...state.약관동의, '개인정보 마케팅 활용 동의(선택)', '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)']
-                })
+                약관동의 = [...state.약관동의, '개인정보 마케팅 활용 동의(선택)', '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'];
             }
             else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)' && state.약관동의.includes('개인정보 마케팅 활용 동의(선택)') === false ){
-                setState({
-                    ...state,
-                    약관동의 : [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)', '개인정보 마케팅 활용 동의(선택)']
-                })
+                약관동의 = [...state.약관동의, '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)', '개인정보 마케팅 활용 동의(선택)'];
             } 
             else{
-                setState({
-                    ...state,
-                    약관동의 : [...state.약관동의, e.target.value]
-                })
+                약관동의 = [...state.약관동의, e.target.value];
             }
         }
         else{
-            let 약관동의 = [];
             if(e.target.value === '개인정보 마케팅 활용 동의(선택)'){
                 약관동의 =  state.약관동의.filter((item) => item !== e.target.value && item !== '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)')
-                setState({
-                    ...state,
-                    약관동의 : 약관동의
-                })
-            }
-            else if(e.target.value === '이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'){
-                약관동의 =  state.약관동의.filter((item) => item !== e.target.value);
-                setState({
-                    ...state,
-                    약관동의 : 약관동의
-                })
             }
             else{
-                setState({
-                    ...state,
-                    약관동의 : state.약관동의.filter((item) => item !== e.target.value)
-                })
+                약관동의 =  state.약관동의.filter((item) => item !== e.target.value);
             }
         }
+        if(약관동의.includes('만 14세 이상입니다(필수)')===false || 약관동의.includes('이용약관(필수)')===false || 약관동의.includes('개인정보수집 및 이용동의(필수)')===false ){
+            isUserServiceError = true;
+            isUserServiceMsg = '필수 항목에 동의해주세요.'
+        }
+        setState({
+            ...state,
+            약관동의 : 약관동의,
+            isUserServiceError : isUserServiceError,
+            isUserServiceMsg : isUserServiceMsg
+        })
 
     }
 
+    const onSubmitSignUp = (e) => {
+        e.preventDefault();
+
+        let 약관동의 = '';
+        state.약관동의.map((item,idx) => {
+            if(idx===state.약관동의.length-1){
+                약관동의 += item
+            }
+            else{
+                약관동의 += item + ', '
+            }
+        })
+
+        const formData = {
+            "user_email1": state.이메일,
+            "user_email2": state.이메일도메인,
+            "user_pw": state.비밀번호,
+            "user_nick": state.닉네임,
+            "user_service": 약관동의
+        }
+
+        $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/signup_action.jsp',
+            type: 'POST',
+            data: formData,
+            success(res) {
+                console.log('AJAX 성공!');
+                console.log(res);
+                console.log(JSON.parse(res));
+                window.location.href = '/'
+            },
+            error(err) {
+                console.log('AJAX 실패!' + err);
+            }
+        });
+    }
 
 
     return (
         <div id='signUp'>
             <section className='section1'>
-                <Link to="/">
+                <a href="!#">
                     <svg width="88" height="31" viewBox="0 0 88 31" preserveAspectRatio="xMidYMid meet"><g fill="none" fillRule="evenodd"><path fill="#35C5F0" d="M23.131 0H5.03C2.424 0 0 2.411 0 5v20c0 2.59 2.424 5 5.029 5h20.114c2.603 0 5.028-2.41 5.028-5V5c0-2.589-2.425-5-5.028-5H23.13z"></path><path fill="#FFF" d="M22.114 15.615a1.99 1.99 0 0 1-1.996-1.984 1.99 1.99 0 0 1 1.996-1.985 1.99 1.99 0 0 1 1.996 1.985 1.99 1.99 0 0 1-1.996 1.984zm-1.488 5.213H9.123v-7.574l5.752-3.988 3.297 2.285a4.397 4.397 0 0 0-.52 2.08 4.44 4.44 0 0 0 2.974 4.183v3.014zm1.488-11.635c-.507 0-.995.086-1.449.24l-4.769-3.306a1.791 1.791 0 0 0-2.042 0l-7.14 4.95a1.771 1.771 0 0 0-.764 1.456v9.676c0 .98.8 1.775 1.785 1.775h14.28a1.78 1.78 0 0 0 1.785-1.775v-4.47a4.438 4.438 0 0 0 2.776-4.108c0-2.45-1.997-4.438-4.462-4.438z"></path><g fill="#000"><path d="M46.634 22.257h-3.442V19.15c0-.558-.454-1.01-1.015-1.01-.56 0-1.015.452-1.015 1.01v3.107h-3.441c-.561 0-1.016.453-1.016 1.01 0 .558.455 1.01 1.016 1.01h8.913c.56 0 1.015-.452 1.015-1.01 0-.557-.454-1.01-1.015-1.01M39.847 11.118c0-3.193 1.46-3.67 2.33-3.67.87 0 2.33.477 2.33 3.67v.251c0 3.193-1.46 3.67-2.33 3.67-.87 0-2.33-.477-2.33-3.67v-.251zm2.33 5.94c2.69 0 4.361-2.18 4.361-5.69v-.25c0-3.51-1.67-5.69-4.36-5.69-2.69 0-4.362 2.18-4.362 5.69v.251c0 3.51 1.671 5.689 4.361 5.689zM60.037 11.95H49.154c-.56 0-1.015.451-1.015 1.009 0 .558.454 1.01 1.015 1.01h10.883c.561 0 1.016-.452 1.016-1.01s-.455-1.01-1.016-1.01M58.951 22.723c-4.946 1.278-6.604.551-7.088.18-.316-.244-.457-.562-.457-1.033v-.602h7.17c.561 0 1.016-.452 1.016-1.01v-3.53c0-.558-.455-1.01-1.016-1.01H50.39c-.56 0-1.015.452-1.015 1.01 0 .557.454 1.009 1.015 1.009h7.171v1.512H50.39c-.56 0-1.015.452-1.015 1.01v1.61c0 1.094.43 2.004 1.246 2.63.836.643 2.053.965 3.642.965 1.434 0 3.17-.262 5.199-.786.543-.14.869-.692.727-1.231a1.016 1.016 0 0 0-1.238-.724M50.904 10.2h7.558c.56 0 1.015-.452 1.015-1.01 0-.557-.455-1.01-1.015-1.01h-6.543V5.768c0-.558-.454-1.01-1.015-1.01-.561 0-1.015.452-1.015 1.01V9.19c0 .558.454 1.01 1.015 1.01M86.923 5.096c-.56 0-1.015.452-1.015 1.01v8.146c0 .558.454 1.01 1.015 1.01.561 0 1.015-.452 1.015-1.01V6.106c0-.558-.454-1.01-1.015-1.01M81.798 13.986a1.016 1.016 0 0 0 1.3.6c.526-.19.799-.768.607-1.292-.032-.09-.697-1.863-2.358-3.125l2.58-2.853c.267-.296.335-.722.172-1.086a1.016 1.016 0 0 0-.928-.598h-6.326c-.56 0-1.015.452-1.015 1.01 0 .557.455 1.009 1.015 1.009h4.048L79.03 9.71a.176.176 0 0 0-.007.01l-2.933 3.242a1.006 1.006 0 0 0 .077 1.426 1.016 1.016 0 0 0 1.434-.076l2.383-2.636c1.261.887 1.8 2.275 1.814 2.309M85.338 23.19h-4.903a.569.569 0 0 1-.57-.565v-1.357h6.043v1.357a.568.568 0 0 1-.57.566m1.585-6.512c-.56 0-1.015.452-1.015 1.01v1.56h-6.043v-1.56c0-.558-.455-1.01-1.016-1.01-.56 0-1.015.452-1.015 1.01v4.936a2.596 2.596 0 0 0 2.6 2.585h4.904c1.434 0 2.6-1.16 2.6-2.585v-4.936c0-.558-.454-1.01-1.015-1.01M66.393 7.448c1.548 0 1.626 2.944 1.626 3.534 0 .59-.078 3.535-1.626 3.535-1.547 0-1.625-2.945-1.625-3.535 0-.59.078-3.534 1.625-3.534m0 9.088c1.23 0 2.256-.649 2.89-1.826.502-.933.767-2.222.767-3.728 0-1.506-.265-2.794-.767-3.727-.634-1.177-1.66-1.826-2.89-1.826-1.23 0-2.255.649-2.89 1.826-.5.933-.766 2.221-.766 3.727 0 1.506.265 2.795.767 3.728.634 1.177 1.66 1.826 2.89 1.826"></path><path d="M72.64 5.096c-.56 0-1.016.452-1.016 1.01v12.358c-1.345.417-4.016.784-7.251.784h-1.546c-.56 0-1.015.452-1.015 1.01 0 .557.454 1.009 1.015 1.009h1.546c1.846 0 5.04-.161 7.251-.708v3.362c0 .558.455 1.01 1.016 1.01.56 0 1.015-.452 1.015-1.01V6.106c0-.558-.454-1.01-1.015-1.01"></path></g></g></svg>
-                </Link>
+                </a>
             </section>
             <section className='section2'>
                 <div className="container">
@@ -254,47 +316,60 @@ export default function SignUpComponent () {
                                     <li><a href="!#"><svg width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet"><g fill="none" fillRule="evenodd"><path fill="#00C63B" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24z"></path><path fill="#FFF" d="M21 25.231V34h-7V15h7l6 8.769V15h7v19h-7l-6-8.769z"></path></g></svg></a></li>
                                 </ul>
                             </div>
-                            <form name='sign_up' id='signUp' method='post' action="">
+                            <form name='sign_up' id='signUp' method='post' action="" onSubmit={onSubmitSignUp}>
                                 <div className="join email">
-                                    <label>이메일</label>
-                                    <input type="text" className='email' name='user_email1' id='userEmail1' placeholder='이메일' onChange={onChangeEmail}/>
-                                    <i>@</i>
-                                    <select type="text" name='user_email2' id='userEmail2' onChange={onChangeEmailDomain}>
-                                        <option value="선택해주세요">선택해주세요</option>
-                                        <option value="naver.com">naver.com</option>
-                                        <option value="hanmail.net">hanmail.net</option>
-                                        <option value="daum.net">daum.net</option>
-                                        <option value="gmail.com">gmail.com</option>
-                                        <option value="nate.com">nate.com</option>
-                                        <option value="hotmail.com">hotmail.com</option>
-                                        <option value="outlook.com">outlook.com</option>
-                                        <option value="icloud.com">icloud.com</option>
-                                        <option value="직접입력">직접입력</option>
-                                    </select>                                                
+                                    <label className={`label ${state.isEmailError?'on':''}`}>이메일</label>
+                                    <div className='email-box'>
+                                        <input type="text" className={`email ${state.isEmailError?'on':''}`} name='user_email1' id='userEmail1' placeholder='이메일' onChange={onChangeEmail} ref={emailInput}/>
+                                        <i>@</i>
+                                        <div>
+                                            <select type="text" name='user_email2' id='userEmail2' onChange={onChangeEmailDomain} ref={selectEmail} className={`${state.isEmailError?' on':''}`}>
+                                                <option value="선택해주세요">선택해주세요</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="hanmail.net">hanmail.net</option>
+                                                <option value="daum.net">daum.net</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="nate.com">nate.com</option>
+                                                <option value="hotmail.com">hotmail.com</option>
+                                                <option value="outlook.com">outlook.com</option>
+                                                <option value="icloud.com">icloud.com</option>
+                                                <option value="직접입력">직접입력</option>
+                                            </select> 
+                                            {
+                                                state.isEmailInput&&(
+                                                    <>
+                                                        <input className={`email-input ${state.isEmailError?' on':''}`} type="text" name='user_email2' id='userEmail3' placeholder='직접 입력해주세요' onChange={onChangeEmailDomain} /> 
+                                                        <a href="!#" onClick={onClickExit}><svg className="exit" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fillRule="evenodd" d="M5 4L8.5.3l1 1.1L6.2 5l3.5 3.6-1 1L5 6.1 1.4 9.6l-1-1L3.9 5 .4 1.5l1.1-1L5 3.8z"></path></svg></a>                                                
+                                                    </>
+
+                                                )
+                                            }
+                                        </div>
+                                    </div>                                         
                                     <svg className="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="rgba(0,0,0,0.3)"><path fillRule="evenodd" d="M0 3l5 5 5-5z"></path></svg>                                                
                                     <p className={`error-msg ${state.isEmailError?'on':''}`}>{state.isEmailMsg}</p>
-                                    <button>이메일 인증하기</button>
+                                    <button className={`${state.이메일!==''&&!state.isEmailError&&!state.isEmailDomainError?'on':''}`} onClick={onClickEmailAuth} >이메일 인증하기</button>
                                 </div>
                                 <div className="join">
-                                    <label>비밀번호</label>
+                                    <label className={`label ${state.isPwError?'on':''}`}>비밀번호</label>
                                     <p className="sub-msg">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
-                                    <input type="password" name='user_pw' id='userPw' placeholder='비밀번호' onChange={onChangePw} />                       
+                                    <input type="password" name='user_pw' id='userPw' placeholder='비밀번호' onChange={onChangePw} className={`${state.isPwError?'on':''}`} />                       
                                     <p className={`error-msg ${state.isPwError?'on':''}`}>{state.isPwMsg}</p>
                                 </div>
                                 <div className="join">
-                                    <label>비밀번호 확인</label>
-                                    <input type="password" name='user_pw_ok' id='userPwOk' placeholder='비밀번호 확인' onChange={onChangePwOk} />                       
+                                    <label className={`label ${state.isPw2Error?'on':''}`}>비밀번호 확인</label>
+                                    <input type="password" name='user_pw_ok' id='userPwOk' placeholder='비밀번호 확인' onChange={onChangePwOk} className={`${state.isPw2Error?'on':''}`}/>                       
                                     <p className={`error-msg ${state.isPw2Error?'on':''}`}>{state.isPw2Msg}</p>
                                 </div>
                                 <div className="join">
-                                    <label>닉네임</label>
+                                    <label className={`label ${state.isNickError?'on':''}`}>닉네임</label>
                                     <p className="sub-msg">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</p>
-                                    <input type="text" name='user_nick' id='userNick' placeholder='별명 (2~15자)' onChange={onChangeNick} />                       
+                                    <input type="text" name='user_nick' id='userNick' placeholder='별명 (2~15자)' onChange={onChangeNick} className={`${state.isNickError?'on':''}`} />                       
                                     <p className={`error-msg ${state.isNickError?'on':''}`}>{state.isNickMsg}</p>
                                 </div>
                                 <div className="join">
-                                    <label>약관동의</label>
-                                    <div className="check-box">
+                                    <label className={`label ${state.isUserServiceError?'on':''}`}>약관동의</label>
+                                    <div className={`check-box ${state.isUserServiceError?'on':''}`}>
                                         <label className='check'>
                                         <input type="checkbox" name='user_agr_all' id='userAgrAll' value={'전체동의'} checked={state.약관동의.length === 5} onChange={onChangeUserServiceAll} /> 전체동의 <span>선택항목에 대한 동의 포함</span>
                                         </label>               
@@ -314,7 +389,7 @@ export default function SignUpComponent () {
                                         <input type="checkbox" name='user_agr_5' id='userAgr5' value={'이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)'} checked={state.약관동의.includes('이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신(선택)')} onChange={onChangeUserService}/> 이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신 <span>(선택)</span>
                                         </label>  
                                     </div>     
-                                    <p className='error-msg'>에러메시지</p>               
+                                    <p className={`error-msg ${state.isUserServiceError}?'on':''`}>{state.isUserServiceMsg}</p>               
                                 </div>
                                 <button type='submit'>회원가입하기</button>
                             </form>

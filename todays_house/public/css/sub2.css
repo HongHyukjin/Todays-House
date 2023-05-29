@@ -1,0 +1,110 @@
+#wrap {
+  width: 100;
+}
+#wrap #sub2 {
+  width: 100%;
+}
+#wrap #sub2 .container {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#wrap #sub2 .container .gap {
+  width: 100%;
+}
+#wrap #sub2 .container .gap .nav-box {
+  margin-top: 18px;
+  margin-bottom: 70px;
+}
+#wrap #sub2 .container .gap .nav-box ul {
+  display: flex;
+}
+#wrap #sub2 .container .gap .nav-box ul li {
+  margin-right: 5px;
+}
+#wrap #sub2 .container .gap .nav-box ul li button {
+  width: auto;
+  height: 32px;
+  padding: 7px 8px 6px 8px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 700;
+  text-align: center;
+  color: #757575;
+}
+#wrap #sub2 .container .gap .nav-box ul li button img {
+  padding-left: 3px;
+}
+#wrap #sub2 .container .gap .content-box {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+#wrap #sub2 .container .gap .content-box .content {
+  width: 33.333%;
+  padding-bottom: 30px;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box {
+  width: 365.328px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box > img {
+  cursor: pointer;
+  width: 365.328px;
+  height: 243.547px;
+  transition: all 0.2s;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box > img:hover {
+  transform: scale(1.1);
+}
+#wrap #sub2 .container .gap .content-box .content .img-box span {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button {
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  border: 0;
+  top: 85%;
+  right: 8%;
+  background: none;
+}
+#wrap #sub2 .container .gap .content-box .content .title-box {
+  width: 365px;
+  text-align: center;
+}
+#wrap #sub2 .container .gap .content-box .content .title-box h2 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 24px;
+  color: #424242;
+  margin: 18px 0 8px 0;
+}
+#wrap #sub2 .container .gap .content-box .content .title-box span {
+  width: auto;
+  height: auto;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.6px;
+  line-height: 16px;
+}
+#wrap #sub2 .container .gap .content-box .content .title-box span img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 15px;
+}
+#wrap #sub2 .container .gap .content-box .content .title-box p {
+  font-size: 13px;
+  color: #757575;
+  line-height: 17px;
+  letter-spacing: -0.7px;
+  margin-top: 10px;
+}
