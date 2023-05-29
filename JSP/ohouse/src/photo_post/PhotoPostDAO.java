@@ -50,18 +50,22 @@ public class PhotoPostDAO {
         return -1;
     }
 
-    public PhotoPostDTO select(){
-        PhotoPostDTO photoPostDTO = new PhotoPostDTO();
-        String SQL ="select file from photo_post where idx=1";
+    // member table과 photo table join 해서 member의 이메일이 현재 로그인된 이메일인 photo를 불러옴
+    public List<PhotoPostDTO> select(String user_email){
+        PhotoPostDTO photoPostDTO = null;
+        List<PhotoPostDTO> list = new ArrayList<>();
+        String SQL ="select file from ohouse_member m join photo_post p where m.user_email=?";
         try{
-            // stmt  = conn.createStatement();
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(SQL);
-            if(rs.next()){
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, user_email);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                photoPostDTO = new PhotoPostDTO();
                 photoPostDTO.setFile(rs.getString("file"));
+                list.add(photoPostDTO);
             }
 
-           return photoPostDTO;
+           return list;
         }
         catch(Exception e){
             e.printStackTrace();
@@ -75,7 +79,7 @@ public class PhotoPostDAO {
             catch(Exception e){ }
           
         }
-        return photoPostDTO;
+        return list;
     }
 
 
