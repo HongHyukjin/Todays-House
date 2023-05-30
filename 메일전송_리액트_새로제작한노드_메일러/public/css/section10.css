@@ -1,0 +1,75 @@
+#wrap {
+  width: 100%;
+}
+#wrap #section10 {
+  width: 100%;
+  height: 306px;
+  margin: 40px 0;
+}
+#wrap #section10 .container {
+  width: 100%;
+  max-width: 1256px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+#wrap #section10 .container .gap {
+  width: 100%;
+}
+#wrap #section10 .container .gap .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+#wrap #section10 .container .gap .title span {
+  font-size: 14px;
+  line-height: 18px;
+  color: #2f3438;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+#wrap #section10 .container .gap .title span strong {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #2f3438;
+  letter-spacing: -1px;
+}
+#wrap #section10 .container .gap .title span strong:hover {
+  transition: all 0.1s;
+  opacity: 0.6;
+}
+#wrap #section10 .container .gap .title a {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 20px;
+  color: #35c5f0;
+  cursor: pointer;
+  letter-spacing: -1.3px;
+}
+#wrap #section10 .container .gap .title a:hover {
+  transition: all 0.1s;
+  opacity: 0.8;
+}
+#wrap #section10 .container .gap .content {
+  width: 100%;
+}
+#wrap #section10 .container .gap .content ul {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+#wrap #section10 .container .gap .content ul li {
+  width: 100%;
+  overflow: hidden;
+}
+#wrap #section10 .container .gap .content ul li a img {
+  width: 189.333px;
+  height: 230px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+#wrap #section10 .container .gap .content ul li a img:hover {
+  transform: scale(1.05);
+}

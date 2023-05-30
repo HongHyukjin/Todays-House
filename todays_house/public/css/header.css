@@ -139,7 +139,7 @@
 #wrap #header > .container .gap .row1 .headbox .right > ul > li > input:focus {
   outline: 1px solid #35C5F0;
 }
-#wrap #header > .container .gap .row1 .headbox .right > ul > li > button {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li button {
   background-color: #35C5F0;
   position: relative;
   cursor: pointer;
@@ -153,11 +153,11 @@
   font-weight: 600;
   letter-spacing: -1px;
 }
-#wrap #header > .container .gap .row1 .headbox .right > ul > li > button:hover {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li button:hover {
   transition: all 0.1s;
   opacity: 0.5;
 }
-#wrap #header > .container .gap .row1 .headbox .right > ul > li > button::before {
+#wrap #header > .container .gap .row1 .headbox .right > ul > li button::before {
   content: "";
   position: absolute;
   width: 8.5px;

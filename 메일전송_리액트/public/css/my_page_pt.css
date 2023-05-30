@@ -1,0 +1,143 @@
+#myPagePt {
+  width: 100%;
+}
+#myPagePt .container {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#myPagePt .container .gap {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+}
+#myPagePt .container .gap .left {
+  width: 290px;
+}
+#myPagePt .container .gap .left .profile {
+  width: 100%;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 30px 25px 18px 25px;
+}
+#myPagePt .container .gap .left .profile .up-box {
+  border-bottom: 1px solid #eaebef;
+}
+#myPagePt .container .gap .left .profile .up-box .img-box {
+  display: flex;
+  justify-content: center;
+}
+#myPagePt .container .gap .left .profile .up-box .img-box img {
+  width: 120px;
+}
+#myPagePt .container .gap .left .profile .up-box h2 {
+  font-size: 26px;
+  color: #292929;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0 10px 0;
+}
+#myPagePt .container .gap .left .profile .up-box > ul {
+  display: flex;
+  justify-content: center;
+}
+#myPagePt .container .gap .left .profile .up-box > ul li {
+  color: #828c94;
+  font-size: 13px;
+}
+#myPagePt .container .gap .left .profile .up-box > ul li > span {
+  color: #525b61;
+  font-weight: 600;
+}
+#myPagePt .container .gap .left .profile .up-box > ul i {
+  font-size: 5px;
+  font-weight: 300;
+  margin: 0 5px;
+}
+#myPagePt .container .gap .left .profile .up-box .btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+#myPagePt .container .gap .left .profile .up-box .btn button {
+  width: 53px;
+  height: 30px;
+  background: #fff;
+  color: #292929;
+  border: 1px solid #dbdbdb;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#myPagePt .container .gap .left .profile .up-box .btn button:hover {
+  background: #fafafa;
+}
+#myPagePt .container .gap .left .profile .down-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 24px 0 6px 0;
+}
+#myPagePt .container .gap .left .profile .down-box > li {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  cursor: pointer;
+}
+#myPagePt .container .gap .left .profile .down-box > li svg {
+  width: 28px;
+  height: 28px;
+  color: #424242;
+}
+#myPagePt .container .gap .left .profile .down-box > li h3 {
+  font-size: 13px;
+  color: #424242;
+  font-weight: 400;
+}
+#myPagePt .container .gap .left .profile .down-box > li h4 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #424242;
+  text-align: center;
+}
+#myPagePt .container .gap .left > button {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #effbff;
+  border: 0;
+  color: #3f474d;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 14px 0 0 0;
+  transition: all 0.3s;
+}
+#myPagePt .container .gap .left > button:hover {
+  background: #e1f7ff;
+}
+#myPagePt .container .gap .left > button > span {
+  color: #35c5f0;
+  font-weight: 600;
+  padding: 0 0 0 4px;
+}
+#myPagePt .container .gap .left > button svg {
+  margin: 0 0 0 5px;
+}
+#myPagePt .container .gap .right {
+  width: 750px;
+  margin: 0 25px 0 100px;
+}
+#myPagePt .container .gap .right .txt-box {
+  padding: 50px 0 0 0;
+}
+#myPagePt .container .gap .right .txt-box p {
+  font-size: 15px;
+  color: #757575;
+  text-align: center;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+}

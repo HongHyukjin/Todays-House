@@ -1,0 +1,38 @@
+#wrap {
+  width: 100%;
+}
+#wrap #section1 {
+  width: 100%;
+  height: 508px;
+}
+#wrap #section1 .container {
+  width: 100%;
+  margin: 30px auto;
+  max-width: 1256px;
+  padding: 0 60px;
+}
+#wrap #section1 .container .gap {
+  width: 100%;
+}
+#wrap #section1 .container .gap .content {
+  width: 100%;
+  display: flex;
+}
+#wrap #section1 .container .gap .content .left {
+  overflow: hidden;
+}
+#wrap #section1 .container .gap .content .left a > img {
+  width: auto;
+  height: 508px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+#wrap #section1 .container .gap .content .left a > img:hover {
+  transform: scale(1.05);
+}
+#wrap #section1 .container .gap .content .right a > img {
+  width: auto;
+  height: 508px;
+  padding-left: 15px;
+  border-radius: 5px;
+}

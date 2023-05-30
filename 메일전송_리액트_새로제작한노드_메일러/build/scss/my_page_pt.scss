@@ -1,0 +1,145 @@
+#myPagePt{
+    width: 100%;
+    .container{
+        width: 100%;
+        max-width: 1136px;
+        margin: 0 auto;
+        .gap{
+            width: 100%;
+            padding: 30px 0;
+            display: flex;
+            .left{
+                width: 290px;
+                .profile{
+                    width: 100%;
+                    border: 1px solid #dadce0;
+                    border-radius: 4px;
+                    padding: 30px 25px 18px 25px;
+                    .up-box{
+                        border-bottom: 1px solid #eaebef;
+                        .img-box{
+                            display: flex;
+                            justify-content: center;
+                            img{
+                                width: 120px;
+                            }
+                        }
+                        h2{
+                            font-size: 26px;
+                            color: #292929;
+                            font-weight: bold;
+                            text-align: center;
+                            padding: 15px 0 10px 0;
+                        }
+                        >ul{
+                            display: flex;
+                            justify-content: center;
+                            li{
+                                color: #828c94;
+                                font-size: 13px;
+                                >span{
+                                    color: #525b61;
+                                    font-weight: 600;
+                                }
+                            }
+                            i{
+                                font-size: 5px;
+                                font-weight: 300;
+                                margin: 0 5px;
+                            }
+                        }
+                        .btn{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            padding: 15px 0 ;
+                            button{
+                                width: 53px;
+                                height: 30px;
+                                background: #fff;
+                                color: #292929;
+                                border: 1px solid #dbdbdb;
+                                font-size: 12px;
+                                border-radius: 4px;
+                                transition: all 0.3s;
+                                cursor: pointer;
+                                &:hover{
+                                    background: #fafafa;
+                                }
+                            }
+                        }
+                    }
+                    .down-box{
+                        display: flex;                      
+                        justify-content: space-evenly;
+                        padding: 24px 0 6px 0;
+                        >li{
+                            display: flex;
+                            flex-flow: column wrap;
+                            align-items: center;
+                            cursor: pointer;
+                            svg{
+                                width: 28px;
+                                height: 28px;
+                                color: #424242;
+                                
+                            }
+                            h3{
+                                font-size: 13px;
+                                color: #424242;
+                                font-weight: 400;
+                            }
+                            h4{
+                                font-size: 15px;
+                                font-weight: bold;
+                                color: #424242;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                >button{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #effbff;
+                    border: 0;
+                    color: #3f474d;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin: 14px 0 0 0;
+                    transition: all 0.3s;
+                    &:hover{
+                        background: #e1f7ff;
+                    }
+                    >span{
+                        color: #35c5f0;
+                        font-weight: 600;
+                        padding: 0 0 0 4px;
+    
+                    }
+                    svg{
+                        margin: 0 0 0 5px;
+                    }
+                }
+            }
+            .right{
+                width: 750px;
+                margin: 0 25px 0 100px;
+                .txt-box{
+                    padding: 50px 0 0 0;
+                    p{
+                        font-size: 15px;
+                        color: #757575;
+                        text-align: center;
+                        letter-spacing: -0.4px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
