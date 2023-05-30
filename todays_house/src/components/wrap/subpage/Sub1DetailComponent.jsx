@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
-import $ from 'jquery';
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-export default function DetailComponent ({사진}) {
+export default function Sub1DetailComponent ({사진}) {
 
         let {id} = useParams();
   
@@ -13,16 +11,11 @@ export default function DetailComponent ({사진}) {
    
             console.log(사진);
             console.log(id);
-        },[]) 
-
-  
-      
-
-  
+        },[])  
    
     return (
         
-        <div id='detail'  key={id}>
+        <div id='sub1Detail'  key={id}>
             <div className="container">
                 <div className="gap">
                     <div className="title">

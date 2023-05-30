@@ -51,14 +51,16 @@
                               height:243.547px;
                               transition: all 0.2s;
                               &:hover {
-                                  transform: scale(1.1);
+                                  transform: scale(1.06);
                               }
                           }
                           span {
                               position: absolute;
                               top:7%;
                               left:5%;
-                              > img {}
+                              > img {
+                                width: auto;
+                              }
                           }
                           button {
                               z-index: 2;
@@ -66,10 +68,10 @@
                               cursor: pointer;
                               border: 0;
                               top:85%;
-                              right:8%;
+                              right:6%;
                               background: none;
                               > img {
-
+                                width: 30px;
                               }
                           }
                       }
@@ -79,10 +81,12 @@
                           h2 {
                               font-size: 17px;
                               font-weight: 700;
-                              letter-spacing: -1px;
+                              letter-spacing: -0.4px;
                               line-height: 24px;
                               color:#424242;
                               margin:18px 0 8px 0;
+                              word-break: keep-all;
+                              overflow-wrap: break-word;
                           }
                           span {
                               width:auto;

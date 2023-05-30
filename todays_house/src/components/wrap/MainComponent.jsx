@@ -11,13 +11,11 @@ import Section8Component from './main/Section8Component';
 import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
-// import DetailComponent from './subpage/DetailComponent';
 
 export default function MainComponent () {
     return (
         <>
             <NavComponent />
-           {/* <DetailComponent/> */}
             <Section1Component/>
             <Section2Component/>
             <Section3Component/>
