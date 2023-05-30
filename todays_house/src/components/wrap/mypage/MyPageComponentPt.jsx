@@ -38,9 +38,9 @@ export default function MyPageComponentPt ()  {
         });
     }
 
-    // React.useEffect(()=>{
-    //     getUserData();
-    // }, [])
+    React.useEffect(()=>{
+        getUserData();
+    }, [])
 
     const getPhoto=()=>{
         const user_email = sessionStorage.getItem('user_email');
@@ -86,7 +86,6 @@ export default function MyPageComponentPt ()  {
 
     React.useEffect(()=>{
         getPhoto();
-        getUserData();
     },[]);
 
  
