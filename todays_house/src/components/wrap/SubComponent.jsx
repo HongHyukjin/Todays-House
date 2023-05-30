@@ -7,6 +7,7 @@ import Sub2Component from './subpage/Sub2Component';
 import Sub3Component from './subpage/Sub3Component';
 import Sub1DetailComponent from './subpage/Sub1DetailComponent';
 import Sub2DetailComponent from './subpage/Sub2DetailComponent ';
+import Sub3DetailComponent from './subpage/Sub3DetailComponent ';
 
 export default function SubComponent () {
     const [photo, setPhoto] = React.useState({
@@ -41,6 +42,7 @@ export default function SubComponent () {
                 <Route path='/서브2' element={<Sub2Component 집들이={photo.집들이}/>} />
                 <Route path='서브2/:id' element={<Sub2DetailComponent 집들이={photo.집들이}/>} />
                 <Route path='/서브3' element={<Sub3Component />} />
+                <Route path='/서브3/노하우' element={<Sub3DetailComponent />} />
             </Routes>
         </>
     );
