@@ -91,7 +91,7 @@ export default function MyPageComponentKnowHow ()  {
 
  
     return (
-        <div id='myPageHouse' >
+        <div id='myPageKnowHow' >
             <div className="container">
                 <div className="gap">
                     <div className="left">

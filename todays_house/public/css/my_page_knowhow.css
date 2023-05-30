@@ -1,70 +1,70 @@
-#myPagePt {
+#myPageKnowHow {
   width: 100%;
 }
-#myPagePt .container {
+#myPageKnowHow .container {
   width: 100%;
   max-width: 1136px;
   margin: 0 auto;
 }
-#myPagePt .container .gap {
+#myPageKnowHow .container .gap {
   width: 100%;
   padding: 30px 0;
   display: flex;
 }
-#myPagePt .container .gap .left {
+#myPageKnowHow .container .gap .left {
   width: 290px;
 }
-#myPagePt .container .gap .left .profile {
+#myPageKnowHow .container .gap .left .profile {
   width: 100%;
   border: 1px solid #dadce0;
   border-radius: 4px;
   padding: 30px 25px 18px 25px;
 }
-#myPagePt .container .gap .left .profile .up-box {
+#myPageKnowHow .container .gap .left .profile .up-box {
   border-bottom: 1px solid #eaebef;
 }
-#myPagePt .container .gap .left .profile .up-box .img-box {
+#myPageKnowHow .container .gap .left .profile .up-box .img-box {
   display: flex;
   justify-content: center;
   width: 118px;
   height: 118px;
   margin: 0 auto;
 }
-#myPagePt .container .gap .left .profile .up-box .img-box img {
+#myPageKnowHow .container .gap .left .profile .up-box .img-box img {
   border-radius: 50%;
   width: 120px;
 }
-#myPagePt .container .gap .left .profile .up-box h2 {
+#myPageKnowHow .container .gap .left .profile .up-box h2 {
   font-size: 26px;
   color: #292929;
   font-weight: bold;
   text-align: center;
   padding: 15px 0 10px 0;
 }
-#myPagePt .container .gap .left .profile .up-box > ul {
+#myPageKnowHow .container .gap .left .profile .up-box > ul {
   display: flex;
   justify-content: center;
 }
-#myPagePt .container .gap .left .profile .up-box > ul li {
+#myPageKnowHow .container .gap .left .profile .up-box > ul li {
   color: #828c94;
   font-size: 13px;
 }
-#myPagePt .container .gap .left .profile .up-box > ul li > span {
+#myPageKnowHow .container .gap .left .profile .up-box > ul li > span {
   color: #525b61;
   font-weight: 600;
 }
-#myPagePt .container .gap .left .profile .up-box > ul i {
+#myPageKnowHow .container .gap .left .profile .up-box > ul i {
   font-size: 5px;
   font-weight: 300;
   margin: 0 5px;
 }
-#myPagePt .container .gap .left .profile .up-box .btn {
+#myPageKnowHow .container .gap .left .profile .up-box .btn {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 15px 0;
 }
-#myPagePt .container .gap .left .profile .up-box .btn button {
+#myPageKnowHow .container .gap .left .profile .up-box .btn button {
   width: 53px;
   height: 30px;
   background: #fff;
@@ -75,15 +75,15 @@
   transition: all 0.3s;
   cursor: pointer;
 }
-#myPagePt .container .gap .left .profile .up-box .btn button:hover {
+#myPageKnowHow .container .gap .left .profile .up-box .btn button:hover {
   background: #fafafa;
 }
-#myPagePt .container .gap .left .profile .down-box {
+#myPageKnowHow .container .gap .left .profile .down-box {
   display: flex;
   justify-content: space-evenly;
   padding: 24px 0 6px 0;
 }
-#myPagePt .container .gap .left .profile .down-box > li {
+#myPageKnowHow .container .gap .left .profile .down-box > li {
   position: relative;
   z-index: 1;
   display: flex;
@@ -91,24 +91,24 @@
   align-items: center;
   cursor: pointer;
 }
-#myPagePt .container .gap .left .profile .down-box > li svg {
+#myPageKnowHow .container .gap .left .profile .down-box > li svg {
   width: 28px;
   height: 28px;
   color: #424242;
 }
-#myPagePt .container .gap .left .profile .down-box > li h3 {
+#myPageKnowHow .container .gap .left .profile .down-box > li h3 {
   font-size: 13px;
   color: #424242;
   font-weight: 400;
   padding: 10px 0;
 }
-#myPagePt .container .gap .left .profile .down-box > li h4 {
+#myPageKnowHow .container .gap .left .profile .down-box > li h4 {
   font-size: 15px;
   font-weight: bold;
   color: #424242;
   text-align: center;
 }
-#myPagePt .container .gap .left .profile .down-box > li::before {
+#myPageKnowHow .container .gap .left .profile .down-box > li::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -118,10 +118,10 @@
   left: 0;
   transition: all 0.3s;
 }
-#myPagePt .container .gap .left .profile .down-box > li:hover:before {
+#myPageKnowHow .container .gap .left .profile .down-box > li:hover:before {
   background-color: rgba(255, 255, 255, 0.6);
 }
-#myPagePt .container .gap .left > button {
+#myPageKnowHow .container .gap .left > button {
   width: 100%;
   height: 50px;
   font-size: 14px;
@@ -136,59 +136,58 @@
   margin: 14px 0 0 0;
   transition: all 0.3s;
 }
-#myPagePt .container .gap .left > button:hover {
+#myPageKnowHow .container .gap .left > button:hover {
   background: #e1f7ff;
 }
-#myPagePt .container .gap .left > button > span {
+#myPageKnowHow .container .gap .left > button > span {
   color: #35c5f0;
   font-weight: 600;
   padding: 0 0 0 4px;
 }
-#myPagePt .container .gap .left > button svg {
+#myPageKnowHow .container .gap .left > button svg {
   margin: 0 0 0 5px;
 }
-#myPagePt .container .gap .right {
+#myPageKnowHow .container .gap .right {
   width: 750px;
   margin: 0 25px 0 100px;
 }
-#myPagePt .container .gap .right .txt-box {
+#myPageKnowHow .container .gap .right .txt-box {
   width: 100%;
 }
-#myPagePt .container .gap .right .txt-box .no-res {
+#myPageKnowHow .container .gap .right .txt-box .no-res {
   font-size: 15px;
   color: #757575;
   text-align: center;
   letter-spacing: -0.4px;
   font-weight: 500;
 }
-#myPagePt .container .gap .right .txt-box .is-post {
+#myPageKnowHow .container .gap .right .txt-box .is-post {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-flow: row wrap;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li {
   width: 30%;
   height: 364px;
   margin: 0 3% 40px 0;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .writer-box {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .writer-box {
   width: 100%;
   position: relative;
   cursor: pointer;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .writer-box > img {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .writer-box > img {
   width: 36px;
   height: 36px;
   border-radius: 100%;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .writer-box > span {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .writer-box > span {
   font-size: 15px;
   color: #424242;
   font-weight: 600;
   padding: 0 0 0 5px;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .writer-box::before {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .writer-box::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -198,48 +197,48 @@
   left: 0;
   transition: all 0.2s;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .writer-box:hover:before {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .writer-box:hover:before {
   background-color: rgba(255, 255, 255, 0.5);
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .pt-box {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .pt-box {
   margin: 15px 0;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .pt-box > a {
   width: 100%;
   display: block;
   overflow: hidden;
   border-radius: 6px;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a > img {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .pt-box > a > img {
   width: 100%;
   height: 236px;
   transition: all 0.3s;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .pt-box > a > img:hover {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .pt-box > a > img:hover {
   scale: 1.05;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box {
   width: 100%;
   padding: 0 0 20px 0;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico > li {
   cursor: pointer;
   position: relative;
   z-index: 1;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon {
   width: 100%;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon.stroke {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon.stroke {
   stroke: #626262;
   fill: #fff;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li::before {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico > li::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -249,16 +248,16 @@
   left: 0;
   transition: all 0.2s;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .ico-box .ico > li:hover:before {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .ico-box .ico > li:hover:before {
   background-color: rgba(255, 255, 255, 0.5);
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .memo-box {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .memo-box {
   color: #555;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
 }
-#myPagePt .container .gap .right .txt-box .is-post > li .memo-box:hover {
+#myPageKnowHow .container .gap .right .txt-box .is-post > li .memo-box:hover {
   color: rgba(66, 66, 66, 0.3);
 }
