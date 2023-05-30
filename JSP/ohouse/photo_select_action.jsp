@@ -24,10 +24,22 @@
     for(PhotoPostDTO photoPostDTO : list){
         cnt++;
         if(cnt < list.size()){
-            jsonData += "{ \"imgUrl\" : \"" + photoPostDTO.getFile() + "\" },";
+            jsonData += "{ \"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
+                     +   "\"type\" : \"" + photoPostDTO.getType() + "\","
+                     +   "\"style\" : \"" + photoPostDTO.getStyle() + "\","
+                     +   "\"place\" : \"" + photoPostDTO.getPlace() + "\","
+                     +   "\"file\" : \"" + photoPostDTO.getFile() + "\","
+                     +   "\"memo\" : \"" + photoPostDTO.getMemo() + "\""
+                     + "},";
         }
         else{
-            jsonData += "{ \"imgUrl\" : \"" + photoPostDTO.getFile() + "\" }";
+            jsonData += "{ \"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
+                     +   "\"type\" : \"" + photoPostDTO.getType() + "\","
+                     +   "\"style\" : \"" + photoPostDTO.getStyle() + "\","
+                     +   "\"place\" : \"" + photoPostDTO.getPlace() + "\","
+                     +   "\"file\" : \"" + photoPostDTO.getFile() + "\","
+                     +   "\"memo\" : \"" + photoPostDTO.getMemo() + "\""
+                     + "}";
         }
     }
     jsonData += "]}";

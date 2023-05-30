@@ -47,21 +47,26 @@ public class PhotoPostDAO {
             catch(Exception e){ }
           
         }
-        return -1;
+        return -1; 
     }
 
     // member table과 photo table join 해서 member의 이메일이 현재 로그인된 이메일인 photo를 불러옴
     public List<PhotoPostDTO> select(String user_email){
         PhotoPostDTO photoPostDTO = null;
         List<PhotoPostDTO> list = new ArrayList<>();
-        String SQL ="select file from ohouse_member m join photo_post p where m.user_email=?";
+        String SQL ="select * from ohouse_member m join photo_post p where m.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
-            rs = ps.executeQuery();
+            rs = ps.executeQuery(); 
             while(rs.next()){
                 photoPostDTO = new PhotoPostDTO();
+                photoPostDTO.setPyeong(rs.getString("pyeong"));
+                photoPostDTO.setType(rs.getString("type"));
+                photoPostDTO.setStyle(rs.getString("style"));
+                photoPostDTO.setPlace(rs.getString("place"));
                 photoPostDTO.setFile(rs.getString("file"));
+                photoPostDTO.setMemo(rs.getString("memo"));
                 list.add(photoPostDTO);
             }
 
