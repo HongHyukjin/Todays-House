@@ -83,6 +83,8 @@
                               line-height: 24px;
                               color:#424242;
                               margin:18px 0 8px 0;
+                              word-break: keep-all;
+                              overflow-wrap: break-word;
                           }
                           span {
                               width:auto;

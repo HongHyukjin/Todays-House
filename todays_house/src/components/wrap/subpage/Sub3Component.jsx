@@ -2,35 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Sub3ComponentChild from './Sub3ComponentChild'
 
-export default function Sub3Component(){
-
-    const [state, setState] = React.useState({
-        노하우 : []
-    });
-
-    const getNewProduct=()=>{
-        axios({
-            url : '../data/product.json',
-            method : 'GET'
-        })
-        .then((res)=>{
-            setState({
-                ...state,
-                노하우 : res.data.노하우
-            })
-        })
-        .catch((err)=>{
-            console.log("AXIOS 오류!" + err)
-        })
-    }
-
-    React.useEffect(()=>{
-        getNewProduct();
-    },[]);
-
-
-
-
+export default function Sub3Component({노하우}){
 
 
 
@@ -81,7 +53,7 @@ export default function Sub3Component(){
                         </div>
                     </div>
                     <div className="nohow-box">
-                        <Sub3ComponentChild 노하우={state.노하우} />
+                        <Sub3ComponentChild 노하우={노하우} />
                     </div>
                 </div>
             </div>
