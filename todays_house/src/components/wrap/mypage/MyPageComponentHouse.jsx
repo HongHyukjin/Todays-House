@@ -37,8 +37,6 @@ export default function MyPageComponentHouse ()  {
             console.log('AJAX 실패!' + err);
         }
     };
-  
-  
 
     React.useEffect(()=>{
         getUserData();
@@ -146,7 +144,7 @@ export default function MyPageComponentHouse ()  {
                                                 return (
                                                     <li key={idx}>
                                                         <div className="writer-box"><img src={state.imgUrl} alt="" /> <span>{state.닉네임}</span></div>
-                                                        <div className="pt-box"><a href="!#"><img src={item.imgUrl} alt="" /></a> </div>
+                                                        <div className="pt-box"><a href="!#"><img src={item.file} alt="" /></a> </div>
                                                         <div className="ico-box">
                                                             <ul className="ico">
                                                                 <li><svg class="icon stroke" aria-label="좋아요" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="fff" fill-rule="nonzero" d="M23.22 7.95c.4 4.94-2.92 9.71-10.92 13.85a.47.47 0 0 1-.42 0C3.88 17.66.56 12.9.96 7.93 1.54 2.48 8.28.3 12.1 4.7c3.8-4.4 10.55-2.22 11.13 3.25z"></path></svg></li>

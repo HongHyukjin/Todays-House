@@ -41,7 +41,6 @@ export default function SubComponent () {
                 <Route path='/서브2' element={<Sub2Component />} />
                 <Route path='/서브3' element={<Sub3Component />} />
                 <Route path='/서브1/상세보기/:id' element={<DetailComponent 사진={state.사진}/>} />
-                    
             </Routes>
         </>
     );
