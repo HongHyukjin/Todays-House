@@ -1,15 +1,14 @@
-
 import $ from 'jquery';
 import React, {useRef} from 'react';
 import {Link} from 'react-router-dom';
 
-export default function UploadHouseComponent ()  {
+export default function UploadKnowHowComponent ()  {
 
     const [state,setState] = React.useState({
         file : '',
         imgUrl : '',
-        house_title:'',
-        house_content:'',
+        knowhow_title:'',
+        knowhow_content:'',
         num:0,
         isTitleError:false
       })
@@ -55,7 +54,7 @@ export default function UploadHouseComponent ()  {
         }
         setState({
           ...state,
-          house_title:value,
+          knowhow_title:value,
           isTitleError:isTitleError
         })
 
@@ -65,7 +64,7 @@ export default function UploadHouseComponent ()  {
         let 내용=e.target.value;
         setState({
           ...state,
-          house_content:내용
+          knowhow_content:내용
         })
       }
 
@@ -84,32 +83,32 @@ export default function UploadHouseComponent ()  {
           $('.input .img_del').css({"display":"block"})
           $('.ico').css({"display":"none"})
           $('.re').css({"display":"block"})
-          $('#UploadHouse .img-upload').css({"display":"none"})
+          $('#UploadKnowHow .img-upload').css({"display":"none"})
         }
         else{ // 사진이 없으면
           $('.input .img_del').css({"display":"none"})
           $('.ico').css({"display":"flex"})
           $('.re').css({"display":"none"})   
-          $('#UploadHouse .img-upload').css({"display":"block"})
+          $('#UploadKnowHow .img-upload').css({"display":"block"})
         }
 
-        $('#UploadHouse .img-upload').on({
+        $('#UploadKnowHow .img-upload').on({
           click(e){
             e.preventDefault();
-            $('#UploadHouse .img-upload').css({"outline":"2px solid #ff7777"})
+            $('#UploadKnowHow .img-upload').css({"outline":"2px solid #ff7777"})
           }
         })
 
       }, [state.file]);
 
       React.useEffect(()=>{
-        let num=state.house_title.length;
+        let num=state.knowhow_title.length;
         setState({
           ...state,
           num:num
         })
 
-      },[state.house_title]);
+      },[state.knowhow_title]);
 
       React.useEffect(()=>{
         $('.guide-btn').on({
@@ -133,18 +132,18 @@ export default function UploadHouseComponent ()  {
 
       const onClickSubmit=(e)=>{
         e.preventDefault();
-        onSubmitHousePost();
+        onSubmitKnowHowPost();
     
     } 
 
-      const onSubmitHousePost=()=>{
+      const onSubmitKnowHowPost=()=>{
         const formData = {
           "file":state.imgUrl,
-          "house_title":state.house_title,
-          "house_content":state.house_content,
+          "knowhow_title":state.knowhow_title,
+          "knowhow_content":state.knowhow_content,
         }
         $.ajax({
-          url:'http://localhost:8080/JSP/ohouse/house_post_action.jsp',
+          url:'http://localhost:8080/JSP/ohouse/knowhow_post_action.jsp',
           type:'post',
           data:formData,
           success(res){
@@ -159,7 +158,7 @@ export default function UploadHouseComponent ()  {
       }
     
     return (
-        <div id='UploadHouse'>
+        <div id='UploadKnowHow'>
             <div className='row1'>
                 <div className="container">
                     <div className="gap">
@@ -171,33 +170,24 @@ export default function UploadHouseComponent ()  {
             <div className="guide">
               <button className='guide-btn'>
                 <svg className="icon" width="25" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMidYMid meet"><rect width="25" height="25" fill="#6ADFC4" rx="10"></rect><g fill="#FFF" transform="translate(7 8)"><rect width="7" height="1.5" rx=".8"></rect><rect width="11" height="1.5" y="4" rx=".8"></rect><rect width="11" height="1.5" y="8" rx=".8"></rect></g></svg>
-                <b>집들이 작성 가이드</b>
-                <p>원활한 집들이 발행을 위해 꼭 읽어주세요.</p>
+                <b>노하우 작성 가이드</b>
+                <p>원활한 노하우 발행을 위해 꼭 읽어주세요..</p>
                 <div className="arrow">
                   <svg className="u9pb" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
                 </div>
               </button>
               <div className="guide-content hide">
                 <ul className='one'>
-                  <li className='one-one'>에디터의 섭외 없이 작성해주시는 경우엔 확인 후 <b>게시글 오픈이 반려될 수도 있습니다.</b> 오픈 및 반려 여부는 <b>댓글로</b> 안내 드립니다. </li>
-                  <li className='one-one'>오픈 및 반려 여부 확인은 작성해주신 시점을 기준으로 일주일-10일 가량 소요되며, <b>댓글로</b> 결과를 안내 드립니다.</li>
-                  <li className='one-one'>간단한 자기 소개 후 집에 관한 이야기를 들려주세요. (집 공간 사진 최소 15장 이상)</li>
-                  <li className='one-one'>집 사진/소개글 관련해서 고민이 될 땐 이 링크를 참고해주세요.
-                    <ul className='two'>
-                      <li className='two-two'>원룸·오피스텔·방을 소개하는 경우 (<a href="https://ohouse.notion.site/6569e378ef97497a9e17d884c1665da1">바로가기</a>)</li>
-                      <li className='two-two'>아파트·빌라·주택 전체를 소개하는 경우 (<a href="https://ohouse.notion.site/7f783b644f9746eea77ff8b6c959389e">바로가기</a>)</li>
-                    </ul>
-                  </li> 
-                  <li className='one-one'>도면이 있으면 좋아요. (손그림도 OK)</li>
-                  <li className='one-one'>사진 속 제품 정보를 본문에 최대한 적어주세요. (제품분류/브랜드/제품명 순서)</li>
-                  <li className='one-one'>사진 첨부 시 용량은 장당 최대 20MB까지 업로드할 수 있고, jpg, png, webp, heif, heic, gif 포맷을 지원합니다.</li>
-                  <li className='one-one'>정보를 많이 입력할수록 검색 결과에 많이 노출되어 조회수가 올라갑니다.</li>
-                  <li className='one-one'>커버사진과 제목은 에디터에 의해 변경될 수 있습니다.</li>
+                  <li className='one-one'>작성해주신 노하우는 오늘의집 에디터 검수를 통해 오픈 여부가 결정되며, 결과는 10일 내에 댓글로 안<br />내드립니다. (커버사진과 제목은 에디터에 의해 변경될 수 있습니다.) </li>
+                  <li className='one-one'><b>어떤 글을 써야 할지 고민이 될 땐 이 링크를 참고해주세요. (<a href="https://ohouse.notion.site/7a4124e1130d48fa8db989ec63f703e9">바로가기</a>)</b></li>
+                  <li className='one-one'>제품 태그를 많이 추가할수록 검색 결과에 많이 노출되어 조회수가 올라갑니다.</li>
+                  <li className='one-one'>브랜드 혹은 제품 홍보 목적의 콘텐츠는 오픈이 불가합니다.</li> 
+                  <li className='one-one'>사진 첨부 시 용량은 장당 최대 20MB까지 업로드할 수 있고, jpg, png, webp, heif, heic, gif 포맷을<br /> 지원합니다.</li>
                   <li className='one-one'>글 작성과 이미지 업로드 시, 타인의 지식재산권을 침해하지 않도록 유의해주세요.</li>
                 </ul>
               </div>
             </div>
-            <form action="" name='upload_ho' id='uploadHo' onSubmit={onSubmitHousePost}>
+            <form action="" name='upload_kn' id='uploadKn' onSubmit={onSubmitKnowHowPost}>
                 <div className="photo-box">
                     <div className="input">
                         <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} className='hide'/>
@@ -223,7 +213,7 @@ export default function UploadHouseComponent ()  {
                 <div className="write-box">
                     <ul>
                       <li className='first-row'>
-                        <input type="text" name="house_title" id="houseTitle" placeholder='제목을 입력해주세요.' maxLength={80} onChange={onChangeTitle} value={state.house_title}/>
+                        <input type="text" name="knowhow_title" id="knowhowTitle" placeholder='제목을 입력해주세요.' maxLength={80} onChange={onChangeTitle} value={state.knowhow_title}/>
                         <span>{state.num} <i>/</i>80</span>
                       </li>
                       <li>
@@ -236,7 +226,7 @@ export default function UploadHouseComponent ()  {
                         }
                       </li>
                       <li>
-                        <textarea type="text" name="house_content" id="houseContent"  placeholder='내용을 입력해주세요.'onChange={onChangeContent}/>
+                        <textarea type="text" name="knowhow_content" id="knowhowContent"  placeholder='내용을 입력해주세요.'onChange={onChangeContent}/>
                       </li>
                     </ul>
                 </div>

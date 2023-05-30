@@ -1,12 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
 
-export default function MyPageComponentPt ()  {
+export default function MyPageComponentKnowHow ()  {
 
     const [state,setState] = React.useState({
         닉네임 : '닉네임',
         imgUrl : '',
-        사진:'',
+        집들이:'',
         isPost:false,
         noRes:true
     })
@@ -44,7 +44,7 @@ export default function MyPageComponentPt ()  {
         getUserData();
     }, [])
 
-    const getPhoto = async () => {
+    const getKnowHow = async () => {
         try {
             const user_email = sessionStorage.getItem('user_email');
             const form_data = {
@@ -52,7 +52,7 @@ export default function MyPageComponentPt ()  {
             };
 
             const res = await $.ajax({
-                url: 'http://localhost:8080/JSP/ohouse/photo_select_action.jsp',
+                url: 'http://localhost:8080/JSP/ohouse/knowhow_select_action.jsp',
                 type: 'POST',
                 data: form_data,
                 dataType: 'json'
@@ -60,11 +60,11 @@ export default function MyPageComponentPt ()  {
 
             console.log('AJAX 성공');
             console.log(res.result);
-            let 사진 = '';
+            let 집들이 = '';
             let isPost = false;
             let noRes = true;
 
-            if (사진 === '') {
+            if (집들이 === '') {
                 isPost = true;
                 noRes = false;
             } else {
@@ -74,7 +74,7 @@ export default function MyPageComponentPt ()  {
 
             setState((prevState) => ({
                 ...prevState,
-                사진: res.result,
+                집들이: res.result,
                 isPost: isPost,
                 noRes: noRes
             }));
@@ -86,12 +86,12 @@ export default function MyPageComponentPt ()  {
 
 
     React.useEffect(()=>{
-        getPhoto();
+        getKnowHow();
     },[]);
 
  
     return (
-        <div id='myPagePt' >
+        <div id='myPageHouse' >
             <div className="container">
                 <div className="gap">
                     <div className="left">
@@ -142,7 +142,7 @@ export default function MyPageComponentPt ()  {
 
                                     <ul className="is-post">
                                         {
-                                            state.사진.map((item, idx) => {
+                                            state.집들이.map((item, idx) => {
                                                 return (
                                                     <li key={idx}>
                                                         <div className="writer-box"><img src={state.imgUrl} alt="" /> <span>{state.닉네임}</span></div>
@@ -154,7 +154,7 @@ export default function MyPageComponentPt ()  {
                                                                 <li><svg class="icon no-stroke" aria-label="댓글 달기" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="nonzero" d="M13.665 18.434l.53-.066C19.69 17.679 23 14.348 23 10c0-4.942-4.235-8.5-11-8.5S1 5.058 1 10c0 4.348 3.31 7.68 8.804 8.368l.531.066L12 21.764l1.665-3.33zm-3.985.926C3.493 18.585 0 14.69 0 10 0 4.753 4.373.5 12 .5S24 4.753 24 10c0 4.69-3.493 8.585-9.68 9.36l-1.647 3.293c-.374.75-.974.744-1.346 0L9.68 19.36z"></path></svg></li>
                                                             </ul>
                                                         </div>
-                                                        <div className="memo-box">{item.memo}</div>
+                                                        <div className="memo-box">{item.knowhow_title}</div>
                                                     </li>
                                                 )
                                             })

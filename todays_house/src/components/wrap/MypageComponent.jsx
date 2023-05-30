@@ -5,6 +5,8 @@ import UpdateComponent from './mypage/UpdateComponent';
 import ChangePwComponent from './mypage/ChangePwComponent';
 import MyPageComponentAll from './mypage/MyPageComponentAll';
 import MyPageComponentPt from './mypage/MyPageComponentPt';
+import MyPageComponentHouse from './mypage/MyPageComponentHouse';
+import MyPageComponentKnowHow from './mypage/MyPageComponentKnowHow';
 
 export default function MypageComponent ({isMypage}) {
 
@@ -15,8 +17,8 @@ export default function MypageComponent ({isMypage}) {
           <Route path='/' element={<MyPageComponentAll/>} />
           <Route path='/모두보기' element={<MyPageComponentAll/>} />
           <Route path='/사진' element={<MyPageComponentPt/>} />
-          <Route path='/집들이' element={<MyPageComponentPt />} />
-          <Route path='/노하우' element={<MyPageComponentPt />} />
+          <Route path='/집들이' element={<MyPageComponentHouse />} />
+          <Route path='/노하우' element={<MyPageComponentKnowHow />} />
           <Route path='/회원정보수정' element={<UpdateComponent />} />
           <Route path='/비밀번호변경' element={<ChangePwComponent />} />
       </Routes>

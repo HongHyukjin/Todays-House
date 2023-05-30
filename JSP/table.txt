@@ -52,5 +52,14 @@ create table house_post(
     write_date timestamp default current_timestamp
 );
 
+// 노하우 올리기
+create table knowhow_post(
+    idx     int     auto_increment primary key,
+    file    longblob not null,
+    knowhow_title varchar(81) not null,
+    knowhow_content varchar(2000) not null,
+    write_date timestamp default current_timestamp
+);
+
 
 
