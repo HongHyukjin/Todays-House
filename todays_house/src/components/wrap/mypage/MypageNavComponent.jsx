@@ -65,7 +65,7 @@ export default function MypageNavComponent () {
                   <li><Link to="/마이페이지/집들이" className='bottom-nav-btn'>집들이</Link></li>
                   <li><Link to="/마이페이지/노하우" className='bottom-nav-btn'>노하우</Link></li>
                   <li><a href="#!" className='bottom-nav-btn'>질문과답변</a></li>
-                  <li><a href="#!" className='bottom-nav-btn'>스크랩북</a></li>
+                  <li><Link to="/스크랩페이지" className='bottom-nav-btn'>스크랩북</Link></li>
                   <li><a href="#!" className='bottom-nav-btn'>좋아요</a></li>
                 </ul>
               </nav>

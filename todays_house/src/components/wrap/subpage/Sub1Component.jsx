@@ -3,31 +3,8 @@ import axios from 'axios';
 import Sub1ComponentChild from './Sub1ComponentChild';
 
 
-export default function Sub1Component() {
+export default function Sub1Component({사진}) {
 
-    const [state, setState] = React.useState({
-        사진 : []
-    });
-
-    const getNewProduct3 = () =>{
-        axios({
-            url : '../data/product.json',
-            method : 'GET'
-        })
-        .then((res)=>{
-            setState({
-                ...state,
-                사진 : res.data.사진
-            })
-        })
-        .catch((err)=>{
-            console.log("AXIOS 오류" + err)
-        })
-    }
-
-    React.useEffect(()=>{
-        getNewProduct3();
-    },[]);
 
 
 
@@ -52,7 +29,7 @@ export default function Sub1Component() {
                         </div>
                     </div>
                     <div className="content">
-                        <Sub1ComponentChild 사진={state.사진} />
+                        <Sub1ComponentChild 사진={사진} />
                     </div>
                 </div>
             </div>

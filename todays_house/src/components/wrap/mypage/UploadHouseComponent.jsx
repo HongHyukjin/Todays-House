@@ -144,7 +144,7 @@ export default function UploadHouseComponent ()  {
           "house_content":state.house_content,
         }
         $.ajax({
-          url:'http://localhost:8080/JSP/house_post_action.jsp',
+          url:'http://localhost:8080/JSP/ohouse/house_post_action.jsp',
           type:'post',
           data:formData,
           success(res){

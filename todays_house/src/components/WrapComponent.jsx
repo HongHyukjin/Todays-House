@@ -7,6 +7,7 @@ import SignUpComponent from './wrap/SignUpComponent';
 import UploadPhotoComponent from './wrap/mypage/UploadPhotoComponent';
 import UploadVedioComponent from './wrap/mypage/UploadVideoComponent';
 import UploadHouseComponent from './wrap/mypage/UploadHouseComponent';
+import UploadKnowHowComponent from './wrap/mypage/UploadKnowHowComponent';
 
 
 export default function WrapComponent () {
@@ -52,6 +53,7 @@ export default function WrapComponent () {
                     <Route path="/사진업로드" element={<UploadPhotoComponent />}/>
                     <Route path="/비디오업로드" element={<UploadVedioComponent />}/>
                     <Route path="/집들이업로드" element={<UploadHouseComponent />}/>
+                    <Route path="/노하우업로드" element={<UploadKnowHowComponent />}/>
             </Routes>
          </BrowserRouter>
 

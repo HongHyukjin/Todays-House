@@ -1,3 +1,7 @@
+<%
+    response.setHeader("Access-Control-Allow-Origin","*");
+%>
+
 <%@ page
     language="java"
     contentType="application/json; charset=UTF-8"

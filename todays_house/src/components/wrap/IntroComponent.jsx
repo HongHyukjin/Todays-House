@@ -7,7 +7,8 @@ import $ from 'jquery';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
 import SubComponent from './SubComponent';
-import DetailComponent from './main/DetailComponent';
+import ShoppingComponent from './ShoppingComponent'
+import ScrapComponent from './ScrapComponent';
 
 export default function IntroComponent () {
     const [state,setState] = React.useState({
@@ -92,8 +93,9 @@ export default function IntroComponent () {
                       <Route index element={<MainComponent/>} top={state.top} />
                       <Route path='/메인' element={<MainComponent/>} />
                       <Route path='/서브페이지/*' element={<SubComponent />} />
-                      <Route path='/상세페이지/*' element={<DetailComponent />} />
+                      <Route path='/쇼핑페이지/*' element={<ShoppingComponent />} />
                       <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
+                      <Route path='/스크랩페이지' element={<ScrapComponent />} />
                 </Routes>
             <FooterComponent/>
         </>

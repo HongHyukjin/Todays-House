@@ -1,5 +1,6 @@
 #scrap {
   width: 100%;
+  padding-top: 80px;
 }
 #scrap .container {
   width: 100%;
@@ -15,6 +16,7 @@
 }
 #scrap .container .gap .content .row1 {
   width: 100%;
+  padding-top: 40px;
 }
 #scrap .container .gap .content .row1 > ul {
   width: 100%;
