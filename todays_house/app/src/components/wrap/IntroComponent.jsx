@@ -6,13 +6,14 @@ import { Routes, Route}  from 'react-router-dom';
 import MainComponent from './MainComponent';
 import MypageComponent from './MypageComponent'
 import ShopingComponent from './ShopingComponent';
+import BasketComponent from './BasketComponent';
 
 export default function IntroComponent () {
     return (
         <>
             <TopmodalComponent />   
             <HeaderComponent />
-            <ShopingComponent/>
+            <BasketComponent/>
                 {/* <Routes>
                       <Route index element={<MainComponent />} />
                       <Route path='/메인' element={<MainComponent/>} />
