@@ -34,7 +34,9 @@ export default function BasketComponent(props) {
                                             <span className='span4'>DQ202PBBC(블루)</span><img src="./images/basket/x.png" alt="" />
                                         </li>
                                         <li>
-                                            <button>- 1 +</button>
+                                            <div className="button-box">
+                                                <span className='min'>-</span><button>1</button><span className='plu'>+</span>
+                                            </div>
                                             <span className='span5'>525,000원</span>
                                         </li>
                                         <li>

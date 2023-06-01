@@ -31,6 +31,7 @@
   margin-left: 10px;
   width: 15px;
   height: 15px;
+  border: 1px solid #ccc;
 }
 #wrap #basket .container .gap .content .left-box .row1 span {
   margin-left: 5px;
@@ -101,6 +102,7 @@
   position: absolute;
   top: 25%;
   left: 2%;
+  border: 1px solid #ccc;
 }
 #wrap #basket .container .gap .content .left-box .row2 ul li img {
   width: auto;
@@ -137,7 +139,19 @@
   width: 685px;
   height: 186px;
 }
-#wrap #basket .container .gap .content .left-box .row2 ul .choose-box button {
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box {
+  width: 70px;
+  height: 32px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box .min {
+  width: 17px;
+  height: 18px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box .plu {
+  width: 17px;
+  height: 18px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box button {
   width: 70px;
   height: 32px;
   padding: 7px 6px;
@@ -145,6 +159,7 @@
   border: 1px solid #dadde0;
   font-size: 15px;
   margin-left: -30px;
+  cursor: pointer;
 }
 #wrap #basket .container .gap .content .left-box .row2 ul .choose-box .span4 {
   font-size: 14px;
@@ -244,4 +259,5 @@
   border-radius: 4px;
   font-weight: 600;
   font-size: 17px;
+  cursor: pointer;
 }

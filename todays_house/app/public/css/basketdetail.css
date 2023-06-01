@@ -1,0 +1,296 @@
+#wrap {
+  width: 100%;
+}
+#wrap #basketdetail {
+  width: 100%;
+  height: 1000px;
+}
+#wrap #basketdetail .container {
+  width: 100%;
+  max-width: 1156px;
+  margin: 0 auto;
+}
+#wrap #basketdetail .container .gap {
+  width: 100%;
+}
+#wrap #basketdetail .container .gap .nav {
+  width: 100%;
+  padding-top: 20px;
+}
+#wrap #basketdetail .container .gap .nav ul {
+  display: flex;
+}
+#wrap #basketdetail .container .gap .nav ul li {
+  padding: 0 7px;
+}
+#wrap #basketdetail .container .gap .content {
+  width: 100%;
+  display: flex;
+}
+#wrap #basketdetail .container .gap .content .left-box {
+  width: 55%;
+}
+#wrap #basketdetail .container .gap .content .left-box .img-box {
+  padding-top: 35px;
+  padding-left: 50px;
+}
+#wrap #basketdetail .container .gap .content .left-box .img-box img {
+  width: 558px;
+  height: 558px;
+  border-radius: 5px;
+}
+#wrap #basketdetail .container .gap .content .right-box {
+  width: 45%;
+  padding-left: 22px;
+  padding-top: 35px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .head p {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 19px;
+  color: #656e75;
+  margin-bottom: 10px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .head .name-box {
+  position: relative;
+  padding-bottom: 10px;
+  width: 350px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .head .name-box span {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.7px;
+  color: #000;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .head .name-box button img {
+  position: absolute;
+  top: 0;
+  right: -20%;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body {
+  padding-bottom: 14px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li {
+  padding: 5px 0;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li .discount {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.5px;
+  color: #656e75;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li .prime-cost {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.5px;
+  color: #bdbdbd;
+  text-decoration: line-through;
+  margin-left: 7px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li .price {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 32px;
+  color: #000;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li > span {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .body ul li img {
+  width: 60px;
+  height: 15px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li {
+  padding: 2px 0;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .span1 {
+  font-size: 14px;
+  line-height: 21px;
+  color: #828c94;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  padding-right: 12px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .point {
+  font-size: 14px;
+  font-weight: 700;
+  color: #292929;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .start {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+  color: #35c5f0;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .jeju {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #757575;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .span2 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #292929;
+  letter-spacing: -0.4px;
+  padding-left: 37px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .delivery {
+  width: 420px;
+  height: 40px;
+  margin-top: 20px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .delivery img {
+  margin-left: 37px;
+  margin-right: 5px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .delivery span {
+  font-size: 14px;
+  line-height: 20px;
+  color: #292929;
+  letter-spacing: -0.5px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .bottom ul li .delivery span strong {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  color: #35c5f0;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name {
+  margin-bottom: 30px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul {
+  display: flex;
+  justify-content: space-between;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul > li {
+  position: relative;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul > li span {
+  font-size: 15px;
+  line-height: 22px;
+  color: #525b61;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul > li img {
+  margin-right: 5px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul > li .brand {
+  position: absolute;
+  top: 33%;
+  right: 34%;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-name .company-name ul > li button {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: -0.5px;
+  color: #828c94;
+  border-radius: 14px;
+  width: 86px;
+  height: 28px;
+  padding: 4px 8px 4px 5px;
+  border: 0;
+  margin-right: 41px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 {
+  background-color: #F7F9FA;
+  width: 461px;
+  height: 186px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li {
+  padding: 10px 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li > span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #2F3438;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li .row1-price {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #2F3438;
+  letter-spacing: -0.5px;
+  padding-right: 20px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li button {
+  width: 82px;
+  height: 35px;
+  padding: 7px 8px;
+  background-color: #fff;
+  border: 1px solid #DADDE0;
+  color: #2F3438;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li input {
+  width: 435px;
+  height: 42px;
+  border: 1px solid #DADDE0;
+  padding: 0 14px;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f0f0f0;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 {
+  margin-top: 40px;
+  width: 461px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .order {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  color: #2F3438;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .order-price {
+  color: #2F3438;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 28px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .shop-basket {
+  width: 49%;
+  height: 55px;
+  background-color: #fff;
+  border: 1px solid #35c5f0;
+  color: #35c5f0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .buy {
+  width: 49%;
+  height: 55px;
+  background-color: #35c5f0;
+  border: 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+}
