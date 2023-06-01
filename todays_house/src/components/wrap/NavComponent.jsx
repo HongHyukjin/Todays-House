@@ -1,32 +1,28 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import $ from 'jquery';
 
 
 export default function NavComponent() {
-
     const [slideIndex, setSlideIndex] = React.useState(0);
-    const searchKeywords = ['1 순위', '2 순위', '3 순위', '4 순위', '5 순위', '6 순위', '7 순위', '8 순위', '9 순위', '10 순위'];
-  
+
+    const searchKeywords = ['1 신혼', '2 틈새수납', '3 캐노피', '4 슬라이딩 옷장', '5 순위', '6 캔버스액자', '7 그릇정리대', '8 냄비정리대', '9 바이칸', '10 올리브나무'];
+    let setId = 0;
+    
     React.useEffect(() => {
-      const interval = setInterval(() => {
-        slideDown();
-      }, 3000);
-      
-  
+      const slideUp = () => {
+        setSlideIndex((prevIndex) => (prevIndex + 1) % searchKeywords.length);
+      };
+    
+      setId = setInterval(slideUp, 3000);
+    
       return () => {
-        clearInterval(interval);
+        clearInterval(setId);
       };
     }, []);
-  
-    const slideDown = () => {
-       
-      setSlideIndex(prevIndex => (prevIndex + 1) % searchKeywords.length);
-     
-    };
-  
 
 
-    
+      
     return (
         <>
         <div id='nav'>
@@ -46,18 +42,22 @@ export default function NavComponent() {
                                 <li><a href="!#">이벤트</a></li>
                             </ul>
                         </div>
-                        
-                    </div>
-                    <div id="rank-list">
-                            <dt>실시간 급상승 검색어</dt>
+                        <div id="rank-list">
+                           
                                 <dd>
-                                    <ol className={`slide ${slideIndex > 0 ? 'slide-content' : ''}`}>
+                                    <ol className="slide">
                                         {searchKeywords.map((keyword, index) => (
-                                        <li key={index} className={index === slideIndex ? 'active' : ''}>{keyword}</li>
+                                            <li key={index} className={index === slideIndex ? 'active' : ''}
+                                            style={{ display: index === slideIndex ? 'block' : 'none' }} >
+                                            {keyword}
+                                            </li>
                                         ))}
                                     </ol>
                                 </dd>
                         </div>
+                        
+                    </div>
+
                 </div>
             </div>
         </div>
