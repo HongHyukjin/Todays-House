@@ -158,6 +158,12 @@
                                       width:24px;
                                       height:24px;
                                   }
+                                  &.on{
+                                    .icon{
+                                        fill: #35c5f0;
+                                        stroke : transparent;
+                                    }
+                                  }
                               }
                               .reply {
                                   width:24px;

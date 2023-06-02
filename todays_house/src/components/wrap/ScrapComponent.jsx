@@ -37,8 +37,8 @@ export default function ScrapComponent() {
     }
   };
 
-  const getScrap = async() => {
-    try{
+  const getScrap = async () => {
+    try {
       const user_email = sessionStorage.getItem('user_email');
       const form_data = {
         "user_email": user_email
@@ -56,11 +56,10 @@ export default function ScrapComponent() {
         ...prevState,
         스크랩: res.result
       }));
-    } catch (err){
+    } catch (err) {
       console.log('AJAX 실패!' + err);
     }
-
-}
+  }
 
   React.useEffect(() => {
     getUserData();

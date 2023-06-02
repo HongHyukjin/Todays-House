@@ -23,12 +23,13 @@ public class ScrapPostDAO {
  
     // 1. post
     public int post(ScrapPostDTO scrapPostDTO){
-        String SQL ="insert into scrap(id,imagepath,sub) values(?,?,?)";
+        String SQL ="insert into scrap(user_email,id,imagepath,sub) values(?,?,?,?)";
         try{
             ps = conn.prepareStatement(SQL);
-            ps.setInt(1, scrapPostDTO.getId());
-            ps.setString(2, scrapPostDTO.getImagepath());
-            ps.setString(3, scrapPostDTO.getSub());
+            ps.setString(1, scrapPostDTO.getUser_email());
+            ps.setInt(2, scrapPostDTO.getId());
+            ps.setString(3, scrapPostDTO.getImagepath());
+            ps.setString(4, scrapPostDTO.getSub());
     
 
             return ps.executeUpdate();
@@ -79,8 +80,29 @@ public class ScrapPostDAO {
             }
             catch(Exception e){ }
           
-        }
+        } 
         return list;
+    }
+
+    public int delete(ScrapPostDTO scrapPostDTO){
+        String SQL = "delete from scrap where user_email=? && id=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, scrapPostDTO.getUser_email());
+            ps.setInt(2, scrapPostDTO.getId());;
+    
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1;
     }
 
 

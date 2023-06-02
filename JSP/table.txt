@@ -63,6 +63,7 @@ create table knowhow_post(
 
 //  스크랩
 create table scrap(
+    user_email  varchar(100) not null,
     id             int     not null,
     imagepath  varchar(200)   not null,
     sub           varchar(20) not null

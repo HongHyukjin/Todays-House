@@ -3,9 +3,18 @@ package scrap;
 
 public class ScrapPostDTO {
 
+  private String user_email;
   private int id;
   private String imagepath;
-  private String sub;
+  private String sub; 
+  
+  public String getUser_email() {
+    return this.user_email;
+  }
+
+  public void setUser_email(String user_email) {
+    this.user_email = user_email;
+  }
 
   public int getId() {
     return this.id;
