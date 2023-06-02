@@ -70,31 +70,31 @@ export default function MypageComponent ({isMypage}) {
     }
 };
 
-const getKnowHow = async () => {
-  try {
-      const user_email = sessionStorage.getItem('user_email');
-      const form_data = {
-          "user_email": user_email
-      };
+  const getKnowHow = async () => {
+    try {
+        const user_email = sessionStorage.getItem('user_email');
+        const form_data = {
+            "user_email": user_email
+        };
 
-      const res = await $.ajax({
-          url: 'http://localhost:8080/JSP/ohouse/knowhow_select_action.jsp',
-          type: 'POST',
-          data: form_data,
-          dataType: 'json'
-      });
+        const res = await $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/knowhow_select_action.jsp',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json'
+        });
 
-      console.log('AJAX 성공');
-      console.log(res.result);
+        console.log('AJAX 성공');
+        console.log(res.result);
 
-      setState((prevState) => ({
-          ...prevState,
-          노하우: res.result
-      }));
-  } catch (err) {
-      console.log('AJAX 실패' + err);
-  }
-};
+        setState((prevState) => ({
+            ...prevState,
+            노하우: res.result
+        }));
+    } catch (err) {
+        console.log('AJAX 실패' + err);
+    }
+  };
 
   React.useEffect(()=>{
     getPhoto();

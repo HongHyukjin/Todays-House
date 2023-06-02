@@ -10,6 +10,7 @@ export default function MyPageComponentAll ()  {
         imgUrl : ''
     })
 
+
     const getUserData = () => {
         const user_email = sessionStorage.getItem('user_email');
         const form_data = {

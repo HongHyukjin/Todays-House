@@ -91,21 +91,22 @@
 #scrap .container .gap .content .row5 {
   padding: 20px 0 0 0;
   width: 1156px;
-  height: 329px;
 }
-#scrap .container .gap .content .row5 ul {
-  width: 100%/4;
+#scrap .container .gap .content .row5 > ul {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-flow: row wrap;
 }
-#scrap .container .gap .content .row5 ul li {
+#scrap .container .gap .content .row5 > ul > li {
+  width: 23%;
+  margin: 0 2% 20px 0;
+}
+#scrap .container .gap .content .row5 > ul > li a {
   width: 100%;
 }
-#scrap .container .gap .content .row5 ul li a {
-  width: 100%;
-}
-#scrap .container .gap .content .row5 ul li a img {
+#scrap .container .gap .content .row5 > ul > li a img {
   width: 269px;
   height: 269px;
+  border-radius: 5px;
 }

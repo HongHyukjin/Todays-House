@@ -6,23 +6,36 @@ export default function Sub3DetailComponent ({노하우}) {
 
     let {id} = useParams();
 
+    const [state,setState] = React.useState({
+        노하우 : []
+    });
+
+    React.useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('노하우'));
+        console.log(data[id]);
+        setState({
+            ...state,
+            노하우 : data[id]
+        })
+    }, [노하우])
+
     return (
         
         <div id='sub3Detail'>
             <div className="container">
                 <div className="sub3-img-up">
-                    <img src={`/images/sub3/${노하우[id].이미지1}`}alt="" />
+                    <img src={`/images/sub3/${state.노하우.이미지1}`}alt="" />
                 </div>
                 <div className="gap">
                     <div className="title">
-                        <h1>{노하우[id].설명란}</h1>
+                        <h1>{state.노하우.설명란}</h1>
                     </div>
                     <div className="nick-box">
                         <div className="nickname">
                             <img src='/images/sub3/160758822452433365.webp' alt="" />
                             <div className="name">
-                                <h3>{노하우[id].출처}</h3>
-                                <p>{노하우[id].시간}</p>
+                                <h3>{state.노하우.출처}</h3>
+                                <p>{state.노하우.시간}</p>
                             </div>
                         </div>
                         <div className="button">
@@ -30,25 +43,25 @@ export default function Sub3DetailComponent ({노하우}) {
                         </div>
                     </div>
                     <div className="sub3-img-bottom sub3-img-bottom1">
-                        <img src={`/images/sub3/${노하우[id].이미지2}`} alt="" />
+                        <img src={`/images/sub3/${state.노하우.이미지2}`} alt="" />
                         <button className="svg">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="icon"><defs><path id="scrap-icon-2258-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-2258-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-2258-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fillRule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-2258-a)" href="#scrap-icon-2258-b"></use><use fill="#FFF" fillOpacity=".4" href="#scrap-icon-2258-b"></use><use fill="#000" filter="url(#scrap-icon-2258-c)" href="#scrap-icon-2258-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>                        
                         </button>
                     </div>
                     <div className="content">
                         <p className='text1'>
-                            {노하우[id].글1}
+                            {state.노하우.글1}
                         </p>
                     </div>
                     <div className="sub3-img-bottom sub3-img-bottom2">
-                        <img src={`/images/sub3/${노하우[id].이미지3}`} alt="" />
+                        <img src={`/images/sub3/${state.노하우.이미지3}`} alt="" />
                         <button className="svg">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="icon"><defs><path id="scrap-icon-2258-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-2258-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-2258-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fillRule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-2258-a)" href="#scrap-icon-2258-b"></use><use fill="#FFF" fillOpacity=".4" href="#scrap-icon-2258-b"></use><use fill="#000" filter="url(#scrap-icon-2258-c)" href="#scrap-icon-2258-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>                        
                         </button>
                     </div>
                     <div className="content">
                         <p>
-                            {노하우[id].글2}
+                            {state.노하우.글2}
                         </p>
                     </div>
                     <div className="sub3-img-bottom sub3-img-bottom3">

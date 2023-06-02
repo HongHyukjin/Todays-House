@@ -82,7 +82,6 @@ export default function MyPageComponentHouse ()  {
     };
   
 
-
     React.useEffect(()=>{
         getHouse();
     },[]);

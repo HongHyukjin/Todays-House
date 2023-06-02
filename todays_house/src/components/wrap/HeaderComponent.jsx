@@ -94,6 +94,7 @@ export default function HeaderComponent({isMypage}){
             ...state,
             isLogin : false
         })
+        window.location.href="/";
     }
 
     const onMouseEnterNav=()=>{

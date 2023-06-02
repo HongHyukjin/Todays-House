@@ -89,19 +89,20 @@
               .row5 {
                   padding:20px 0 0 0;
                   width:1156px;
-                  height: 329px;
-                  ul {
-                      width: 100%/4;
+                  >ul {
+                      width: 100%;
                       display: flex;
                       align-items: center;
-                      justify-content: space-between;
-                      li {
-                          width: 100%;
+                      flex-flow: row wrap;
+                      >li {
+                          width: 23%;
+                          margin : 0 2% 20px 0;
                           a {
                               width: 100%;
                               img {
                                   width: 269px;
                                   height: 269px;
+                                  border-radius: 5px;
                               }
                           }
                       }

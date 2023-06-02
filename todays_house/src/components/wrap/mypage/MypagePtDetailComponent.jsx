@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function MypagePtDetailComponent ({사진}) {
-  const {id} = useParams();
+    const {id} = useParams();
 
     return (
         <>
