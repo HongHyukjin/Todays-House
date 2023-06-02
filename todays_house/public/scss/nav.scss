@@ -39,48 +39,59 @@
                             }
                         }
                     }
-
-                }
-                #rank-list {
-                    dt {
-                      font-weight: bold;
-                    }
-                    
-                    dd {
-                        .slide {
-                            display: block;
-                          }
-                        .slide-content {
-                        list-style-type: none;
-                        padding: 0;
-                        margin: 0;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: inline-block;
-                        transition: transform 0.6s ease-in-out;
-                      }
+                    #rank-list {
+                      width: 100%;
+                      max-width: 191px;
+                      height: 30px;
+                      float: right;
+                      position: absolute;
+                      right: 0;
+                      top: 100px;
+                      left: 1265px;
                       
-                      .active {
-                        display: block;
-                        margin-right: 10px;
+                      dd {
+                        width: 100%;
+                          ol.slide {
+                              width: 100%;
+                              text-align: center;
+                              padding: 0;
+                              margin: 0;
+                              // white-space: nowrap;
+                              // overflow: hidden;
+                              // text-overflow: ellipsis;
+                              // display: inline-block;
+                              // position: relative;
+                              height: 20px; /* 슬라이드 컨테이너의 높이에 맞게 조정 */
+                              overflow: hidden;
+                            
+                              li.active {
+                                width: 100%;
+                                display: block;
+                                margin-right: 10px;
+                                font-size: 15px;
+                                letter-spacing: -0.4px;
+                                transition: opacity 0.5s ease, transform 0.5s ease;
+                                
+                                }
+                            }   
+                        }
                         
-                        a {
-                          text-decoration: none;
-                          color: #000;
+                        &.slide {
+                         
+                          dd{
+                              display: block;
+                          }
+                          dd ol {
+                            
+                            transform: translateY(100%);
+                          }
+                          li {
+                            opacity: 1;
+                          }
                         }
                       }
-                    }
-                    
-                    &.slide {
-                      dd{
-                          display: block;
-                      }
-                      dd ol {
-                        transform: translateY(-100%);
-                      }
-                    }
-                  }
+                }
+
             }
         }
     }

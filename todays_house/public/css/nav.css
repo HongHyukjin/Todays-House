@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #wrap {
   width: 100%;
 }
@@ -42,33 +43,41 @@
 #wrap #nav > .container .gap .row2 .headbox2 ul li a:hover {
   color: #00bbff;
 }
-#wrap #nav > .container .gap #rank-list dt {
-  font-weight: bold;
+#wrap #nav > .container .gap .row2 #rank-list {
+  width: 100%;
+  max-width: 191px;
+  height: 30px;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  left: 1265px;
 }
-#wrap #nav > .container .gap #rank-list dd .slide {
-  display: block;
+#wrap #nav > .container .gap .row2 #rank-list dd {
+  width: 100%;
 }
-#wrap #nav > .container .gap #rank-list dd .slide-content {
-  list-style-type: none;
+#wrap #nav > .container .gap .row2 #rank-list dd ol.slide {
+  width: 100%;
+  text-align: center;
   padding: 0;
   margin: 0;
-  white-space: nowrap;
+  height: 20px; /* 슬라이드 컨테이너의 높이에 맞게 조정 */
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  transition: transform 0.6s ease-in-out;
 }
-#wrap #nav > .container .gap #rank-list dd .active {
+#wrap #nav > .container .gap .row2 #rank-list dd ol.slide li.active {
+  width: 100%;
   display: block;
   margin-right: 10px;
+  font-size: 15px;
+  letter-spacing: -0.4px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-#wrap #nav > .container .gap #rank-list dd .active a {
-  text-decoration: none;
-  color: #000;
-}
-#wrap #nav > .container .gap #rank-list.slide dd {
+#wrap #nav > .container .gap .row2 #rank-list.slide dd {
   display: block;
 }
-#wrap #nav > .container .gap #rank-list.slide dd ol {
-  transform: translateY(-100%);
+#wrap #nav > .container .gap .row2 #rank-list.slide dd ol {
+  transform: translateY(100%);
+}
+#wrap #nav > .container .gap .row2 #rank-list.slide li {
+  opacity: 1;
 }
