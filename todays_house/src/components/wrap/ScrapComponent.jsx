@@ -8,7 +8,6 @@ export default function ScrapComponent() {
   const [state,setState] = React.useState({
     닉네임 : '',
     imgUrl : '',
-    사진 : [],
     스크랩 : []
   })
 
@@ -38,8 +37,6 @@ export default function ScrapComponent() {
     }
   };
 
-  
-
   const getScrap = async() => {
     try{
       const user_email = sessionStorage.getItem('user_email');
@@ -55,17 +52,14 @@ export default function ScrapComponent() {
       });
       console.log('AJAX 성공!');
       console.log(res.result);
-      setState({
-        ...state,
+      setState((prevState) => ({
+        ...prevState,
         스크랩: res.result
-      })
+      }));
     } catch (err){
       console.log('AJAX 실패!' + err);
     }
-    const user_email = sessionStorage.getItem('user_email');
-    const form_data = {
-        "user_email": user_email
-    }
+
 }
 
   React.useEffect(() => {

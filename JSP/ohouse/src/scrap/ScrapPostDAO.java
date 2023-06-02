@@ -52,7 +52,7 @@ public class ScrapPostDAO {
     public List<ScrapPostDTO> select(String user_email){
         ScrapPostDTO scrapPostDTO = null;
         List<ScrapPostDTO> list = new ArrayList<>();
-        String SQL ="select * from ohouse_member m join photo_post p where m.user_email=?";
+        String SQL ="select * from ohouse_member m join scrap s where m.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);

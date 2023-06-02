@@ -4,6 +4,10 @@ import $ from 'jquery';
 
 export default function Sub1ComponentChild({ 사진 }) {
 
+    const [state,setState] = React.useState({
+        스크랩 : []
+      })
+
     const onClickScrap = (e, id, 이미지) => {
         e.preventDefault();
         let value = {
@@ -35,6 +39,34 @@ export default function Sub1ComponentChild({ 사진 }) {
             }
         });
     }
+
+    const getScrap = async () => {
+        try {
+            const user_email = sessionStorage.getItem('user_email');
+            const form_data = {
+                "user_email": user_email
+            }
+
+            const res = await $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/scrap_select_action.jsp',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+            });
+            console.log('AJAX 성공!');
+            console.log(res.result);
+            setState((prevState) => ({
+                ...prevState,
+                스크랩: res.result
+            }));
+        } catch (err) {
+            console.log('AJAX 실패!' + err);
+        }
+    }
+
+    React.useEffect(() => {
+        getScrap();
+    }, [])
 
     return (
         <>

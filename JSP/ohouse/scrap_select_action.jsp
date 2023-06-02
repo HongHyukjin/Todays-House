@@ -17,22 +17,22 @@
 <%
     String user_email = request.getParameter("user_email");
     ScrapPostDAO scrapPostDAO = new ScrapPostDAO();
-    List<ScrapPostDTO> list = ScrapPostDAO.select(user_email);
+    List<ScrapPostDTO> list = scrapPostDAO.select(user_email);
     
     String jsonData = "{ \"result\": [";
     int cnt = 0;
-    for(KnowHowPostDTO knowHowPostDTO : list){
+    for(ScrapPostDTO scrapPostDTO : list){
         cnt++;
         if(cnt < list.size()){
-            jsonData += "{ \"file\" : \"" + knowHowPostDTO.getFile() + "\","
-                     +   "\"knowhow_title\" : \"" + knowHowPostDTO.getKnowhow_title() + "\","
-                     +   "\"knowhow_content\" : \"" + knowHowPostDTO.getKnowhow_content() + "\""
+            jsonData += "{ \"id\" : \"" + scrapPostDTO.getId() + "\","
+                     +   "\"imagepath\" : \"" + scrapPostDTO.getImagepath() + "\","
+                     +   "\"sub\" : \"" + scrapPostDTO.getSub() + "\""
                      + "},";
         }   
         else{
-            jsonData += "{ \"file\" : \"" + knowHowPostDTO.getFile() + "\","
-                     +   "\"knowhow_title\" : \"" + knowHowPostDTO.getKnowhow_title() + "\","
-                     +   "\"knowhow_content\" : \"" + knowHowPostDTO.getKnowhow_content() + "\""
+            jsonData += "{ \"id\" : \"" + scrapPostDTO.getId() + "\","
+                     +   "\"imagepath\" : \"" + scrapPostDTO.getImagepath() + "\","
+                     +   "\"sub\" : \"" + scrapPostDTO.getSub() + "\""
                      + "}";
         }
     }
