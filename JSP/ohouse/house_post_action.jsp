@@ -17,21 +17,8 @@
 <jsp:setProperty name="housePostDTO" property="house_content"/>
 
 <%
-HousePostDAO housePostDAO = new HousePostDAO();
+    HousePostDAO housePostDAO = new HousePostDAO();
     int result = housePostDAO.post(housePostDTO);
-    if(result==1){
 %>
-    <script>
-        alert("집들이가 업로드되었습니다");
-    </script>
-<%
-    } 
-    else{
-%>
-        <script>
-            alert("확인 후 다시 시도해주세요");
-            history.back();
-        </script>
-<%          
-    }
-%>
+
+{"result" : "<%=result%>"}

@@ -1,14 +1,14 @@
-package photo_post;
+package scrap;
 import java.sql.*;
 import java.util.*;
 
-public class PhotoPostDAO {
+public class ScrapPostDAO {
     private Connection conn;
     private PreparedStatement ps;
     private Statement stmt;
     private ResultSet rs;
 
-    public PhotoPostDAO(){
+    public ScrapPostDAO(){
         try{
             String DBURL="jdbc:mysql://localhost:3306/Todays_House";
             String DBID="root";
@@ -22,16 +22,15 @@ public class PhotoPostDAO {
     }
  
     // 1. post
-    public int post(PhotoPostDTO photoPostDTO){
-        String SQL ="insert into photo_post(pyeong,type,style,file,place,memo) values(?,?,?,?,?,?)";
+    public int post(ScrapPostDTO scrapPostDTO){
+        String SQL ="insert into scrap(user_email,id,imagepath,sub) values(?,?,?,?)";
         try{
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, photoPostDTO.getPyeong());
-            ps.setString(2, photoPostDTO.getType());
-            ps.setString(3, photoPostDTO.getStyle());
-            ps.setString(4, photoPostDTO.getFile());
-            ps.setString(5, photoPostDTO.getPlace());
-            ps.setString(6, photoPostDTO.getMemo());
+            ps.setString(1, scrapPostDTO.getUser_email());
+            ps.setInt(2, scrapPostDTO.getId());
+            ps.setString(3, scrapPostDTO.getImagepath());
+            ps.setString(4, scrapPostDTO.getSub());
+    
 
             return ps.executeUpdate();
         }
@@ -51,23 +50,21 @@ public class PhotoPostDAO {
     }
 
     // member table과 photo table join 해서 member의 이메일이 현재 로그인된 이메일인 photo를 불러옴
-    public List<PhotoPostDTO> select(String user_email){
-        PhotoPostDTO photoPostDTO = null;
-        List<PhotoPostDTO> list = new ArrayList<>();
-        String SQL ="select * from ohouse_member m join photo_post p where m.user_email=?";
+    public List<ScrapPostDTO> select(String user_email){
+        ScrapPostDTO scrapPostDTO = null;
+        List<ScrapPostDTO> list = new ArrayList<>();
+        String SQL ="select * from ohouse_member m join scrap s where m.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
             rs = ps.executeQuery(); 
             while(rs.next()){
-                photoPostDTO = new PhotoPostDTO();
-                photoPostDTO.setPyeong(rs.getString("pyeong"));
-                photoPostDTO.setType(rs.getString("type"));
-                photoPostDTO.setStyle(rs.getString("style"));
-                photoPostDTO.setPlace(rs.getString("place"));
-                photoPostDTO.setFile(rs.getString("file"));
-                photoPostDTO.setMemo(rs.getString("memo"));
-                list.add(photoPostDTO);
+                scrapPostDTO = new ScrapPostDTO();
+                scrapPostDTO.setId(rs.getInt("id"));;
+                scrapPostDTO.setImagepath(rs.getString("imagepath"));;
+                scrapPostDTO.setSub(rs.getString("sub"));;
+       
+                list.add(scrapPostDTO);
             }
 
            return list;
@@ -83,11 +80,31 @@ public class PhotoPostDAO {
             }
             catch(Exception e){ }
           
-        }
+        } 
         return list;
     }
 
-
-
+    public int delete(ScrapPostDTO scrapPostDTO){
+        String SQL = "delete from scrap where user_email=? && id=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, scrapPostDTO.getUser_email());
+            ps.setInt(2, scrapPostDTO.getId());;
     
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1;
+    }
+
+
+  
 }
