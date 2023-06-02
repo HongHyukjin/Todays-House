@@ -71,18 +71,15 @@
                                 font-size: 15px;
                                 letter-spacing: -0.4px;
                                 transition: opacity 0.5s ease, transform 0.5s ease;
-                                
                                 }
                             }   
                         }
                         
                         &.slide {
-                         
                           dd{
                               display: block;
                           }
                           dd ol {
-                            
                             transform: translateY(100%);
                           }
                           li {

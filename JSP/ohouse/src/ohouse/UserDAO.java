@@ -172,7 +172,7 @@ public class UserDAO {
         }
         return userDTO; 
     }
-
+   
     // 가입 회원 전체리스트 목록 가져오기 
     public List<UserDTO> getJoinList(){
         UserDTO userDTO = new UserDTO();
@@ -213,13 +213,13 @@ public class UserDAO {
         }
         return list;
         
-    }
-
+    }    
+      
     public int emailJb(UserDTO userDTO){
         String SQL = "SELECT * FROM ohouse_member WHERE user_email = ?";  
         try {
             ps = conn.prepareStatement(SQL);
-            ps.setString(7, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+            ps.setString(1, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
             rs = ps.executeQuery();
             if(rs.next()){
                 return -1;

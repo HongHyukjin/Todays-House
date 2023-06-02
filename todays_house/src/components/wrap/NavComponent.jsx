@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import $ from 'jquery';
 
 
 export default function NavComponent() {
-
     const [slideIndex, setSlideIndex] = React.useState(0);
 
     const searchKeywords = ['🧡🆕신혼🆕🧡', '🧡🆕틈새수납🆕🧡', '🧡캐노피🧡', '🧡슬라이딩 옷장🧡', '🧡캔버스액자🧡', '🧡그릇정리대🧡', '🧡냄비정리대🧡', '🧡바이칸🧡', '🧡올리브나무🧡'];
@@ -22,8 +22,7 @@ export default function NavComponent() {
     }, []);
 
 
-
-    
+      
     return (
         <>
         <div id='nav'>

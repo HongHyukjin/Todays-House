@@ -1,0 +1,19 @@
+    // const [slideIndex, setSlideIndex] = React.useState(0);
+  
+ 
+    // const searchKeywords = ['1순위', '2 순위', '3 순위', '4 순위', '5 순위', '6 순위', '7 순위', '8 순위', '9 순위', '10 순위'];
+    //   let setId = 0;
+    
+    //   React.useEffect(() => {
+    //     const slideUp = () => {
+    //       setSlideIndex((prevIndex) => (prevIndex + 1) % searchKeywords.length);
+    //     };
+    
+    //     setId = setInterval(slideUp, 3000);
+    
+    //     return () => {
+    //       clearInterval(setId);
+    //     };
+    //   }, []);
+    
+    네비슬라이드 
