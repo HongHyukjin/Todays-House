@@ -143,8 +143,13 @@
                               top:80%;
                               left:82%;
                               background: none;
-                              > img {
-
+                              &.on{
+                                g{
+                                    fill: #35c5f0;
+                                }
+                                path{
+                                    stroke : transparent;
+                                }
                               }
                           }
                       }

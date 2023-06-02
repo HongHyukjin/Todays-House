@@ -1,34 +1,31 @@
-/* eslint-disable no-unused-expressions */
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
-export default function Sub2DetailComponent ({집들이}) {
+export default function MypageHouseDetailComponent () {
 
-    let {id} = useParams();
+  const {id} = useParams();
 
-    const [state,setState] = React.useState({
-        집들이 : []
-    });
+  const [state, setState] = React.useState({
+    집들이: []
+  })
 
-    React.useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('집들이'));
-        console.log(data[id]);
-        setState({
-            ...state,
-            집들이 : data[id]
-        })
-    }, [])
+  React.useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('house'));
+    setState({
+      ...state,
+      집들이: data[id]
+    })
+  }, [])
 
-    return (
-        
-        <div id='sub2Detail'>
+  return (
+    <div id='sub2Detail'>
             <div className="container">
                 <div className="sub2-img-up">
-                    <img src={`/images/sub2/${state.집들이.배너이미지}` }alt="" />
+                    <img src={state.집들이.file} alt="" />
                 </div>
                 <div className="gap">
                     <div className="title">
-                        <h1>{state.집들이.설명란}</h1>
+                        <h1>{state.집들이.house_post}</h1>
                     </div>
                     <div className="nick-box">
                         <div className="nickname">
@@ -83,7 +80,7 @@ export default function Sub2DetailComponent ({집들이}) {
                     </div>
                     <div className="content">
                         <p>
-                            {state.집들이.내용}
+                            {state.집들이.house_content}
                         </p>
                     </div>
                     <div className="like-btn">
@@ -94,9 +91,6 @@ export default function Sub2DetailComponent ({집들이}) {
                 </div>
             </div>
         </div>
-     
-     
-    );
+  );
 };
 
- 

@@ -87,7 +87,9 @@ export default function Sub1ComponentChild({ 사진 }) {
             console.log('AJAX 성공!');
             console.log(res.result);
             for(let i=0; i<res.result.length; i++){
-                scrap_on = [...scrap_on, Number(res.result[i].id)];
+                if(res.result[i].sub === '서브1'){
+                    scrap_on = [...scrap_on, Number(res.result[i].id)];
+                }
             }
             setState((prevState) => ({
                 ...prevState,
@@ -100,11 +102,6 @@ export default function Sub1ComponentChild({ 사진 }) {
 
     React.useEffect(() => {
         getScrap();
-        // $('#sub1 .comment').on({
-        //     click(){
-        //         $('#sub1 .comment').removeClass('on');
-        //     }
-        // })
     }, [])
 
     return (

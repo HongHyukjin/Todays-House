@@ -16,7 +16,7 @@ export default function Sub1DetailComponent ({사진}) {
                 ...state,
                 사진 : data[id]
             })
-        }, [사진])
+        }, [])
 
 
 

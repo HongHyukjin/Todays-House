@@ -61,6 +61,7 @@ export default function MyPageComponentPt ()  {
 
             console.log('AJAX 성공');
             console.log(res.result);
+            localStorage.setItem('photo', JSON.stringify(res.result));
             let 사진 = '';
             let isPost = false;
             let noRes = true;

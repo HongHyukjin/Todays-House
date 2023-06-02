@@ -28,6 +28,7 @@ export default function MyPageComponentKnowHow ()  {
 
             console.log('AJAX 성공!');
             console.log(res.result); // 결과 데이터 출력
+            localStorage.setItem('knowhow', JSON.stringify(res.result));
             setState((prevState) => ({
                 ...prevState,
                 닉네임: res.result.닉네임 === "null" ? '' : res.result.닉네임,

@@ -17,7 +17,7 @@ export default function Sub3DetailComponent ({노하우}) {
             ...state,
             노하우 : data[id]
         })
-    }, [노하우])
+    }, [])
 
     return (
         
