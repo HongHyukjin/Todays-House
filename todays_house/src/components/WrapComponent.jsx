@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route}  from 'react-router-dom';
+import {HashRouter,BrowserRouter, Routes, Route}  from 'react-router-dom';
 import EmailComponent from './wrap/EmailComponent';
 import IntroComponent from './wrap/IntroComponent';
 import SigninComponent from './wrap/SigninComponent'
@@ -21,7 +21,7 @@ export default function WrapComponent () {
                                                                         /   /
          __________________________                                    /   /
         ⎢                         ⎥                                   /   /
-        ⎢  누구나 예쁜 집에 살 수 있어  ⎥                                  /   /
+        ⎢누구나 예쁜 집에 살 수 있어⎥                                  /   /
         ⎢____    _________________⎥                                 /   /
               \\/    ,      ,,                                      /   /
                    /@\\____/@ \\                                ____/   /
@@ -46,7 +46,7 @@ export default function WrapComponent () {
   return (
     <div id="wrap">
 
-         <BrowserRouter>
+         <HashRouter>
             <Routes>
                     <Route path='/*' element={<IntroComponent />} />
                     <Route path="/로그인" element={<SigninComponent />}/>
@@ -57,7 +57,7 @@ export default function WrapComponent () {
                     <Route path="/집들이업로드" element={<UploadHouseComponent />}/>
                     <Route path="/노하우업로드" element={<UploadKnowHowComponent />}/>
             </Routes>
-         </BrowserRouter>
+         </HashRouter>
 
     </div>
   );

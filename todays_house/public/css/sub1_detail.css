@@ -71,6 +71,30 @@
   justify-content: center;
   align-items: center;
 }
+#sub1Detail .container .gap .content .right .h_container.on {
+  position: fixed;
+  top: 150px;
+  right: 483.5px;
+}
+#sub1Detail .container .gap .content .right .s_container {
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub1Detail .container .gap .content .right .s_container.on {
+  position: fixed;
+  top: 235px;
+  right: 483.5px;
+}
 #sub1Detail .container .gap .content .right #heart {
   color: rgb(53, 197, 240);
   font-size: 24px;

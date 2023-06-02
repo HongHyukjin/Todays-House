@@ -74,56 +74,6 @@
                     }
                 }
             }
-            .info-box{
-                width: 100%;
-                padding: 0 24px 25px 24px;
-                background: #f7f8fa;
-                margin: 60px 0 50px 0;
-                .up{
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    height: 70px;
-                    padding: 15px 0;
-                    border-bottom: 1px solid #dadce0;
-                    .info{
-                        display: flex;
-                        align-items: center;
-                        >dd{
-                            color: #424242;
-                            font-size: 14px;
-                            line-height: 20px;
-                            padding: 0 0 0 8px;
-                        }
-                    }
-                    >i{
-                        color: #dadce0;
-                    }
-                }
-                .bottom{
-                    display: flex;
-                    padding: 20px 0 0 0;
-                    flex-flow: row wrap;
-                    >div{
-                        display: flex;
-                        padding: 0 0 8px 0;
-                        >dt{
-                            color: #828c94;
-                            font-size: 14px;
-                            padding: 0 6px 0 0;
-                            line-height: 20px;
-                            letter-spacing: -0.4px;
-                        }
-                        >dd{
-                            color: #292929;
-                            font-size: 14px;
-                            padding: 0 16px 0 0;
-                            line-height: 20px;
-                            letter-spacing: -0.4px;
-                        }
-                    }
-                }
-            }
             .sub3-img-bottom{
                 width: 100%;
                 position: relative;
@@ -162,16 +112,29 @@
                     word-wrap: break-word;
                     letter-spacing: -0.4px;
                 }
+                .text1{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
             }
             .like-btn{
                 position: absolute;
                 top: 80px;
                 right: -300px;
                 width: 54px;
-                height: 54px;           
+                height: 54px; 
+                &.on{
+                    position: fixed;
+                    top: 160px;
+                    right: 292.5px;
+                    margin: -20px 0 0 0;
+                    z-index: 5;
+                }           
                 .like{
                     width: 54px;
                     height: 54px;
+                    margin: 0 0 15px 0;
                     background: #fff;
                     border-radius: 50%;
                     border: 1px solid #dadce0;

@@ -1,0 +1,114 @@
+#scrap {
+  width: 100%;
+  padding-top : 80px;
+  .container {
+      width: 100%;
+      max-width: 1136px;
+      margin:0 auto;
+      .gap {
+          width: 100%;
+          .content {
+              width: 1104px;
+              margin: 0 auto;
+              .row1 {
+                  width: 100%;
+                  padding-top : 40px;
+                  >ul {
+                      width: 100%;
+                      display: flex;
+                      justify-content: space-between;
+                      >li {
+                         padding: 0 0 15px 0;
+                          h2 {
+                              font-size: 24px;
+                              color: #2F3438;
+                              font-weight: 700;
+                          }
+                          a {
+                              font-size: 14px;
+                              font-weight: 400; 
+                          }
+                      }
+                  }
+              }
+              .row2 {
+                  width: 100%;
+                  ul {
+                      width:100%;
+                      li {
+                          display:flex;
+                          text-align: center;
+                          justify-content: center;
+                          padding : 0 0 25px 0;
+                          img {
+                              width: 86px;
+                              height: 86px;
+                              border-radius: 50%;
+                          }
+                          span {
+                              width: 86px;
+                              height: 28px;
+                              font-size: 20px;
+                              font-weight: 700;
+                              color: #2F3438;
+                              
+                          }
+                      }
+                  }
+              }
+              .row3 {
+                  width: 100%;
+                  ul {
+                      width: 100%;
+                      display: flex;
+                      text-align: center;
+                      justify-content: center;
+                      li {
+                          padding: 0 10px 20px 0;
+                          a {
+                             text-align: center;
+                             font-size: 16px;
+                             color: #35C5F0;
+                             font-weight: 700;
+                          }
+                      }
+                  }
+              }
+              .row4 {
+                  width: 100%;
+                  text-align: right;
+                  border-top: 1px solid #ccc;
+                  padding: 20px 0 0 0;
+                  a {
+                      
+                      color: #35C5F0;
+                      font-size: 14px;
+                      font-weight: 700;
+                  }
+              }
+              .row5 {
+                  padding:20px 0 0 0;
+                  width:1156px;
+                  >ul {
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      flex-flow: row wrap;
+                      >li {
+                          width: 23%;
+                          margin : 0 2% 20px 0;
+                          a {
+                              width: 100%;
+                              img {
+                                  width: 269px;
+                                  height: 269px;
+                                  border-radius: 5px;
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

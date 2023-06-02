@@ -6,10 +6,10 @@ export default function Sub3ComponentChild({노하우}){
         <>
             {
                 
-                노하우.map((item)=>{
+                노하우.map((item,id)=>{
                     return (
                         <div className="nohow" key={item.제품코드}>
-                            <Link to="/서브페이지/서브3/노하우">
+                            <Link to={`/서브페이지/서브3/${id}`}>
                                 <div className="content-image">
                                     <div className="image">
                                         <img src={`../images/sub3/${item.이미지}`} alt="" />

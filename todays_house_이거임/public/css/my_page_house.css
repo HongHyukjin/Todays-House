@@ -1,0 +1,264 @@
+#myPageHouse {
+  width: 100%;
+}
+#myPageHouse .container {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#myPageHouse .container .gap {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+}
+#myPageHouse .container .gap .left {
+  width: 290px;
+}
+#myPageHouse .container .gap .left .profile {
+  width: 100%;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 30px 25px 18px 25px;
+}
+#myPageHouse .container .gap .left .profile .up-box {
+  border-bottom: 1px solid #eaebef;
+}
+#myPageHouse .container .gap .left .profile .up-box .img-box {
+  display: flex;
+  justify-content: center;
+  width: 118px;
+  height: 118px;
+  margin: 0 auto;
+}
+#myPageHouse .container .gap .left .profile .up-box .img-box img {
+  border-radius: 50%;
+  width: 120px;
+}
+#myPageHouse .container .gap .left .profile .up-box h2 {
+  font-size: 26px;
+  color: #292929;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0 10px 0;
+}
+#myPageHouse .container .gap .left .profile .up-box > ul {
+  display: flex;
+  justify-content: center;
+}
+#myPageHouse .container .gap .left .profile .up-box > ul li {
+  color: #828c94;
+  font-size: 13px;
+}
+#myPageHouse .container .gap .left .profile .up-box > ul li > span {
+  color: #525b61;
+  font-weight: 600;
+}
+#myPageHouse .container .gap .left .profile .up-box > ul i {
+  font-size: 5px;
+  font-weight: 300;
+  margin: 0 5px;
+}
+#myPageHouse .container .gap .left .profile .up-box .btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+#myPageHouse .container .gap .left .profile .up-box .btn button {
+  width: 53px;
+  height: 30px;
+  background: #fff;
+  color: #292929;
+  border: 1px solid #dbdbdb;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#myPageHouse .container .gap .left .profile .up-box .btn button:hover {
+  background: #fafafa;
+}
+#myPageHouse .container .gap .left .profile .down-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 24px 0 6px 0;
+}
+#myPageHouse .container .gap .left .profile .down-box > li {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  cursor: pointer;
+}
+#myPageHouse .container .gap .left .profile .down-box > li svg {
+  width: 28px;
+  height: 28px;
+  color: #424242;
+}
+#myPageHouse .container .gap .left .profile .down-box > li h3 {
+  font-size: 13px;
+  color: #424242;
+  font-weight: 400;
+  padding: 10px 0;
+}
+#myPageHouse .container .gap .left .profile .down-box > li h4 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #424242;
+  text-align: center;
+}
+#myPageHouse .container .gap .left .profile .down-box > li::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: "";
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+#myPageHouse .container .gap .left .profile .down-box > li:hover:before {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#myPageHouse .container .gap .left > button {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #effbff;
+  border: 0;
+  color: #3f474d;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 14px 0 0 0;
+  transition: all 0.3s;
+}
+#myPageHouse .container .gap .left > button:hover {
+  background: #e1f7ff;
+}
+#myPageHouse .container .gap .left > button > span {
+  color: #35c5f0;
+  font-weight: 600;
+  padding: 0 0 0 4px;
+}
+#myPageHouse .container .gap .left > button svg {
+  margin: 0 0 0 5px;
+}
+#myPageHouse .container .gap .right {
+  width: 750px;
+  margin: 0 25px 0 100px;
+}
+#myPageHouse .container .gap .right .txt-box {
+  width: 100%;
+}
+#myPageHouse .container .gap .right .txt-box .no-res {
+  font-size: 15px;
+  color: #757575;
+  text-align: center;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+}
+#myPageHouse .container .gap .right .txt-box .is-post {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li {
+  width: 30%;
+  height: 364px;
+  margin: 0 3% 40px 0;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .writer-box {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .writer-box > img {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .writer-box > span {
+  font-size: 15px;
+  color: #424242;
+  font-weight: 600;
+  padding: 0 0 0 5px;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .writer-box::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: "";
+  top: 0;
+  left: 0;
+  transition: all 0.2s;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .writer-box:hover:before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .pt-box {
+  margin: 15px 0;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .pt-box > a {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .pt-box > a > img {
+  width: 100%;
+  height: 236px;
+  transition: all 0.3s;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .pt-box > a > img:hover {
+  scale: 1.05;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box {
+  width: 100%;
+  padding: 0 0 20px 0;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico > li {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon {
+  width: 100%;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico > li .icon.stroke {
+  stroke: #626262;
+  fill: #fff;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico > li::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: "";
+  top: 0;
+  left: 0;
+  transition: all 0.2s;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .ico-box .ico > li:hover:before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .memo-box {
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#myPageHouse .container .gap .right .txt-box .is-post > li .memo-box:hover {
+  color: rgba(66, 66, 66, 0.3);
+}

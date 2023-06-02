@@ -1,0 +1,32 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+export default function Sub2ComponentChild({ 집들이 }) {
+    return (
+        <>
+            {
+                집들이.map((item,id) => {
+                    return (
+                        <div className="content">
+                            <Link to={`/서브페이지/서브2/${id}`}>
+                                <div className="img-box" key={item.제품코드}>
+                                    <img src={`../images/sub2/${item.이미지}`} alt="" />
+                                    <span>
+                                        <img src="../images/new_baner.png" alt="" />
+                                    </span>
+                                    <button><img src="../images/sub2/button_baner.png" alt="" /></button>
+                                </div>
+                                <div className="title-box">
+                                    <h2>{item.설명란}</h2>
+                                    <span><img src={`../images/sub2/${item.이미지2}`} alt="" />{item.출처}</span>
+                                    <p>{item.조회수}</p>
+                                </div>
+                            </Link>
+                        </div>
+                    )
+                })
+
+            }
+        </>
+    );
+};
