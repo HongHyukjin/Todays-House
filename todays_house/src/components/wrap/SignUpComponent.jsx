@@ -93,25 +93,28 @@ export default function SignUpComponent () {
                 success(res) {
                     console.log('AJAX 성공!');
                     console.log(res);
+                    console.log(res.result);
                     if(res.result === '1'){
                         isEmailError =false;
                         isEmailMsg='';
                     }
                     else{
+                        console.log("사용중인이메일")
                         isEmailError =true;
+                        console.log(isEmailError);
                         isEmailMsg='사용중인 이메일입니다.';
                     }
+                    setState({
+                        ...state,
+                        isEmailError : isEmailError,
+                        isEmailDomainError : false,
+                        isEmailMsg : isEmailMsg
+                    })
                 },
                 error(err) {
                     console.log('AJAX 실패!' + err);
                 }
             });
-            setState({
-                ...state,
-                isEmailError : isEmailError,
-                isEmailDomainError : false,
-                isEmailMsg : isEmailMsg
-            })
         }
     }, [state.이메일, state.이메일도메인])
 
