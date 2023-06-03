@@ -63,14 +63,21 @@
                       display: flex;
                       text-align: center;
                       justify-content: center;
+                      align-items: center;
                       li {
-                          padding: 0 10px 20px 0;
+                          padding: 0 5px 20px 5px;
                           a {
                              text-align: center;
                              font-size: 16px;
                              color: #35C5F0;
                              font-weight: 700;
                           }
+                      }
+                      .subnum{
+                            display: none;
+                            &.on{
+                                display: block;
+                            }
                       }
                   }
               }
