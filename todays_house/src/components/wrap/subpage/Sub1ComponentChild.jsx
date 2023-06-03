@@ -16,16 +16,16 @@ export default function Sub1ComponentChild({ 사진 }) {
             "imagepath" : `http://localhost:3000/images/sub1/${이미지}`,
             "sub" : '서브1'
         }
-        let arr = [];
-        if(localStorage.getItem('scrap') !== null){
-            arr = JSON.parse(localStorage.getItem('scrap'));
-            arr = [value, ...arr];
-            localStorage.setItem('scrap', JSON.stringify(arr));
-        }
-        else{
-            arr = [value];
-            localStorage.setItem('scrap', JSON.stringify(arr));
-        }
+        // let arr = [];
+        // if(localStorage.getItem('scrap') !== null){
+        //     arr = JSON.parse(localStorage.getItem('scrap'));
+        //     arr = [value, ...arr];
+        //     localStorage.setItem('scrap', JSON.stringify(arr));
+        // }
+        // else{
+        //     arr = [value];
+        //     localStorage.setItem('scrap', JSON.stringify(arr));
+        // }
         // 스크랩 해제
         if(state.scrap_on.includes(id)){
             $.ajax({

@@ -15,6 +15,11 @@ CREATE TABLE ohouse_member(
    PRIMARY KEY (idx, user_email)
  );
 
+CREATE TABLE ohouse_member(
+   idx             int       AUTO_INCREMENT,
+   user_email      varchar(100)    NOT NULL
+ );
+
 
 // 사진 올리기
 create table photo_post(
