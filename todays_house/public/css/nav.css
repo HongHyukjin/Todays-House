@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "UTF-8";
 #wrap {
   width: 100%;
@@ -57,7 +56,7 @@
 #wrap #nav > .container .gap .row2 #rank-list dd {
   width: 100%;
 }
-#wrap #nav > .container .gap .row2 #rank-list dd ol.slide {
+#wrap #nav > .container .gap .row2 #rank-list dd .slide {
   width: 100%;
   text-align: center;
   padding: 0;
@@ -65,7 +64,18 @@
   height: 20px; /* 슬라이드 컨테이너의 높이에 맞게 조정 */
   overflow: hidden;
 }
-#wrap #nav > .container .gap .row2 #rank-list dd ol.slide li.active {
+#wrap #nav > .container .gap .row2 #rank-list dd .slide .slide-item {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#wrap #nav > .container .gap .row2 #rank-list dd .slide li.active {
   width: 100%;
   display: block;
   margin-right: 10px;
@@ -73,14 +83,10 @@
   letter-spacing: -0.4px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+#wrap #nav > .container .gap .row2 #rank-list .slide-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 #wrap #nav > .container .gap .row2 #rank-list.slide dd {
   display: block;
 }
-#wrap #nav > .container .gap .row2 #rank-list.slide dd ol {
-  transform: translateY(100%);
-}
-#wrap #nav > .container .gap .row2 #rank-list.slide li {
-  opacity: 1;
-}
-=======
->>>>>>> 26292a61f4279f661e94084ab011dd6a3a989a4a

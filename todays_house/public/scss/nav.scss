@@ -48,22 +48,26 @@
                       right: 0;
                       top: 100px;
                       left: 1265px;
-                      
                       dd {
                         width: 100%;
-                          ol.slide {
+                          .slide {
                               width: 100%;
                               text-align: center;
                               padding: 0;
                               margin: 0;
-                              // white-space: nowrap;
-                              // overflow: hidden;
-                              // text-overflow: ellipsis;
-                              // display: inline-block;
-                              // position: relative;
                               height: 20px; /* 슬라이드 컨테이너의 높이에 맞게 조정 */
                               overflow: hidden;
-                            
+                              .slide-item {
+                                display: block;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                transform: translateY(-10%);
+                                transition: opacity 0.5s ease, transform 0.5s ease;
+                              }
                               li.active {
                                 width: 100%;
                                 display: block;
@@ -74,21 +78,17 @@
                                 }
                             }   
                         }
-                        
+                        .slide-item.active {
+                            opacity: 1;
+                            transform: translateY(0);
+                          }
                         &.slide {
                           dd{
                               display: block;
                           }
-                          dd ol {
-                            transform: translateY(100%);
-                          }
-                          li {
-                            opacity: 1;
-                          }
                         }
-                      }
+                    }
                 }
-
             }
         }
     }

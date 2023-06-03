@@ -12,13 +12,13 @@ export default function NavComponent() {
     React.useEffect(() => {
       const slideUp = () => {
         setSlideIndex((prevIndex) => (prevIndex + 1) % searchKeywords.length);
-      };
+    };
     
       setId = setInterval(slideUp, 3000);
     
       return () => {
         clearInterval(setId);
-      };
+    };
     }, []);
 
 
@@ -44,14 +44,20 @@ export default function NavComponent() {
                         </div>
                         <div id="rank-list">
                             <dd>
-                                <ol className="slide">
+                                <div className="slide">
                                     {searchKeywords.map((keyword, index) => (
-                                        <li key={index} className={index === slideIndex ? 'active' : ''}
-                                        style={{ display: index === slideIndex ? 'block' : 'none' }} >
+                                        <li
+                                        key={index}
+                                        className={`slide-item ${index === slideIndex ? 'active' : ''}`}
+                                        style={{
+                                            transition: 'opacity 0.5s ease',
+                                            transform: `translateY(${index === slideIndex ? '1' : '-10%'})`,
+                                            opacity: index === slideIndex ? 1 : 0,
+                                        }}>
                                         {keyword}
                                         </li>
                                     ))}
-                                </ol>
+                                </div>
                             </dd>
                         </div>
                     </div>

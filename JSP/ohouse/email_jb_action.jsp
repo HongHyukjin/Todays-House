@@ -22,7 +22,7 @@
 
 <%
     UserDAO userDAO = new UserDAO();
-    int result = userDAO.signup(userDTO);
+    int result = userDAO.emailJb(userDTO);
 %>
 
-{"AJAX실행 DTO & DAO 결과":"<%=result%>"}
+{"result":"<%=result%>"}

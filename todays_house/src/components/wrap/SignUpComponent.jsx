@@ -81,7 +81,6 @@ export default function SignUpComponent () {
             const formData = {
                 "user_email1" : state.이메일,
                 "user_email2" : state.이메일도메인,
-                
             }
             let isEmailError = false;
             let isEmailMsg = '';
@@ -99,10 +98,10 @@ export default function SignUpComponent () {
                         isEmailMsg='';
                     }
                     else{
-                        console.log("사용중인이메일")
+                        console.log("사용중인 이메일")
                         isEmailError =true;
                         console.log(isEmailError);
-                        isEmailMsg='사용중인 이메일입니다.';
+                        isEmailMsg='사용중인 이메일입니다. 다시 한번 확인해 주세요:)';
                     }
                     setState({
                         ...state,
