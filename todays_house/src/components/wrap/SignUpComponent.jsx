@@ -78,35 +78,39 @@ export default function SignUpComponent () {
 
     React.useEffect(() => {
         if(state.이메일 !== '' && state.이메일도메인 !== ''){
-            // $.ajax({
-            //     url: 'http://localhost:8080/JSP/ohouse/email_jb_action.jsp',
-            //     type: 'POST',
-            //     dataType : 'json',
-            //     success(res) {
-            //         console.log('AJAX 성공!');
-            //         console.log(res.result);
-            //         if(res.result === '1'){
-            //             // session에 이메일 저장 
-            //             sessionStorage.setItem('user_email', state.이메일);
-            //             // main으로 이동 
-            //             window.location.href='/';
-            //         }
-            //         else if(res.result === '0'){
-            //             alert('이미 가입된 이메일입니다. 다시 한번 확인해주세요:)');
-            //         }
-            //         else{
-            //             alert('이메일을 확인해주세요!');
-            //         }
-            //     },
-            //     error(err) {
-            //         console.log('AJAX 실패!' + err);
-            //     }
-            // });
+            const formData = {
+                "user_email1" : state.이메일,
+                "user_email2" : state.이메일도메인,
+                
+            }
+            let isEmailError = false;
+            let isEmailMsg = '';
+            $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/email_jb_action.jsp',
+                type: 'POST',
+                data: formData,
+                dataType : 'json',
+                success(res) {
+                    console.log('AJAX 성공!');
+                    console.log(res);
+                    if(res.result === '1'){
+                        isEmailError =false;
+                        isEmailMsg='';
+                    }
+                    else{
+                        isEmailError =true;
+                        isEmailMsg='사용중인 이메일입니다.';
+                    }
+                },
+                error(err) {
+                    console.log('AJAX 실패!' + err);
+                }
+            });
             setState({
                 ...state,
-                isEmailError : false,
+                isEmailError : isEmailError,
                 isEmailDomainError : false,
-                isEmailMsg : ''
+                isEmailMsg : isEmailMsg
             })
         }
     }, [state.이메일, state.이메일도메인])
