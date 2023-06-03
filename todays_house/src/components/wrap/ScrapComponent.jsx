@@ -127,7 +127,7 @@ export default function ScrapComponent() {
                                     <li>
                                       <Link to={`/서브페이지/${item.sub}/${item.id}`}>
                                         <img src={`${item.imagepath}`} alt="" />
-                                        {/* <span>{`${item.sub==='서브1'?'사진':(${item.sub==='서브2'?'집들이':'노하우'})}`}</span> */}
+                                        <span>{`${item.sub==='서브1'?'사진':(`${item.sub==='서브2'?'집들이':'노하우'}`)}`}</span>
                                       </Link>
                                     </li>
                                   )
