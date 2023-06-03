@@ -1,0 +1,92 @@
+#sub1Detail {
+  width: 100%;
+}
+#sub1Detail .container {
+  padding: 50px 0 0 0;
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#sub1Detail .container .gap {
+  width: 100%;
+  position: relative;
+}
+#sub1Detail .container .gap .title {
+  margin: 0 auto;
+  width: 720px;
+  height: 32px;
+  padding: 0 0 50px 0;
+}
+#sub1Detail .container .gap .title a {
+  margin: 0 8px 0 0;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  line-height: 32px;
+  color: rgb(140, 160, 148);
+}
+#sub1Detail .container .gap .content {
+  width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+#sub1Detail .container .gap .content .center-box {
+  margin: 0 auto;
+}
+#sub1Detail .container .gap .content .center-box img {
+  width: 100%;
+}
+#sub1Detail .container .gap .content .center-txt {
+  width: 100%;
+  padding: 20px 0 100px 0;
+}
+#sub1Detail .container .gap .content .center-txt ul li {
+  padding: 15px 0 10px 0;
+  line-height: 26px;
+}
+#sub1Detail .container .gap .content .center-txt ul li h3 {
+  color: #2f3438;
+  font-size: 16px;
+}
+#sub1Detail .container .gap .content .center-txt ul li a {
+  padding: 0 10px 0 0;
+  font-size: 16px;
+  color: rgb(0, 159, 206);
+}
+#sub1Detail .container .gap .content .like-btn {
+  position: absolute;
+  top: 80px;
+  right: -150px;
+  width: 54px;
+  height: 54px;
+  z-index: 3;
+}
+#sub1Detail .container .gap .content .like-btn.on {
+  position: fixed;
+  top: 160px;
+  right: 441.5px;
+  margin: -20px 0 0 0;
+  z-index: 3;
+}
+#sub1Detail .container .gap .content .like-btn .like {
+  width: 54px;
+  height: 54px;
+  margin: 0 0 15px 0;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #dadce0;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sub1Detail .container .gap .content .like-btn .like:hover {
+  border: 1px solid #828c94;
+}
+#sub1Detail .container .gap .content .like-btn .like:hover > svg {
+  stroke: rgb(130, 140, 148);
+}
+#sub1Detail .container .gap .content .like-btn .like.on > svg {
+  fill: #35c5f0;
+  stroke: #35c5f0;
+}
