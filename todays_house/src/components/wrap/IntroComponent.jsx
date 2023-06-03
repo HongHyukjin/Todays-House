@@ -10,7 +10,7 @@ import SubComponent from './SubComponent';
 import ShoppingComponent from './ShoppingComponent'
 import ScrapComponent from './ScrapComponent';
 
-export default function IntroComponent () {
+export default function IntroComponent ({nav, setNav}) {
     const [state,setState] = React.useState({
         top : 0
     })
@@ -88,12 +88,12 @@ export default function IntroComponent () {
             topModal.isTopModal&&<TopmodalComponent  topModalClose={topModalClose} />  
         }
              
-            <HeaderComponent isMypag={state.isMypage} />
+            <HeaderComponent isMypag={state.isMypage} nav={nav} setNav={setNav} />
                 <Routes>
-                      <Route index element={<MainComponent/>} top={state.top} />
-                      <Route path='/메인' element={<MainComponent/>} />
-                      <Route path='/서브페이지/*' element={<SubComponent />} />
-                      <Route path='/쇼핑페이지/*' element={<ShoppingComponent />} />
+                      <Route index element={<MainComponent nav={nav} setNav={setNav} />} top={state.top} />
+                      <Route path='/메인' element={<MainComponent nav={nav} setNav={setNav} />} />
+                      <Route path='/서브페이지/*' element={<SubComponent nav={nav} setNav={setNav} />} />
+                      <Route path='/쇼핑페이지/*' element={<ShoppingComponent nav={nav} setNav={setNav} />} />
                       <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
                       <Route path='/스크랩페이지' element={<ScrapComponent />} />
                 </Routes>

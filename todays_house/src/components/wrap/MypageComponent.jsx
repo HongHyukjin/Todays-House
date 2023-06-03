@@ -10,6 +10,7 @@ import MyPageComponentKnowHow from './mypage/MyPageComponentKnowHow';
 import MypagePtDetailComponent from './mypage/MypagePtDetailComponent';
 import $ from 'jquery';
 import MypageHouseDetailComponent from './mypage/MypageHouseDetailComponent';
+import MypageKnowHowDetailComponent from './mypage/MypageKnowHowDetailComponent';
 
 export default function MypageComponent ({isMypage}) {
 
@@ -116,6 +117,7 @@ export default function MypageComponent ({isMypage}) {
           <Route path='/비밀번호변경' element={<ChangePwComponent />} />
           <Route path='/사진/상세보기/:id' element={<MypagePtDetailComponent />} />
           <Route path='/집들이/상세보기/:id' element={<MypageHouseDetailComponent />} />
+          <Route path='/노하우/상세보기/:id' element={<MypageKnowHowDetailComponent />} />
       </Routes>
     </>
   );

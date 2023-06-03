@@ -78,12 +78,42 @@ export default function SignUpComponent () {
 
     React.useEffect(() => {
         if(state.이메일 !== '' && state.이메일도메인 !== ''){
-            setState({
-                ...state,
-                isEmailError : false,
-                isEmailDomainError : false,
-                isEmailMsg : ''
-            })
+            const formData = {
+                "user_email1" : state.이메일,
+                "user_email2" : state.이메일도메인,
+            }
+            let isEmailError = false;
+            let isEmailMsg = '';
+            $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/email_jb_action.jsp',
+                type: 'POST',
+                data: formData,
+                dataType : 'json',
+                success(res) {
+                    console.log('AJAX 성공!');
+                    console.log(res);
+                    console.log(res.result);
+                    if(res.result === '1'){
+                        isEmailError =false;
+                        isEmailMsg='';
+                    }
+                    else{
+                        console.log("사용중인 이메일")
+                        isEmailError =true;
+                        console.log(isEmailError);
+                        isEmailMsg='사용중인 이메일입니다. 다시 한번 확인해 주세요:)';
+                    }
+                    setState({
+                        ...state,
+                        isEmailError : isEmailError,
+                        isEmailDomainError : false,
+                        isEmailMsg : isEmailMsg
+                    })
+                },
+                error(err) {
+                    console.log('AJAX 실패!' + err);
+                }
+            });
         }
     }, [state.이메일, state.이메일도메인])
 

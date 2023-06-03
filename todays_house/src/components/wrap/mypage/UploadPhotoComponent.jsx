@@ -171,7 +171,7 @@ export default  function UploadPhotoComponent ()  {
                     <div className="gap">
                         <ul>
                             <li><Link href="/사진업로드" className='nav-btn on' >사진</Link></li>
-                            <li><Link to="/비디오업로드" className='nav-btn'>동영상</Link></li>
+                            {/* <li><Link to="/비디오업로드" className='nav-btn'>동영상</Link></li> */}
                         </ul>
                     </div>
                 </div>

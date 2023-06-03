@@ -9,7 +9,7 @@ import Sub2DetailComponent from './subpage/Sub2DetailComponent ';
 import Sub3DetailComponent from './subpage/Sub3DetailComponent ';
 import axios from 'axios';
 
-export default function SubComponent () {
+export default function SubComponent ({nav,setNav}) {
 
     const [photo, setPhoto] = React.useState({
         사진 : [],
@@ -48,7 +48,7 @@ export default function SubComponent () {
 
     return (
         <>  
-            <NavComponent />
+            <NavComponent nav={nav} setNav={setNav} />
             <Routes>
             <Route path='/서브1' element={<Sub1Component 사진={photo.사진}/>} />
                 <Route path='서브1/:id' element={<Sub1DetailComponent 사진={photo.사진}/>}/>

@@ -36,9 +36,66 @@
                                         color :#00bbff;
                                     }
                                 }
+                                .bottom-nav-btn{
+                                    &.on{
+                                        color: #00bbff;
+                                        .bottom-nav{
+                                            border-bottom: 3px solid #00bbff;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
+                    #rank-list {
+                        width: 100%;
+                        max-width: 191px;
+                        height: 30px;
+                        float: right;
+                        position: absolute;
+                        right: 0;
+                        top: 100px;
+                        left: 1265px;
+                        dd {
+                          width: 100%;
+                            .slide {
+                                width: 100%;
+                                text-align: center;
+                                padding: 0;
+                                margin: 0;
+                                height: 20px; /* 슬라이드 컨테이너의 높이에 맞게 조정 */
+                                overflow: hidden;
+                                .slide-item {
+                                  display: block;
+                                  position: absolute;
+                                  top: 0;
+                                  left: 0;
+                                  width: 100%;
+                                  height: 100%;
+                                  opacity: 0;
+                                  transform: translateY(-10%);
+                                  transition: opacity 0.5s ease, transform 0.5s ease;
+                                }
+                                li.active {
+                                  width: 100%;
+                                  display: block;
+                                  margin-right: 10px;
+                                  font-size: 15px;
+                                  letter-spacing: -0.4px;
+                                  transition: opacity 0.5s ease, transform 0.5s ease;
+                                  }
+                              }   
+                          }
+                          .slide-item.active {
+                              opacity: 1;
+                              transform: translateY(0);
+                            }
+                          &.slide {
+                            dd{
+                                display: block;
+                            }
+                          }
+                      }
                 }
             }
         }

@@ -12,10 +12,10 @@ import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
 
-export default function MainComponent () {
+export default function MainComponent ({nav, setNav}) {
     return (
         <>
-            <NavComponent />
+            <NavComponent nav={nav} setNav={setNav} />
             <Section1Component/>
             <Section2Component/>
             <Section3Component/>
