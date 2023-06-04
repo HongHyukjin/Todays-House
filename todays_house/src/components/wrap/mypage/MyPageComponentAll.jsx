@@ -156,7 +156,7 @@ export default function MyPageComponentAll ()  {
                             <h2>사진 <span>{state.isPhotoNum}</span></h2>
                             <Link to="/사진업로드">
                                     {
-                                        state.사진 === [] &&
+                                        state.사진.length === 0 &&
                                             <div className="upload-p">
                                                 <p> 
                                                     <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
@@ -165,7 +165,7 @@ export default function MyPageComponentAll ()  {
                                             </div>
                                     }
                                     {
-                                        state.사진 !== [] &&
+                                        state.사진.length !== 0 &&
                                             <>
                                                 <ul className="is-post">
                                                     {
@@ -192,7 +192,7 @@ export default function MyPageComponentAll ()  {
                             <h2>집들이 <span>{state.isHouseNum}</span></h2>
                             <Link to="/집들이업로드">
                                 {
-                                    state.집들이 === [] &&
+                                    state.집들이.length === 0 &&
                                         <div className="upload-h">
                                             <p> 
                                                 <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
@@ -201,7 +201,7 @@ export default function MyPageComponentAll ()  {
                                         </div>
                                 }
                                 {
-                                    state.집들이 !== [] &&
+                                    state.집들이.length !== 0 &&
                                         <>
                                             <ul className="is-post">
                                                 {
