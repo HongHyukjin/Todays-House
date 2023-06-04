@@ -112,7 +112,7 @@ export default function UploadHouseComponent ()  {
       },[state.house_title]);
 
       React.useEffect(()=>{
-        $('.guide-btn').on({
+        $('.guide-btn' ).on({
           click(e){
             e.preventDefault();
             let guideContent = $('.guide-content');
@@ -130,6 +130,7 @@ export default function UploadHouseComponent ()  {
           }
         });
       },[]);
+
 
       const onClickSubmit=(e)=>{
         e.preventDefault();
@@ -194,6 +195,98 @@ export default function UploadHouseComponent ()  {
                   <li className='one-one'>정보를 많이 입력할수록 검색 결과에 많이 노출되어 조회수가 올라갑니다.</li>
                   <li className='one-one'>커버사진과 제목은 에디터에 의해 변경될 수 있습니다.</li>
                   <li className='one-one'>글 작성과 이미지 업로드 시, 타인의 지식재산권을 침해하지 않도록 유의해주세요.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="guide-psjb">
+              <button className='pajb-btn'>
+              <svg class="icon" width="26" height="26" viewBox="0 0 26 26" preserveAspectRatio="xMidYMid meet"><rect width="26" height="26" fill="#F8C332" rx="10"></rect><g fill="none" stroke="#FFF"><path stroke-linejoin="round" stroke-width="1.2" d="M15.06 8.65l-6.9 6.88L7 18.98l3.45-1.15 6.9-6.9-2.3-2.28z"></path><path stroke-width="1.2" d="M15.04 8.64l1.45-1.45a.65.65 0 01.93 0l1.37 1.38a.65.65 0 010 .92l-1.45 1.45"></path><path d="M8.27 15.2l2.48 2.47"></path></g></svg>
+                <b>필수 정보 입력</b>
+                <p>공간을 이해하는데 필요한 정보이니 최대한 꼼꼼하게 입력해주세요.</p>
+                <div className="arrow">
+                  <svg className="u9pb" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                </div>
+              </button>
+              <div className="guide-content hide">
+                <ul className='one'>
+                    <li>
+                      <div className='psjb-box'>
+                        <label>주거형태<i> *</i></label>
+                          <select name="" id="">
+                            <option value="">선택해주세요.</option>
+                            <option value="본인방">본인방</option>
+                            <option value="오피스텔">오피스텔</option>
+                            <option value="빌라&연립">빌라&연립</option>
+                            <option value="단독주택">단독주택</option>
+                            <option value="협소주택">협소주택</option>
+                            <option value="상업공간">상업공간</option>
+                            <option value="사무공간">사무공간</option>
+                          </select>
+                        </div>
+                    </li>
+                    <li>
+                      <ul className='one'>
+                        <div className='psjb-box'>
+                            <label>평수<i> *</i></label>
+                            <label className='radio1'><input type="radio" /><h3>단층</h3> </label>
+                            <label className='radio1'><input type="radio" /><h3>2층 단독/협소주택</h3></label>
+                              
+                            <label className='radio1'> <input type="radio" /><h3>3층 이상 단독/협소주택</h3> </label>
+                             
+                              <input type="text" placeholder='평'/>
+                           
+                          </div>
+                      </ul>
+                    </li>
+                    <li>
+                      <div className='psjb-box'>
+                        <label htmlFor="">작업분야<i> *</i></label>
+                          <select type="text" name="working-area" id="WorkingArea">
+                            <option value="선택해주세요.">선택해주세요.</option>
+                            <option value="홈스타일링">홈스타일링</option>
+                            <option value="리모델링">리모델링</option>
+                            <option value="부분시공">부분시공</option>
+                            <option value="건축">건축</option>
+                          </select>
+                        </div>
+                    </li>
+                    <li>
+                      <div className='psjb-box'>
+                        <label htmlFor="">지역<i> *</i></label>
+                          <select type="text" name="area" id="Area">
+                            <option value="선택해주세요." placeholder='선택해주세요.'>선택안함</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="강원도">강원도</option>
+                            <option value="경기도">경기도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                          </select>
+                          <input type="text" className='' name='' id='' placeholder='(선택) 아파트/건물명'/>
+                        </div>
+                    </li>
+                    <li>
+                      <div className='psjb-box'>
+                        <label htmlFor="">스타일<i> *</i></label>
+                          <select type="text" name="style" id="Style">
+                            <option value="선택해주세요.">선택해주세요.</option>
+                            <option value="모던">모던</option>
+                            <option value="시크">시크</option>
+                            <option value="빈티지">빈티지</option>
+                          </select>
+                        </div>
+                    </li>
                 </ul>
               </div>
             </div>
