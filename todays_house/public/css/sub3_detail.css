@@ -122,9 +122,17 @@
   width: 54px;
   height: 54px;
 }
+#sub3Detail .container .gap .like-btn.on {
+  position: fixed;
+  top: 160px;
+  right: 292.5px;
+  margin: -20px 0 0 0;
+  z-index: 5;
+}
 #sub3Detail .container .gap .like-btn .like {
   width: 54px;
   height: 54px;
+  margin: 0 0 15px 0;
   background: #fff;
   border-radius: 50%;
   border: 1px solid #dadce0;
@@ -139,4 +147,8 @@
 }
 #sub3Detail .container .gap .like-btn .like:hover > svg {
   stroke: rgb(130, 140, 148);
+}
+#sub3Detail .container .gap .like-btn .like.on > svg {
+  fill: #35c5f0;
+  stroke: #35c5f0;
 }

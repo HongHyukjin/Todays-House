@@ -37,11 +37,6 @@ export default function MypagePtDetailComponent ({사진}) {
                                 {/* <li><a href="!#">{state.사진.테그}</a></li> */}
                             </ul>
                         </div>
-                        <div className="right">
-                            <div class="h_container">
-                                <i id="heart" class="far fa-heart"></i>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -68,10 +68,15 @@ export default function MyPageComponentPt ()  {
 
             if (사진 === '') {
                 isPost = true;
-                noRes = false;
             } else {
                 isPost = false;
+            }
+
+            if(res.result.length===0){
                 noRes = true;
+            }
+            else{
+                noRes = false;
             }
 
             setState((prevState) => ({

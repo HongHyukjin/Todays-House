@@ -66,10 +66,15 @@ export default function MyPageComponentHouse ()  {
 
             if (집들이 === '') {
                 isPost = true;
-                noRes = false;
             } else {
                 isPost = false;
+            }
+
+            if(res.result.length===0){
                 noRes = true;
+            }
+            else{
+                noRes = false;
             }
 
             setState((prevState) => ({

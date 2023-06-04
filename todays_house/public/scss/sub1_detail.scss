@@ -24,6 +24,7 @@
             .content {
                 width: 720px;
                 margin: 0 auto;
+                position: relative;
                 .center-box {
                     margin: 0 auto;
                     img {
@@ -49,35 +50,46 @@
                         }
                     }
                 }
-                .right {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    
-                    .h_container {
-                        position: absolute;
-                        top:70px;
-                        right:100px;
-                        width: 60px;
-                        height: 60px;
-                        background-color: #fff;
-                        border: 1px solid #ccc;
+                .like-btn{
+                    position: absolute;
+                    top: 80px;
+                    right: -150px;
+                    width: 54px;
+                    height: 54px; 
+                    z-index: 3;
+                    &.on{
+                        position: fixed;
+                        top: 160px;
+                        right: 441.5px;
+                        margin: -20px 0 0 0;
+                        z-index: 3;
+                    }          
+                    .like{
+                        width: 54px;
+                        height: 54px;
+                        margin: 0 0 15px 0;
+                        background: #fff;
                         border-radius: 50%;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                        border: 1px solid #dadce0;
+                        transition: all 0.3s;
+                        cursor: pointer;
                         display: flex;
-                        justify-content: center;
                         align-items: center;
-                      }
-                      #heart {
-                        color: rgb(53, 197, 240);
-                        font-size: 24px;
-                        &:before {
-                            content: "\f004"; /* FontAwesome 하트 아이콘 코드 */
-                            font-family: "Font Awesome 5 Free"; /* FontAwesome 라이브러리의 폰트 패밀리 */
-                            font-weight: 900; /* 아이콘의 두께 */
-                          }
-                      }
-                  }
+                        justify-content: center;
+                        &:hover{
+                            border: 1px solid #828c94;
+                            >svg{
+                                stroke:rgba(130, 140, 148,1);
+                            }
+                        }
+                        &.on{
+                            >svg{
+                                fill:#35c5f0;
+                                stroke:#35c5f0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

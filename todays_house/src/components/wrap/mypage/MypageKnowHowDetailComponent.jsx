@@ -34,11 +34,6 @@ export default function MypageKnowHowDetailComponent () {
                                 <li><h3>{state.노하우.knowhow_content}</h3></li>
                             </ul>
                         </div>
-                        <div className="right">
-                            <div class="h_container">
-                                <i id="heart" class="far fa-heart"></i>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

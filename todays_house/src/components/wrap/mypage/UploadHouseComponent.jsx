@@ -139,6 +139,7 @@ export default function UploadHouseComponent ()  {
 
       const onSubmitHousePost=()=>{
         const formData = {
+          "user_email":sessionStorage.getItem("user_email"),
           "file":state.imgUrl,
           "house_title":state.house_title,
           "house_content":state.house_content,

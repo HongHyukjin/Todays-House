@@ -21,12 +21,13 @@ public class HousePostDAO {
 
     // 1. post
     public int post(HousePostDTO housePostDTO) {
-        String SQL = "insert into house_post(file,house_title,house_content) values(?,?,?)";
+        String SQL = "insert into house_post(user_email,file,house_title,house_content) values(?,?,?,?)";
         try {
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, housePostDTO.getFile());
-            ps.setString(2, housePostDTO.getHouse_title());
-            ps.setString(3, housePostDTO.getHouse_content());
+            ps.setString(1, housePostDTO.getUser_email());
+            ps.setString(2, housePostDTO.getFile());
+            ps.setString(3, housePostDTO.getHouse_title());
+            ps.setString(4, housePostDTO.getHouse_content());
 
             return ps.executeUpdate();
         } catch (Exception e) {
@@ -52,10 +53,11 @@ public class HousePostDAO {
     public List<HousePostDTO> select(String user_email){
         HousePostDTO housePostDTO = null;
         List<HousePostDTO> list = new ArrayList<>();
-        String SQL ="select * from ohouse_member m join house_post h where m.user_email=?";
+        String SQL ="select * from ohouse_member m join house_post h where m.user_email=? && h.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
+            ps.setString(2, user_email);
             rs = ps.executeQuery(); 
             while(rs.next()){
                 housePostDTO = new HousePostDTO();

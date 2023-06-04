@@ -5,7 +5,8 @@ import $ from 'jquery';
 export default function Sub1ComponentChild({ 사진 }) {
 
     const [state,setState] = React.useState({
-        scrap_on : []
+        scrap_on : [],
+        zzim_on:[]
       })
 
     const onClickScrap = (e, id, 이미지) => {
@@ -99,9 +100,92 @@ export default function Sub1ComponentChild({ 사진 }) {
             console.log('AJAX 실패!' + err);
         }
     }
+    const onClickHeart = (e, id, 이미지) => {
+        e.preventDefault();
+        let value = {
+            "user_email": sessionStorage.getItem('user_email'),
+            "id": id,
+            "imagepath": `http://localhost:3000/images/sub1/${이미지}`,
+            "sub": '서브1'
+        }
+
+        if (state.zzim_on.includes(id)) {
+            $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/zzim_delete_action.jsp',
+                type: 'POST',
+                data: value,
+                success(res) {
+                    console.log('AJAX 성공!');
+                    console.log(res);
+                    console.log(JSON.parse(res));
+                    setState({
+                        ...state,
+                        // 현재 누른 데이터 scrap
+                        zzim_on: state.zzim_on.filter(item => item !== id)
+                    })
+                },
+                error(err) {
+                    console.log('AJAX 실패!' + err);
+                }
+            });
+        }
+
+        else {
+            $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/zzim_post_action.jsp',
+                type: 'POST',
+                data: value,
+                success(res) {
+                    console.log('AJAX 성공!');
+                    console.log(res);
+                    console.log(JSON.parse(res));
+                    setState({
+                        ...state,
+                        // 현재 누른 데이터 scrap
+                        zzim_on: [...state.zzim_on, id]
+                    })
+                },
+                error(err) {
+                    console.log('AJAX 실패!' + err);
+                }
+            });
+        }
+    }
+
+    const getZzim = async () => {
+        try {
+            let zzim_on = [];
+            const user_email = sessionStorage.getItem('user_email');
+            const form_data = {
+                "user_email": user_email
+            }
+
+            const res = await $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/zzim_select_action.jsp',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+            });
+            console.log('AJAX 성공!');
+            console.log(res.result);
+            for(let i=0; i<res.result.length; i++){
+                if(res.result[i].sub === '서브1'){
+                    zzim_on = [...zzim_on, Number(res.result[i].id)];
+                }
+            }
+            setState((prevState) => ({
+                ...prevState,
+                zzim_on : zzim_on
+            }));
+        } catch (err) {
+            console.log('AJAX 실패!' + err);
+        }
+    }
+
 
     React.useEffect(() => {
         getScrap();
+        getZzim();
     }, [])
 
     return (

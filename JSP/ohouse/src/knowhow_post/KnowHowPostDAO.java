@@ -22,12 +22,13 @@ public class KnowHowPostDAO {
 
     // 1. post
     public int post(KnowHowPostDTO knowHowPostDTO) {
-        String SQL = "insert into knowhow_post(file,knowhow_title,knowhow_content) values(?,?,?)";
+        String SQL = "insert into knowhow_post(user_email,file,knowhow_title,knowhow_content) values(?,?,?,?)";
         try {
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, knowHowPostDTO.getFile());
-            ps.setString(2, knowHowPostDTO.getKnowhow_title());
-            ps.setString(3, knowHowPostDTO.getKnowhow_content());
+            ps.setString(1, knowHowPostDTO.getUser_email());
+            ps.setString(2, knowHowPostDTO.getFile());
+            ps.setString(3, knowHowPostDTO.getKnowhow_title());
+            ps.setString(4, knowHowPostDTO.getKnowhow_content());
 
             return ps.executeUpdate();
         } catch (Exception e) {
@@ -53,10 +54,11 @@ public class KnowHowPostDAO {
     public List<KnowHowPostDTO> select(String user_email){
         KnowHowPostDTO knowHowPostDTO = null;
         List<KnowHowPostDTO> list = new ArrayList<>();
-        String SQL ="select * from ohouse_member m join knowhow_post h where m.user_email=?";
+        String SQL ="select * from ohouse_member m join knowhow_post k where m.user_email=? && k.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
+            ps.setString(2, user_email);
             rs = ps.executeQuery();
             while(rs.next()){
                 knowHowPostDTO = new KnowHowPostDTO();
