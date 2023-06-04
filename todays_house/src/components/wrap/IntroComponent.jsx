@@ -9,6 +9,7 @@ import MypageComponent from './MypageComponent'
 import SubComponent from './SubComponent';
 import ShoppingComponent from './ShoppingComponent'
 import ScrapComponent from './ScrapComponent';
+import BasketComponent from './BasketComponent';
 
 export default function IntroComponent ({nav, setNav}) {
     const [state,setState] = React.useState({
@@ -96,6 +97,7 @@ export default function IntroComponent ({nav, setNav}) {
                       <Route path='/쇼핑페이지/*' element={<ShoppingComponent nav={nav} setNav={setNav} />} />
                       <Route path='/마이페이지/*' element={<MypageComponent isMypag={state.isMypage} />} />
                       <Route path='/스크랩페이지' element={<ScrapComponent />} />
+                      <Route path='/장바구니페이지' element={<BasketComponent />} />
                 </Routes>
             <FooterComponent/>
         </>

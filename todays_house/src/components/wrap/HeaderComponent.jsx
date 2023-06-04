@@ -215,7 +215,7 @@ export default function HeaderComponent({isMypage, nav, setNav}){
                                                     <Link to="/스크랩페이지"><span className='_scrap_outline_24 css-17vaqfq'></span></Link>
                                                 </li>
                                                 <li><a href="!#"><span className='_notification_outline_24 css-17vaqfq'></span></a></li>
-                                                <li><a href="!#"><span className='_cart_24 css-17vaqfq'></span></a></li>
+                                                <li><Link to="/장바구니페이지"><span className='_cart_24 css-17vaqfq'></span></Link></li>
 
                                                 <li>
                                                     <a href="" className='avartar-box' onClick={onClickSub2}><img src={state.imgUrl} alt="" /></a>

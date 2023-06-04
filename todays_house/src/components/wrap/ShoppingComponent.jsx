@@ -22,6 +22,7 @@ export default function ShoppingComponent ({nav,setNav}) {
             method : 'GET'
         })
         .then((res)=>{
+            localStorage.setItem('쇼핑홈', JSON.stringify(res.data.쇼핑홈))
             setState({
                 ...state,
                 쇼핑홈 : res.data.쇼핑홈

@@ -7,7 +7,7 @@ export default function Section3ComponentChild({ 쇼핑홈 }) {
             {
                 쇼핑홈.map((item, id) => {
                     return (
-                        <div className="todaydeal-box">
+                        <div className="todaydeal-box" key={id}>
                             <Link to={`/쇼핑페이지/쇼핑디테일/${id}`}>
                                 <div className="img-box" key={item.제품코드}>
                                     <img src={`/images/shop/${item.상품이미지}`} alt="" />
