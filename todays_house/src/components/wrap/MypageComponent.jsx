@@ -5,11 +5,14 @@ import UpdateComponent from './mypage/UpdateComponent';
 import ChangePwComponent from './mypage/ChangePwComponent';
 import MyPageComponentAll from './mypage/MyPageComponentAll';
 import MyPageComponentPt from './mypage/MyPageComponentPt';
-import MyPageZzimComponent from './mypage/MyPageZzimComponent';
+import MyPageComponentHouse from './mypage/MyPageComponentHouse';
+import MyPageComponentKnowHow from './mypage/MyPageComponentKnowHow';
+import MypagePtDetailComponent from './mypage/MypagePtDetailComponent';
 import $ from 'jquery';
+import MypageHouseDetailComponent from './mypage/MypageHouseDetailComponent';
+import MypageKnowHowDetailComponent from './mypage/MypageKnowHowDetailComponent';
 
 export default function MypageComponent ({isMypage}) {
-  
 
   const [state, setState] = React.useState({
     사진: [],
@@ -108,11 +111,13 @@ export default function MypageComponent ({isMypage}) {
           <Route path='/' element={<MyPageComponentAll/>} />
           <Route path='/모두보기' element={<MyPageComponentAll/>} />
           <Route path='/사진' element={<MyPageComponentPt/>} />
-          <Route path='/집들이' element={<MyPageComponentPt />} />
-          <Route path='/노하우' element={<MyPageComponentPt />} />
-          <Route path='/찜하기' element={<MyPageZzimComponent />} />
+          <Route path='/집들이' element={<MyPageComponentHouse />} />
+          <Route path='/노하우' element={<MyPageComponentKnowHow />} />
           <Route path='/회원정보수정' element={<UpdateComponent />} />
           <Route path='/비밀번호변경' element={<ChangePwComponent />} />
+          <Route path='/사진/상세보기/:id' element={<MypagePtDetailComponent />} />
+          <Route path='/집들이/상세보기/:id' element={<MypageHouseDetailComponent />} />
+          <Route path='/노하우/상세보기/:id' element={<MypageKnowHowDetailComponent />} />
       </Routes>
     </>
   );

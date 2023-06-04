@@ -203,7 +203,6 @@ export default function Sub2DetailComponent ({집들이}) {
         }
     }
 
-
     React.useEffect(()=>{
         getZzim();
         getScrap();

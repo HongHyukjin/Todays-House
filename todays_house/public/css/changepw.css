@@ -33,7 +33,7 @@
   margin: 0 0 5px 0;
   line-height: 22.5px;
 }
-#wrap #changePw .container .gap .content form div p {
+#wrap #changePw .container .gap .content form div .ex {
   font-size: 15px;
   line-height: 22.5px;
 }
@@ -47,6 +47,25 @@
   padding: 0 15px;
   line-height: 40px;
   color: #424242;
+}
+#wrap #changePw .container .gap .content form div .error-msg {
+  display: none;
+  margin: 0 0 10px 0;
+}
+#wrap #changePw .container .gap .content form div .error-msg.on {
+  display: block;
+}
+#wrap #changePw .container .gap .content form div .error-msg svg {
+  display: inline;
+  margin: 0 5px 0 0;
+}
+#wrap #changePw .container .gap .content form div .error-msg p {
+  display: inline;
+  margin: 0 0 20px 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+  color: #f77;
 }
 #wrap #changePw .container .gap .content form button {
   width: 100%;

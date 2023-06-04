@@ -93,38 +93,18 @@
 #signUp .section2 .container .gap .content form .join input.email {
   width: 170px;
 }
-#signUp .section2 .container .gap .content form .join input.email.on {
-  outline: 3px solid rgba(53, 197, 240, 0.3);
-}
 #signUp .section2 .container .gap .content form .join input::-moz-placeholder {
   color: #dbdbdb;
 }
 #signUp .section2 .container .gap .content form .join input::placeholder {
   color: #dbdbdb;
 }
-#signUp .section2 .container .gap .content form .join input.on {
-  border: 1px solid #f77;
-}
-#signUp .section2 .container .gap .content form .join input.on:focus {
-  outline: 3px solid rgba(255, 119, 119, 0.3);
-}
-#signUp .section2 .container .gap .content form .join .email-box {
-  display: flex;
-  align-items: center;
-}
-#signUp .section2 .container .gap .content form .join .email-box .email {
-  width: 170px;
-}
-#signUp .section2 .container .gap .content form .join .email-box i {
+#signUp .section2 .container .gap .content form .join i {
   font-size: 15px;
-  margin: 0 3px 5px 2px;
+  margin: 0 3px 0 2px;
   color: #dbdbdb;
 }
-#signUp .section2 .container .gap .content form .join .email-box > div {
-  position: relative;
-  width: 170px;
-}
-#signUp .section2 .container .gap .content form .join .email-box > div select {
+#signUp .section2 .container .gap .content form .join select {
   z-index: 1;
   width: 170px;
   height: 40px;
@@ -137,46 +117,6 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-#signUp .section2 .container .gap .content form .join .email-box > div select.on {
-  border: 1px solid #f77;
-}
-#signUp .section2 .container .gap .content form .join .email-box > div select.on:focus {
-  outline: 3px solid rgba(255, 119, 119, 0.3);
-}
-#signUp .section2 .container .gap .content form .join .email-box > div .email-input {
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 170px;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #dbdbdb;
-  font-size: 14px;
-  color: #424242;
-  border-radius: 4px;
-  outline: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  transition: all 0.3s;
-}
-#signUp .section2 .container .gap .content form .join .email-box > div .email-input:focus {
-  outline: 3px solid rgba(53, 197, 240, 0.3);
-}
-#signUp .section2 .container .gap .content form .join .email-box > div > a {
-  display: block;
-  position: absolute;
-  z-index: 3;
-  top: 12px;
-  right: 15px;
-  width: 10px;
-  height: 10px;
-}
-#signUp .section2 .container .gap .content form .join .email-box > div > a .exit {
-  width: 100%;
-  height: 100%;
 }
 #signUp .section2 .container .gap .content form .join > button {
   width: 100%;

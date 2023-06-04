@@ -3,6 +3,41 @@ import HeaderComponent from './HeaderComponent';
 import TopmodalComponent from './TopmodalComponent';
 
 export default function EmailComponent() {
+
+    // const nodeMailer = require('nodemailer');
+
+    // const mailPoster = nodeMailer.createTransport({
+    //     service: 'Naver',
+    //     host : 'smtp.naver.com',
+    //     port : 465,
+    //     auth : {
+    //         user : 'gurwlszx@naver.com',
+    //         pass : '0603okju!!'
+    //     }
+    // });
+
+    // const mailOpt = (user_email, title, contents) => {
+    //     const mailOptions = {
+    //         from : 'gurwlszx@naver.com',
+    //         to : user_email,
+    //         subject : title,
+    //         text : contents
+    //     };
+
+    //     return mailOptions;
+    // }
+
+    // const sendMail = (mailOption) => {
+    //     mailPoster.sendMail(mailOption, function (error, info) {
+    //         if (error) {
+    //             console.log('에러 ' + error);
+    //         }
+    //         else {
+    //             console.log('전송 완료 ' + info.response);
+    //         }
+    //     });
+    // }
+
     return (
         <>
             <TopmodalComponent />

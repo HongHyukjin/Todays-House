@@ -1,4 +1,0 @@
-1. 현재 경로의 JSP 파일을 그대로 복사해서
-톰캣 폴더의 Root에 풀고 WEB_INF에 class 복사해놓고 실행
-
-2. JSP 안에 table.txt 안의 명령어 순서대로 실행

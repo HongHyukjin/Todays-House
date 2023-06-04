@@ -148,3 +148,7 @@
 #sub3Detail .container .gap .like-btn .like:hover > svg {
   stroke: rgb(130, 140, 148);
 }
+#sub3Detail .container .gap .like-btn .like.on > svg {
+  fill: #35c5f0;
+  stroke: #35c5f0;
+}

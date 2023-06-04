@@ -11,6 +11,7 @@
 <% request.setCharacterEncoding("UTF-8");%>
 
 <jsp:useBean class="photo_post.PhotoPostDTO" id="photoPostDTO" scope="page"/>
+<jsp:setProperty name="photoPostDTO" property="user_email"/>
 <jsp:setProperty name="photoPostDTO" property="pyeong"/>
 <jsp:setProperty name="photoPostDTO" property="type"/>
 <jsp:setProperty name="photoPostDTO" property="style"/>

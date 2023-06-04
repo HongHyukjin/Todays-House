@@ -69,12 +69,14 @@ export default  function UploadPhotoComponent ()  {
           $('#uploadPt .ico').css({"display":"none"})
           $('#uploadPt .re').css({"display":"block"})
           $('#uploadPt .input').css({"background":"#f7f8fa"})
+          $('#uploadPt .btn').css({"display":"flex"})
           $('#uploadPt .img_upload:hover').css({"background":"#fff"})
         }
         else{
           $('#uploadPt .input .img_del').css({"display":"none"})
           $('#uploadPt .ico').css({"display":"flex"})
           $('#uploadPt .re').css({"display":"none"})
+          $('#uploadPt .btn').css({"display":"none"})
           $('#uploadPt .input').css({"background":"trnsparent"})
         }
       }, [state.file])
@@ -94,6 +96,7 @@ export default  function UploadPhotoComponent ()  {
     const onSubmitPhotoPost=()=>{ 
         
         const formData = {
+            "user_email":sessionStorage.getItem("user_email"),
             "pyeong":state.pyeong,
             "type":state.type,
             "style":state.style,
@@ -171,7 +174,7 @@ export default  function UploadPhotoComponent ()  {
                     <div className="gap">
                         <ul>
                             <li><Link href="/사진업로드" className='nav-btn on' >사진</Link></li>
-                            <li><Link to="/비디오업로드" className='nav-btn'>동영상</Link></li>
+                            {/* <li><Link to="/비디오업로드" className='nav-btn'>동영상</Link></li> */}
                         </ul>
                     </div>
                 </div>
@@ -238,12 +241,14 @@ export default  function UploadPhotoComponent ()  {
                                             </button>
                                             <div>
                                                 <img src={state.imgUrl} alt="" />
-                                                <button className="re" onClick={onClickImageUpload}>
-                                                    <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
-                                                </button>
-                                                <button className='img_del' onClick={onClickDelImage}>
-                                                    <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
-                                                </button>
+                                                <div className="btn">
+                                                    <button className="re" onClick={onClickImageUpload}>
+                                                        <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
+                                                    </button>
+                                                    <button className='img_del' onClick={onClickDelImage}>
+                                                        <svg className="icon" width="30" height="30" fill="#fff" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                                    </button>
+                                                </div>
                                             </div>
 
                                         </div>

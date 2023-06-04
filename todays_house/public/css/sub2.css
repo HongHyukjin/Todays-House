@@ -59,27 +59,31 @@
   transition: all 0.2s;
 }
 #wrap #sub2 .container .gap .content-box .content .img-box > img:hover {
-  transform: scale(1.06);
+  transform: scale(1.1);
 }
 #wrap #sub2 .container .gap .content-box .content .img-box span {
   position: absolute;
   top: 7%;
   left: 5%;
 }
-#wrap #sub2 .container .gap .content-box .content .img-box span > img {
-  width: auto;
-}
 #wrap #sub2 .container .gap .content-box .content .img-box button {
   z-index: 2;
   position: absolute;
   cursor: pointer;
   border: 0;
-  top: 85%;
-  right: 6%;
+  top: 83%;
+  right: 3%;
   background: none;
 }
-#wrap #sub2 .container .gap .content-box .content .img-box button > img {
-  width: 30px;
+#wrap #sub2 .container .gap .content-box .content .img-box button .icon {
+  width: 32px;
+  height: 32px;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button.on g {
+  fill: #35c5f0;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button.on path {
+  stroke: transparent;
 }
 #wrap #sub2 .container .gap .content-box .content .title-box {
   width: 365px;
@@ -88,7 +92,7 @@
 #wrap #sub2 .container .gap .content-box .content .title-box h2 {
   font-size: 17px;
   font-weight: 700;
-  letter-spacing: -0.4px;
+  letter-spacing: -1px;
   line-height: 24px;
   color: #424242;
   margin: 18px 0 8px 0;

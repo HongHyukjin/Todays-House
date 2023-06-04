@@ -8,62 +8,26 @@ export default function SigninComponent(){
     const [state, setState] = React.useState({
         이메일 : '',
         비밀번호 : '',
-        isPwError : false,
-        isPwMsg : '',
-        isEmailError : false,
-        isEmailMsg : ''
     })
    
     // 이메일 
     const onChangeEmail = (e) => {
       const {value} = e.target;
-      let isEmailError = false;
-      let isEmailMsg = '';
-
-      if(value === ''){
-          isEmailError = true;
-          isEmailMsg = '필수 입력 항목입니다.';
-      }
-      else if(value !== ''){
-          isEmailError = true;
-          isEmailMsg = '이메일 형식이 올바르지 않습니다.';
-      }
 
       setState({
           ...state,
-          이메일 : value,
-          isEmailError : isEmailError,
-          isEmailMsg : isEmailMsg
+          이메일 : value
       })
     }
 
     const onChangePw = (e) => {
 
         const {value} = e.target;
-        let isPwError = false;
-        let isPwMsg = '';
-        const regExp1 = /^(.){8,16}$/g;
-        const regExp2 = /([A-Za-z]+[0-9]+)+|([0-9]+[A-Za-z]+)+/g;
-        const regExp3 = /\s/g;
 
-        if(value === ''){
-            isPwError = true;
-            isPwMsg = '필수 입력 항목입니다.'
-        }
-        else if(regExp1.test(value) === false || regExp2.test(value) === false){
-            isPwError = true;
-            isPwMsg = '비밀번호는 영문, 숫자를 포함하여 8자 이상이어야 합니다.'
-        }
-        else if(regExp3.test(value) === true){
-            isPwError = true;
-            isPwMsg = '공백은 사용할 수 없습니다.'
-        }
 
         setState({
             ...state,
-            비밀번호 : value,
-            isPwError : isPwError,
-            isPwMsg : isPwMsg
+            비밀번호 : value
         })
     }
 
@@ -86,8 +50,7 @@ export default function SigninComponent(){
             dataType : 'json',
             success(res) {
                 console.log('AJAX 성공!');
-                console.log(res);
-                console.log(res.result.type);
+                console.log(res.result);
                 if(res.result === '1'){
                     // session에 이메일 저장 
                     sessionStorage.setItem('user_email', state.이메일);
@@ -138,7 +101,7 @@ export default function SigninComponent(){
                         </div>
                     </li>
                     <button  type="submit" className="ohouse-login-form-button">
-                        <a href="">로그인</a>
+                        로그인
                     </button>
 
                     <li>

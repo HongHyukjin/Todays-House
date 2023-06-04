@@ -9,7 +9,7 @@ import Sub2DetailComponent from './subpage/Sub2DetailComponent ';
 import Sub3DetailComponent from './subpage/Sub3DetailComponent ';
 import axios from 'axios';
 
-export default function SubComponent () {
+export default function SubComponent ({nav,setNav}) {
 
     const [photo, setPhoto] = React.useState({
         사진 : [],
@@ -17,31 +17,41 @@ export default function SubComponent () {
         노하우:[]
     });
 
+
     React.useEffect(() => {
         axios({
             url : '../data/product.json',
             method : 'GET'
         })
         .then((res)=>{
+            localStorage.setItem('사진',JSON.stringify(res.data.사진));
+            localStorage.setItem('집들이',JSON.stringify(res.data.집들이));
+            localStorage.setItem('노하우',JSON.stringify(res.data.노하우));
             setPhoto({
                 ...photo,
                 사진 : res.data.사진,
                 집들이 : res.data.집들이,
                 노하우: res.data.노하우
             })
-            console.log('sub',photo.사진);
+            // console.log('sub',photo.사진);
         })
         .catch((err)=>{
             console.log("AXIOS 오류" + err)
         })
+
+        
     },[]);
+
+    
+
+    
 
     return (
         <>  
-            <NavComponent />
+            <NavComponent nav={nav} setNav={setNav} />
             <Routes>
             <Route path='/서브1' element={<Sub1Component 사진={photo.사진}/>} />
-                <Route path='서브1/:id' element={<Sub1DetailComponent 사진={photo.사진} />}/>
+                <Route path='서브1/:id' element={<Sub1DetailComponent 사진={photo.사진}/>}/>
                 <Route path='/서브2' element={<Sub2Component 집들이={photo.집들이}/>} />
                 <Route path='서브2/:id' element={<Sub2DetailComponent 집들이={photo.집들이}/>} />
                 <Route path='/서브3' element={<Sub3Component 노하우={photo.노하우}/>} />

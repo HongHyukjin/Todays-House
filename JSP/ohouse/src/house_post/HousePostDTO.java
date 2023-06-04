@@ -5,10 +5,19 @@ package house_post;
  */
 public class HousePostDTO {
 
+    private String user_email;
     private String file;
     private String house_title;
     private String house_content;
     private String write_date;
+
+    public String getUser_email() {
+        return this.user_email;
+    }
+
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
+    }
 
     public String getFile() {
         return this.file;

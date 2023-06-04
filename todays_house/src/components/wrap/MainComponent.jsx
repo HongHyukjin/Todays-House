@@ -11,12 +11,11 @@ import Section8Component from './main/Section8Component';
 import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
-import GoTopComponent from './GoTopComponent';
 
-export default function MainComponent () {
+export default function MainComponent ({nav, setNav}) {
     return (
         <>
-            <NavComponent />
+            <NavComponent nav={nav} setNav={setNav} />
             <Section1Component/>
             <Section2Component/>
             <Section3Component/>
@@ -28,7 +27,6 @@ export default function MainComponent () {
             <Section9Component/>
             <Section10Component/>
             <Section11Component/>
-            <GoTopComponent/>
         </>
     );
 };

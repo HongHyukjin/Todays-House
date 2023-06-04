@@ -1,4 +1,3 @@
-
 import $ from 'jquery';
 import React, {useRef} from 'react';
 import {Link} from 'react-router-dom';
@@ -139,6 +138,7 @@ export default function UploadKnowHowComponent ()  {
 
       const onSubmitKnowHowPost=()=>{
         const formData = {
+          "user_email":sessionStorage.getItem("user_email"),
           "file":state.imgUrl,
           "knowhow_title":state.knowhow_title,
           "knowhow_content":state.knowhow_content,

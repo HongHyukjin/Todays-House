@@ -149,6 +149,12 @@
                             stroke:rgba(130, 140, 148,1);
                         }
                     }
+                    &.on{
+                        >svg{
+                            fill:#35c5f0;
+                            stroke:#35c5f0;
+                        }
+                    }
                 }
             }
         }

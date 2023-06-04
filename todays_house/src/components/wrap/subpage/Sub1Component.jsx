@@ -7,6 +7,7 @@ export default function Sub1Component({사진}) {
 
 
 
+
     // 사진 페이지
     return (
         <div id='sub1'>

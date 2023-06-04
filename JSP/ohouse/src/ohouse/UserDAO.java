@@ -172,7 +172,7 @@ public class UserDAO {
         }
         return userDTO; 
     }
-
+   
     // 가입 회원 전체리스트 목록 가져오기 
     public List<UserDTO> getJoinList(){
         UserDTO userDTO = new UserDTO();
@@ -193,7 +193,7 @@ public class UserDAO {
                 userDTO.setUser_url(rs.getString("user_url"));
                 userDTO.setUser_gender(rs.getString("user_gender"));
                 userDTO.setUser_birth(rs.getString("user_birth"));
-                userDTO.setUser_image(rs.getString("user_image"));
+                userDTO.setUser_profile(rs.getString("user_image"));
                 userDTO.setUser_oneline(rs.getString("user_oneline"));
                 userDTO.setCreate_date(rs.getString("create_date"));
                 list.add(userDTO);
@@ -213,6 +213,31 @@ public class UserDAO {
         }
         return list;
         
+    }    
+      
+    public int emailJb(UserDTO userDTO){
+        String SQL = "SELECT * FROM ohouse_member WHERE user_email = ?";  
+        try {
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, userDTO.getUser_email1()+"@"+userDTO.getUser_email2());
+            rs = ps.executeQuery();
+            if(rs.next()){
+                return -1;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+            finally {
+                try {
+                    if(rs!=null){rs.close();}
+                    if(ps!=null){ps.close();}
+                    if(conn!=null){conn.close();}
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            return 1;
     }
         
     

@@ -146,6 +146,12 @@
   left: 82%;
   background: none;
 }
+#wrap #sub3 .container .gap .nohow-box .nohow .content-image button.on g {
+  fill: #35c5f0;
+}
+#wrap #sub3 .container .gap .nohow-box .nohow .content-image button.on path {
+  stroke: transparent;
+}
 #wrap #sub3 .container .gap .nohow-box .nohow .content-title {
   margin-top: 18px;
 }

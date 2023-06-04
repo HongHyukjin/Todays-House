@@ -38,6 +38,7 @@
   line-height: 20px;
   color: #35c5f0;
   cursor: pointer;
+  pointer-events: none;
   letter-spacing: -1.3px;
 }
 #wrap #section3 .container .gap .title a:hover {
@@ -51,24 +52,29 @@
 #wrap #section3 .container .gap .content ul li {
   overflow: hidden;
 }
-#wrap #section3 .container .gap .content ul li a img {
+#wrap #section3 .container .gap .content ul li > a {
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+#wrap #section3 .container .gap .content ul li > a img {
   width: 100%;
   height: 180px;
   margin-bottom: 13px;
   border-radius: 4px;
   transition: all 0.2s;
 }
-#wrap #section3 .container .gap .content ul li a img:hover {
+#wrap #section3 .container .gap .content ul li > a img:hover {
   transform: scale(1.05);
 }
-#wrap #section3 .container .gap .content ul li a p {
+#wrap #section3 .container .gap .content ul li > a p {
   color: rgb(66, 66, 66);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -1.3px;
   line-height: 24px;
 }
-#wrap #section3 .container .gap .content ul li a p strong {
+#wrap #section3 .container .gap .content ul li > a p strong {
   color: #35c5f0;
   font-weight: 800;
   font-size: 16px;
