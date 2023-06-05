@@ -10,16 +10,26 @@ export default function NavComponent({nav,setNav}) {
     let setId = 0;
     
     React.useEffect(() => {
-      const slideUp = () => {
-        setSlideIndex((prevIndex) => (prevIndex + 1) % searchKeywords.length);
-    };
-    
-      setId = setInterval(slideUp, 3000);
-    
-      return () => {
-        clearInterval(setId);
-    };
+        const slideUp = () => {
+            setSlideIndex((prevIndex) => (prevIndex + 1) % searchKeywords.length);
+        };
+
+        setId = setInterval(slideUp, 3000);
+
+        return () => {
+            clearInterval(setId);
+        };
+
     }, []);
+
+    React.useEffect(() => {
+        let nav2 = localStorage.getItem('nav2');
+        console.log(nav2);
+        setNav({
+            ...nav,
+            nav2 : localStorage.getItem('nav2')
+        })
+    }, [])
 
     React.useEffect(() => {
         $('#nav .bottom-nav-btn').on({

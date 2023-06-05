@@ -47,8 +47,8 @@ export default function WrapComponent () {
   }, [])
 
   React.useEffect(() => {
-    console.log(nav.nav1);
-    console.log(nav.nav2);
+    localStorage.setItem('nav1', nav.nav1);
+    localStorage.setItem('nav2', nav.nav2);
   }, [nav.nav1, nav.nav2])
 
   return (

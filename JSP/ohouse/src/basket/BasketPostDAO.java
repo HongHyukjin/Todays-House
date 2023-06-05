@@ -80,7 +80,7 @@ public class BasketPostDAO {
         }
         finally{
             try{
-                if(rs!=null){rs.close();}
+                if(rs!=null){rs.close();} 
                 if(ps!=null){ps.close();}
                 if(conn!=null){conn.close();}
             }
@@ -90,7 +90,52 @@ public class BasketPostDAO {
         return list;
     }
 
+    public int update(BasketPostDTO basketPostDTO){
+        String SQL = "UPDATE basket SET num=?,totalprice=? WHERE user_email=? && id=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, basketPostDTO.getNum());
+            ps.setString(2, basketPostDTO.getTotalprice());
+            ps.setString(3, basketPostDTO.getUser_email());
+            ps.setString(4, basketPostDTO.getId());
+            return ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return -1; 
+    }
 
+    public int delete(BasketPostDTO basketPostDTO){
+        String SQL = "delete from basket where user_email=? && id=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, basketPostDTO.getUser_email());
+            ps.setString(2, basketPostDTO.getId());;
+    
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1; 
+    }
 
     
 }

@@ -186,6 +186,15 @@ export default function HeaderComponent({isMypage, nav, setNav}){
         }
     }, [state.isLogin])
 
+    React.useEffect(() => {
+        let nav1 = localStorage.getItem('nav1');
+        console.log(nav1);
+        setNav({
+            ...nav,
+            nav1 : localStorage.getItem('nav1')
+        })
+    },[])
+
     return (
         <>
             <div id='header'>

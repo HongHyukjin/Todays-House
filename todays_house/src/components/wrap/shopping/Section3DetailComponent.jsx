@@ -93,6 +93,7 @@ export default function Section3DetailComponent({쇼핑홈}) {
             success(res) {
                 console.log('AJAX 성공!');
                 console.log(res);
+                alert('장바구니에 저장되었습니다!')
             },
             error(err) {
                 console.log('AJAX 실패!' + err);
@@ -203,7 +204,7 @@ export default function Section3DetailComponent({쇼핑홈}) {
                                             <span className='order-price'>{commaPrice(state.totalprice)}</span>
                                         </li>
                                         <li>
-                                            <button className='shop-basket' onClick={onClickBasket} ><Link to="/장바구니페이지">장바구니</Link></button>
+                                            <button className='shop-basket' onClick={onClickBasket} >장바구니</button>
                                             <button className='buy'>바로구매</button>
                                         </li>
                                     </ul>
