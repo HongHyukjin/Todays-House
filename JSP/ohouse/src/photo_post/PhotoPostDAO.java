@@ -64,6 +64,8 @@ public class PhotoPostDAO {
             rs = ps.executeQuery(); 
             while(rs.next()){
                 photoPostDTO = new PhotoPostDTO();
+
+                photoPostDTO.setIdx(rs.getInt("p.idx"));
                 photoPostDTO.setPyeong(rs.getString("pyeong"));
                 photoPostDTO.setType(rs.getString("type"));
                 photoPostDTO.setStyle(rs.getString("style"));
@@ -90,7 +92,25 @@ public class PhotoPostDAO {
         return list;
     }
 
-
+    public int delete(PhotoPostDTO photoPostDTO){
+        String SQL = "delete from photo_post where idx=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setInt(1, photoPostDTO.getIdx());
+    
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1;
+    }
 
     
 }
