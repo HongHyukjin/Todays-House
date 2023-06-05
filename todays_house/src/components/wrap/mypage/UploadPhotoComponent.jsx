@@ -112,7 +112,7 @@ export default  function UploadPhotoComponent ()  {
             success(res){
                 console.log('AJAX 성공');
                 console.log(res);
-                if(!state.pyeong || !state.type || !state.style || !state.imgUrl || !state.place || state.memo){
+                if(!state.pyeong || !state.type || !state.style || !state.imgUrl || !state.place || !state.memo){
                     alert("모든 항목을 입력해주세요!");
                 }
                 else{

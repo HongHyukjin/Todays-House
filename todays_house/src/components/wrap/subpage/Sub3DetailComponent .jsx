@@ -15,6 +15,7 @@ export default function Sub3DetailComponent ({노하우}) {
     });
 
     React.useEffect(() => {
+        window.scrollTo(0,0);
         const data = JSON.parse(localStorage.getItem('노하우'));
         console.log(data[id]);
         setState({
