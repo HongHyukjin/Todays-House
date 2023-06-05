@@ -1,0 +1,236 @@
+#signUp {
+  width: 100%;
+}
+#signUp .section1 {
+  width: 100%;
+  padding: 40px 15px 0 15px;
+}
+#signUp .section1 a {
+  width: 100%;
+}
+#signUp .section2 {
+  width: 100%;
+  padding: 60px 0 0 0;
+}
+#signUp .section2 .container {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+#signUp .section2 .container .gap {
+  width: 100%;
+}
+#signUp .section2 .container .gap .title {
+  width: 100%;
+}
+#signUp .section2 .container .gap .title h2 {
+  color: #424242;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+#signUp .section2 .container .gap .content {
+  width: 100%;
+}
+#signUp .section2 .container .gap .content .up {
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+}
+#signUp .section2 .container .gap .content .up > p {
+  padding: 20px 0 15px 0;
+  line-height: 1;
+  text-align: center;
+  font-size: 12px;
+  color: #757575;
+}
+#signUp .section2 .container .gap .content .up > ul {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 30px 0;
+}
+#signUp .section2 .container .gap .content .up > ul > li {
+  margin: 0 10px;
+}
+#signUp .section2 .container .gap .content form {
+  width: 100%;
+}
+#signUp .section2 .container .gap .content form .join {
+  width: 100%;
+  position: relative;
+  padding: 20px 0 0 0;
+}
+#signUp .section2 .container .gap .content form .join > svg {
+  position: absolute;
+  z-index: 2;
+  top: 76px;
+  right: 15px;
+}
+#signUp .section2 .container .gap .content form .join .label {
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2f3438;
+  padding: 10px 0;
+}
+#signUp .section2 .container .gap .content form .join .label.on {
+  color: #ff7777;
+}
+#signUp .section2 .container .gap .content form .join input {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #dbdbdb;
+  font-size: 15px;
+  color: #424242;
+  border-radius: 4px;
+  outline: 3px solid transparent;
+  transition: all 0.3s;
+}
+#signUp .section2 .container .gap .content form .join input:focus {
+  outline: 3px solid rgba(53, 197, 240, 0.3);
+}
+#signUp .section2 .container .gap .content form .join input.email {
+  width: 170px;
+}
+#signUp .section2 .container .gap .content form .join input::-moz-placeholder {
+  color: #dbdbdb;
+}
+#signUp .section2 .container .gap .content form .join input::placeholder {
+  color: #dbdbdb;
+}
+#signUp .section2 .container .gap .content form .join i {
+  font-size: 15px;
+  margin: 0 3px 0 2px;
+  color: #dbdbdb;
+}
+#signUp .section2 .container .gap .content form .join select {
+  z-index: 1;
+  width: 170px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  color: #424242;
+  border-radius: 4px;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#signUp .section2 .container .gap .content form .join > button {
+  width: 100%;
+  margin: 15px 0 5px 0;
+  height: 50px;
+  background: #f7f8fa;
+  color: #c2c8cc;
+  font-size: 17px;
+  font-weight: 600;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#signUp .section2 .container .gap .content form .join > button.on {
+  color: #35c5f0;
+  border-color: #35c5f0;
+  background-color: #fff;
+}
+#signUp .section2 .container .gap .content form .join .sub-msg {
+  font-size: 14px;
+  color: #828C94;
+  letter-spacing: -1px;
+  padding: 0 0 15px 0;
+}
+#signUp .section2 .container .gap .content form .join .check-box {
+  border: 1px solid #eaedef;
+  padding: 18px;
+}
+#signUp .section2 .container .gap .content form .join .check-box.on {
+  border: 1px solid #ff7777;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2F3438;
+  letter-spacing: -1.5px;
+  padding: 15px 0;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label:nth-child(1) {
+  font-weight: 700;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label span {
+  font-size: 12px;
+  padding: 0 0 0 5px;
+  display: flex;
+  align-items: center;
+  color: #828C94;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label:nth-child(2) > span, #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(3) > span, #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(4) > span {
+  color: #009fce;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label:nth-child(3), #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(4), #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(5) {
+  position: relative;
+  z-index: 1;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label:nth-child(3)::before, #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(4)::before, #signUp .section2 .container .gap .content form .join .check-box > label:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 18.5px;
+  right: 17px;
+  width: 9px;
+  height: 9px;
+  border-top: 1.5px solid #2F3438;
+  border-right: 1.5px solid #2F3438;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  margin: 0 10px 0 0;
+}
+#signUp .section2 .container .gap .content form .join .check-box > label:first-child {
+  border-bottom: 1px solid #eaedef;
+  padding: 0 0 20px 0;
+}
+#signUp .section2 .container .gap .content form .join .error-msg {
+  padding: 10px 0 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ff7777;
+}
+#signUp .section2 .container .gap .content form > button {
+  width: 100%;
+  margin: 30px 0;
+  height: 50px;
+  background: #35c5f0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#signUp .section2 .container .gap .content .log-in {
+  width: 100%;
+  display: flex;
+  padding: 0 0 50px 0;
+  justify-content: center;
+}
+#signUp .section2 .container .gap .content .log-in p {
+  font-size: 15px;
+  color: #424242;
+  padding: 0 10px 0 0;
+  letter-spacing: -1px;
+}
+#signUp .section2 .container .gap .content .log-in a {
+  font-size: 15px;
+  color: #424242;
+  text-decoration: underline;
+  font-weight: 700;
+}
+#signUp .section2 .container .gap .content .log-in a:hover {
+  color: rgba(66, 66, 66, 0.6);
+}

@@ -1,0 +1,162 @@
+#sub3Detail {
+    width: 100%; 
+    height: 100%;
+    .container{
+        width: 100%;
+        height: 100%;
+        .sub3-img-up{
+            width: 100%;
+            height: 489px;
+            >img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .gap{
+            width: 100%;
+            max-width: 718px;
+            margin: 0 auto;
+            position: relative;
+            .title{
+                padding: 60px 0 30px 0;
+                h1{
+                    color: #2f3438;
+                    font-size: 34px;
+                    line-height: 42px;
+                    font-weight: 700;
+                    word-break: keep-all;
+                    overflow-wrap: break-word;
+                }
+            }
+            .nick-box{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .nickname{
+                    display: flex;
+                    align-items: center;
+                    >img{
+                        width: 50px;
+                        border-radius: 50%;
+                    }
+                    .name{
+                        padding: 0 0 0 20px;
+                        h3{
+                            color: #2f3438;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 20px;
+                            padding: 0 0 6px 0;
+                        }
+                        >p{
+                            color: #656e75;
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+                .button{
+                    
+                    >button{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        width: 90px;
+                        height: 36px;
+                        padding: 0 12px;
+                        font-weight: 700;
+                        color: #fff;
+                        font-size: 15px;
+                        background: #35c5f0;
+                        border-radius: 4px;
+                        border: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .sub3-img-bottom{
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                >img{
+                    width: 100%;
+                }
+                .svg{
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    z-index: 2;
+                    border: 0;
+                    background: transparent;
+                    width: 35px;
+                    display: none;
+                    >svg{
+                       width: 100%;             
+                    }
+                }
+                &:hover{
+                    .svg{
+                        display: block;
+                    }
+                }
+
+            }
+            .content{
+                width: 100%;
+                padding: 30px 0 80px 0;
+                >p{
+                    color: #2f3438;
+                    font-size: 16px;
+                    line-height: 32px;
+                    word-break: keep-all;
+                    word-wrap: break-word;
+                    letter-spacing: -0.4px;
+                }
+                .text1{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+            .like-btn{
+                position: absolute;
+                top: 80px;
+                right: -300px;
+                width: 54px;
+                height: 54px; 
+                &.on{
+                    position: fixed;
+                    top: 160px;
+                    right: 292.5px;
+                    margin: -20px 0 0 0;
+                    z-index: 5;
+                }           
+                .like{
+                    width: 54px;
+                    height: 54px;
+                    margin: 0 0 15px 0;
+                    background: #fff;
+                    border-radius: 50%;
+                    border: 1px solid #dadce0;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &:hover{
+                        border: 1px solid #828c94;
+                        >svg{
+                            stroke:rgba(130, 140, 148,1);
+                        }
+                    }
+                    &.on{
+                        >svg{
+                            fill:#35c5f0;
+                            stroke:#35c5f0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

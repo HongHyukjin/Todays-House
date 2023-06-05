@@ -1,37 +1,8 @@
 import React from 'react';
-import jQuery from 'jquery';
 import axios from 'axios';
-import Sub3Componentchild from './Sub3Componentchild'
+import Sub3ComponentChild from './Sub3ComponentChild'
 
-export default function Sub3Component(){
-
-    const [state, setState] = React.useState({
-        노하우 : []
-    });
-
-    const getNewProduct=()=>{
-        axios({
-            url : './data/product.json',
-            method : 'GET'
-        })
-        .then((res)=>{
-            setState({
-                ...state,
-                노하우 : res.data.노하우
-            })
-        })
-        .catch((err)=>{
-            console.log("AXIOS 오류!" + err)
-        })
-    }
-
-    React.useEffect(()=>{
-        getNewProduct();
-    },[]);
-
-
-
-
+export default function Sub3Component({노하우}){
 
 
 
@@ -44,16 +15,16 @@ export default function Sub3Component(){
                         <div className="icon-box">
                             <ul>
                                 <li>
-                                    <a href="!#"><img src="./images/icon_house.png" alt="" />전셋집꾸미기</a>
+                                    <a href="!#"><img src="../images/icon_house.png" alt="" />전셋집꾸미기</a>
                                 </li>
                                 <li>
-                                    <a href="!#"><img src="./images/icon_hand.png" alt="" />셀프인테리어</a>   
+                                    <a href="!#"><img src="../images/icon_hand.png" alt="" />셀프인테리어</a>   
                                 </li>
                                 <li>
-                                    <a href="!#"><img src="./images/icon_table.png" alt="" />신혼가구쇼핑</a>
+                                    <a href="!#"><img src="../images/icon_table.png" alt="" />신혼가구쇼핑</a>
                                 </li>
                                 <li>
-                                    <a href="!#"><img src="./images/icon_roll.png" alt="" />리모델링</a>
+                                    <a href="!#"><img src="../images/icon_roll.png" alt="" />리모델링</a>
                                 </li>
                             </ul>
                         </div>
@@ -61,7 +32,7 @@ export default function Sub3Component(){
                     <div className="title-box">
                         <div className="title">
                             <h2>테마별 노하우</h2>
-                            <button>최신순<img src="./images/arrow_down.png" alt="" /></button>
+                            <button>최신순<img src="../images/arrow_down.png" alt="" /></button>
                         </div>
                     </div>
                     <div className="nav-box">
@@ -82,7 +53,7 @@ export default function Sub3Component(){
                         </div>
                     </div>
                     <div className="nohow-box">
-                        <Sub3Componentchild 노하우={state.노하우} />
+                        <Sub3ComponentChild 노하우={노하우} />
                     </div>
                 </div>
             </div>

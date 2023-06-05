@@ -52,7 +52,7 @@ export default function MypageNavComponent () {
       <div id="mypagenav">
         <nav className='top-nav'>
               <ul>
-                <li><a href="#!" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</a></li>
+                <li><Link to="/마이페이지/모두보기" className={`top-nav-btn ${state.nav1==='프로필'?'on':''}`}>프로필</Link></li>
                 <li><Link to="/마이페이지/회원정보수정" className={`top-nav-btn ${state.nav1==='설정'?'on':''}`}>설정</Link></li>
               </ul>
             </nav>
@@ -60,12 +60,12 @@ export default function MypageNavComponent () {
               state.nav1==='프로필' &&
               <nav className='bottom-nav'>
                 <ul>
-                  <li><a href="#!" className={`bottom-nav-btn ${state.nav2==='모두보기'?'on':''}`}>모두보기</a></li>
-                  <li><a href="#!" className='bottom-nav-btn'>사진</a></li>
-                  <li><a href="#!" className='bottom-nav-btn'>집들이</a></li>
-                  <li><a href="#!" className='bottom-nav-btn'>노하우</a></li>
+                  <li><Link to="/마이페이지/모두보기" className={`bottom-nav-btn ${state.nav2==='모두보기'?'on':''}`}>모두보기</Link></li>
+                  <li><Link to="/마이페이지/사진" className='bottom-nav-btn'>사진</Link></li>
+                  <li><Link to="/마이페이지/집들이" className='bottom-nav-btn'>집들이</Link></li>
+                  <li><Link to="/마이페이지/노하우" className='bottom-nav-btn'>노하우</Link></li>
                   <li><a href="#!" className='bottom-nav-btn'>질문과답변</a></li>
-                  <li><a href="#!" className='bottom-nav-btn'>스크랩북</a></li>
+                  <li><Link to="/스크랩페이지" className='bottom-nav-btn'>스크랩북</Link></li>
                   <li><a href="#!" className='bottom-nav-btn'>좋아요</a></li>
                 </ul>
               </nav>

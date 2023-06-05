@@ -62,6 +62,9 @@
 #wrap #update .container .gap .content form > div .input input[type=text].half {
   width: 190px;
 }
+#wrap #update .container .gap .content form > div .input input[type=text]::-moz-placeholder {
+  color: #ccc;
+}
 #wrap #update .container .gap .content form > div .input input[type=text]::placeholder {
   color: #ccc;
 }
@@ -140,7 +143,9 @@
   width: 22px;
   height: 22px;
   margin: 0 10px 0 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 50%;
   border: 1px solid #ccc;
 }

@@ -235,6 +235,20 @@
   background-color: #fff;
   border: 1px solid #DADDE0;
   color: #2F3438;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li button > a {
+  width: 18px;
+  height: 18px;
+  font-size: 20px;
+  line-height: 20px;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li button h1 {
+  width: 28px;
+  height: 18px;
+  font-size: 18px;
 }
 #wrap #basketdetail .container .gap .content .right-box .product-price .row1 ul li input {
   width: 435px;
@@ -245,7 +259,6 @@
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
-  color: #f0f0f0;
 }
 #wrap #basketdetail .container .gap .content .right-box .product-price .row2 {
   margin-top: 40px;
@@ -281,6 +294,12 @@
   line-height: 26px;
   border-radius: 4px;
   cursor: pointer;
+}
+#wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .shop-basket a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 14px 10px;
 }
 #wrap #basketdetail .container .gap .content .right-box .product-price .row2 ul li .buy {
   width: 49%;

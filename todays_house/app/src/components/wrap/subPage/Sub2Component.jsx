@@ -1,33 +1,9 @@
 import React from 'react';
-import jQuery from 'jquery';
 import axios from 'axios';
-import Sub2Componentchild from './Sub2Componentchild';
+import Sub2ComponentChild from './Sub2ComponentChild';
 
-export default function Sub2Component() {
+export default function Sub2Component({집들이}) {
 
-    const [state, setState] = React.useState({
-        집들이: []
-    });
-
-    const getNewProduct2 = () => {
-        axios({
-            url: './data/product.json',
-            method: 'GET'
-        })
-            .then((res) => {
-                setState({
-                    ...state,
-                    집들이: res.data.집들이
-                })
-            })
-            .catch((err) => {
-                console.log("AXIOS 오류!" + err)
-            })
-    }
-
-    React.useEffect(() => {
-        getNewProduct2();
-    }, []);
 
     // 집들이 페이지
     return (
@@ -49,7 +25,7 @@ export default function Sub2Component() {
                         </ul>
                     </div>
                     <div className="content-box">
-                        <Sub2Componentchild 집들이={state.집들이} />
+                        <Sub2ComponentChild 집들이={집들이} />
                     </div>
                 </div>
             </div>

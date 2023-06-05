@@ -11,15 +11,11 @@ import Section8Component from './main/Section8Component';
 import Section9Component from './main/Section9Component';
 import Section10Component from './main/Section10Component';
 import Section11Component from './main/Section11Component';
-import Sub1Component from './subPage/Sub1Component';
-import Sub2Component from './subPage/Sub2Component';
-import Sub3Component from './subPage/Sub3Component';
 
-
-const MainComponent = () => {
+export default function MainComponent ({nav, setNav}) {
     return (
         <>
-            <NavComponent />
+            <NavComponent nav={nav} setNav={setNav} />
             <Section1Component/>
             <Section2Component/>
             <Section3Component/>
@@ -31,11 +27,7 @@ const MainComponent = () => {
             <Section9Component/>
             <Section10Component/>
             <Section11Component/>
-            <Sub1Component/>
-            <Sub2Component/>
-            <Sub3Component/>
         </>
     );
 };
 
-export default MainComponent;

@@ -1,0 +1,131 @@
+#scrap {
+  width: 100%;
+  padding-top: 80px;
+}
+#scrap .container {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#scrap .container .gap {
+  width: 100%;
+}
+#scrap .container .gap .content {
+  width: 1104px;
+  margin: 0 auto;
+}
+#scrap .container .gap .content .row1 {
+  width: 100%;
+  padding-top: 40px;
+}
+#scrap .container .gap .content .row1 > ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#scrap .container .gap .content .row1 > ul > li {
+  padding: 0 0 15px 0;
+}
+#scrap .container .gap .content .row1 > ul > li h2 {
+  font-size: 24px;
+  color: #2F3438;
+  font-weight: 700;
+}
+#scrap .container .gap .content .row1 > ul > li a {
+  font-size: 14px;
+  font-weight: 400;
+}
+#scrap .container .gap .content .row2 {
+  width: 100%;
+}
+#scrap .container .gap .content .row2 ul {
+  width: 100%;
+}
+#scrap .container .gap .content .row2 ul li {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 0 0 25px 0;
+}
+#scrap .container .gap .content .row2 ul li img {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+}
+#scrap .container .gap .content .row2 ul li span {
+  width: 86px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2F3438;
+}
+#scrap .container .gap .content .row3 {
+  width: 100%;
+}
+#scrap .container .gap .content .row3 ul {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#scrap .container .gap .content .row3 ul li {
+  padding: 0 5px 20px 5px;
+}
+#scrap .container .gap .content .row3 ul li a {
+  text-align: center;
+  font-size: 16px;
+  color: #35C5F0;
+  font-weight: 700;
+}
+#scrap .container .gap .content .row3 ul .subnum {
+  display: none;
+}
+#scrap .container .gap .content .row3 ul .subnum.on {
+  display: block;
+}
+#scrap .container .gap .content .row4 {
+  width: 100%;
+  text-align: right;
+  border-top: 1px solid #ccc;
+  padding: 20px 0 0 0;
+}
+#scrap .container .gap .content .row4 a {
+  color: #35C5F0;
+  font-size: 14px;
+  font-weight: 700;
+}
+#scrap .container .gap .content .row5 {
+  padding: 20px 0 0 0;
+  width: 1156px;
+}
+#scrap .container .gap .content .row5 > ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+#scrap .container .gap .content .row5 > ul > li {
+  width: 23%;
+  margin: 0 2% 20px 0;
+}
+#scrap .container .gap .content .row5 > ul > li a {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#scrap .container .gap .content .row5 > ul > li a img {
+  width: 269px;
+  height: 269px;
+  border-radius: 5px;
+}
+#scrap .container .gap .content .row5 > ul > li a span {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 5px;
+  color: #fff;
+  font-size: 13px;
+}
