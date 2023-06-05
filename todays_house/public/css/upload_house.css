@@ -41,7 +41,7 @@
   box-shadow: rgba(234, 235, 239, 0.8) 0px 2px 4px 0px;
   border-radius: 4px;
 }
-#UploadHouse .guide > .guide-btn {
+#UploadHouse .guide .guide-btn {
   width: 100%;
   height: 76px;
   background: #fff;
@@ -50,26 +50,26 @@
   display: flex;
   align-items: center;
 }
-#UploadHouse .guide > .guide-btn:hover {
+#UploadHouse .guide .guide-btn:hover {
   background: #f7f8fa;
 }
-#UploadHouse .guide > .guide-btn > b {
+#UploadHouse .guide .guide-btn > b {
   color: #3f474d;
   font-size: 15px;
   font-weight: 600;
   padding: 0 5px 0 12px;
 }
-#UploadHouse .guide > .guide-btn > p {
+#UploadHouse .guide .guide-btn > p {
   color: #a4acb3;
   font-size: 13px;
   padding: 0 0 1px 0;
 }
-#UploadHouse .guide > .guide-btn > .arrow {
-  width: 290px;
+#UploadHouse .guide .guide-btn .arrow {
+  width: 35%;
   display: flex;
   justify-content: end;
 }
-#UploadHouse .guide > .guide-btn > .arrow .u9pb {
+#UploadHouse .guide .guide-btn .arrow .u9pb {
   transition: all 0.3s;
 }
 #UploadHouse .guide .guide-content {
@@ -81,22 +81,22 @@
   color: #424242;
   font-size: 15px;
 }
-#UploadHouse .guide .guide-content .one > .one-one {
+#UploadHouse .guide .guide-content .one .one-one {
   padding: 8px 0;
   line-height: 25px;
 }
-#UploadHouse .guide .guide-content .one > .one-one > b {
+#UploadHouse .guide .guide-content .one .one-one b {
   font-weight: 600;
   vertical-align: top;
 }
-#UploadHouse .guide .guide-content .one > .one-one .two {
+#UploadHouse .guide .guide-content .one .one-one .two {
   list-style: disc;
   padding: 0 0 0 25px;
 }
-#UploadHouse .guide .guide-content .one > .one-one .two .two-two {
+#UploadHouse .guide .guide-content .one .one-one .two .two-two {
   padding: 6px 0 0 0;
 }
-#UploadHouse .guide .guide-content .one > .one-one .two .two-two > a {
+#UploadHouse .guide .guide-content .one .one-one .two .two-two > a {
   color: #35c5f0;
   font-weight: 600;
   vertical-align: top;
@@ -111,75 +111,74 @@
 }
 #UploadHouse .guide-psjb .pajb-btn {
   width: 100%;
-  height: 77px;
+  height: 76px;
   background: #fff;
   padding: 0 30px;
   border: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 #UploadHouse .guide-psjb .pajb-btn:hover {
   background: #f7f8fa;
 }
 #UploadHouse .guide-psjb .pajb-btn > .icon {
-  width: 26px;
-  height: 26px;
+  width: auto;
 }
 #UploadHouse .guide-psjb .pajb-btn b {
   width: 130px;
   color: #3f474d;
   font-size: 15px;
   font-weight: 600;
-  padding: 0 10px 0 0;
+  padding: 0 5px 0 12px;
 }
 #UploadHouse .guide-psjb .pajb-btn p {
   width: 441px;
   color: #a4acb3;
   font-size: 13px;
   padding: 0 0 1px 0;
+  text-align: left;
 }
 #UploadHouse .guide-psjb .pajb-btn .arrow {
-  width: 35%;
+  width: 10%;
   display: flex;
   justify-content: end;
 }
 #UploadHouse .guide-psjb .pajb-btn .arrow .u9pb {
   transition: all 0.3s;
 }
-#UploadHouse .guide-psjb .guide-content {
+#UploadHouse .guide-psjb .psjb-content {
   width: 100%;
   padding: 0 30px;
 }
-#UploadHouse .guide-psjb .guide-content .one {
+#UploadHouse .guide-psjb .psjb-content .one {
   padding: 0;
   list-style: none;
 }
-#UploadHouse .guide-psjb .guide-content .one li {
+#UploadHouse .guide-psjb .psjb-content .one li {
   width: 100%;
-  padding: 15px 0;
   line-height: 25px;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box {
   width: 100%;
+  padding: 15px 0;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box > label {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .label {
   width: 130px;
   font-size: 15px;
   font-weight: 700;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box > label i {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .label i {
   color: red;
   padding: 0 30px 0 0;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box .radio1 {
-  margin: 10px 0;
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 {
   display: inline-flex;
+  padding: 0 20px 0 0;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box .radio1 input[type=radio] {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 input[type=radio] {
   width: 24px;
   height: 24px;
   margin: 0 10px 0 0;
@@ -189,16 +188,15 @@
   border: 1px solid #ccc;
   border-radius: 50%;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box .radio1 input[type=radio]:checked {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 input[type=radio]:checked {
   border: 7px solid #35c5f0;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box .radio1 h3 {
-  display: inline-block;
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 h3 {
   text-align: left;
   font-size: 14px;
   margin: 0;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box select {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -211,7 +209,10 @@
   width: 220px;
   height: 40px;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box input[type=text] {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box select:hover {
+  border: 1px solid #35c5f0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text] {
   width: 220px;
   height: 40px;
   padding: 8px 12px;
@@ -219,7 +220,7 @@
   border-radius: 4px;
   margin: 0 10px;
 }
-#UploadHouse .guide-psjb .guide-content .one li .psjb-box input[type=text]:hover {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text]:hover {
   border: 1px solid #35c5f0;
 }
 #UploadHouse form {

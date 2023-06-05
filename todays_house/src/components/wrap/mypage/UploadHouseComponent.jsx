@@ -131,6 +131,26 @@ export default function UploadHouseComponent ()  {
         });
       },[]);
 
+      React.useEffect(()=>{
+        $('.pajb-btn' ).on({
+          click(e){
+            e.preventDefault();
+            let guideContent = $('.psjb-content');
+            guideContent.removeClass("hide");
+            guideContent.toggleClass("hide");
+            if( guideContent.is(":visible") ){
+                guideContent.slideUp();
+                $('.u9pb1').css({"transform":"rotate(0)"});
+            }
+            else{
+                guideContent.slideDown();
+                $('.u9pb1').css({"transform":"rotate(180deg)"});
+            }
+            
+          }
+        });
+      },[]);
+
 
       const onClickSubmit=(e)=>{
         e.preventDefault();
@@ -204,15 +224,15 @@ export default function UploadHouseComponent ()  {
                 <b>필수 정보 입력</b>
                 <p>공간을 이해하는데 필요한 정보이니 최대한 꼼꼼하게 입력해주세요.</p>
                 <div className="arrow">
-                  <svg className="u9pb" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                  <svg className="u9pb1" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
                 </div>
               </button>
-              <div className="guide-content hide">
+              <div className="psjb-content hide">
                 <ul className='one'>
                     <li>
                       <div className='psjb-box'>
-                        <label>주거형태<i> *</i></label>
-                          <select name="" id="">
+                        <label className='label'>주거형태<i> *</i></label>
+                          <select name="jugu" id="Jugu">
                             <option value="">선택해주세요.</option>
                             <option value="본인방">본인방</option>
                             <option value="오피스텔">오피스텔</option>
@@ -226,21 +246,20 @@ export default function UploadHouseComponent ()  {
                     </li>
                     <li>
                       <ul className='one'>
-                        <div className='psjb-box'>
-                            <label>평수<i> *</i></label>
-                            <label className='radio1'><input type="radio" /><h3>단층</h3> </label>
-                            <label className='radio1'><input type="radio" /><h3>2층 단독/협소주택</h3></label>
-                              
-                            <label className='radio1'> <input type="radio" /><h3>3층 이상 단독/협소주택</h3> </label>
-                             
-                              <input type="text" placeholder='평'/>
-                           
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>평수<i> *</i></label>
+                            <label className='radio1'><input type="radio" name="pyeong" id="pyeong" /><h3>단층</h3></label>
+                            <label className='radio1'><input type="radio" name="pyeong" id="pyeong"/><h3>2층 단독/협소주택</h3></label>
+                            <label className='radio1'> <input type="radio" name="pyeong" id="pyeong"/><h3>3층 이상 단독/협소주택</h3></label>
+                            {/* <input type="text" placeholder='평'/> */}
                           </div>
+                        </li>
                       </ul>
                     </li>
                     <li>
                       <div className='psjb-box'>
-                        <label htmlFor="">작업분야<i> *</i></label>
+                        <label className='label'>작업분야<i> *</i></label>
                           <select type="text" name="working-area" id="WorkingArea">
                             <option value="선택해주세요.">선택해주세요.</option>
                             <option value="홈스타일링">홈스타일링</option>
@@ -252,7 +271,7 @@ export default function UploadHouseComponent ()  {
                     </li>
                     <li>
                       <div className='psjb-box'>
-                        <label htmlFor="">지역<i> *</i></label>
+                        <label className='label'>지역<i> *</i></label>
                           <select type="text" name="area" id="Area">
                             <option value="선택해주세요." placeholder='선택해주세요.'>선택안함</option>
                             <option value="서울특별시">서울특별시</option>
@@ -273,12 +292,12 @@ export default function UploadHouseComponent ()  {
                             <option value="세종특별자치시">세종특별자치시</option>
                             <option value="제주특별자치도">제주특별자치도</option>
                           </select>
-                          <input type="text" className='' name='' id='' placeholder='(선택) 아파트/건물명'/>
+                          <input type="text" name='apart' id='Apart' placeholder='(선택) 아파트/건물명'/>
                         </div>
                     </li>
                     <li>
                       <div className='psjb-box'>
-                        <label htmlFor="">스타일<i> *</i></label>
+                        <label className='label'>스타일<i> *</i></label>
                           <select type="text" name="style" id="Style">
                             <option value="선택해주세요.">선택해주세요.</option>
                             <option value="모던">모던</option>

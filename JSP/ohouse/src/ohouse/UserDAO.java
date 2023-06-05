@@ -123,7 +123,7 @@ public class UserDAO {
         catch(Exception e){
             e.printStackTrace();
         }
-        finally{
+        finally{ 
             try{
                 if(rs!=null){rs.close();}
                 if(ps!=null){ps.close();}
