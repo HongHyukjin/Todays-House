@@ -96,7 +96,7 @@ public class PhotoPostDAO {
         String SQL = "delete from photo_post where idx=?";
         try{
             ps = conn.prepareStatement(SQL);
-            ps.setInt(1, photoPostDTO.getIdx());;
+            ps.setInt(1, photoPostDTO.getIdx());
     
             return ps.executeUpdate();
         }

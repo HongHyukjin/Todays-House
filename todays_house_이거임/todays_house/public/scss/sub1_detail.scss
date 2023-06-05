@@ -11,9 +11,9 @@
             .title {
                 margin: 0 auto 30px auto;
                 width: 720px;
-                height: 32px;
                 padding: 0 15px 0 15px;
                 display: flex;
+                align-items: flex-end;
                 position: relative;
                 >a {
                     margin:0 8px 0 0;
@@ -33,12 +33,22 @@
                         line-height: 32px;
                         color: rgba(140, 160, 148, 1);
                     }
+                    h1{
+                        color: #2f3438;
+                        font-size: 34px;
+                        line-height: 42px;
+                        font-weight: 700;
+                        word-break: keep-all;
+                        overflow-wrap: break-word;
+                    }
                 }
                 .delete{
                     display: flex;
+                    position: relative;
                     width: 20%;
                     height: 100%;
                     justify-content: flex-end;
+                    align-items: flex-end;
                     button{
                         height: 100%;
                         background: none;
@@ -46,30 +56,31 @@
                         font-size: 28px;
                         letter-spacing: -4px;
                         display: flex;
-                        align-items: center;
+                        align-items: baseline;
                         cursor: pointer;
                     }
-                }
-                .sub{
-                    z-index: 4;
-                    position: absolute;
-                    top: 55px;
-                    right: 0;
-                    width: 118px;
-                    height: 52px;
-                    background: #fff;
-                    border-radius: 5px;
-                    border: 1px solid #ddd;
-                    text-align: center;
-                    >a{
-                        width: 100%;
-                        height: 100%;
-                        display: block;
-                        padding: 15px 0;
-                        font-size: 16px;
-                        color: #f77;
+                    .sub{
+                        z-index: 4;
+                        position: absolute;
+                        top: 55px;
+                        right: -20px;
+                        width: 118px;
+                        height: 52px;
+                        background: #fff;
+                        border-radius: 5px;
+                        border: 1px solid #ddd;
+                        text-align: center;
+                        >a{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            padding: 15px 0;
+                            font-size: 16px;
+                            color: #f77;
+                        }
                     }
                 }
+
             }
             .content {
                 width: 720px;

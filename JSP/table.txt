@@ -36,6 +36,14 @@ create table house_post(
     file    longblob not null,
     house_title varchar(81) not null,
     house_content varchar(2000) not null,
+    place varchar(100) not null,
+    pyeong varchar(100) not null,
+    category varchar(100) not null,
+    worker varchar(100) not null,
+    family varchar(100) not null,
+    area varchar(100) not null,
+    area2 varchar(100) null,
+    style varchar(100) not null,
     write_date timestamp default current_timestamp
 );
 

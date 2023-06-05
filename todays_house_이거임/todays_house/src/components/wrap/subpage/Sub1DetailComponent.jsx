@@ -25,7 +25,7 @@ export default function Sub1DetailComponent ({사진}) {
         React.useEffect(()=>{
             let isFixed =false;
             $(window).scroll(function(){
-                console.log($(window).scrollTop());
+                // console.log($(window).scrollTop());
                 if($(window).scrollTop()>=200){
                     isFixed = true;
                 }

@@ -1,29 +1,29 @@
-#sub2Detail {
+#sub1MyPageDetail {
   width: 100%;
   height: 100%;
 }
-#sub2Detail .container {
+#sub1MyPageDetail .container {
   width: 100%;
   height: 100%;
 }
-#sub2Detail .container .sub2-img-up {
+#sub1MyPageDetail .container .sub2-img-up {
   width: 100%;
   height: 489px;
 }
-#sub2Detail .container .sub2-img-up > img {
+#sub1MyPageDetail .container .sub2-img-up > img {
   width: 100%;
   height: 100%;
 }
-#sub2Detail .container .gap {
+#sub1MyPageDetail .container .gap {
   width: 100%;
   max-width: 718px;
   margin: 0 auto;
   position: relative;
 }
-#sub2Detail .container .gap .title {
+#sub1MyPageDetail .container .gap .title {
   padding: 60px 0 30px 0;
 }
-#sub2Detail .container .gap .title h1 {
+#sub1MyPageDetail .container .gap .title h1 {
   color: #2f3438;
   font-size: 34px;
   line-height: 42px;
@@ -31,35 +31,35 @@
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-#sub2Detail .container .gap .nick-box {
+#sub1MyPageDetail .container .gap .nick-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#sub2Detail .container .gap .nick-box .nickname {
+#sub1MyPageDetail .container .gap .nick-box .nickname {
   display: flex;
   align-items: center;
 }
-#sub2Detail .container .gap .nick-box .nickname > img {
+#sub1MyPageDetail .container .gap .nick-box .nickname > img {
   width: 50px;
   border-radius: 50%;
 }
-#sub2Detail .container .gap .nick-box .nickname .name {
+#sub1MyPageDetail .container .gap .nick-box .nickname .name {
   padding: 0 0 0 20px;
 }
-#sub2Detail .container .gap .nick-box .nickname .name h3 {
+#sub1MyPageDetail .container .gap .nick-box .nickname .name h3 {
   color: #2f3438;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
   padding: 0 0 6px 0;
 }
-#sub2Detail .container .gap .nick-box .nickname .name > p {
+#sub1MyPageDetail .container .gap .nick-box .nickname .name > p {
   color: #656e75;
   font-size: 16px;
   line-height: 20px;
 }
-#sub2Detail .container .gap .nick-box .button > button {
+#sub1MyPageDetail .container .gap .nick-box .button > button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -74,13 +74,13 @@
   border: 0;
   cursor: pointer;
 }
-#sub2Detail .container .gap .info-box {
+#sub1MyPageDetail .container .gap .info-box {
   width: 100%;
   padding: 0 24px 25px 24px;
   background: #f7f8fa;
   margin: 60px 0 50px 0;
 }
-#sub2Detail .container .gap .info-box .up {
+#sub1MyPageDetail .container .gap .info-box .up {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -88,51 +88,51 @@
   padding: 15px 0;
   border-bottom: 1px solid #dadce0;
 }
-#sub2Detail .container .gap .info-box .up .info {
+#sub1MyPageDetail .container .gap .info-box .up .info {
   display: flex;
   align-items: center;
 }
-#sub2Detail .container .gap .info-box .up .info > dd {
+#sub1MyPageDetail .container .gap .info-box .up .info > dd {
   color: #424242;
   font-size: 14px;
   line-height: 20px;
   padding: 0 0 0 8px;
 }
-#sub2Detail .container .gap .info-box .up > i {
+#sub1MyPageDetail .container .gap .info-box .up > i {
   color: #dadce0;
 }
-#sub2Detail .container .gap .info-box .bottom {
+#sub1MyPageDetail .container .gap .info-box .bottom {
   display: flex;
   padding: 20px 0 0 0;
   flex-flow: row wrap;
 }
-#sub2Detail .container .gap .info-box .bottom > div {
+#sub1MyPageDetail .container .gap .info-box .bottom > div {
   display: flex;
   padding: 0 0 8px 0;
 }
-#sub2Detail .container .gap .info-box .bottom > div > dt {
+#sub1MyPageDetail .container .gap .info-box .bottom > div > dt {
   color: #828c94;
   font-size: 14px;
   padding: 0 6px 0 0;
   line-height: 20px;
   letter-spacing: -0.4px;
 }
-#sub2Detail .container .gap .info-box .bottom > div > dd {
+#sub1MyPageDetail .container .gap .info-box .bottom > div > dd {
   color: #292929;
   font-size: 14px;
   padding: 0 16px 0 0;
   line-height: 20px;
   letter-spacing: -0.4px;
 }
-#sub2Detail .container .gap .sub2-img-bottom {
+#sub1MyPageDetail .container .gap .sub2-img-bottom {
   width: 100%;
   position: relative;
   z-index: 1;
 }
-#sub2Detail .container .gap .sub2-img-bottom > img {
+#sub1MyPageDetail .container .gap .sub2-img-bottom > img {
   width: 100%;
 }
-#sub2Detail .container .gap .sub2-img-bottom .svg {
+#sub1MyPageDetail .container .gap .sub2-img-bottom .svg {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -142,17 +142,17 @@
   width: 35px;
   display: none;
 }
-#sub2Detail .container .gap .sub2-img-bottom .svg > svg {
+#sub1MyPageDetail .container .gap .sub2-img-bottom .svg > svg {
   width: 100%;
 }
-#sub2Detail .container .gap .sub2-img-bottom:hover .svg {
+#sub1MyPageDetail .container .gap .sub2-img-bottom:hover .svg {
   display: block;
 }
-#sub2Detail .container .gap .content {
+#sub1MyPageDetail .container .gap .content {
   width: 100%;
   padding: 30px 0 80px 0;
 }
-#sub2Detail .container .gap .content > p {
+#sub1MyPageDetail .container .gap .content > p {
   color: #2f3438;
   font-size: 16px;
   line-height: 32px;
@@ -160,7 +160,7 @@
   word-wrap: break-word;
   letter-spacing: -0.4px;
 }
-#sub2Detail .container .gap .like-btn {
+#sub1MyPageDetail .container .gap .like-btn {
   position: absolute;
   top: 80px;
   right: -300px;
@@ -168,14 +168,14 @@
   height: 54px;
   z-index: 10;
 }
-#sub2Detail .container .gap .like-btn.on {
+#sub1MyPageDetail .container .gap .like-btn.on {
   position: fixed;
   top: 160px;
   right: 292.5px;
   margin: -20px 0 0 0;
   z-index: 5;
 }
-#sub2Detail .container .gap .like-btn .like {
+#sub1MyPageDetail .container .gap .like-btn .like {
   width: 54px;
   height: 54px;
   margin: 0 0 15px 0;
@@ -188,13 +188,13 @@
   align-items: center;
   justify-content: center;
 }
-#sub2Detail .container .gap .like-btn .like:hover {
+#sub1MyPageDetail .container .gap .like-btn .like:hover {
   border: 1px solid #828c94;
 }
-#sub2Detail .container .gap .like-btn .like:hover > svg {
+#sub1MyPageDetail .container .gap .like-btn .like:hover > svg {
   stroke: rgb(130, 140, 148);
 }
-#sub2Detail .container .gap .like-btn .like.on > svg {
+#sub1MyPageDetail .container .gap .like-btn .like.on > svg {
   fill: #35c5f0;
   stroke: #35c5f0;
 }

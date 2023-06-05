@@ -46,6 +46,7 @@ export default function MyPageComponentHouse ()  {
     const getHouse = async () => {
         try {
             const user_email = sessionStorage.getItem('user_email');
+            console.log(user_email);
             const form_data = {
                 "user_email": user_email
             };
@@ -158,7 +159,7 @@ export default function MyPageComponentHouse ()  {
                                                                 <li><svg class="icon no-stroke" aria-label="댓글 달기" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="nonzero" d="M13.665 18.434l.53-.066C19.69 17.679 23 14.348 23 10c0-4.942-4.235-8.5-11-8.5S1 5.058 1 10c0 4.348 3.31 7.68 8.804 8.368l.531.066L12 21.764l1.665-3.33zm-3.985.926C3.493 18.585 0 14.69 0 10 0 4.753 4.373.5 12 .5S24 4.753 24 10c0 4.69-3.493 8.585-9.68 9.36l-1.647 3.293c-.374.75-.974.744-1.346 0L9.68 19.36z"></path></svg></li>
                                                             </ul>
                                                         </div>
-                                                        <div className="memo-box">{item.house_post}</div>
+                                                        <div className="memo-box">{item.house_title}</div>
                                                     </li>
                                                 )
                                             })

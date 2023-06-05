@@ -62,14 +62,14 @@ export default function MypagePtDetailComponent ({사진}) {
                         </div>
                         <div className="delete" onClick={onClickSub}>
                             <button>. . .</button>
-                        </div>
-                        {
+                            {
                             state.isSub&&(
                                 <div className="sub" onClick={onClickDelete}>
                                     <a href="!#">삭제하기</a>
                                 </div>
                             )
                         }
+                        </div>
                     </div>
                     <div className="content">
                         <div className="center-box">

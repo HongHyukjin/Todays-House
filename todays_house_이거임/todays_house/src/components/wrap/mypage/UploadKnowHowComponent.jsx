@@ -150,6 +150,12 @@ export default function UploadKnowHowComponent ()  {
           success(res){
               console.log('AJAX 성공');
               console.log(res);
+              if(!state.imgUrl || !state.knowhow_title || !state.knowhow_content){
+                alert("모든 항목을 입력해주세요!");
+              }
+              else{
+                  window.location.href = '#/마이페이지';
+              }
           },
           error(err){
               console.log('AJAX 실패'+err);
