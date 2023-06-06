@@ -13,8 +13,8 @@ import UploadKnowHowComponent from './wrap/mypage/UploadKnowHowComponent';
 export default function WrapComponent () {
 
   const [nav, setNav] = React.useState({
-    nav1 : '커뮤니티',
-    nav2 : '홈'
+    nav1 : '',
+    nav2 : ''
   })
 
   React.useEffect(() => {
@@ -47,8 +47,31 @@ export default function WrapComponent () {
   }, [])
 
   React.useEffect(() => {
-    localStorage.setItem('nav1', nav.nav1);
-    localStorage.setItem('nav2', nav.nav2);
+    if(localStorage.getItem('isFirst') === null){
+      localStorage.setItem('isFirst', true);
+      setNav({
+        ...nav,
+        nav1 : '커뮤니티',
+        nav2 : '홈'
+      })
+      localStorage.setItem('nav1', '커뮤니티');
+      localStorage.setItem('nav2', '홈');
+    }
+    if(localStorage.getItem('isFirst') !== null){
+      setNav({
+        ...nav,
+        nav1 : localStorage.getItem('nav1'),
+        nav2 : localStorage.getItem('nav2')
+      })
+    }
+  }, [])
+
+
+  React.useEffect(() => {
+    if(localStorage.getItem('isFirst') !== null && nav.nav1 !== '' && nav.nav2 !== ''){
+      localStorage.setItem('nav1', nav.nav1);
+      localStorage.setItem('nav2', nav.nav2);
+    }
   }, [nav.nav1, nav.nav2])
 
   return (

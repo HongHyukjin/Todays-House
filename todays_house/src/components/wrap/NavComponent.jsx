@@ -22,14 +22,6 @@ export default function NavComponent({nav,setNav}) {
 
     }, []);
 
-    React.useEffect(() => {
-        let nav2 = localStorage.getItem('nav2');
-        console.log(nav2);
-        setNav({
-            ...nav,
-            nav2 : localStorage.getItem('nav2')
-        })
-    }, [])
 
     React.useEffect(() => {
         $('#nav .bottom-nav-btn').on({
