@@ -15,6 +15,7 @@ export default function Sub2DetailComponent ({집들이}) {
     });
 
     React.useEffect(() => {
+        window.scrollTo(0,0);
         const data = JSON.parse(localStorage.getItem('집들이'));
         console.log(data[id]);
         setState({

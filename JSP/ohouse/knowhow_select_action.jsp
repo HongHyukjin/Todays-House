@@ -24,13 +24,15 @@
     for(KnowHowPostDTO knowHowPostDTO : list){
         cnt++;
         if(cnt < list.size()){
-            jsonData += "{ \"file\" : \"" + knowHowPostDTO.getFile() + "\","
+            jsonData += "{ \"idx\" : \"" + knowHowPostDTO.getIdx() + "\","
+                     +   "\"file\" : \"" + knowHowPostDTO.getFile() + "\","
                      +   "\"knowhow_title\" : \"" + knowHowPostDTO.getKnowhow_title() + "\","
                      +   "\"knowhow_content\" : \"" + knowHowPostDTO.getKnowhow_content() + "\""
                      + "},";
         }   
         else{
-            jsonData += "{ \"file\" : \"" + knowHowPostDTO.getFile() + "\","
+            jsonData += "{ \"idx\" : \"" + knowHowPostDTO.getIdx() + "\","
+                     +   "\"file\" : \"" + knowHowPostDTO.getFile() + "\","
                      +   "\"knowhow_title\" : \"" + knowHowPostDTO.getKnowhow_title() + "\","
                      +   "\"knowhow_content\" : \"" + knowHowPostDTO.getKnowhow_content() + "\""
                      + "}";

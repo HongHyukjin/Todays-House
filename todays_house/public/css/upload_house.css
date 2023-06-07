@@ -101,6 +101,137 @@
   font-weight: 600;
   vertical-align: top;
 }
+#UploadHouse .guide-psjb {
+  width: 100%;
+  max-width: 720px;
+  margin: 20px auto 0 auto;
+  border: 1px solid #dadce0;
+  box-shadow: rgba(234, 235, 239, 0.8) 0px 2px 4px 0px;
+  border-radius: 4px;
+}
+#UploadHouse .guide-psjb .pajb-btn {
+  width: 100%;
+  height: 76px;
+  background: #fff;
+  padding: 0 30px;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+#UploadHouse .guide-psjb .pajb-btn:hover {
+  background: #f7f8fa;
+}
+#UploadHouse .guide-psjb .pajb-btn > .icon {
+  width: auto;
+}
+#UploadHouse .guide-psjb .pajb-btn b {
+  width: 130px;
+  color: #3f474d;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 5px 0 12px;
+}
+#UploadHouse .guide-psjb .pajb-btn p {
+  width: 441px;
+  color: #a4acb3;
+  font-size: 13px;
+  padding: 0 0 1px 0;
+  text-align: left;
+}
+#UploadHouse .guide-psjb .pajb-btn .arrow {
+  width: 10%;
+  padding: 0 14px 0 0;
+  display: flex;
+  justify-content: end;
+}
+#UploadHouse .guide-psjb .pajb-btn .arrow .u9pb1 {
+  transition: all 0.3s;
+}
+#UploadHouse .guide-psjb .psjb-content {
+  width: 100%;
+  padding: 0 30px;
+}
+#UploadHouse .guide-psjb .psjb-content .one {
+  padding: 0;
+  list-style: none;
+}
+#UploadHouse .guide-psjb .psjb-content .one li {
+  width: 100%;
+  line-height: 25px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box {
+  width: 100%;
+  position: relative;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .select-icon {
+  position: absolute;
+  top: 21px;
+  right: 330px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .label {
+  width: 130px;
+  font-size: 15px;
+  font-weight: 700;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .label i {
+  color: red;
+  padding: 0 30px 0 0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 {
+  display: inline-flex;
+  padding: 0 20px 0 0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 > input[type=radio] {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px 0 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 > input[type=radio]:checked {
+  border: 7px solid #35c5f0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 h3 {
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box > select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 8px 12px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+  width: 220px;
+  height: 40px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box > select:focus {
+  border: 1px solid #35c5f0;
+  outline: 0;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text] {
+  width: 220px;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text]:focus {
+  border: 1px solid #35c5f0;
+  outline: 0;
+}
 #UploadHouse form {
   width: 100%;
   max-width: 720px;

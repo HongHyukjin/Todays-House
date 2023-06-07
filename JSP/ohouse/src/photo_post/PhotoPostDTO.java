@@ -4,6 +4,7 @@ package photo_post;
  */
 public class PhotoPostDTO{
 
+    private int idx;
     private String user_email;
     private String pyeong;
     private String type;
@@ -12,6 +13,14 @@ public class PhotoPostDTO{
     private String place;
     private String memo;
     private String write_date;
+
+    public int getIdx() {
+        return this.idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
+    }
 
     public String getUser_email() {
         return this.user_email;

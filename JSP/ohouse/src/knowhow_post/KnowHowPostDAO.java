@@ -62,6 +62,7 @@ public class KnowHowPostDAO {
             rs = ps.executeQuery();
             while(rs.next()){
                 knowHowPostDTO = new KnowHowPostDTO();
+                knowHowPostDTO.setIdx(rs.getInt("k.idx"));
                 knowHowPostDTO.setFile(rs.getString("file"));
                 knowHowPostDTO.setKnowhow_title(rs.getString("knowhow_title"));
                 knowHowPostDTO.setKnowhow_content(rs.getString("knowhow_content"));
@@ -84,4 +85,26 @@ public class KnowHowPostDAO {
         }
         return list;
     }
+
+    public int delete(KnowHowPostDTO knowHowPostDTO){
+        String SQL = "delete from knowhow_post where idx=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setInt(1, knowHowPostDTO.getIdx());
+    
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1;
+    }
+
+
 }

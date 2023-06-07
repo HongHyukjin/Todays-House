@@ -11,7 +11,15 @@ export default function UploadHouseComponent ()  {
         house_title:'',
         house_content:'',
         num:0,
-        isTitleError:false
+        isTitleError:false,
+        place:'',
+        pyeong:'',
+        category:'',
+        worker:'',
+        family:'',
+        area:'',
+        area2:'',
+        style:''
       })
     
       const imageInput = useRef();
@@ -112,7 +120,7 @@ export default function UploadHouseComponent ()  {
       },[state.house_title]);
 
       React.useEffect(()=>{
-        $('.guide-btn').on({
+        $('.guide-btn' ).on({
           click(e){
             e.preventDefault();
             let guideContent = $('.guide-content');
@@ -131,6 +139,27 @@ export default function UploadHouseComponent ()  {
         });
       },[]);
 
+      React.useEffect(()=>{
+        $('.pajb-btn' ).on({
+          click(e){
+            e.preventDefault();
+            let guideContent = $('.psjb-content');
+            guideContent.removeClass("hide");
+            guideContent.toggleClass("hide");
+            if( guideContent.is(":visible") ){
+                guideContent.slideUp();
+                $('.u9pb1').css({"transform":"rotate(0)"});
+            }
+            else{
+                guideContent.slideDown();
+                $('.u9pb1').css({"transform":"rotate(180deg)"});
+            }
+            
+          }
+        });
+      },[]);
+
+
       const onClickSubmit=(e)=>{
         e.preventDefault();
         onSubmitHousePost();
@@ -143,6 +172,14 @@ export default function UploadHouseComponent ()  {
           "file":state.imgUrl,
           "house_title":state.house_title,
           "house_content":state.house_content,
+          "place":state.place,
+          "pyeong":state.pyeong,
+          "category":state.category,
+          "worker":state.worker,
+          "family":state.family,
+          "area":state.area,
+          "area2":state.area2,
+          "style":state.style
         }
         $.ajax({
           url:'http://localhost:8080/JSP/ohouse/house_post_action.jsp',
@@ -151,18 +188,69 @@ export default function UploadHouseComponent ()  {
           success(res){
               console.log('AJAX 성공');
               console.log(res);
-              if(!state.imgUrl || !state.house_title || !state.house_content){
+              if(!state.house_title || !state.house_content || !state.place || !state.pyeong || !state.category || !state.worker|| !state.family|| !state.imgUrl|| !state.area|| !state.style){
                 alert("모든 항목을 입력해주세요!");
-              }
-              else{
-                  window.location.href = '#/마이페이지';
-              }
+            }
+            else{
+                window.location.href = '#/마이페이지';
+            }
           },
           error(err){
               console.log('AJAX 실패'+err);
           }
       })
 
+      }
+
+      const onChangePlace=(e)=>{
+        setState({
+          ...state,
+          place:e.target.value
+        })
+      }
+
+      const onChangePyeong=(e)=>{
+        
+        setState({
+          ...state,
+          pyeong:e.target.value
+        })
+      }
+      const onChangeCategory=(e)=>{
+        setState({
+          ...state,
+          category:e.target.value
+        })
+      }
+      const onChangeWorker=(e)=>{
+        setState({
+          ...state,
+          worker:e.target.value
+        })
+      }
+      const onChangeArea=(e)=>{
+        setState({
+          ...state,
+          area:e.target.value
+        })
+      }
+      const onChangeArea2=(e)=>{
+        setState({
+          ...state,
+          area2:e.target.value
+        })
+      }
+      const onChangeFamily=(e)=>{
+        setState({
+          ...state,
+          family:e.target.value
+        })
+      }
+      const onChangeStyle=(e)=>{
+        setState({
+          ...state,
+          style:e.target.value
+        })
       }
     
     return (
@@ -205,6 +293,135 @@ export default function UploadHouseComponent ()  {
               </div>
             </div>
             <form action="" name='upload_ho' id='uploadHo' onSubmit={onSubmitHousePost}>
+                <div className="guide-psjb">
+                  <button className='pajb-btn'>
+                  <svg class="icon" width="26" height="26" viewBox="0 0 26 26" preserveAspectRatio="xMidYMid meet"><rect width="26" height="26" fill="#F8C332" rx="10"></rect><g fill="none" stroke="#FFF"><path stroke-linejoin="round" stroke-width="1.2" d="M15.06 8.65l-6.9 6.88L7 18.98l3.45-1.15 6.9-6.9-2.3-2.28z"></path><path stroke-width="1.2" d="M15.04 8.64l1.45-1.45a.65.65 0 01.93 0l1.37 1.38a.65.65 0 010 .92l-1.45 1.45"></path><path d="M8.27 15.2l2.48 2.47"></path></g></svg>
+                    <b>필수 정보 입력</b>
+                    <p>공간을 이해하는데 필요한 정보이니 최대한 꼼꼼하게 입력해주세요.</p>
+                    <div className="arrow">
+                      <svg className="u9pb1" width="18" height="18" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="#828c94" fillRule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                    </div>
+                  </button>
+                  <div className="psjb-content hide">
+                    <ul className='one'>
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>주거형태<i> *</i></label>
+                              <select name="place" className='place' id="place" onChange={onChangePlace}>
+                                <option value="">선택해주세요.</option>
+                                <option value="본인방">본인방</option>
+                                <option value="오피스텔">오피스텔</option>
+                                <option value="빌라&연립">빌라&연립</option>
+                                <option value="아파트">아파트</option>
+                                <option value="단독주택">단독주택</option>
+                                <option value="협소주택">협소주택</option>
+                                <option value="상업공간">상업공간</option>
+                                <option value="사무공간">사무공간</option>
+                              </select>
+                              <span className='select-icon'>
+                                <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dadada"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                              </span>
+                            </div>
+                        </li>
+                        <li>
+                          <ul className='one'>
+                            <li>
+                              <div className='psjb-box'>
+                                <label className='label'>평수<i> *</i></label>
+                                <label className='radio1'><input type="radio" name="pyeong" id="pyeong1" value="단층" onChange={onChangePyeong} /><h3>단층</h3></label>
+                                <label className='radio1'><input type="radio" name="pyeong" id="pyeong2" value="2층 단독/협소주택" onChange={onChangePyeong}/><h3>2층 단독/협소주택</h3></label>
+                                <label className='radio1'> <input type="radio" name="pyeong" id="pyeong3" value="3층 이상 단독/협소주택" onChange={onChangePyeong}/><h3>3층 이상 단독/협소주택</h3></label>
+                                {/* <input type="text" placeholder='평'/> */}
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>작업분야<i> *</i></label>
+                              <select type="text" name="category" id="category" onChange={onChangeCategory} >
+                                <option value="선택해주세요.">선택해주세요.</option>
+                                <option value="홈스타일링">홈스타일링</option>
+                                <option value="리모델링">리모델링</option>
+                                <option value="부분시공">부분시공</option>
+                                <option value="건축">건축</option>
+                              </select>
+                            </div>
+                        </li>
+                        <ul className='one'>
+                            <li>
+                              <div className='psjb-box'>
+                                <label className='label'>작업자<i> *</i></label>
+                                <label className='radio1'><input type="radio" name="worker" id="self" value="셀프 • DIY" onChange={onChangeWorker}/><h3>셀프 • DIY</h3></label>
+                                <label className='radio1'><input type="radio" name="worker" id="semiSelf" value="반셀프"onChange={onChangeWorker}/><h3>반셀프</h3></label>
+                                <label className='radio1'> <input type="radio" name="worker" id="pro" value="전문가"onChange={onChangeWorker}/><h3>전문가</h3></label>
+                                {/* <input type="text" placeholder='평'/> */}
+                              </div>
+                            </li>
+                          </ul>
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>지역<i> *</i></label>
+                              <select type="text" name="area" id="area" onChange={onChangeArea}>
+                                <option value="선택해주세요." placeholder='선택해주세요.'>선택안함</option>
+                                <option value="서울특별시">서울특별시</option>
+                                <option value="부산광역시">부산광역시</option>
+                                <option value="대구광역시">대구광역시</option>
+                                <option value="인천광역시">인천광역시</option>
+                                <option value="광주광역시">광주광역시</option>
+                                <option value="대전광역시">대전광역시</option>
+                                <option value="울산광역시">울산광역시</option>
+                                <option value="강원도">강원도</option>
+                                <option value="경기도">경기도</option>
+                                <option value="경상남도">경상남도</option>
+                                <option value="경상북도">경상북도</option>
+                                <option value="전라남도">전라남도</option>
+                                <option value="전라북도">전라북도</option>
+                                <option value="충청남도">충청남도</option>
+                                <option value="충청북도">충청북도</option>
+                                <option value="세종특별자치시">세종특별자치시</option>
+                                <option value="제주특별자치도">제주특별자치도</option>
+                              </select>
+                              <input type="text" name='area2' id='area2' placeholder='(선택) 아파트/건물명' onChange={onChangeArea2}/>
+                              <span className='select-icon'>
+                                <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dadada"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                              </span>
+                            </div>
+                        </li>
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>가족형태<i> *</i></label>
+                              <select name="family" id="family" onChange={onChangeFamily}>
+                                <option value="">선택해주세요.</option>
+                                <option value="싱글라이프">싱글라이프</option>
+                                <option value="신혼/부부가 사는집">신혼/부부가 사는집</option>
+                                <option value="자녀가 있는 집">자녀가 있는 집</option>
+                                <option value="부모님과 함께 사는 집">부모님과 함께 사는 집</option>
+                                <option value="룸메이트와 함께 사는 집">룸메이트와 함께 사는 집</option>
+                                <option value="기타">기타</option>
+                              </select>
+                              <span className='select-icon'>
+                                <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dadada"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                              </span>
+                            </div>
+                        </li>
+                        <li>
+                          <div className='psjb-box'>
+                            <label className='label'>스타일<i> *</i></label>
+                              <select type="text" name="style" id="Style" onChange={onChangeStyle}>
+                                <option value="선택해주세요.">선택해주세요.</option>
+                                <option value="모던">모던</option>
+                                <option value="시크">시크</option>
+                                <option value="빈티지">빈티지</option>
+                              </select>
+                              <span className='select-icon'>
+                                <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" fill="#dadada"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                              </span>
+                            </div>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
                 <div className="photo-box">
                     <div className="input">
                         <input type="file" name="file" id="file" accept='image/*' ref={imageInput} onChange={onChangeImage} onClick={onClickImage} className='hide'/>

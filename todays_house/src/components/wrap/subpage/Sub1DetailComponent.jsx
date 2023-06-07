@@ -15,6 +15,7 @@ export default function Sub1DetailComponent ({사진}) {
         })
     
         React.useEffect(() => {
+            window.scrollTo(0,0);
             const data = JSON.parse(localStorage.getItem('사진'));
             setState({
                 ...state,
