@@ -76,14 +76,12 @@ export default function BasketComponent(props) {
     }, [state.isClick])
 
     const commaPrice=(price)=>{
-        if(price < 1000){
-            return price;
-        }
         let value = price.toString();
         const regExp = /(^\d+)(\d{3})/g;
         while( regExp.test(value) ){
-            return  value.replace(regExp, '$1,$2');
+            value = value.replace(regExp, '$1,$2');
         }        
+        return value;
     }
 
     const onChangeAll = (e) => {
@@ -110,7 +108,7 @@ export default function BasketComponent(props) {
         }
     }
 
-    const onChangeProduct = (e, idx) => {
+    const onChangeProduct = (e, idx, id) => {
         const {checked} = e.target;
         let realTotalPrice = 0;
         if(checked === true){
@@ -118,7 +116,7 @@ export default function BasketComponent(props) {
             console.log(realTotalPrice);
             setState({
                 ...state,
-                checkedProduct : [...state.checkedProduct, idx],
+                checkedProduct : [...state.checkedProduct, id],
                 realTotalPrice : realTotalPrice
             })
         }
@@ -258,7 +256,7 @@ export default function BasketComponent(props) {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" className='check' value={`제품선택 ${idx}`} onChange={(e) => onChangeProduct(e,idx)} checked={state.checkedProduct.includes(item.id)} />
+                                                    <input type="checkbox" className='check' value={`제품선택 ${idx}`} onChange={(e) => onChangeProduct(e,idx,item.id)} checked={state.checkedProduct.includes(item.id)} />
                                                     <img className='baesong' src="./images/basket/ic-departure-today-c4b771c1162afcd9223631b660e19d73.png" alt="" />
                                                     <span className='span2'>평일 14:00까지 결제시</span>
                                                     <a href="" onClick={(e) => onClickDelete(e,item.id)}><img className='img2' src="./images/basket/x.png" alt="" /></a>

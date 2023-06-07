@@ -19,13 +19,12 @@ export default function Section3DetailComponent({쇼핑홈}) {
     React.useEffect(()=>{
         window.scrollTo(0, 0);
         const data = JSON.parse(localStorage.getItem('쇼핑홈'));
-        console.log(Number(data[id].할인가.replace(',','')))
         setState((prevState) => ({
             ...prevState,
             쇼핑홈 : data[id],
-            price : Number(data[id].할인가.replace(',','')),
-            sale : data[id].할인율2.replace('%',''),
-            totalprice : Number(data[id].할인가.replace(',',''))
+            price : Number(data[id].할인가.replaceAll(',','')),
+            sale : data[id].할인율2.replaceAll('%',''),
+            totalprice : Number(data[id].할인가.replaceAll(',',''))
         }))
     },[]);
 
@@ -63,8 +62,9 @@ export default function Section3DetailComponent({쇼핑홈}) {
         let value = price.toString();
         const regExp = /(^\d+)(\d{3})/g;
         while( regExp.test(value) ){
-            return  value.replace(regExp, '$1,$2');
+            value = value.replace(regExp, '$1,$2');
         }        
+        return value;
     }
 
     const onChangeMemo = (e) => {
