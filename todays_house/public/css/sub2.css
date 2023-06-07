@@ -71,9 +71,19 @@
   position: absolute;
   cursor: pointer;
   border: 0;
-  top: 85%;
-  right: 8%;
+  top: 83%;
+  right: 3%;
   background: none;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button .icon {
+  width: 32px;
+  height: 32px;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button.on g {
+  fill: #35c5f0;
+}
+#wrap #sub2 .container .gap .content-box .content .img-box button.on path {
+  stroke: transparent;
 }
 #wrap #sub2 .container .gap .content-box .content .title-box {
   width: 365px;

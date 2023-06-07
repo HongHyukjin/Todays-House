@@ -9,6 +9,9 @@ import MyPageComponentHouse from './mypage/MyPageComponentHouse';
 import MyPageComponentKnowHow from './mypage/MyPageComponentKnowHow';
 import MypagePtDetailComponent from './mypage/MypagePtDetailComponent';
 import $ from 'jquery';
+import MypageHouseDetailComponent from './mypage/MypageHouseDetailComponent';
+import MypageKnowHowDetailComponent from './mypage/MypageKnowHowDetailComponent';
+import MyPageZzimComponent from './mypage/MypageZzimComponent';
 
 export default function MypageComponent ({isMypage}) {
 
@@ -70,31 +73,31 @@ export default function MypageComponent ({isMypage}) {
     }
 };
 
-const getKnowHow = async () => {
-  try {
-      const user_email = sessionStorage.getItem('user_email');
-      const form_data = {
-          "user_email": user_email
-      };
+  const getKnowHow = async () => {
+    try {
+        const user_email = sessionStorage.getItem('user_email');
+        const form_data = {
+            "user_email": user_email
+        };
 
-      const res = await $.ajax({
-          url: 'http://localhost:8080/JSP/ohouse/knowhow_select_action.jsp',
-          type: 'POST',
-          data: form_data,
-          dataType: 'json'
-      });
+        const res = await $.ajax({
+            url: 'http://localhost:8080/JSP/ohouse/knowhow_select_action.jsp',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json'
+        });
 
-      console.log('AJAX 성공');
-      console.log(res.result);
+        console.log('AJAX 성공');
+        console.log(res.result);
 
-      setState((prevState) => ({
-          ...prevState,
-          노하우: res.result
-      }));
-  } catch (err) {
-      console.log('AJAX 실패' + err);
-  }
-};
+        setState((prevState) => ({
+            ...prevState,
+            노하우: res.result
+        }));
+    } catch (err) {
+        console.log('AJAX 실패' + err);
+    }
+  };
 
   React.useEffect(()=>{
     getPhoto();
@@ -111,9 +114,12 @@ const getKnowHow = async () => {
           <Route path='/사진' element={<MyPageComponentPt/>} />
           <Route path='/집들이' element={<MyPageComponentHouse />} />
           <Route path='/노하우' element={<MyPageComponentKnowHow />} />
+          <Route path='/좋아요' element={<MyPageZzimComponent/>} />
           <Route path='/회원정보수정' element={<UpdateComponent />} />
           <Route path='/비밀번호변경' element={<ChangePwComponent />} />
-          <Route path='/사진/상세보기/:id' element={<MypagePtDetailComponent 사진={state.사진} />} />
+          <Route path='/사진/상세보기/:id' element={<MypagePtDetailComponent />} />
+          <Route path='/집들이/상세보기/:id' element={<MypageHouseDetailComponent />} />
+          <Route path='/노하우/상세보기/:id' element={<MypageKnowHowDetailComponent />} />
       </Routes>
     </>
   );

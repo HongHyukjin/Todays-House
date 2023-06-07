@@ -65,8 +65,10 @@ export default function ChangePwComponent () {
     e.preventDefault();
     const user_email = sessionStorage.getItem("user_email");
 
+    let index = user_email.indexOf('@');
     const formData = {
-      "user_email" : user_email,
+      "user_email1" : user_email.substring(0, index),
+      "user_email2" : user_email.substring(index+1),
       "user_pw" : state.새비밀번호
     }
 

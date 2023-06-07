@@ -5,10 +5,29 @@ package knowhow_post;
  */
 public class KnowHowPostDTO {
 
+	private int idx;
+	private String user_email;
     private String file;
     private String knowhow_title;
     private String knowhow_content;
     private String write_date;
+
+	public int getIdx() {
+        return this.idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
+    }
+
+
+	public String getUser_email() {
+        return this.user_email;
+    }
+
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
+    }
 
 	public String getFile() {
 		return this.file;

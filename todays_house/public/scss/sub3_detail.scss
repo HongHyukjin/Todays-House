@@ -123,10 +123,18 @@
                 top: 80px;
                 right: -300px;
                 width: 54px;
-                height: 54px;           
+                height: 54px; 
+                &.on{
+                    position: fixed;
+                    top: 160px;
+                    right: 292.5px;
+                    margin: -20px 0 0 0;
+                    z-index: 5;
+                }           
                 .like{
                     width: 54px;
                     height: 54px;
+                    margin: 0 0 15px 0;
                     background: #fff;
                     border-radius: 50%;
                     border: 1px solid #dadce0;
@@ -139,6 +147,12 @@
                         border: 1px solid #828c94;
                         >svg{
                             stroke:rgba(130, 140, 148,1);
+                        }
+                    }
+                    &.on{
+                        >svg{
+                            fill:#35c5f0;
+                            stroke:#35c5f0;
                         }
                     }
                 }

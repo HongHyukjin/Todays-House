@@ -165,6 +165,10 @@
   width: 24px;
   height: 24px;
 }
+#wrap #sub1 .container .gap .content .pitbox .bodybox .body-button .comment.on .icon {
+  fill: #35c5f0;
+  stroke: transparent;
+}
 #wrap #sub1 .container .gap .content .pitbox .bodybox .body-button .reply {
   width: 24px;
   height: 24px;

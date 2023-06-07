@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import $, { ajax } from 'jquery';
+import $ from 'jquery';
 
 export default function SignUpComponent () {
 

@@ -24,15 +24,33 @@
     for(HousePostDTO housePostDTO : list){
         cnt++;
         if(cnt < list.size()){
-            jsonData += "{ \"file\" : \"" + housePostDTO.getFile() + "\","
-                     +   "\"house_post\" : \"" + housePostDTO.getHouse_title() + "\","
-                     +   "\"house_content\" : \"" + housePostDTO.getHouse_content() + "\""
+            jsonData += "{ \"idx\" : \"" + housePostDTO.getIdx() + "\","
+                     +   "\"file\" : \"" + housePostDTO.getFile() + "\","
+                     +   "\"house_title\" : \"" + housePostDTO.getHouse_title() + "\","
+                     +   "\"house_content\" : \"" + housePostDTO.getHouse_content() + "\","
+                     +   "\"place\" : \"" + housePostDTO.getPlace() + "\","
+                     +   "\"pyeong\" : \"" + housePostDTO.getPyeong() + "\","
+                     +   "\"category\" : \"" + housePostDTO.getCategory() + "\","
+                     +   "\"worker\" : \"" + housePostDTO.getWorker() + "\","
+                     +   "\"family\" : \"" + housePostDTO.getFamily() + "\","
+                     +   "\"area\" : \"" + housePostDTO.getArea() + "\","
+                     +   "\"area2\" : \"" + housePostDTO.getArea2() + "\","
+                     +   "\"style\" : \"" + housePostDTO.getStyle() + "\""
                      + "},";
         }   
         else{
-            jsonData += "{ \"file\" : \"" + housePostDTO.getFile() + "\","
-                     +   "\"house_post\" : \"" + housePostDTO.getHouse_title() + "\","
-                     +   "\"house_content\" : \"" + housePostDTO.getHouse_content() + "\""
+            jsonData += "{ \"idx\" : \"" + housePostDTO.getIdx() + "\","
+                     +   "\"file\" : \"" + housePostDTO.getFile() + "\","
+                     +   "\"house_title\" : \"" + housePostDTO.getHouse_title() + "\","
+                     +   "\"house_content\" : \"" + housePostDTO.getHouse_content() + "\","
+                     +   "\"place\" : \"" + housePostDTO.getPlace() + "\","
+                     +   "\"pyeong\" : \"" + housePostDTO.getPyeong() + "\","
+                     +   "\"category\" : \"" + housePostDTO.getCategory() + "\","
+                     +   "\"worker\" : \"" + housePostDTO.getWorker() + "\","
+                     +   "\"family\" : \"" + housePostDTO.getFamily() + "\","
+                     +   "\"area\" : \"" + housePostDTO.getArea() + "\","
+                     +   "\"area2\" : \"" + housePostDTO.getArea2() + "\","
+                     +   "\"style\" : \"" + housePostDTO.getStyle() + "\""
                      + "}";
         }
     }

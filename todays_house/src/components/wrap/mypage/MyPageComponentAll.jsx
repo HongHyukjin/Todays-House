@@ -7,37 +7,108 @@ export default function MyPageComponentAll ()  {
 
     const [state,setState] = React.useState({
         닉네임 : '',
-        imgUrl : ''
+        imgUrl : '',
+        사진 : [],
+        집들이 : [],
+        isPhotoNum : 0,
+        isHouseNum : 0,
     })
 
-    const getUserData = () => {
-        const user_email = sessionStorage.getItem('user_email');
-        const form_data = {
-            "user_email": user_email
-        }
 
-        $.ajax({
-            url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success(res) {
-                console.log('AJAX 성공!');
-                console.log(res.result); // 결과 데이터 출력
-                setState({
-                    ...state,
-                    닉네임 : res.result.닉네임 === "null" ? '' : res.result.닉네임,
-                    imgUrl: res.result.imgUrl === "null" ? '../images/avatar.avif' : res.result.imgUrl
-                })
-            },
-            error(err) {
-                console.log('AJAX 실패!' + err);
-            },
-        });
-    }
+    const getUserData = async () => {
+        try {
+            const user_email = sessionStorage.getItem('user_email');
+            const form_data = {
+                "user_email": user_email
+            };
+
+            const res = await $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/update_getjoin_action.jsp',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json'
+            });
+
+            console.log('AJAX 성공!');
+            console.log(res.result); // 결과 데이터 출력
+            setState((prevState) => ({
+                ...prevState,
+                닉네임: res.result.닉네임 === "null" ? '' : res.result.닉네임,
+                imgUrl: res.result.imgUrl === "null" ? '../images/avatar.avif' : res.result.imgUrl
+            }));
+        } catch (err) {
+            console.log('AJAX 실패!' + err);
+        }
+    };
+
+    const getPhoto = async () => {
+        try {
+            const user_email = sessionStorage.getItem('user_email');
+            const form_data = {
+                "user_email": user_email
+            };
+
+            const res = await $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/photo_select_action.jsp',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json'
+            });
+
+            console.log('AJAX 성공');
+            console.log(res.result);
+
+            let isPhotoNum = 0;
+            for(let i=0; i<res.result.length; i++){
+                isPhotoNum++;
+            }
+
+            setState((prevState) => ({
+                ...prevState,
+                사진: res.result,
+                isPhotoNum : isPhotoNum
+            }));
+        } catch (err) {
+            console.log('AJAX 실패' + err);
+        }
+    };
+
+    const getHouse = async () => {
+        try {
+            const user_email = sessionStorage.getItem('user_email');
+            const form_data = {
+                "user_email": user_email
+            };
+
+            const res = await $.ajax({
+                url: 'http://localhost:8080/JSP/ohouse/house_select_action.jsp',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json'
+            });
+
+            console.log('AJAX 성공');
+            console.log(res.result);
+
+            let isHouseNum = 0;
+            for(let i=0; i<res.result.length; i++){
+                isHouseNum++;
+            }
+
+            setState((prevState) => ({
+                ...prevState,
+                집들이: res.result,
+                isHouseNum : isHouseNum
+            }));
+        } catch (err) {
+            console.log('AJAX 실패' + err);
+        }
+    };
 
     React.useEffect(() => {
         getUserData();
+        getPhoto();
+        getHouse();
     }, [])
 
     return (
@@ -82,25 +153,75 @@ export default function MyPageComponentAll ()  {
                     </div>
                     <div className="right">
                         <div className="row1">
-                            <h2>사진 <span>0</span></h2>
+                            <h2>사진 <span>{state.isPhotoNum}</span></h2>
                             <Link to="/사진업로드">
-                                <div className="upload-p">
-                                    <p> 
-                                        <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
-                                        첫 번째 사진을 올려보세요
-                                    </p>
-                                </div>
+                                    {
+                                        state.사진.length === 0 &&
+                                            <div className="upload-p">
+                                                <p> 
+                                                    <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
+                                                    첫 번째 사진을 올려보세요
+                                                </p>
+                                            </div>
+                                    }
+                                    {
+                                        state.사진.length !== 0 &&
+                                            <>
+                                                <ul className="is-post">
+                                                    {
+                                                        state.사진.map((item, idx) => {
+                                                            return (
+                                                                <li key={idx}>
+                                                                    <div className="pt-box"><Link to={`/마이페이지/사진/상세보기/${idx}`}><img src={item.file} alt="" /></Link> </div>
+                                                                </li>
+                                                            )
+                                                        })
+                                                    }
+                                                </ul>
+                                                <div className="upload-more">
+                                                    <p> 
+                                                        <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
+                                                        사진올리기
+                                                    </p>
+                                                </div>
+                                            </>
+                                    }
                             </Link>
                         </div>
                         <div className="row2">
-                            <h2>집들이 <span>0</span></h2>
+                            <h2>집들이 <span>{state.isHouseNum}</span></h2>
                             <Link to="/집들이업로드">
-                                <div className="upload-h">
-                                    <p> 
-                                        <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
-                                        첫 번째 집들이를 올려보세요
-                                    </p>
-                                </div>
+                                {
+                                    state.집들이.length === 0 &&
+                                        <div className="upload-h">
+                                            <p> 
+                                                <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
+                                                첫 번째 집들이를 올려보세요
+                                            </p>
+                                        </div>
+                                }
+                                {
+                                    state.집들이.length !== 0 &&
+                                        <>
+                                            <ul className="is-post">
+                                                {
+                                                    state.집들이.map((item, idx) => {
+                                                        return (
+                                                            <li key={idx}>
+                                                                <div className="pt-box"><Link to={`/마이페이지/집들이/상세보기/${idx}`}><img src={item.file} alt="" /></Link> </div>
+                                                            </li>
+                                                        )
+                                                    })
+                                                }
+                                            </ul>
+                                            <div className="upload-more">
+                                                <p> 
+                                                    <span><svg width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="css-1n1rkai e1s15hxd0"><path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg></span>
+                                                    집들이올리기
+                                                </p>
+                                            </div>
+                                        </>
+                                }
                             </Link>
                         </div>
                     </div>

@@ -9,21 +9,83 @@
             width: 100%;
             position: relative;
             .title {
-                margin: 0 auto;
+                margin: 0 auto 30px auto;
                 width: 720px;
-                height: 32px;
-                padding: 0 0 50px 0;
-                a {
+                padding: 0 15px 0 15px;
+                display: flex;
+                align-items: flex-end;
+                position: relative;
+                >a {
                     margin:0 8px 0 0;
                     font-size: 16px;
                     letter-spacing: -0.4px;
                     line-height: 32px;
                     color: rgba(140, 160, 148, 1);
+                    
                 }
+                .a{
+                    width: 80%;
+                    height: 100%;
+                    >a {
+                        margin:0 8px 0 0;
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                        line-height: 32px;
+                        color: rgba(140, 160, 148, 1);
+                    }
+                    h1{
+                        color: #2f3438;
+                        font-size: 34px;
+                        line-height: 42px;
+                        font-weight: 700;
+                        word-break: keep-all;
+                        overflow-wrap: break-word;
+                    }
+                }
+                .delete{
+                    display: flex;
+                    position: relative;
+                    width: 20%;
+                    height: 100%;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    button{
+                        height: 100%;
+                        background: none;
+                        border: 0;
+                        font-size: 28px;
+                        letter-spacing: -4px;
+                        display: flex;
+                        align-items: baseline;
+                        cursor: pointer;
+                    }
+                    .sub{
+                        z-index: 4;
+                        position: absolute;
+                        top: 55px;
+                        right: -20px;
+                        width: 118px;
+                        height: 52px;
+                        background: #fff;
+                        border-radius: 5px;
+                        border: 1px solid #ddd;
+                        text-align: center;
+                        >a{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            padding: 15px 0;
+                            font-size: 16px;
+                            color: #f77;
+                        }
+                    }
+                }
+
             }
             .content {
                 width: 720px;
                 margin: 0 auto;
+                position: relative;
                 .center-box {
                     margin: 0 auto;
                     img {
@@ -49,35 +111,46 @@
                         }
                     }
                 }
-                .right {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    
-                    .h_container {
-                        position: absolute;
-                        top:70px;
-                        right:100px;
-                        width: 60px;
-                        height: 60px;
-                        background-color: #fff;
-                        border: 1px solid #ccc;
+                .like-btn{
+                    position: absolute;
+                    top: 80px;
+                    right: -150px;
+                    width: 54px;
+                    height: 54px; 
+                    z-index: 3;
+                    &.on{
+                        position: fixed;
+                        top: 160px;
+                        right: 441.5px;
+                        margin: -20px 0 0 0;
+                        z-index: 3;
+                    }          
+                    .like{
+                        width: 54px;
+                        height: 54px;
+                        margin: 0 0 15px 0;
+                        background: #fff;
                         border-radius: 50%;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                        border: 1px solid #dadce0;
+                        transition: all 0.3s;
+                        cursor: pointer;
                         display: flex;
-                        justify-content: center;
                         align-items: center;
-                      }
-                      #heart {
-                        color: rgb(53, 197, 240);
-                        font-size: 24px;
-                        &:before {
-                            content: "\f004"; /* FontAwesome 하트 아이콘 코드 */
-                            font-family: "Font Awesome 5 Free"; /* FontAwesome 라이브러리의 폰트 패밀리 */
-                            font-weight: 900; /* 아이콘의 두께 */
-                          }
-                      }
-                  }
+                        justify-content: center;
+                        &:hover{
+                            border: 1px solid #828c94;
+                            >svg{
+                                stroke:rgba(130, 140, 148,1);
+                            }
+                        }
+                        &.on{
+                            >svg{
+                                fill:#35c5f0;
+                                stroke:#35c5f0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

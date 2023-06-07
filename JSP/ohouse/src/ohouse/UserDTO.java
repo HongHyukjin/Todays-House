@@ -13,7 +13,7 @@ public class UserDTO {
     private String user_service;
     private String user_url; 
     private String user_gender;
-    private String user_birth; 
+    private String user_birth;
     private String user_profile;
     private String user_oneline;
     private String create_date;

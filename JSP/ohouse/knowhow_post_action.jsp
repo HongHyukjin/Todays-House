@@ -12,6 +12,7 @@
 <% request.setCharacterEncoding("UTF-8");%>
 
 <jsp:useBean class="knowhow_post.KnowHowPostDTO" id="knowHowPostDTO" scope="page"/>
+<jsp:setProperty name="knowHowPostDTO" property="user_email"/>
 <jsp:setProperty name="knowHowPostDTO" property="file"/>
 <jsp:setProperty name="knowHowPostDTO" property="knowhow_title"/>
 <jsp:setProperty name="knowHowPostDTO" property="knowhow_content"/>

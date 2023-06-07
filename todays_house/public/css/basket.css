@@ -1,0 +1,273 @@
+#wrap {
+  width: 100%;
+}
+#wrap #basket {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-top: 80px;
+}
+#wrap #basket .container {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+#wrap #basket .container .gap {
+  width: 100%;
+}
+#wrap #basket .container .gap .content {
+  width: 100%;
+  display: flex;
+}
+#wrap #basket .container .gap .content .left-box {
+  width: 750px;
+  margin-top: 40px;
+}
+#wrap #basket .container .gap .content .left-box .row1 {
+  display: flex;
+  position: relative;
+  padding-bottom: 10px;
+}
+#wrap #basket .container .gap .content .left-box .row1 input {
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+}
+#wrap #basket .container .gap .content .left-box .row1 span {
+  margin-left: 5px;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+  color: #424242;
+  font-weight: 400;
+}
+#wrap #basket .container .gap .content .left-box .row1 p {
+  position: absolute;
+  right: 2%;
+  top: 0;
+  font-size: 12px;
+  color: #424242;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+#wrap #basket .container .gap .content .left-box .row2 {
+  background-color: #fff;
+  margin: 0 0 15px 0;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li {
+  display: flex;
+  padding: 10px 0;
+  padding-left: 40px;
+  position: relative;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .ro1 .span1 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -1px;
+  color: #424242;
+  padding-left: 280px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .span2 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+  color: #2f3438;
+  margin-left: 7px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .span3 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 21px;
+  color: #000;
+  margin-left: 15px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .span7 {
+  font-size: 12px;
+  color: #424242;
+  font-weight: 400;
+  margin-top: 10px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .span8 {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #424242;
+  letter-spacing: -0.5px;
+  padding-left: 280px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .check {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 25%;
+  left: 2%;
+  border: 1px solid #ccc;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li img {
+  width: auto;
+  height: auto;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li > a {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .product {
+  width: 70px;
+  height: 70px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li .baesong {
+  width: 60px;
+  height: 15px;
+  margin-left: 10px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul li p {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  color: #2F3438;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box {
+  background-color: #F7F9FA;
+  position: relative;
+  margin-left: 40px;
+  width: 685px;
+  height: 186px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box {
+  width: 70px;
+  height: 32px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box .min {
+  width: 17px;
+  height: 18px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box .plu {
+  width: 17px;
+  height: 18px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box button {
+  width: 70px;
+  height: 32px;
+  padding: 7px 6px;
+  background-color: #fff;
+  border: 1px solid #dadde0;
+  font-size: 15px;
+  margin-left: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .button-box button > a {
+  width: 18px;
+  height: 18px;
+  font-size: 20px;
+  line-height: 20px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .span4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #2F3438;
+  margin-left: -30px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .span5 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  color: #2F3438;
+  position: absolute;
+  top: 47%;
+  right: 2%;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .span6 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+  color: #2F3438;
+  margin-left: -30px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box .choose {
+  width: 653px;
+  padding: 0 14px;
+  border: 1px solid #DADDE0;
+  background-color: #fff;
+  border-radius: 4px;
+  height: 42px;
+  margin-top: -15px;
+  margin-left: -30px;
+}
+#wrap #basket .container .gap .content .left-box .row2 ul .choose-box img {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  width: auto;
+  height: auto;
+}
+#wrap #basket .container .gap .content .right-box {
+  width: 365px;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+#wrap #basket .container .gap .content .right-box .content-box {
+  padding: 30px 0;
+  background-color: #fff;
+}
+#wrap #basket .container .gap .content .right-box .content-box ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+#wrap #basket .container .gap .content .right-box .content-box ul li span {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  color: #424242;
+}
+#wrap #basket .container .gap .content .right-box .content-box ul li p {
+  color: #424242;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+}
+#wrap #basket .container .gap .content .right-box .content-box ul li .last {
+  color: #000;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  margin-top: 10px;
+}
+#wrap #basket .container .gap .content .right-box .content-box ul li .last-price {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  margin-top: 10px;
+}
+#wrap #basket .container .gap .content .right-box button {
+  margin-top: 20px;
+  width: 365px;
+  height: 50px;
+  padding: 15px 10px;
+  background-color: #35c5f0;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+}

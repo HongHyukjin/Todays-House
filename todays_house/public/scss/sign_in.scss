@@ -23,7 +23,7 @@ $border-color: #e0e0e0;
                     width: 100%;
                 }
             }
-           >ul{
+            >ul{
                 width: 100%;
                 padding: 35px 0 0 0;
                 >li{
@@ -139,6 +139,10 @@ $border-color: #e0e0e0;
                     a{
                         color : #fff;
                         font-weight: 700;
+                    }
+                    &:hover{
+                        border: 1px solid #35c5f0;
+                        
                     }
                 }
             }

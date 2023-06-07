@@ -23,15 +23,17 @@ public class PhotoPostDAO {
  
     // 1. post
     public int post(PhotoPostDTO photoPostDTO){
-        String SQL ="insert into photo_post(pyeong,type,style,file,place,memo) values(?,?,?,?,?,?)";
+        String SQL ="insert into photo_post(user_email,pyeong,type,style,file,place,memo) values(?,?,?,?,?,?,?)";
         try{
             ps = conn.prepareStatement(SQL);
-            ps.setString(1, photoPostDTO.getPyeong());
-            ps.setString(2, photoPostDTO.getType());
-            ps.setString(3, photoPostDTO.getStyle());
-            ps.setString(4, photoPostDTO.getFile());
-            ps.setString(5, photoPostDTO.getPlace());
-            ps.setString(6, photoPostDTO.getMemo());
+
+            ps.setString(1, photoPostDTO.getUser_email());
+            ps.setString(2, photoPostDTO.getPyeong());
+            ps.setString(3, photoPostDTO.getType());
+            ps.setString(4, photoPostDTO.getStyle());
+            ps.setString(5, photoPostDTO.getFile());
+            ps.setString(6, photoPostDTO.getPlace());
+            ps.setString(7, photoPostDTO.getMemo());
 
             return ps.executeUpdate();
         }
@@ -54,13 +56,16 @@ public class PhotoPostDAO {
     public List<PhotoPostDTO> select(String user_email){
         PhotoPostDTO photoPostDTO = null;
         List<PhotoPostDTO> list = new ArrayList<>();
-        String SQL ="select * from ohouse_member m join photo_post p where m.user_email=?";
+        String SQL ="select * from ohouse_member m join photo_post p where m.user_email=? && p.user_email=?";
         try{
             ps = conn.prepareStatement(SQL);
             ps.setString(1, user_email);
+            ps.setString(2, user_email);
             rs = ps.executeQuery(); 
             while(rs.next()){
                 photoPostDTO = new PhotoPostDTO();
+
+                photoPostDTO.setIdx(rs.getInt("p.idx"));
                 photoPostDTO.setPyeong(rs.getString("pyeong"));
                 photoPostDTO.setType(rs.getString("type"));
                 photoPostDTO.setStyle(rs.getString("style"));
@@ -87,7 +92,25 @@ public class PhotoPostDAO {
         return list;
     }
 
-
+    public int delete(PhotoPostDTO photoPostDTO){
+        String SQL = "delete from photo_post where idx=?";
+        try{
+            ps = conn.prepareStatement(SQL);
+            ps.setInt(1, photoPostDTO.getIdx());
+    
+            return ps.executeUpdate();
+        }
+        catch(Exception e){}
+        finally{
+            try{
+                if(rs!=null){rs.close();}
+                if(ps!=null){ps.close();}
+                if(conn!=null){conn.close();}
+            }
+            catch(Exception e){ }
+        }
+        return -1;
+    }
 
     
 }

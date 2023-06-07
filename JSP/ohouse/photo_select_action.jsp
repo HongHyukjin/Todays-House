@@ -24,7 +24,8 @@
     for(PhotoPostDTO photoPostDTO : list){
         cnt++;
         if(cnt < list.size()){
-            jsonData += "{ \"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
+            jsonData += "{ \"idx\" : \"" + photoPostDTO.getIdx() + "\","
+                     +   "\"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
                      +   "\"type\" : \"" + photoPostDTO.getType() + "\","
                      +   "\"style\" : \"" + photoPostDTO.getStyle() + "\","
                      +   "\"place\" : \"" + photoPostDTO.getPlace() + "\","
@@ -33,7 +34,8 @@
                      + "},";
         }
         else{
-            jsonData += "{ \"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
+            jsonData += "{ \"idx\" : \"" + photoPostDTO.getIdx() + "\","
+                     +   "\"pyeong\" : \"" + photoPostDTO.getPyeong() + "\","
                      +   "\"type\" : \"" + photoPostDTO.getType() + "\","
                      +   "\"style\" : \"" + photoPostDTO.getStyle() + "\","
                      +   "\"place\" : \"" + photoPostDTO.getPlace() + "\","

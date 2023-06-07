@@ -65,11 +65,20 @@
                               position: absolute;
                               cursor: pointer;
                               border: 0;
-                              top:85%;
-                              right:8%;
+                              top:83%;
+                              right:3%;
                               background: none;
-                              > img {
-
+                              .icon{
+                                width : 32px;
+                                height : 32px;
+                              }
+                              &.on{
+                                g{
+                                    fill: #35c5f0;
+                                }
+                                path{
+                                    stroke : transparent;
+                                }
                               }
                           }
                       }

@@ -29,10 +29,11 @@
                 width: 720px;
                 margin: 0 auto;
                 .center-box {
+                    padding : 0 100px;
                     margin: 0 auto;
                     img {
-                        width: 720px;
-                        height: 960px;
+                        width: 100%;
+                        height: auto;
                     }
                 }
                 .center-txt {

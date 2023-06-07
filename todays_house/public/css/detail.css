@@ -33,11 +33,12 @@
   margin: 0 auto;
 }
 #detail .container .gap .content .center-box {
+  padding: 0 100px;
   margin: 0 auto;
 }
 #detail .container .gap .content .center-box img {
-  width: 720px;
-  height: 960px;
+  width: 100%;
+  height: auto;
 }
 #detail .container .gap .content .center-txt {
   width: 100%;

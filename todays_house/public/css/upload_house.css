@@ -140,10 +140,11 @@
 }
 #UploadHouse .guide-psjb .pajb-btn .arrow {
   width: 10%;
+  padding: 0 14px 0 0;
   display: flex;
   justify-content: end;
 }
-#UploadHouse .guide-psjb .pajb-btn .arrow .u9pb {
+#UploadHouse .guide-psjb .pajb-btn .arrow .u9pb1 {
   transition: all 0.3s;
 }
 #UploadHouse .guide-psjb .psjb-content {
@@ -160,10 +161,16 @@
 }
 #UploadHouse .guide-psjb .psjb-content .one li .psjb-box {
   width: 100%;
+  position: relative;
   padding: 15px 0;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .select-icon {
+  position: absolute;
+  top: 21px;
+  right: 330px;
 }
 #UploadHouse .guide-psjb .psjb-content .one li .psjb-box .label {
   width: 130px;
@@ -178,7 +185,7 @@
   display: inline-flex;
   padding: 0 20px 0 0;
 }
-#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 input[type=radio] {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 > input[type=radio] {
   width: 24px;
   height: 24px;
   margin: 0 10px 0 0;
@@ -188,7 +195,7 @@
   border: 1px solid #ccc;
   border-radius: 50%;
 }
-#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 input[type=radio]:checked {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 > input[type=radio]:checked {
   border: 7px solid #35c5f0;
 }
 #UploadHouse .guide-psjb .psjb-content .one li .psjb-box .radio1 h3 {
@@ -196,7 +203,7 @@
   font-size: 14px;
   margin: 0;
 }
-#UploadHouse .guide-psjb .psjb-content .one li .psjb-box select {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box > select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -209,8 +216,9 @@
   width: 220px;
   height: 40px;
 }
-#UploadHouse .guide-psjb .psjb-content .one li .psjb-box select:hover {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box > select:focus {
   border: 1px solid #35c5f0;
+  outline: 0;
 }
 #UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text] {
   width: 220px;
@@ -220,8 +228,9 @@
   border-radius: 4px;
   margin: 0 10px;
 }
-#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text]:hover {
+#UploadHouse .guide-psjb .psjb-content .one li .psjb-box input[type=text]:focus {
   border: 1px solid #35c5f0;
+  outline: 0;
 }
 #UploadHouse form {
   width: 100%;

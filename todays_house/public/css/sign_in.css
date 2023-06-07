@@ -138,3 +138,6 @@
   color: #fff;
   font-weight: 700;
 }
+#wrap #signin .ohouse-login-form > ul .ohouse-login-form-button:hover {
+  border: 1px solid #35c5f0;
+}
