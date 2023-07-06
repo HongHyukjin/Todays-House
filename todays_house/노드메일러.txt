@@ -1,0 +1,5 @@
+server 안에 들어가서 터미널에 node email.js 써주면 됨! 
+
+nodemailer를 사용하기전에 
+
+package.json > express, cors , nodemailer.. 다운받기 ex) npm i express .. ... ..

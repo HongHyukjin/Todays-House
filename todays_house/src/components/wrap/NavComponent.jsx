@@ -16,6 +16,7 @@ export default function NavComponent({nav,setNav}) {
 
         setId = setInterval(slideUp, 3000);
 
+        
         return () => {
             clearInterval(setId);
         };
